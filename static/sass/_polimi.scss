@@ -1,29 +1,31 @@
 /****************************************************************************************************
-*   Stanford Theming File
+*   polimi Theming File
 *
-*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*   Contains all the theme color definitions for the polimi Open Source MOOC Project
 *
 ****************************************************************************************************/
 
 //-----------------
-//  Color variables (from Stanford palette unless noted)
+//  Color variables (from polimi palette unless noted)
 //-----------------
 
 //Cardinal Color Variables
-$cardinal-red: #8C1515;
-$dark-red: #820000; //Link Color
-$cardinal-light: #c83737; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #e9afaf; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$cardinal-blue: #515790;
+$dark-blue: #069; //Link Color
+$cardinal-light:lighten($cardinal-blue, 18.5%); //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #afcde9; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
-//Beige Color Variables
-$beige: #9d9573;
-$beige-60: lighten($beige, 18.5%); //Main Border/HR Color
-$beige-25: lighten($beige, 25%); 
+//Azzurro Color Variables
+$azzurro: #fffff2;
+$azzurro-60: lighten($azzurro, 18.5%); //Main Border/HR Color
+$azzurro-25: lighten($azzurro, 25%); 
 
 //Sandstone Color Variables
-$sandstone: #ddcf99;
+$sandstone: #00ACD7;
 $sandstone-50: lighten($sandstone, 9%);
 $sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
+
+
 
 //Gray Color Variables
 $gray: #3f3c30; //Main Text Color
@@ -66,33 +68,33 @@ $header-bg: transparentize(lighten($sandstone, 18.5%), .25);
 $courseware-header-image: none;
 $courseware-header-bg: transparentize(lighten($sandstone, 18.5%), .25);
 $footer-bg: $sandstone-25;
-$courseware-footer-border: 1px solid $beige-60;
+$courseware-footer-border: 1px solid $azzurro-60;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
 
-$faded-hr-image-1: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-2: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-3: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-4: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-5: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-6: linear-gradient($beige-60 0%, $beige-60);
+$faded-hr-image-1: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-2: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-3: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-4: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-5: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-6: linear-gradient($azzurro-60 0%, $azzurro-60);
 
 $base-font-color: $black;
 $lighter-base-font-color: $black-80;
 $very-light-text: $gray-1;
 
-$link-color: $dark-red;
-$link-color-d1: $dark-red;
+$link-color: $dark-blue;
+$link-color-d1: $dark-blue;
 $link-hover: $cardinal-light;
 $site-status-color: $cardinal-bg;
 
-$header-graphic-super-color: $dark-red;
+$header-graphic-super-color: $dark-blue;
 $header-graphic-sub-color: $lighter-base-font-color;
 
-$header-link-color: $dark-red;
+$header-link-color: $dark-blue;
 $header-link-hover: $cardinal-light;
 
-$button-color: $cardinal-red;
+$button-color: $cardinal-blue;
 $button-archive-color: $gray-3;
 
 $shadow-color: $gray;
@@ -103,16 +105,16 @@ $button-bg-color: $gray-3;
 $button-bg-hover-color: $gray-1;
 
 // actions - primary
-$action-primary-bg: $cardinal-red;
+$action-primary-bg: $cardinal-blue;
 $action-primary-fg: $gray-2;
 $action-primary-shadow: none;
 
 // focused - hover/active pseudo states
-$action-primary-focused-bg: $dark-red;
+$action-primary-focused-bg: $dark-blue;
 $action-primary-focused-fg: $gray-1;
 
 // current or active navigation item
-$action-primary-active-bg: $dark-red;
+$action-primary-active-bg: $dark-blue;
 $action-primary-active-fg: $gray-1;
 $action-primary-active-shadow: none;
 $action-primary-active-focused-fg: $gray-2;
@@ -146,17 +148,17 @@ $action-secondary-disabled-fg: $gray;
 
 //
 
-$border-color-1: $beige-60;
-$border-color-2: $beige-60;
-$border-color-3: $beige-60;
-$outer-border-color: $beige-60;
+$border-color-1: $azzurro-60;
+$border-color-2: $azzurro-60;
+$border-color-3: $azzurro-60;
+$outer-border-color: $azzurro-60;
 
 $sidebar-color: $gray-1;
 
 $dashboard-profile-header-image: none;
 $dashboard-profile-header-color: $sandstone-25;
 $dashboard-profile-color: $gray-3;
-$dot-color: $beige-60;
+$dot-color: $azzurro-60;
 
 $course-bg-color: $gray-3;
 $course-bg-image: none;
@@ -182,12 +184,12 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: '../themes/stanford/images/stanford-pano.jpg';
+$homepage-bg-image: '../themes/polimi/images/polimi-pano.jpg';
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/stanford/images/stanford-video-thumb.png';
+$video-thumb-url: '../themes/polimi/images/polimi-video-thumb.png';
 
 //-----------------
 //  Mixin Styles
