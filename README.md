@@ -1,6 +1,7 @@
 Overview
 ========
-This directory stores Stanford's theming files for its edX instance.
+This directory stores Polimi-X's theming files for its edX instance as inspired by
+Standford's Theme (https://github.com/Stanford-Online/edx-theme)
 We're storing the stuff here and then pulling it in to our instance
 when we deploy.
 
