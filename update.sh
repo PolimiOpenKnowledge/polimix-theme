@@ -1,7 +1,7 @@
 ## Copy static sass file needed before rake gather asset 
 SASS_DIR="/edx/app/edxapp/edx-platform/lms/static/sass"
 
-cmd="sudo -u edxapp cp ./static/sass/css/* SASS_DIR/ "
+cmd="sudo -u edxapp cp $PWD/static/sass/css/* SASS_DIR/ "
 echo $cmd
 $cmd
 
