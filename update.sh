@@ -5,9 +5,6 @@ cmd="sudo -u edxapp cp $PWD/static/sass/* $SASS_DIR/ "
 echo $cmd
 $cmd
 
-echo "Compile assets manually"
-sudo -u edxapp bash
-source /edx/app/edxapp/edxapp_env
-cd /edx/app/edxapp/edx-platform
-rake lms:gather_assets:aws
-exit
+cmd="sudo -u edxapp bash compile-asset.sh"
+echo $cmd
+$cmd
