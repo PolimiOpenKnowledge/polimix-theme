@@ -195,10 +195,10 @@ $video-thumb-url: '../themes/polimix/images/polimi-video-thumb.png';
 //  Mixin Styles
 //-----------------
 @mixin login_register_h1_style {
-    clip: auto !important;
+   /* clip: auto !important;
     height: 50px;
     width: 550px;
-    margin-top: 50px;
+    margin-top: 50px;*/
 }
 
 @mixin footer_references_style {
