@@ -5,18 +5,19 @@
 
 ## Toss the Polimi brand bar on top of the page
 <%block name="navigation_top">
-  <div id="polimi-header">
-    <div class="polimi-container">
-      <a href="http://www.polimi.it">
-       <img src="${static.url('themes/polimix/images/header-logo.png')}"  alt="Home page" />
-      </a>
-    </div>
-  </div>
+## <div id="polimi-header">
+##   <div class="polimi-container">
+##     <a href="http://www.polimi.it">
+##       <img src="${static.url('themes/polimix/images/header-logo.png')}"  alt="Home page" />
+##      </a>
+##    </div>
+##  </div>
+&nbsp;
 </%block>
 
 ## TODO: this will eventually be moved to the Sass
 <%block name="navigation_logo">
-  &nbsp;
+    <img src="${static.url('themes/polimix/images/header-logo.png')}"  alt="Home page" />
 </%block>
 
 ## We don't want extra links inside the navigation dropdown
