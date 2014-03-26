@@ -15,7 +15,13 @@ header {
   opacity:0.92;
 }
 
-
+.home > header {
+	height:620px
+	
+	.title > hgroup h2 {
+		text-transform: initial
+	}
+}
 
 /***   Footer   ***/
 
