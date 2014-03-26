@@ -7,6 +7,7 @@
 #polimi-header .polimi-container,
 #polimi-footer .polimi-container {
   margin: 0 auto;
+  text-align:center;
 }
 
 #polimi-header .span2,
