@@ -8,6 +8,8 @@
 //-----------------
 //  Color variables (from polimi palette unless noted)
 //-----------------
+//Ciano Polimi
+$polimi-ciano: #00acd7
 
 //Cardinal Color Variables
 $cardinal-blue: #515790;
@@ -19,12 +21,6 @@ $cardinal-bg: #afcde9; //Selected Content BG Color, ie. calendar          ***Cus
 $azzurro: #fffff2;
 $azzurro-60: lighten($azzurro, 18.5%); //Main Border/HR Color
 $azzurro-25: lighten($azzurro, 25%); 
-
-//Sandstone Color Variables
-$sandstone: #00ACD7;
-$sandstone-50: lighten($sandstone, 9%);
-$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
-
 
 
 //Gray Color Variables
@@ -45,11 +41,11 @@ $black-80: #585754;
 //  Font Assignment
 //-----------------
 
-$theme-sans-font: 'Source Sans';
+$theme-sans-font: 'Trebuchet MS';
 $sans-serif: $theme-sans-font, $sans-serif;
 $body-font-family: $sans-serif;
 
-$theme-serif-font: 'Crimson Text';
+$theme-serif-font: 'Yanone Kaffeesatz';
 $serif: $theme-serif-font, $serif;
 
 
@@ -64,10 +60,10 @@ $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;
-$header-bg:transparent; //transparentize(lighten($sandstone, 18.5%), .25);
+$header-bg:transparent; //transparentize(lighten($polimi-ciano, 18.5%), .25);
 $courseware-header-image: none;
-$courseware-header-bg: transparentize(lighten($sandstone, 18.5%), .25);
-$footer-bg: $sandstone-25;
+$courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), .25);
+$footer-bg: $polimi-ciano;
 $courseware-footer-border: 1px solid $azzurro-60;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
@@ -127,16 +123,16 @@ $action-prmary-disabled-fg: $gray-1;
 
 
 // actions - secondary
-$action-secondary-bg: $sandstone;
+$action-secondary-bg: $polimi-ciano;
 $action-secondary-fg: $gray;
 $action-secondary-shadow: none;
 
 // focused - hover/active pseudo states
-$action-secondary-focused-bg: $sandstone-50;
+$action-secondary-focused-bg: $polimi-ciano-50;
 $action-secondary-focused-fg: $gray;
 
 // current or active navigation item
-$action-secondary-active-bg: $sandstone-50;
+$action-secondary-active-bg: $polimi-ciano-50;
 $action-secondary-active-fg: $gray;
 $action-secondary-active-shadow: none;
 $action-secondary-active-focused-fg: $gray-75;
@@ -156,7 +152,7 @@ $outer-border-color: $azzurro-60;
 $sidebar-color: $gray-1;
 
 $dashboard-profile-header-image: none;
-$dashboard-profile-header-color: $sandstone-25;
+$dashboard-profile-header-color: $polimi-ciano-25;
 $dashboard-profile-color: $gray-3;
 $dot-color: $azzurro-60;
 
