@@ -3,7 +3,11 @@
  * ========================================================
  * Custom base styles
  */
-
+.polimi-name {
+	color:#fff;
+	text-transform:uppercase;
+	line-height:30px;
+}
 #polimi-header .polimi-container,
 #polimi-footer .polimi-container {
   margin: 0 auto;
@@ -40,7 +44,7 @@
 
 /* Background gradient */
 #polimi-header {
-  background: #3ed8ff; 
+  background: #00acd7; 
   box-shadow: inset 0 -4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
   min-height: 30px;
 }

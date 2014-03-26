@@ -63,7 +63,7 @@ $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;
-$header-bg:transparent; //transparentize(lighten($polimi-ciano, 18.5%), .25);
+$header-bg: $white;
 $courseware-header-image: none;
 $courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), .25);
 $footer-bg: $polimi-ciano;
@@ -93,7 +93,7 @@ $header-graphic-sub-color: $lighter-base-font-color;
 $header-link-color: $dark-blue;
 $header-link-hover: $cardinal-light;
 
-$button-color: $cardinal-blue;
+$button-color: $polimi-ciano;
 $button-archive-color: $gray-3;
 
 $shadow-color: $gray;
