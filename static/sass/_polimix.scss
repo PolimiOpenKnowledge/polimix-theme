@@ -11,6 +11,8 @@
 
 //Ciano Polimi
 $polimi-ciano: #00acd7;
+$polimi-ciano-50: lighten($polimi-ciano, 9%);
+$polimi-ciano-25: lighten($polimi-ciano, 20%); //Important Heading BG Color 
 
 //Cardinal Color Variables
 $cardinal-blue: #515790;
@@ -102,7 +104,7 @@ $button-bg-color: $gray-3;
 $button-bg-hover-color: $gray-1;
 
 // actions - primary
-$action-primary-bg: $cardinal-blue;
+$action-primary-bg: $polimi-ciano;
 $action-primary-fg: $gray-2;
 $action-primary-shadow: none;
 
