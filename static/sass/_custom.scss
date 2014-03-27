@@ -5,14 +5,22 @@
 *
 ****************************************************************************************************/
 
+$home-opacity:0.92
+
 
 /*** Set opacity background banner ***/
-.content-wrapper {
-	position:absolute;
-	top:0;
-}
+.index-page {
+     #polimi-header {
+     	position:relative;
+     	z-index:10;
+     	opacity:$home-opacity ;
+     } 
+	.content-wrapper {
+		position:absolute;
+		top:0;
+	}
 header {
-  opacity:0.92;
+  opacity:$home-opacity ;
 }
 
 .home > header {
