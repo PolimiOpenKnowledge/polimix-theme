@@ -1,40 +1,49 @@
-## mako
-<%! from django.core.urlresolvers import reverse %>
+## mako 
+<%! from django.core.urlresolvers import reverse %> 
+<%namespace name='static' file='/static_content.html'/>
+
+
 <div class="wrapper-footer">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-         </ol>
-      </nav>
-    </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
-    </div>
-  </footer>
+	<footer>
+		<div class="colophon">
+			<nav class="nav-colophon">
+				<h1 class="logo">
+					<a href="http://www.polimi.it"> 
+					<img src="${static.url('themes/polimix/images/header-logo.png')}"
+						alt="Home page" />
+					</a>
+				</h1>
+				<ol class="left nav-global">
+
+					<li class="nav-global-01"><a href="/about">About</a></li>
+
+					<li class="nav-global-04"><a class="cta cta-register"
+						href="/register">Register Now</a></li>
+				</ol>
+			</nav>
+			
+		</div>
+		<div class="references">
+				<span>Built on <a href="http://code.edx.org">OpenEdX</a>.
+				</span>
+		</div>
+		<div class="terms">
+			<nav class="nav-terms">
+				<ol>
+					<li><a href="${reverse('tos')}">Terms of Service</a></li>
+					<li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
+					<li><a href="${reverse('tos')}#honor">Honor Code</a></li>
+					<li><a href="${reverse('tos')}#copyright">Copyright</a></li>
+				</ol>
+			</nav>
+			
+		</div>
+
+	</footer>
 </div>
 
 <div id="polimi-footer">
-  <div class="polimi-container">
-    <div class="polimi-row">
-      <div id="polimi-footer-logo" class="span2">
-        <a href="http://www.polimi.it">
-          Politecnico di Milano
-        </a>
-      </div>
-      <div id="polimi-footer-text" class="span10">
-        <ul>
-          <li class="home"><a href="http://www.polimi.it">Polimi Home</a></li>
-          
-        </ul>
-        <div class="clear"></div>
-        <p class="copyright vcard">&copy; <span class="fn org"> Politecnico di Milano</span>, <span class="adr"> <span class="locality">Milano</span>, <span class="region">Italia</span> <span class="postal-code">20133</span> </span></p>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
-  </div>
+	<div class="polimi-container">
+		<div class="polimi-name">Politecnico di Milano</div>
+	</div>
 </div>

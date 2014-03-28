@@ -66,7 +66,7 @@ $header-image: none;
 $header-bg: $white;
 $courseware-header-image: none;
 $courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), .25);
-$footer-bg: $polimi-ciano;
+$footer-bg: $white;
 $courseware-footer-border: 1px solid $azzurro-60;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
@@ -82,7 +82,7 @@ $base-font-color: $black;
 $lighter-base-font-color: $black-80;
 $very-light-text: $gray-1;
 
-$link-color: $dark-blue;
+$link-color: $polimi-ciano;
 $link-color-d1: $dark-blue;
 $link-hover: $cardinal-light;
 $site-status-color: $cardinal-bg;

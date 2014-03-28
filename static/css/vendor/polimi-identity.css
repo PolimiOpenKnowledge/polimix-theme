@@ -15,131 +15,29 @@
   text-align:center;
 }
 
-#polimi-header .span2,
-#polimi-footer .span2 {
-  display: block;
-  min-height: 1px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-#polimi-header .span10,
-#polimi-footer .span10 {
-  display: block;
-  min-height: 1px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 #polimi-header .polimi-container:after,
 #polimi-footer .polimi-container:after {
   clear: both;
 }
 
-#polimi-header .row:after,
-#polimi-footer .row:after {
-  clear: both;
+
+#polimi-header, #polimi-footer {
+	background: #00acd7;
+	min-height: 30px;
+	box-shadow: inset 0 -4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
+   
 }
-
-
 #polimi-header {
-  background: #00acd7; 
-  box-shadow: inset 0 -4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
-  min-height: 30px;
   position:relative;
   opacity:0.92;
   z-index:10;
 }
 
-#polimi-footer,
-#polimi-footer .polimi-container {
-  background: #2e3048; 
-  color: #e3dfd5;
-  box-shadow: inset 0 4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
-}
-
-/* Prevent flush left */
-#polimi-header .polimi-container img {
-  padding: 4px 0 0 10px;
-}
 
 #polimi-header a,#polimi-footer a {
   color: #fff;
 }
 
-#polimi-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Prevent horizontal scroll bar */
-#polimi-footer .polimi-container {
-  padding: 3px 7px 20px;
-}
-
-#polimi-footer .polimi-container .polimi-row {
-  margin: 30px 0 0;
-}
-
-/* Align logo and text */
-#polimi-footer-logo {
-  margin: 0 0 10px;
-  padding: 0;
-}
-
-#polimi-footer-text {
-  margin-top: 0;
-}
-
-#polimi-footer-text ul {
-  margin: 2px 0 0;
-  padding: 0;
-  line-height: 1em;
-}
-
-#polimi-footer-text ul li {
-  display: block;
-  list-style: none;
-}
-
-#polimi-footer-text ul li a {
-  font: 13px 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
-  text-decoration: none;
-}
-
-#polimi-footer p.copyright {
-  font: 11px 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
-  margin: 0;
-  padding: 30px 0 0;
-  line-height: 1.5em;
-  color: #e3dfd5;
-}
-
-#polimi-footer p.copyright span {
-  color: #e3dfd5;
-}
-
-/* Footer two columns */
-#polimi-footer .span2 {
-  width: 48%;
-  float: left;
-}
-
-#polimi-footer .span10 {
-  width: 48%;
-  float: right;
-}
-
-#polimi-footer img {
-  margin: 0 auto;
-  display: block;
-}
-
-/* Clear the floats */
-#polimi-footer .clear {
-  clear: both;
-}
 
 /*
 ========================================================
@@ -160,37 +58,13 @@ Media queries
     margin-top:2px;
   }
 
-  /* Remove left padding */
-  #polimi-header .polimi-container img {
-    padding:4px 0 0;
-  }
-
+  
   /* Bootstrap style */
   #polimi-header .polimi-container,
   #polimi-footer .polimi-container {
     width:724px;
   }
 
-  #polimi-footer .polimi-container .polimi-row {
-    margin:30px 0 0 -20px;
-  }
-  /* Footer single column */
-  #polimi-footer .span2 {
-    float:left;
-    width:104px;
-    padding-left:8px; /* Prevent flush left */
-  }
-  /* Bootstrap style */
-  #polimi-footer .span10 {
-    width:600px;
-    margin-left:20px;
-    margin:0 12px 0 20px;
-    float:left;
-  }
-
-  #polimi-footer img {
-    margin:0 auto;
-  }
 
   #polimi-footer ul li.alt {
   	clear:right;
@@ -209,20 +83,11 @@ Media queries
   	clear:left;
     display:inline-block;
   }
-
-  #bottom-logo {
-    margin:-5px 0 10px;
-  }
-
+  
   #polimi-footer .clear {
     clear:none;
   }
 
-  p.copyright {
-    text-align:left;
-    padding-left:17%;
-    padding-top:25px;
-  }
 }
 
 @media screen and (min-width: 980px) {
@@ -232,13 +97,6 @@ Media queries
     width:940px;
   }
 
-  #polimi-footer .span2 {
-    width:140px;
-  }
-
-  #polimi-footer .span10 {
-    width:780px;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -249,17 +107,6 @@ Media queries
     width:1180px;
   }
 
-  #polimi-footer .span2 {
-    width:170px;
-  }
-
-  #polimi-footer .span10 {
-    width:970px;
-  }
-
-  p.copyright {
-    padding-left:16%;
-  }
 }
 
 /*
