@@ -14,6 +14,8 @@ $polimi-ciano: #00acd7;
 $polimi-ciano-50: lighten($polimi-ciano, 9%);
 $polimi-ciano-25: lighten($polimi-ciano, 20%); //Important Heading BG Color 
 
+$red:#dc292d ;
+
 //Cardinal Color Variables
 $cardinal-blue: #515790;
 $dark-blue: #069; //Link Color
@@ -85,7 +87,7 @@ $very-light-text: $gray-1;
 $link-color: $polimi-ciano;
 $link-color-d1: $dark-blue;
 $link-hover: $cardinal-light;
-$site-status-color: $cardinal-bg;
+$site-status-color: $cardinal-blue;
 
 $header-graphic-super-color: $dark-blue;
 $header-graphic-sub-color: $lighter-base-font-color;

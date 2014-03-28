@@ -43,6 +43,30 @@ header.global {
 		}
 	}
 }
+
+/*** Course list ***/
+.highlighted-courses .courses , .find-courses .courses {
+    .course {
+    	.status {
+    		background:$red;
+    		// @include transform(rotate(45deg));
+    		left:87%;
+    	}
+    	header.course-preview {
+    		.info-link {
+    			color:$gray-1;
+    			background:$polimi-ciano;
+    		}
+    		&:hover, &:focus {
+    			.info-link {
+    				color:$polimi-ciano;
+    				background:$gray-1;
+    			}
+    		}
+    	}
+    }
+}
+
 /***   Footer   ***/
 .wrapper-footer {
 	footer {
