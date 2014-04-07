@@ -1,9 +1,10 @@
+<%! from django.utils.translation import ugettext as _ %>
 <%! from django.core.urlresolvers import reverse %>
 <%namespace name='static' file='/static_content.html'/>
 
 <%inherit file="/main.html" />
 
-<%block name="title"><title>About Politenico Online</title></%block>
+<%block name="title"><title>About ${_("{platform_name}").format(platform_name=settings.PLATFORM_NAME)}</title></%block>
 
 <%block name="js_extra">
   <script type="text/javascript">
@@ -48,9 +49,9 @@
         <!-- Image Copyright owned by Giulio Gratta -->
       </div>
       <article>
-        <h2>About <span class="edx">PolimiX</span></h2>
+        <h2>About <span class="edx">${_("{platform_name}").format(platform_name=settings.PLATFORM_NAME)}</span></h2>
         
-        <p>PolimiX is developing new online course material in order to improve on-campus courses and provide broader public access to exciting learning opportunities.</p>
+        <p>${_("{platform_name}").format(platform_name=settings.PLATFORM_NAME)} is developing new online course material in order to improve on-campus courses and provide broader public access to exciting learning opportunities.</p>
         <p>The platform is running and developing on an instance of the <a href="http://code.edx.org">OpenEdX platform</a>.</p>
       </article>
       <hr class="fade-right-hr-divider">
