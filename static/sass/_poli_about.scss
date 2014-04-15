@@ -1,0 +1,94 @@
+.container.about, section.about.outside-app {
+	padding-top:0;
+}
+
+.about {
+	color: $lighter-base-font-color;
+  	font: normal 1.2em/1.2em $serif;
+  	letter-spacing: 1px;
+  	-webkit-font-smoothing: antialiased;
+	
+	img {
+      display: block;
+      width: 100%;
+	}
+	#banner {
+		position: relative;
+		 
+	}
+	.media {
+      background: #FFF;
+      background: $course-header-bg;
+      border: 1px solid $border-color-3;
+      border-left: 0;
+      @include box-sizing(border-box);
+      // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
+      height: 120px;
+      //float: right;
+      padding: 4px;
+      position: absolute;
+      top:200px;
+      vertical-align: top;
+      width: flex-grid(2) + flex-gutter();
+      z-index: 10;
+	  @extend .animation-harvard-slide;
+	  @extend .animation-edx-appear;
+	      &:hover, &:focus {
+	        text-decoration: underline;
+	      }
+
+	      .hero {
+	        height: 100%;
+	        overflow: hidden;
+	        position: relative;
+	        background: $polimi-ciano url($video-thumb-url) center no-repeat;
+	        background-size: cover;
+	
+	      }
+     }
+     .vision {
+     	text-align:center;
+     	border-bottom:1px $gray-2 solid;
+     }
+	.boxes-wrapper {
+		margin:0 auto;
+		text-align:center;
+		@include clearfix;
+	}
+	.box {
+		float:left;
+		width:(flex-grid(3,12)+flex-gutter());
+		margin:flex-gutter();
+		background:#fff;
+		@include box-sizing(border-box);
+      	box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
+      	min-height:300px;
+      	&.during-box {
+      		text-align:center;
+      	}
+
+		h3 {
+			background:$polimi-ciano;
+			color:$gray-1;
+			text-transform:uppercase;
+			width:85%;
+			margin-top:10px;
+			position:relative;
+			left:-10px;
+			padding-left:10px;
+		}
+		p {
+			text-align:justify;
+			margin:0 auto;
+			width: 80%;
+		}
+		img {
+			@include inline-block;
+  			max-width:80%;
+  			margin:flex-gutter();
+		}
+	}
+
+
+
+}

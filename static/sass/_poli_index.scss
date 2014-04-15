@@ -1,0 +1,47 @@
+$home-opacity:0.92 ;
+/*** Set opacity background banner ***/
+
+.index-page {
+     #polimi-header {
+     	position:relative;
+     	z-index:10;
+     	opacity:1 ;
+     } 
+	.content-wrapper {
+		position:relative;
+		top:-110px;
+	}
+}
+header.global {
+  opacity:$home-opacity ;
+  .nav-global li a {
+   color:$link-color;
+  }
+  h1.logo a {
+	margin-top:-10px
+  } 
+}
+
+.home > header {
+	height:620px ;
+	.outer-wrapper {
+		padding-top: 320px;
+	}
+	.title > hgroup {
+		 width:100%;
+		 h1 {
+		  color: $polimi-ciano ;
+		  font-size:2.5em;
+		  text-align:center;
+		  font-weight:600;
+		 }
+		 h2 {
+			text-transform: initial ;
+			text-align: right;
+			font-style:normal;
+		}
+	}
+	.media .hero {
+		 background: $polimi-ciano url($video-thumb-url) center no-repeat;
+	}
+}

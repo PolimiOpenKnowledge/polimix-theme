@@ -1,0 +1,70 @@
+/*** Course list ***/
+.highlighted-courses .courses , .find-courses .courses {
+    .course {
+    	.status {
+    		background:$red;
+    		
+    		left:87%;
+    		/*  Label diagonali tagliate
+    		left:89%;
+    		@include transform(rotate(45deg));
+    		top:2%;
+    		padding:2px 15px;
+    		&:after {
+    			content:'';
+    			display:block;
+    			position:absolute;
+    			top:-4px;
+    			left:-11px;
+    			background: $gray-1;
+    			width:30px;
+    			height:13px;
+    			@include transform(rotate(45deg));
+    			border:none;
+    		}
+    		&:before {
+    			content:'';
+    			display:block;
+    			position:absolute;
+    			top:-8px;
+    			left:-8px;
+    			background: $gray-1;
+    			width:15px;
+    			height:15px;
+    			@include transform(rotate(45deg));
+    		}*/
+    	}
+    	
+    	.status.enrollment {
+    		background:$red;
+    		@include transform(rotate(0deg));
+    		left:2%;
+    		&:after {
+    			border-bottom: 6px solid shade($red, 50%);
+       			border-right: 6px solid transparent;
+		        content: "";
+		        display: block;
+		        height: 0;
+		        position: absolute;
+		        right: -6px;
+		        top: 0;
+		        width: 0;
+    		}
+    		&:before {
+    			display:none;
+    		}
+    	}
+    	header.course-preview {
+    		.info-link {
+    			color:$gray-1;
+    			background:$polimi-ciano;
+    		}
+    		&:hover, &:focus {
+    			.info-link {
+    				color:$polimi-ciano;
+    				background:$gray-1;
+    			}
+    		}
+    	}
+    }
+}

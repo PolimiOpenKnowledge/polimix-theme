@@ -5,126 +5,14 @@
 *
 ****************************************************************************************************/
 
-$home-opacity:0.92 ;
+// using poli prefix to prevent names collision with original edx files
+@import "poli_index";
+@import "poli_about";
+@import "poli_courses";
 
 
-/*** Set opacity background banner ***/
 
-.index-page {
-     #polimi-header {
-     	position:relative;
-     	z-index:10;
-     	opacity:1 ;
-     } 
-	.content-wrapper {
-		position:relative;
-		top:-110px;
-	}
-}
-header.global {
-  opacity:$home-opacity ;
-  .nav-global li a {
-   color:$link-color;
-  }
-  h1.logo a {
-	margin-top:-10px
-  } 
-}
 
-.home > header {
-	height:620px ;
-	.outer-wrapper {
-		padding-top: 320px;
-	}
-	.title > hgroup {
-		 width:100%;
-		 h1 {
-		  color: $polimi-ciano ;
-		  font-size:2.5em;
-		  text-align:center;
-		  font-weight:600;
-		 }
-		 h2 {
-			text-transform: initial ;
-			text-align: right;
-			font-style:normal;
-		}
-	}
-	.media .hero {
-		 background: $polimi-ciano url($video-thumb-url) center no-repeat;
-	}
-}
-
-/*** Course list ***/
-.highlighted-courses .courses , .find-courses .courses {
-    .course {
-    	.status {
-    		background:$red;
-    		
-    		left:87%;
-    		/*  Label diagonali tagliate
-    		left:89%;
-    		@include transform(rotate(45deg));
-    		top:2%;
-    		padding:2px 15px;
-    		&:after {
-    			content:'';
-    			display:block;
-    			position:absolute;
-    			top:-4px;
-    			left:-11px;
-    			background: $gray-1;
-    			width:30px;
-    			height:13px;
-    			@include transform(rotate(45deg));
-    			border:none;
-    		}
-    		&:before {
-    			content:'';
-    			display:block;
-    			position:absolute;
-    			top:-8px;
-    			left:-8px;
-    			background: $gray-1;
-    			width:15px;
-    			height:15px;
-    			@include transform(rotate(45deg));
-    		}*/
-    	}
-    	
-    	.status.enrollment {
-    		background:$red;
-    		@include transform(rotate(0deg));
-    		left:2%;
-    		&:after {
-    			border-bottom: 6px solid shade($red, 50%);
-       			border-right: 6px solid transparent;
-		        content: "";
-		        display: block;
-		        height: 0;
-		        position: absolute;
-		        right: -6px;
-		        top: 0;
-		        width: 0;
-    		}
-    		&:before {
-    			display:none;
-    		}
-    	}
-    	header.course-preview {
-    		.info-link {
-    			color:$gray-1;
-    			background:$polimi-ciano;
-    		}
-    		&:hover, &:focus {
-    			.info-link {
-    				color:$polimi-ciano;
-    				background:$gray-1;
-    			}
-    		}
-    	}
-    }
-}
 
 /***   Footer   ***/
 .wrapper-footer {
