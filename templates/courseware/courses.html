@@ -14,7 +14,7 @@
   # not sure why this is, but if I use static.url('images/edx_bw.png') then the HTML rendering
   # of this template goes wonky
 
-  logo_file =static.url('polimix/images/POK_logo.jpg') #microsite.get_value('course_index_overlay_logo_file', settings.STATIC_URL + 'images/edx_bw.png')
+  logo_file =microsite.get_value('course_index_overlay_logo_file', settings.STATIC_URL + 'images/edx_bw.png')
 %>
 
   <header class="search">
@@ -24,7 +24,7 @@
           % if self.stanford_theme_enabled():
             <img src="${static.url('themes/stanford/images/seal.png')}" alt="Stanford Seal Logo" />
           % else:
-            <img src='${logo_file}' alt="${microsite.get_value('platform_name', settings.PLATFORM_NAME)} Logo" />
+            <img src="${static.url('themes/polimix/images/POK_logo.jpg')}" alt="${microsite.get_value('platform_name', settings.PLATFORM_NAME)} Logo" />
           % endif
         </div>
         % if self.stanford_theme_enabled():
