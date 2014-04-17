@@ -1,0 +1,19 @@
+@mixin mobile($selector, $width) {
+	.#{$selector} {
+		.container {
+			max-width: $width;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		img,
+		select,
+		input {
+			max-width:$width;
+		}	
+	}
+}
+
+@import "responsive-960px-max";
+//@import "responsive-768px-max";
+//@import "responsive-480px-max";
+//@import "responsive-320px-max";

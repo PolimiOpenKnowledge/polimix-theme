@@ -4,7 +4,11 @@
 *   Contains all the theme color definitions for the polimi Open Source MOOC Project
 *
 ****************************************************************************************************/
-
+/* DIMENSIONI */
+$mobile-s: 300px;
+$mobile-m: 460px;
+$mobile-l: 748px;
+$desktop-s: 960px;
 //-----------------
 //  Color variables (from polimi palette unless noted)
 //-----------------
@@ -34,7 +38,8 @@ $gray-75: lighten($gray, 18.25%); //Lighter Text Color
 
 $gray-3: #e9e6df; //Block/Course BG Color
 $gray-2: #f2f1eb;
-$gray-1: #ebebeb; //Main BG Color
+$gray-1: #fbfbf9; 
+$gray-0: #ebebeb; //Main BG Color
 $white: #ffffff;
 
 $black: #2e2d29;
@@ -60,8 +65,8 @@ $pok-logo-ciano-url: '../themes/polimix/images/POK_logo_ciano.png';
 //  Theme Element Assignments
 //-----------------
 
-$body-bg: $gray-1;
-$container-bg: $gray-1;
+$body-bg: $gray-0;
+$container-bg: $gray-0;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;

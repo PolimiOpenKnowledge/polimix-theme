@@ -27,6 +27,9 @@ header.global {
 	.outer-wrapper {
 		padding-top: 320px;
 	}
+	.title {
+		opacity:$home-opacity ;
+	}
 	.title > hgroup {
 		 width:100%;
 		 h1 {
@@ -42,6 +45,7 @@ header.global {
 		}
 	}
 	.media .hero {
-		 background: $polimi-ciano url($video-thumb-url) center no-repeat;
+		 background: $polimi-ciano url($video-thumb-url);
+		 background-size:cover;
 	}
 }

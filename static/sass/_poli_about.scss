@@ -32,7 +32,6 @@
       width: flex-grid(2) + flex-gutter();
       z-index: 10;
 	  @extend .animation-harvard-slide;
-	  @extend .animation-edx-appear;
 	      &:hover, &:focus {
 	        text-decoration: underline;
 	      }

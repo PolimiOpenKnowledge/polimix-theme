@@ -1,0 +1,13 @@
+@media (max-width: 960px) {
+	@include mobile("responsive", $desktop-s);
+	.home > header {
+		.title > hgroup {
+			 padding:0;
+			 padding-top:20px;
+			 h1 {
+			  font-size:2.0em;
+			  font-weight:500;
+			 }
+		}
+	}
+}
