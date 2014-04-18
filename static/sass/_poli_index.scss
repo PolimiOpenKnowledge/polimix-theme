@@ -29,14 +29,17 @@ header.global {
 	}
 	.title {
 		opacity:$home-opacity ;
+		width: flex-grid(6);
+		//margin-left: flex-grid(2);
 	}
 	.title > hgroup {
-		 width:100%;
+		width:100%;
+		padding:20px 10px;
 		 h1 {
 		  color: $polimi-ciano ;
-		  font-size:2.5em;
+		  font-weight:700;
+		  font-size: 2.5em/1.4em ;
 		  text-align:center;
-		  font-weight:600;
 		 }
 		 h2 {
 			text-transform: initial ;
