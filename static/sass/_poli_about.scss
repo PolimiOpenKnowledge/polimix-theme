@@ -1,5 +1,6 @@
 .container.about, section.about.outside-app {
-	padding-top:0;
+	padding:0 30px 20px 30px;
+	width:auto;
 }
 
 .about {
@@ -18,14 +19,12 @@
 	}
 	.media {
       background: #FFF;
-      background: $course-header-bg;
       border: 1px solid $border-color-3;
       border-left: 0;
       @include box-sizing(border-box);
       // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
       height: 120px;
       //float: right;
-      padding: 4px;
       position: absolute;
       top:200px;
       vertical-align: top;
@@ -47,21 +46,45 @@
      }
      .vision {
      	text-align:center;
-     	border-bottom:1px $gray-2 solid;
+     	position:relative;
+     	top:-30px;
+     	background-color: $black;
+     	opacity:$home-opacity;
+     	.sub {
+     		color:$gray-1;
+     	}
+     }
+     .intro-lego {
+     	font-size:2em;
+     	color:$polimi-ciano;
+     	text-align:center;
      }
 	.boxes-wrapper {
 		margin:0 auto;
 		text-align:center;
-		@include clearfix;
 	}
 	.box {
 		float:left;
-		width:(flex-grid(3,12)+flex-gutter());
-		margin:flex-gutter();
-		background:#fff;
-		@include box-sizing(border-box);
-      	box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
-      	min-height:300px;
+		width:flex-grid(4,12);
+		margin:6px;
+		
+		.inner-box {
+			min-height:400px;	
+			padding-top:10px;
+			width:flex-grid(10,12);
+			margin: flex-grid(1);
+			background: #fff;
+			@include box-sizing(border-box);
+      		box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
+      		
+      		p {
+      			min-height:100px;
+      			text-align:justify;
+				margin:20px auto;
+				width: 80%;
+      		}
+		}
+		
       	&.during-box {
       		text-align:center;
       	}
@@ -75,11 +98,6 @@
 			position:relative;
 			left:-10px;
 			padding-left:10px;
-		}
-		p {
-			text-align:justify;
-			margin:0 auto;
-			width: 80%;
 		}
 		img {
 			@include inline-block;
