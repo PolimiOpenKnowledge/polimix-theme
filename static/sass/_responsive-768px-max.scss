@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+	@include mobile("responsive", $mobile-l);
+	.home > header {
+		.title {
+			margin-left: 120px;
+			
+			h1 {
+				font-size: 1.5em;
+			}
+		}
+		.media .hero {
+			background-size:contain;
+			background-repeat:no-repeat;
+			background-position:center;
+		}
+	}
+}
