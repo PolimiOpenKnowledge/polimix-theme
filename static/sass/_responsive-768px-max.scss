@@ -14,4 +14,15 @@
 			background-position:center;
 		}
 	}
+	
+	.container.about .media {
+		.hero {
+			background-size:contain;
+			background-repeat:no-repeat;
+			background-position:center;
+		}
+		.vision {
+			top:-60px // goes on 2 lines
+		}
+	}
 }

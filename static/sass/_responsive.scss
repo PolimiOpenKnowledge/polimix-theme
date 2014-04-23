@@ -1,16 +1,18 @@
 @mixin mobile($selector, $width) {
-	.#{$selector} {
-		.container , header.global, .wrapper-footer footer {
+	//.#{$selector} {
+		.container , header.global, header.global nav, .wrapper-footer footer, .home>header .outer-wrapper, .container.about {
 			max-width: $width;
 			margin-left: 10px;
 			margin-right: 10px;
+			padding-left:0;
+			padding-right:0;
 		}
 		img,
 		select,
 		input {
-			max-width:$width;
+			max-width:$width - 20px;
 		}	
-	}
+	//}
 }
 
 @import "responsive-960px-max";
