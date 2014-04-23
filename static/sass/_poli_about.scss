@@ -5,7 +5,7 @@
 
 .container.about {
 	color: $lighter-base-font-color;
-  	font: normal 1.2em/1.2em $serif;
+  	font-family:$sans-serif;
   	letter-spacing: 1px;
   	-webkit-font-smoothing: antialiased;
 	
@@ -45,6 +45,8 @@
 	      }
      }
      .vision {
+     	@include font-size(21);
+ 		@include line-height(21);
      	text-align:center;
      	position:relative;
      	top:-30px;
@@ -65,31 +67,33 @@
 	}
 	.box {
 		float:left;
-		width:flex-grid(4,12);
-		margin:6px;
+		width:flex-grid(2,6);
+		margin-left: flex-gutter(6);
 		
 		.inner-box {
 			min-height:400px;	
 			padding-top:10px;
-			width:flex-grid(10,12);
-			margin: flex-grid(1);
 			background: #fff;
 			@include box-sizing(border-box);
       		box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
-      		
+      		margin:0 auto;
       		p {
-      			min-height:100px;
+      			
       			text-align:justify;
 				margin:20px auto;
 				width: 80%;
+				@include font-size(21);
+ 				@include line-height(21);
+ 				min-height: 155px; // 5 lines 
       		}
 		}
-		
-      	&.during-box {
-      		text-align:center;
-      	}
+		&.before-box {
+			margin-left:0;
+		}
+      	
 
 		h3 {
+			@extend %t-title3;
 			background:$polimi-ciano;
 			color:$gray-1;
 			text-transform:uppercase;
