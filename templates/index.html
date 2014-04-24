@@ -5,7 +5,7 @@
 <%namespace name='static' file='static_content.html'/>
 
 <%! from microsite_configuration import microsite %>
-
+<%! import branding %>
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
@@ -71,11 +71,14 @@
   </header>
   <section class="container">
     <section class="highlighted-courses">
-
+	  <%
+	  highcourses=branding.get_visible_courses()
+	  highcourses = sorted(highcourses, key=lambda course: course.sorting_score, reverse=True)
+	  %>
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
-            %for course in courses:
+            %for course in highcourses:
               <li class="courses-listing-item">
                 <%include file="course.html" args="course=course" />
               </li>
