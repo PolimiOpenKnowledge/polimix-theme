@@ -2,20 +2,20 @@
 	//.#{$selector} {
 		.container , header.global, header.global nav, .wrapper-footer footer, .home>header .outer-wrapper, .container.about {
 			max-width: $width;
-			margin-left: 10px;
-			margin-right: 10px;
+			margin-left: 0;
+			margin-right: 0;
 			padding-left:0;
 			padding-right:0;
 		}
 		img,
 		select,
 		input {
-			max-width:$width - 20px;
+			max-width:$width;
 		}	
 	//}
 }
 
-@import "responsive-960px-max";
-@import "responsive-768px-max";
-//@import "responsive-480px-max";
-//@import "responsive-320px-max";
+@import "responsive-desktop-small-max";
+@import "responsive-mobile-large-max";
+//@import "responsive-mobile-medium-max";
+//@import "responsive-mobile-small-max";
