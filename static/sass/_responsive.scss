@@ -1,6 +1,6 @@
 @mixin mobile($selector, $width) {
 	//.#{$selector} {
-		.content-wrapper .container header.global, header.global nav, .wrapper-footer footer, .home>header .outer-wrapper, .container.about {
+		.content-wrapper .container, header.global, header.global nav, .wrapper-footer footer, .home>header .outer-wrapper, .container.about {
 			max-width: $width;
 			margin-left: 0;
 			margin-right: 0;
