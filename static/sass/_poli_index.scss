@@ -29,7 +29,16 @@ header.global {
   nav {
   	padding:10px 10px 0;
   	height:70px;
-  } 
+  }
+  
+  &.slim {
+  	nav {
+  		height:60px;
+  	}
+  	h1.logo img {
+  		height:60px;
+  	}
+  }
 }
 
 .home > header {
