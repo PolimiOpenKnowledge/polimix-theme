@@ -39,7 +39,7 @@
   <section class="container">
     <section class="courses">
       <ul class="courses-listing">
-      <% #revcourses= sorted(courses, key=lambda course: course.sorting_score, reverse=True)%>
+      <% revcourses= sorted(courses, key=lambda course: course.sorting_score, reverse=True)%>
         %for course in courses:
         <li class="courses-listing-item">
           <%include file="../course.html" args="course=course" />
