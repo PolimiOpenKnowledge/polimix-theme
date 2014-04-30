@@ -53,21 +53,25 @@ header.global {
 	}
 	.title > hgroup {
 		width:100%;
-		padding:20px 10px;
+		padding:11px 10px 0 10px;
 		 h1 {
 		  color: $polimi-ciano ;
-		  font-weight:700;
-		  font-size: 2.5em/1.4em ;
+		  font-size:3.4em ;
 		  text-align:center;
+		  font-family:$serif;
+		  letter-spacing:4px;
+		  margin-left:3px;
 		 }
 		 h2 {
 			text-transform: initial ;
 			text-align: right;
 			font-style:normal;
+			margin-right:30px;
+			margin-top:-15px;
 		}
 	}
 	.media .hero {
-		 background: $polimi-ciano url($video-thumb-url);
-		 background-size:cover;
+		 background: $polimi-ciano url($video-thumb-url) center;
+		 background-size:contain;
 	}
 }

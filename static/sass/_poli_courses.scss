@@ -1,10 +1,13 @@
 /*** Course list ***/
 .highlighted-courses .courses , .find-courses .courses {
     .course {
+    	. info .desc {
+    		font-size:0.95em;
+    	}
     	.status {
     		background:$red;
     		
-    		left:87%;
+    		left:86%;
     		/*  Label diagonali tagliate
     		left:89%;
     		@include transform(rotate(45deg));

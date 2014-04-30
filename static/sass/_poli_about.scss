@@ -26,9 +26,9 @@
       height: 120px;
       //float: right;
       position: absolute;
-      top:200px;
+      top:60%;
       vertical-align: top;
-      width: flex-grid(2) + flex-gutter();
+      width: flex-grid(2,10) + flex-gutter();
       z-index: 10;
 	  @extend .animation-harvard-slide;
 	      &:hover, &:focus {
@@ -39,8 +39,8 @@
 	        height: 100%;
 	        overflow: hidden;
 	        position: relative;
-	        background: $white url($pok-logo-ciano-url) center no-repeat;
-	        background-size: cover;
+	        background: $white url($pok-logo-ciano-url) left no-repeat;
+	        background-size: contain;
 	
 	      }
      }
@@ -59,6 +59,7 @@
      	font-size:2em;
      	color:$polimi-ciano;
      	text-align:center;
+     	padding:10px 0;
      }
 	.boxes-wrapper {
 		margin:0 auto;
@@ -78,7 +79,7 @@
       		margin:0 auto;
       		p {
       			
-      			text-align:justify;
+      			text-align:left;
 				margin:20px auto;
 				width: 80%;
 				font-size:1.3em;
@@ -96,16 +97,18 @@
 			background:$polimi-ciano;
 			color:$gray-1;
 			text-transform:uppercase;
-			width:85%;
+			width:90%;
 			margin-top:10px;
 			position:relative;
 			left:-10px;
-			padding-left:10px;
+			padding-left:48px;
+			text-align:left;
 		}
 		img {
 			@include inline-block;
   			max-width:80%;
   			margin:flex-gutter();
+  			margin-bottom:30px;
 		}
 	}
 
