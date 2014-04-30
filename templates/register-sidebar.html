@@ -20,7 +20,7 @@ from django.core.urlresolvers import reverse
     </a>
   </p>
 </div>
-% if settings.MKTG_URL_LINK_MAP.get('FAQ'):
+% if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta">
   <h3>${_("Polimi user?")}</h3>
   <p class="instructions">
