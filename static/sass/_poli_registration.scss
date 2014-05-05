@@ -1,7 +1,13 @@
-.already-registered h3 , aunica-login h3 {
+.already-registered h3 , .aunica-login h3 {
 	color:$polimi-ciano;
 }
 
 .link2button {
 	@extend %btn-primary-blue;
+	color:$gray-1;
+	display:block;
+}
+
+.register .field .it {
+	display:block;
 }

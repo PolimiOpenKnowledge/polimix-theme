@@ -22,7 +22,7 @@ from django.core.urlresolvers import reverse
 </div>
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta aunica-login">
-  <h3><span class="it">${_("Utente Polimi?")}</span><span class="locale-separator">/</span><span class="en">${_("Polimi user?")}</span></h3>
+  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
   <p class="instructions">
   <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Codice Persona</span>
     <a class="link2button" href="${reverse('shib-login')}${login_query()}">
@@ -37,28 +37,34 @@ from django.core.urlresolvers import reverse
 ## TODO: Use a %block tag or something to allow themes to
 ##       override in a more generalizable fashion.
 % if not stanford_theme_enabled():
-  <div class="cta cta-welcome">
-    <h3>${_("Welcome to {platform_name}").format(platform_name=platform_name)}</h3>
-    <p>${_("Registering with {platform_name} gives you access to all of our current and future free courses. Not ready to take a course just yet? Registering puts you on our mailing list - we will update you as courses are added.").format(platform_name=platform_name)}</p>
-  </div>
+##  <div class="cta cta-welcome">
+##    <h3>${_("Welcome to {platform_name}").format(platform_name=platform_name)}</h3>
+##    <p>${_("Registering with {platform_name} gives you access to all of our current and future free courses. Not ready to take a course just yet? Registering puts you on our mailing list - we will update you as courses are added.").format(platform_name=platform_name)}</p>
+##  </div>
+
 % endif
 
-<div class="cta cta-nextsteps">
-  <h3>${_("Next Steps")}</h3>
+## <div class="cta cta-nextsteps">
+##  <h3>${_("Next Steps")}</h3>
   % if stanford_theme_enabled():
-    <p>${_("You will receive an activation email.  You must click on the activation link to complete the process.  Don't see the email?  Check your spam folder and mark emails from class.stanford.edu as 'not spam', since you'll want to be able to receive email from your courses.")}</p>
+##    <p>${_("You will receive an activation email.  You must click on the activation link to complete the process.  Don't see the email?  Check your spam folder and mark emails from class.stanford.edu as 'not spam', since you'll want to be able to receive email from your courses.")}</p>
   % else:
-    <p>${_("As part of joining {platform_name}, you will receive an activation email.  You must click on the activation link to complete the process.  Don't see the email?  Check your spam folder and mark {platform_name} emails as 'not spam'.  At {platform_name}, we communicate mostly through email.").format(platform_name=platform_name)}</p>
+##    <p>${_("As part of joining {platform_name}, you will receive an activation email.  You must click on the activation link to complete the process.  Don't see the email?  Check your spam folder and mark {platform_name} emails as 'not spam'.  At {platform_name}, we communicate mostly through email.").format(platform_name=platform_name)}</p>
   % endif
-</div>
+## </div>
 
-% if settings.MKTG_URL_LINK_MAP.get('FAQ'):
-  <div class="cta cta-help">
-    <h3>${_("Need Help?")}</h3>
-    <p>${_("Need help in registering with {platform_name}?").format(platform_name=platform_name)}
-      <a href="${marketing_link('FAQ')}">
-          ${_("View our FAQs for answers to commonly asked questions.")}
-      </a>
-      ${_("Once registered, most questions can be answered in the course specific discussion forums or through the FAQs.")}</p>
+<!-- % if settings.MKTG_URL_LINK_MAP.get('FAQ'): -->
+<!--   <div class="cta cta-help"> -->
+<!--     <h3>${_("Need Help?")}</h3> -->
+<!--    <p>${_("Need help in registering with {platform_name}?").format(platform_name=platform_name)} -->
+<!--       <a href="${marketing_link('FAQ')}"> -->
+<!--           ${_("View our FAQs for answers to commonly asked questions.")} -->
+<!--       </a> -->
+<!--       ${_("Once registered, most questions can be answered in the course specific discussion forums or through the FAQs.")}</p> -->
+<!--   </div> -->
+<!-- % endif -->
+<div class="cta cta-help"> 
+   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <p><p>${_('{email}').format(
+    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
   </div>
-% endif

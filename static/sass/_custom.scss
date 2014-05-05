@@ -21,6 +21,12 @@ header.global .nav-global li a.cta-register {
 
 	color:$gray-d3;
 }
+.view-register li a.cta-register {
+	border-bottom:1px $polimi-ciano solid;
+}
+.about-page li.nav-global-01 a {
+	border-bottom:1px $polimi-ciano solid;
+}
 
 /***   Footer   ***/
 .wrapper-footer {
