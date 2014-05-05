@@ -10,13 +10,14 @@
 @import "poli_index";
 @import "poli_about";
 @import "poli_courses";
+@import "poli_registration";
 
 @import "responsive";
 
 
 /*** Navigation ***/
 
-.cta-register {
+header.global .nav-global li a.cta-register {
 
 	color:$gray-2;
 }
