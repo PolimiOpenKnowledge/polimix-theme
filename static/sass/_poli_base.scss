@@ -32,3 +32,12 @@ color:inherit;
 margin-left:3px;
 margin-right:3px;
 }
+
+
+// general link as button
+.link2button {
+	@extend %btn-primary-blue;
+	color:$gray-1;
+	display:block;
+	background-color:$polimi-ciano;
+}

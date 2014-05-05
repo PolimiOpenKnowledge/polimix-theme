@@ -1,7 +1,7 @@
 $home-opacity:0.92 ;
 /*** Set opacity background banner ***/
 
-.index-page {
+.view-index {
      #polimi-header {
      	position:relative;
      	z-index:10;
@@ -17,6 +17,7 @@ header.global {
   opacity:$home-opacity ;
   .nav-global li a {
    color:$link-color;
+   padding:5px 5px 0 5px;
   }
   h1.logo {
   	margin:-10px 39px 0px 0px;
@@ -36,7 +37,7 @@ header.global {
   		height:60px;
   	}
   	h1.logo img {
-  		height:60px;
+  		height:80px;
   	}
   }
 }

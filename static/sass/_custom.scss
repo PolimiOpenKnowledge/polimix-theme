@@ -7,6 +7,7 @@
 
 // using poli prefix to prevent names collision with original edx files
 @import "poli_base";
+@import "poli_navigation";
 @import "poli_index";
 @import "poli_about";
 @import "poli_courses";
@@ -15,18 +16,8 @@
 @import "responsive";
 
 
-/*** Navigation ***/
 
-header.global .nav-global li a.cta-register {
 
-	color:$gray-d3;
-}
-.view-register li a.cta-register {
-	border-bottom:1px $polimi-ciano solid;
-}
-.about-page li.nav-global-01 a {
-	border-bottom:1px $polimi-ciano solid;
-}
 
 /***   Footer   ***/
 .wrapper-footer {
