@@ -17,3 +17,18 @@ header.global .nav-global li a , .wrapper-footer footer .colophon .nav-colophon 
    @include font-size(21);
    @include line-height(21);
 }
+
+
+// style for multiple language together (it e en) : shame!!!
+.it {
+font-style:normal;
+color:inherit
+}
+.en {
+font-style:italic;
+color:inherit;
+}
+.locale-separator {
+margin-left:3px;
+margin-right:3px;
+}

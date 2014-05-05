@@ -12,21 +12,21 @@ from django.core.urlresolvers import reverse
 
 % if has_extauth_info is UNDEFINED:
 
-<div class="cta">
-  <h3>${_("Already registered?")}</h3>
+<div class="cta already-registered">
+  <h3><span class="it">Già registrato?</span><span class="locale-separator">/</span><span class="en">Already registered?</span></h3>
   <p class="instructions">
     <a href="${reverse('signin_user')}${login_query()}">
-      ${_("Click here to log in.")}
+     <span class="it">Clicca qui per il log in</span><span class="locale-separator">/</span><span class="en">Click here to log in</span>
     </a>
   </p>
 </div>
 % if settings.FEATURES['AUTH_USE_SHIB']:
-<div class="cta">
+<div class="cta aunica-login">
   <h3><span class="it">${_("Utente Polimi?")}</span><span class="locale-separator">/</span><span class="en">${_("Polimi user?")}</span></h3>
   <p class="instructions">
-   ${_("If you already have a \"Codice Persona\" for Politecnico di Milano use it! ")}
-    <a href="${reverse('shib-login')}${login_query()}">
-      ${_("Click here to log in with your \"Codice Persona\" or request it.")}
+  <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Codice Persona</span>
+    <a class="link2button" href="${reverse('shib-login')}${login_query()}">
+     POLIMI Log in
     </a>
   </p>
 </div>
