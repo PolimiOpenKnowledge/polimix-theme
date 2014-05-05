@@ -1,9 +1,9 @@
 /*** Navigation ***/
 
-@mixin current-page($selector,$selected-color){
+@mixin current-page($page-selector,$link-selector,$selected-color){
 	 .#{$selector} {
 	 
-	 	li a {
+	 	li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
 	 	}
 	 	&:after {
@@ -25,9 +25,9 @@ header.global .nav-global li a.cta-register , .view-register .nav-global-04 a{
 	color:$gray-d3 !important;  // importa in edx source file! Need to remove at origin
 }
 
-@include current-page("view-register",$polimi-ciano);
-@include current-page("view-about",$polimi-ciano);
-@include current-page("view-courses",$polimi-ciano);
+@include current-page("view-register","nav-global-04",$polimi-ciano);
+@include current-page("view-about","nav-global-01",$polimi-ciano);
+@include current-page("view-courses","nav-global-02",$polimi-ciano);
 
 .view-about li.nav-global-01 a {
 	border-bottom:1px $polimi-ciano solid;
