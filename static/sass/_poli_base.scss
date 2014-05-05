@@ -8,7 +8,20 @@
 // Change font serif to sans-serif for all paragraph. This can be deleted after picked better serif font (not Yanone as Polimi site?) 
 html p {
   font: normal 1em/1.6em $sans-serif;
+  
+  a {
+  	font-family:$sans-serif;
+  }
 }
+
+.static-container ol li, .static-container ul li {
+	font-family:$sans-serif
+}
+//reset edx setting
+.course-info .details {
+	font-family:$sans-serif;
+}
+
 
 // Set font for navigation link as $serif (??). This can be deleted after picked better serif font (not Yanone as Polimi site?)
 
