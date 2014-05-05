@@ -5,18 +5,20 @@
 	 
 	 	li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
+	 		
+	 		&:after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 5px solid $selected-color;
+				right: 43%;
+				top: 100%;
+			}
 	 	}
-	 	&:after {
-			content: "";
-			position: absolute;
-			width: 0;
-			height: 0;
-			border-left: 5px solid transparent;
-			border-right: 5px solid transparent;
-			border-top: 5px solid $selected-color;
-			right: 43%;
-			top: 100%;
-		}
+	 	
 	 }
 }
 
@@ -28,7 +30,3 @@ header.global .nav-global li a.cta-register , .view-register .nav-global-04 a{
 @include current-page("view-register","nav-global-04",$polimi-ciano);
 @include current-page("view-about","nav-global-01",$polimi-ciano);
 @include current-page("view-courses","nav-global-02",$polimi-ciano);
-
-.view-about li.nav-global-01 a {
-	border-bottom:1px $polimi-ciano solid;
-}
