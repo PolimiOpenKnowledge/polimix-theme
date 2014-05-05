@@ -1,7 +1,7 @@
 /*** Navigation ***/
 
 @mixin current-page($page-selector,$link-selector,$selected-color){
-	 .#{$selector} {
+	 .#{$page-selector} {
 	 
 	 	li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
