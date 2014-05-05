@@ -22,7 +22,7 @@ from django.core.urlresolvers import reverse
 </div>
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta">
-  <h3>${_("Polimi user?")}</h3>
+  <h3><span class="it">${_("Utente Polimi?")}</span><span class="locale-separator">/</span><span class="en">${_("Polimi user?")}</span></h3>
   <p class="instructions">
    ${_("If you already have a \"Codice Persona\" for Politecnico di Milano use it! ")}
     <a href="${reverse('shib-login')}${login_query()}">
