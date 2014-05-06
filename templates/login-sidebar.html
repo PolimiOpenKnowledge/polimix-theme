@@ -19,6 +19,18 @@ from django.core.urlresolvers import reverse
   <p><a href="${reverse('register_user')}">${_("Sign up for {platform_name} today!").format(platform_name=platform_name)}</a></p>
 </div>
 
+% if settings.FEATURES['AUTH_USE_SHIB']:
+<div class="cta aunica-login">
+  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
+  <p class="instructions">
+  <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Codice Persona</span>
+    <a class="link2button" href="${reverse('shib-login')}${login_query()}">
+     POLIMI Log in
+    </a>
+  </p>
+</div>
+% endif
+
 <div class="cta cta-help"> 
    <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
    <p><p>${_('{email}').format(
