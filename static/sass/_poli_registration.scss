@@ -3,7 +3,7 @@
 		aside .already-registered h3  {
 			color:$polimi-ciano;
 		}
-		section .aunica-login h3 {
+		section .aunica-login h3, section .pok-user h3 {
 		 font-size:1.6em;
 		 
 		}
@@ -23,7 +23,7 @@
 
 .view-login {
 	.login {
-		section .aunica-login h3 {
+		section .aunica-login h3 , section .pok-user h3 {
 			font-size:1.6em;
 		}
 		
