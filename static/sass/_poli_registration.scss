@@ -1,15 +1,19 @@
 .view-register {
 	.register {
-		aside .already-registered h3 , aside .aunica-login h3 {
+		aside .already-registered h3  {
 			color:$polimi-ciano;
 		}
-		
+		section .aunica-login h3 {
+		 font-size:1.6em;
+		 
+		}
 		.field .it {
 			display:block;
 		}
 		.link2button {
 			display:block;
 			color:$gray-1;
+			background-color:$polimi-ciano;
 		}
 	
 	}
@@ -19,13 +23,14 @@
 
 .view-login {
 	.login {
-		aside .aunica-login h3 {
-			color:$polimi-ciano;
+		section .aunica-login h3 {
+			font-size:1.6em;
 		}
 		
 		.link2button {
 			display:block;
 			color:$gray-1;
+			background-color:$polimi-ciano;
 		}
 	}
 

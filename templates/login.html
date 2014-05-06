@@ -1,10 +1,12 @@
 <%inherit file="main.html" />
 <%! from microsite_configuration import microsite %>
 <%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query"/>
 
 <%! from django.core.urlresolvers import reverse %>
 <%! from django.utils.translation import ugettext as _ %>
 <%! from third_party_auth import provider, pipeline %>
+
 
 <%block name="pagetitle">${_("Log into your {platform_name} Account").format(platform_name=platform_name)}</%block>
 
