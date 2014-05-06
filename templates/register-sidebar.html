@@ -20,17 +20,7 @@ from django.core.urlresolvers import reverse
     </a>
   </p>
 </div>
-% if settings.FEATURES['AUTH_USE_SHIB']:
-<div class="cta aunica-login">
-  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
-  <p class="instructions">
-  <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Codice Persona</span>
-    <a class="link2button" href="${reverse('shib-login')}${login_query()}">
-     POLIMI Log in
-    </a>
-  </p>
-</div>
-% endif
+
 
 % endif
 
