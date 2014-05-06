@@ -130,10 +130,7 @@
 	<div class="cta aunica-login">
 	  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
 	  <p class="instructions">
-	  <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Person Code</span>
-	    <a class="link2button" href="${reverse('shib-login')}${login_query()}">
-	     POLIMI Log in
-	    </a>
+	  <span class="it">Se sei un utente POLIMI entra con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
 	  </p>
 	</div>
 	% endif

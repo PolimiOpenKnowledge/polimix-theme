@@ -1,6 +1,6 @@
 .view-register {
 	.register {
-		aside .already-registered h3  {
+		aside .already-registered h3 , aside .aunica-login h3 {
 			color:$polimi-ciano;
 		}
 		section .aunica-login h3, section .pok-user h3 {
@@ -14,6 +14,28 @@
 			display:block;
 			color:$gray-1;
 			background-color:$polimi-ciano;
+		}
+		
+		.otherwise {
+			text-align:center;
+			margin:10px auto;
+			
+			div:before {
+				display:inline-block;
+				margin: 0 0 8px 20px;
+				height:3px;
+				content:" ";
+				background-color:$gray-4;
+				width: 140px;
+			}
+			div:after {
+				display:inline-block;
+				margin: 0 20px 8px 0;
+				height:3px;
+				content:" ";
+				background-color:$gray-4;
+				width: 140px;
+			}
 		}
 	
 	}
