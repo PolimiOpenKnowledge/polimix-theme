@@ -13,7 +13,7 @@ html {
 	p {
 	  	font: normal 1em/1.6em $sans-serif;
 	}
-    a {
+    p a , a {
 	  	font-family:$sans-serif;
 	  	
 	  	&:visited,&:link {
