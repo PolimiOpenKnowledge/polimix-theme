@@ -16,6 +16,11 @@
 }
 
 .view-register {
+	header.global {
+		nav {
+			width:auto;
+		}
+	}
 	.introduction {
 		header {
 			 @extend %account-header;
@@ -93,6 +98,11 @@
 
 
 .view-login {
+	header.global {
+		nav {
+			width:auto;
+		}
+	}
 	.introduction {
 		header {
 			 @extend %account-header;
