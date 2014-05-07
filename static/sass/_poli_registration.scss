@@ -50,6 +50,10 @@
 			.cta {
 				background:$gray-0;
 				padding:6px;
+				&.aunica-login {
+					background:$polimi-ciano-50;
+					border-radius:3px $polimi-ciano;
+				}
 			}
 			.aunica-login h3 {
 				color:$polimi-ciano;
