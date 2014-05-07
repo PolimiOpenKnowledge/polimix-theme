@@ -1,8 +1,52 @@
 .view-register {
-	.register {
-		aside .already-registered h3 , aside .aunica-login h3 {
-			color:$polimi-ciano;
+	.introduction {
+		header {
+			border:none;
+			h1.title {
+				background:$gray-1;
+				margin-bottom:0;
+				padding:3px;
+				left:0;
+				right:30px;
+				span {
+					display:inline;
+					&.title-sub {
+						text-transformation:none;
+					}
+				}
+			}
 		}
+	}
+	.intro-polimi {
+		@include box-sizing(border-box);
+	    @include clearfix;
+	    margin: 0 auto;
+	    width: 960px;
+	    background: $container-bg;
+		border: 1px solid $m-gray;
+		width:960px;
+		margin:0 auto;
+		.instructions {
+			.locale-separator {
+				display:none;
+			}
+			span.it, span.en {
+				display:block;
+			}
+		}
+		
+	}
+	.register {
+		aside {
+			.cta {
+				background:$gray-0;
+				padding:6px;
+			}
+			.aunica-login h3 {
+				color:$polimi-ciano;
+			}
+		}
+		
 		section .aunica-login h3, section .pok-user h3 {
 		 font-size:1.6em;
 		 
@@ -48,6 +92,15 @@
 	.login {
 		section .aunica-login h3 , section .pok-user h3 {
 			font-size:1.6em;
+		}
+		aside {
+			.cta {
+				background:$gray-0;
+				padding:6px;
+			}
+			.aunica-login h3 {
+				color:$polimi-ciano;
+			}
 		}
 		
 		.link2button {

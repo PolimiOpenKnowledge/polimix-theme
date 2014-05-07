@@ -12,14 +12,6 @@ from django.core.urlresolvers import reverse
 
 % if has_extauth_info is UNDEFINED:
 
-<div class="cta already-registered">
-  <h3><span class="it">Già registrato?</span><span class="locale-separator">/</span><span class="en">Already registered?</span></h3>
-  <p class="instructions">
-    <a href="${reverse('signin_user')}${login_query()}">
-     <span class="it">Clicca qui per il log in</span><span class="locale-separator">/</span><span class="en">Click here to log in</span>
-    </a>
-  </p>
-</div>
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta aunica-login">
   <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
@@ -31,6 +23,16 @@ from django.core.urlresolvers import reverse
   </p>
 </div>
 % endif
+
+<div class="cta already-registered">
+  <h3><span class="it">Già registrato?</span><span class="locale-separator">/</span><span class="en">Already registered?</span></h3>
+  <p class="instructions">
+    <a href="${reverse('signin_user')}${login_query()}">
+     <span class="it">Clicca qui per il log in</span><span class="locale-separator">/</span><span class="en">Click here to log in</span>
+    </a>
+  </p>
+</div>
+
 
 % endif
 

@@ -103,17 +103,12 @@
 <section class="intro-polimi">
 	% if settings.FEATURES['AUTH_USE_SHIB']:	
 		  <p class="instructions">
-		  	  <span class="it">Se sei un utente POLIMI entra con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
+		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti registrati a POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise register to POK by filling out the form.</span>
 		  </p>
 	% endif
 </section>
 <section class="register container">
   <section role="main" class="content">
-  
-  
-	<section class="cta pok-user">
-	 	<h3><span class="it">Nuovo Utente?</span><span class="locale-separator">/</span><span class="en">New user?</span></h3>
-	</section>
     <form role="form" id="register-form" method="post" data-remote="true" action="/create_account" novalidate>
       <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
 
