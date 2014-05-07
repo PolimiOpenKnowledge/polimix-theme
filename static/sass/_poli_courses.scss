@@ -83,3 +83,16 @@
 	font-size:1.5em;
 	margin-top:10px;
 }
+.aunica-warning {
+	border: 1px solid $polimi-ciano;
+	padding: 10px;
+	color: $polimi-ciano;
+	
+	p {
+		margin-bottom:0;
+		color:$polimi-ciano;
+	}
+}
+.course-summary {
+	background:$gray-0;
+}
