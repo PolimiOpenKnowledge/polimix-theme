@@ -10,12 +10,16 @@
 			display:inline;
 		}
 		span.title-sub {
-			text-transformation:none;
+			text-transform:none;
 		}
 	}
 }
 
 .view-register {
+
+	.form-actions button[type="submit"] {
+		width:270px;
+	}
 	header.global {
 		nav {
 			width:auto;
@@ -38,9 +42,9 @@
 					border-radius:4px;
 					border:2px solid $polimi-ciano;
 					
-					.instructions {
-					   margin-bottom:0;
-					}
+				}
+				.instructions {
+				   margin-bottom:0;
 				}
 			}
 			.aunica-login h3 {
@@ -65,28 +69,6 @@
 			background-color:$polimi-ciano;
 			box-shadow:none;
 		}
-		/*
-		.otherwise {
-			text-align:center;
-			margin:10px auto;
-			
-			div:before {
-				display:inline-block;
-				margin: 0 0 8px 20px;
-				height:3px;
-				content:" ";
-				background-color:$black-80;
-				width: 140px;
-			}
-			div:after {
-				display:inline-block;
-				margin: 0 20px 8px 0;
-				height:3px;
-				content:" ";
-				background-color:$black-80;
-				width: 140px;
-			}
-		}*/
 	
 	}
 	
@@ -116,7 +98,11 @@
 			width:300px;
 			.cta {
 				background:$gray-0;
-				padding:6px;
+				padding:15px;
+				
+				.instructions {
+				   margin-bottom:0;
+				}
 			}
 			.aunica-login h3 {
 				color:$polimi-ciano;
@@ -134,15 +120,18 @@
 }
 
 .view-register , .view-login {
+	.introduction {
+		width:960px;
+	}
 	.intro-polimi {
 		@include box-sizing(border-box);
 	    @include clearfix;
 	    margin: 0 auto;
-	    width: 960px;
 	    background: $container-bg;
 		border-bottom: 1px solid $m-gray;
 		width:960px;
 		margin:0 auto;
+		padding:10px;
 		.instructions {
 			.locale-separator {
 				display:none;
@@ -155,3 +144,5 @@
 	}
 
 }
+
+
