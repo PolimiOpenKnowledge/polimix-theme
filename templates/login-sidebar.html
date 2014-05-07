@@ -15,8 +15,8 @@ from django.core.urlresolvers import reverse
 </div> -->
 % endif
 <div class="cta cta-help">
-  <h3>${_("Not Enrolled?")}</h3>
-  <p><a href="${reverse('register_user')}">${_("Sign up for {platform_name} today!").format(platform_name=platform_name)}</a></p>
+  <h3><span class="it">Non sei iscritto?</span><span class="locale-separator">/</span><span class="en">Not Enrolled?</span></h3>
+  <p><a href="${reverse('register_user')}"><span class="en">${_("Iscriviti a {platform_name} subito!").format(platform_name=platform_name)}</span><span class="locale-separator">/</span><span class="en">${_("Sign up for {platform_name} today!").format(platform_name=platform_name)}</span></a></p>
 </div>
 
 % if settings.FEATURES['AUTH_USE_SHIB']:
