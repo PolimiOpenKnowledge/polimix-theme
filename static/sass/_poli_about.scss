@@ -4,7 +4,6 @@
 }
 
 .container.about {
-	color: $lighter-base-font-color;
   	font-family:$sans-serif;
   	letter-spacing: 1px;
   	-webkit-font-smoothing: antialiased;
@@ -40,7 +39,6 @@
 	        overflow: hidden;
 	        position: relative;
 	        background: $white url($pok-logo-ciano-url) left no-repeat;
-	        background-size: contain;
 	
 	      }
      }
@@ -109,6 +107,7 @@
   			max-width:80%;
   			margin:flex-gutter();
   			margin-bottom:30px;
+  			border:1px solid #efefef;
 		}
 	}
 

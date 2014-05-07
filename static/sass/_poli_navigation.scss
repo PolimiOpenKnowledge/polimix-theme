@@ -24,9 +24,12 @@
 
 header.global .nav-global li a.cta-register , .view-register .nav-global-04 a{
 
-	color:$gray-d3 !important;  // importa in edx source file! Need to remove at origin
+	color:$black !important;  // importa in edx source file! Need to remove at origin
 }
-
+header.global .nav-courseware li .cta-login {
+	font-weight: bold;
+	text-transform: uppercase;
+}
 @include current-page("view-register","nav-global-04",$polimi-ciano);
 @include current-page("view-about","nav-global-01",$polimi-ciano);
 @include current-page("view-courses","nav-global-02",$polimi-ciano);

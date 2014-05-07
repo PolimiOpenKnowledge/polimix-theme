@@ -32,7 +32,10 @@ header.global {
   	height:70px;
   }
   
-  &.slim {
+  
+}
+html header.global {
+	&.slim {
   	nav {
   		height:60px;
   	}

@@ -100,23 +100,17 @@
     </h1>
   </header>
 </section>
-
+<section class="intro-polimi">
+	% if settings.FEATURES['AUTH_USE_SHIB']:	
+		  <p class="instructions">
+		  	  <span class="it">Se sei un utente POLIMI entra con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
+		  </p>
+	% endif
+</section>
 <section class="register container">
   <section role="main" class="content">
   
-  % if settings.FEATURES['AUTH_USE_SHIB']:
-	<section class="cta aunica-login">
-	  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
-	  <p class="instructions">
-	  	  <span class="it">Se sei un utente POLIMI entra con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
-	  </p>
-	</section>
-	<section class="otherwise">
-		<div>
-			<span class="it">Oppure</span><span class="locale-separator">/</span><span class="en">Otherwise</span>
-		</div>
-	</section>
-% endif
+  
 	<section class="cta pok-user">
 	 	<h3><span class="it">Nuovo Utente?</span><span class="locale-separator">/</span><span class="en">New user?</span></h3>
 	</section>
