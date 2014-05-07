@@ -93,6 +93,17 @@
 		color:$polimi-ciano;
 	}
 }
-.course-summary {
-	background:$gray-0;
+.course-info .course-sidebar {
+	
+	.course-summary {
+		header::after {
+			background-image:linear-gradient( $black 0%,$black)
+		}
+		background:$gray-0;
+		
+		.important-dates li {
+			border-bottom:1px dotted $black;
+		}
+	}
+
 }

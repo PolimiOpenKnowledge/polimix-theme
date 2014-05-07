@@ -14,21 +14,20 @@ from django.core.urlresolvers import reverse
 
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta aunica-login">
-  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
+  <h3><span class="it">Utente POLIMI</span><span class="locale-separator">/</span><span class="en">POLIMI user</span></h3>
   <p class="instructions">
-  <span class="it">Accedi con il Codice Persona</span><span class="locale-separator">/</span><span class="en">Log in with Codice Persona</span>
     <a class="link2button" href="${reverse('shib-login')}${login_query()}">
-     POLIMI Log in
+     POLIMI Login
     </a>
   </p>
 </div>
 % endif
 
 <div class="cta already-registered">
-  <h3><span class="it">Già registrato?</span><span class="locale-separator">/</span><span class="en">Already registered?</span></h3>
+  <h3><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
   <p class="instructions">
-    <a href="${reverse('signin_user')}${login_query()}">
-     <span class="it">Clicca qui per il log in</span><span class="locale-separator">/</span><span class="en">Click here to log in</span>
+  	 <a class="link2button" href="${reverse('signin_user')}${login_query()}">
+     POK Login
     </a>
   </p>
 </div>
@@ -66,7 +65,7 @@ from django.core.urlresolvers import reverse
 <!--   </div> -->
 <!-- % endif -->
 <div class="cta cta-help"> 
-   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <h3><span class="it">Serve AIUTO?</span><span class="locale-separator">/</span><span class="en">Need HELP?</span></h3>
    <p><p>${_('{email}').format(
     email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
   </div>

@@ -49,11 +49,15 @@
 		aside {
 			.cta {
 				background:$gray-0;
-				padding:6px;
+				padding:15px;
 				&.aunica-login {
 					background:$polimi-ciano-50;
-					border-radius:2px;
+					border-radius:4px;
 					border:2px solid $polimi-ciano;
+					
+					.instructions {
+					   margin-bottom:0;
+					}
 				}
 			}
 			.aunica-login h3 {

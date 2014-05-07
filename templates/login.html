@@ -123,20 +123,15 @@
     </h1>
   </header>
 </section>
-
+<section class="intro-polimi">
+	% if settings.FEATURES['AUTH_USE_SHIB']:	
+		  <p class="instructions">
+		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti inserisci le tue credenziali POK</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user you can directly using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise insert your POK credentials.</span>
+		  </p>
+	% endif
+</section>
 <section class="login container">
   <section role="main" class="content">
-	  % if settings.FEATURES['AUTH_USE_SHIB']:
-	<div class="cta aunica-login">
-	  <h3><span class="it">Utente Polimi?</span><span class="locale-separator">/</span><span class="en">Polimi user?</span></h3>
-	  <p class="instructions">
-	  <span class="it">Se sei un utente POLIMI entra con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
-	  </p>
-	</div>
-	% endif
-	<section class="cta pok-user">
-	 	<h3><span class="it">${_("Utente {platform_name}").format(platform_name=platform_name)}</span><span class="locale-separator">/</span><span class="en">${_("{platform_name} user").format(platform_name=platform_name)}</span></h3>
-	</section>
     <form role="form" id="login-form" method="post" data-remote="true" action="/login_ajax" novalidate>
 
       <!-- status messages -->

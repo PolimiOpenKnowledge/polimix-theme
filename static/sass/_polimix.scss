@@ -23,7 +23,7 @@ $red:#dc292d ;
 
 //Cardinal Color Variables
 $cardinal-blue: #515790;
-$dark-blue: #069; //Link Color
+$dark-blue: $polimi-ciano; //Link Color
 $cardinal-light:lighten($cardinal-blue, 18.5%); //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
 $cardinal-bg: #afcde9; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 

@@ -103,7 +103,7 @@
 <section class="intro-polimi">
 	% if settings.FEATURES['AUTH_USE_SHIB']:	
 		  <p class="instructions">
-		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti registrati a POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise register to POK by filling out the form.</span>
+		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti registrati al portale POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user you can log in directly using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise register to POK by filling out the form.</span>
 		  </p>
 	% endif
 </section>
