@@ -13,9 +13,9 @@
     		&:after {
     			width: 0px;
 			height: 0px;
-			border-style: solid;
+			border-style: inset;
 			border-width: 10px 0 0 10px;
-			border-color: transparent transparent transparent #690002
+			border-color: transparent transparent transparent shade($red, 50%); /* altrimenti #690002*/
     		}
     		
     	}
