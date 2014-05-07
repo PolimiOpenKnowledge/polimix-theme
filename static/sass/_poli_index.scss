@@ -1,4 +1,4 @@
-$home-opacity:0.92 ;
+$home-opacity:0.94 ;
 /*** Set opacity background banner ***/
 
 .view-index {
@@ -39,8 +39,11 @@ html header.global {
   	nav {
   		height:60px;
   	}
-  	h1.logo img {
-  		height:80px;
+  	h1.logo {
+  		margin:-10px 10px 0 13px;
+  		img {
+  			height:80px;
+  		}
   	}
   }
 }
