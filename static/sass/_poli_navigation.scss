@@ -3,7 +3,7 @@
 @mixin current-page($page-selector,$link-selector,$selected-color){
 	 .#{$page-selector} {
 	 
-	 	li.#{$link-selector} a {
+	 	header.global li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
 	 		
 	 		&:after {
