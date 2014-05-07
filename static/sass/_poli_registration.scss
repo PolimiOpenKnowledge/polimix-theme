@@ -26,27 +26,10 @@
 			 @extend %account-header;
 		}
 	}
-	.intro-polimi {
-		@include box-sizing(border-box);
-	    @include clearfix;
-	    margin: 0 auto;
-	    width: 960px;
-	    background: $container-bg;
-		border-bottom: 1px solid $m-gray;
-		width:960px;
-		margin:0 auto;
-		.instructions {
-			.locale-separator {
-				display:none;
-			}
-			span.it, span.en {
-				display:block;
-			}
-		}
-		
-	}
+	
 	.register {
 		aside {
+			width:300px;
 			.cta {
 				background:$gray-0;
 				padding:15px;
@@ -63,6 +46,10 @@
 			.aunica-login h3 {
 				color:$polimi-ciano;
 			}
+		}
+		section.content {
+			width:590px;
+			margin-right:30px;
 		}
 		
 		section .aunica-login h3, section .pok-user h3 {
@@ -118,10 +105,15 @@
 		}
 	}
 	.login {
+		section.content {
+			width:590px;
+			margin-right:30px;
+		}
 		section .aunica-login h3 , section .pok-user h3 {
 			font-size:1.6em;
 		}
 		aside {
+			width:300px;
 			.cta {
 				background:$gray-0;
 				padding:6px;
@@ -141,4 +133,25 @@
 
 }
 
+.view-register , .view-login {
+	.intro-polimi {
+		@include box-sizing(border-box);
+	    @include clearfix;
+	    margin: 0 auto;
+	    width: 960px;
+	    background: $container-bg;
+		border-bottom: 1px solid $m-gray;
+		width:960px;
+		margin:0 auto;
+		.instructions {
+			.locale-separator {
+				display:none;
+			}
+			span.it, span.en {
+				display:block;
+			}
+		}
+		
+	}
 
+}
