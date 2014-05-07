@@ -1,20 +1,24 @@
+%account-header {
+	border:none;
+	h1.title {
+		background:$gray-1;
+		margin-bottom:0;
+		padding:3px;
+		left:0;
+		right:30px;
+		span.title-sub, span.title-super {
+			display:inline;
+		}
+		span.title-sub {
+			text-transformation:none;
+		}
+	}
+}
+
 .view-register {
 	.introduction {
 		header {
-			border:none;
-			h1.title {
-				background:$gray-1;
-				margin-bottom:0;
-				padding:3px;
-				left:0;
-				right:30px;
-				span {
-					display:inline;
-					&.title-sub {
-						text-transformation:none;
-					}
-				}
-			}
+			 @extend %account-header;
 		}
 	}
 	.intro-polimi {
@@ -23,7 +27,7 @@
 	    margin: 0 auto;
 	    width: 960px;
 	    background: $container-bg;
-		border: 1px solid $m-gray;
+		border-bottom: 1px solid $m-gray;
 		width:960px;
 		margin:0 auto;
 		.instructions {
@@ -89,6 +93,11 @@
 
 
 .view-login {
+	.introduction {
+		header {
+			 @extend %account-header;
+		}
+	}
 	.login {
 		section .aunica-login h3 , section .pok-user h3 {
 			font-size:1.6em;

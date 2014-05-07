@@ -52,7 +52,7 @@ html header.global {
 	}
 	.title {
 		opacity:$home-opacity ;
-		width: flex-grid(6);
+		width: flex-grid(6)+flex-gutter();
 		//margin-left: flex-grid(2);
 	}
 	.title > hgroup {
