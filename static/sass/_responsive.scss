@@ -1,11 +1,22 @@
 @mixin mobile($selector, $width) {
 	//.#{$selector} {
-		.content-wrapper .container, header.global, header.global nav, .wrapper-footer footer, .home>header .outer-wrapper, .container.about,.view-register .introduction, .view-login .introduction, .view-register .intro-polimi, .view-login .intro-polimi {
+		#polimi-header, .polimi-container, header.global, header.global nav, .content-wrapper, .wrapper-footer , #polimi-footer{
+			max-width: ($width - 20px);
+			margin:0 10px 0 10px;
+		} 
+		.content-wrapper section {
+			/*selector with class needed to override default edx css*/
+			&.introduction, &.intro-polimi, &.container, &.home, &.about {   
+				max-width: $width;
+				margin-left: 0;
+				margin-right: 0;
+			}
+			
+		}
+		html body .wrapper-footer footer {
 			max-width: $width;
 			margin-left: 0;
 			margin-right: 0;
-			padding-left:0;
-			padding-right:0;
 		}
 		img,
 		select,
