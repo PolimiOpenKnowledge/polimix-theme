@@ -1,11 +1,13 @@
 %account-header {
 	/*border:none;*/
+	height:150px;
 	h1.title {
 		background:$gray-1;
 		margin-bottom:0;
 		padding:3px;
 		left:auto;
 		right:30px;
+		opacity:0.8;
 		span.title-sub, span.title-super {
 			display:inline;
 		}
@@ -33,7 +35,7 @@
 	
 	.register {
 		aside {
-			width:300px;
+			width:flex-grid(2,6);
 			.cta {
 				background:$gray-0;
 				padding:15px;
@@ -52,8 +54,7 @@
 			}
 		}
 		section.content {
-			width:590px;
-			margin-right:30px;
+			width:flex-grid(4,6);
 		}
 		
 		section .aunica-login h3, section .pok-user h3 {
@@ -88,14 +89,13 @@
 	}
 	.login {
 		section.content {
-			width:590px;
-			margin-right:30px;
+			width:flex-grid(8);
 		}
 		section .aunica-login h3 , section .pok-user h3 {
 			font-size:1.6em;
 		}
 		aside {
-			width:300px;
+			width:flex-grid(4);
 			.cta {
 				background:$gray-0;
 				padding:15px;
