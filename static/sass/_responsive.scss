@@ -4,7 +4,7 @@
 			max-width: ($width - 20px);
 			margin:0 10px 0 10px;
 		} 
-		 header.global nav , .wrapper-footer footer {
+		 header.global nav , .wrapper-footer footer , content-wrapper section.container {
 		 	// contain float right element reducing min-width (760px in original version)
 		 	min-width: ($width - ($width / 4))
 		 }
