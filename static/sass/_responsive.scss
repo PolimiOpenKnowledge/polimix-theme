@@ -4,17 +4,21 @@
 			max-width: ($width - 20px);
 			margin:0 10px 0 10px;
 		} 
+		 header.global nav , .wrapper-footer footer {
+		 	// contain float right element reducing min-width (760px in original version)
+		 	min-width: ($width - ($width / 4))
+		 }
 		.content-wrapper section {
 			/*selector with class needed to override default edx css*/
 			&.introduction, &.intro-polimi, &.container, &.home, &.about {   
-				max-width: $width;
+				max-width: ($width - 20px);
 				margin-left: 0;
 				margin-right: 0;
 			}
 			
 		}
 		html body .wrapper-footer footer {
-			max-width: $width;
+			max-width: ($width - 20px);
 			margin-left: 0;
 			margin-right: 0;
 		}
