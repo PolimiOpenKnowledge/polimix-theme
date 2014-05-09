@@ -22,5 +22,10 @@
 			min-height:200px;
 		}
 	}
+
+	//override edx _footer.scss file which set 960px 
+	html .view-register .wrapper-footer footer, html .view-login .wrapper-footer footer {
+		width:auto;
+	}
 	
 }
