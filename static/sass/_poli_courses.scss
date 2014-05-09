@@ -16,6 +16,7 @@
 			border-style: inset;
 			border-width: 10px 0 0 10px;
 			border-color: transparent transparent transparent shade($red, 50%); /* altrimenti #690002*/
+			right: -9px;
     		}
     		
     	}
@@ -31,7 +32,7 @@
 		        display: block;
 		        height: 0;
 		        position: absolute;
-		        right: -6px;
+		        right: -9px;
 		        top: 0;
 		        width: 0;
     		}
