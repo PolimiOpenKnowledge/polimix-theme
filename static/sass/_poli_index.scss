@@ -80,5 +80,6 @@ html header.global {
 	.media .hero {
 		 background: $polimi-ciano url($video-thumb-url) center;
 		 background-size:contain;
+		 background-repeat:no-repeat;
 	}
 }

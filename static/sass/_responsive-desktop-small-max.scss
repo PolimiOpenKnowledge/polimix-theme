@@ -8,6 +8,11 @@
 			width: flex-grid(7);
 			margin-left: flex-grid(2);
 		}
+		.title > hgroup {
+			h1 {
+			   letter-spacing:2px;
+			}
+		}
 	}
 	
 	.container.about {
@@ -27,5 +32,11 @@
 	html .view-register .wrapper-footer footer, html .view-login .wrapper-footer footer {
 		width:auto;
 	}
-	
+
+
+	.view-register , .view-login {
+		.introduction, .intro-polimi {
+			width:auto;
+		}
+	}
 }
