@@ -124,6 +124,10 @@
 			background-color:$polimi-ciano;
 			box-shadow:none;
 		}
+		
+		.login form field.required label:after {
+			content:"";  //remove * for login form
+		}
 	}
 
 }
