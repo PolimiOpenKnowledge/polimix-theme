@@ -5,7 +5,11 @@
 	.my-courses .course .cover {
 		border-bottom:1px solid $gray-3;
 		height:auto;
+		img {
+			min-height:auto;
+		}
 	}
+	
 
 } 
 
