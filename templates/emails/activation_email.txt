@@ -12,14 +12,12 @@ Grazie per esserti registrato a Polimi Open Knowledge! Per attivare il tuo accou
 Se hai fatto richiesta di un account non devi fare nulla: non riceverai nessun'altra mail da ${_({platform_name}).format(platform_name=settings.PLATFORM_NAME)}.
 
 Se ti serve assistenza scrivi a ${_('{email}').format(
-    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}
+    email='<a href="mailto:{email}">{email}</a>').format(email=settings.TECH_SUPPORT_EMAIL)}
     
     
  
 
-${_("Thank you for signing up for Polimi Open Knowledge! To activate "
-"your account, please copy and paste this address into your web "
-"browser's address bar:").format(platform_name=settings.PLATFORM_NAME)}
+Thank you for signing up for Polimi Open Knowledge! To activate your account, please copy and paste this address into your web browser's address bar:
 
 % if is_secure:
   https://${ site }/activate/${ key }
@@ -28,6 +26,7 @@ ${_("Thank you for signing up for Polimi Open Knowledge! To activate "
 % endif
 
  ${_("If you didn't request this, you don't need to do anything; you won't "
-      "receive any more email from us. "
-      "if you require assistance, please write to {email}").format(email=settings.TECH_SUPPORT_EMAIL))}
+     "receive any more email from us. "
+     "if you require assistance, please write to {email}").format(
+    email='<a href="mailto:{email}">{email}</a>').format(email=settings.TECH_SUPPORT_EMAIL))}
 
