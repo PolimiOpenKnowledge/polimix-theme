@@ -27,6 +27,5 @@ Thank you for signing up for Polimi Open Knowledge! To activate your account, pl
 
  ${_("If you didn't request this, you don't need to do anything; you won't "
      "receive any more email from us. "
-     "if you require assistance, please write to {email}").format(
-    email='<a href="mailto:{email}">{email}</a>').format(email=settings.TECH_SUPPORT_EMAIL))}
+     "if you require assistance, please write to {email}").format(email='<a href="mailto:{email}">{email}</a>').format(email=settings.TECH_SUPPORT_EMAIL)}
 
