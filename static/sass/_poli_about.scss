@@ -82,6 +82,10 @@
 				width: 80%;
 				font-size:1.3em;
  				min-height: 175px; // 5 lines 
+ 				
+ 				strong {
+ 					color: black;
+ 				}
       		}
 		}
 		&.before-box {
