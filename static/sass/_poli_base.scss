@@ -38,7 +38,9 @@ header.global .nav-global li a , .wrapper-footer footer .colophon .nav-colophon 
    @include line-height(21);
 }
 
-
+.is-hidden {
+ display:none;
+}
 // style for multiple language together (it e en) : shame!!!
 .it {
 font-style:normal;
