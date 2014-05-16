@@ -5,7 +5,7 @@
 	 
 	 	header.global li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
-	 		
+	 		color:$selected-color !important // important in edx source file! Need to remove at origin
 	 		&:after {
 				content: "";
 				position: absolute;
@@ -19,16 +19,37 @@
 			}
 	 	}
 	 	
+	 	.wrapper-footer footer {
+			.colophon .nav-colophon li {
+			  		 a {
+			  			color:$selected-color ;
+			  		}
+		  	}
+		}
+	 	
 	 }
 }
 
 header.global .nav-global li a.cta-register , .view-register .nav-global-04 a{
 
-	color:$black !important;  // importa in edx source file! Need to remove at origin
+	color:$black !important;  // important in edx source file! Need to remove at origin
 }
 header.global .nav-courseware li .cta-login {
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.wrapper-footer footer {
+	.colophon .nav-colophon li {
+  			display:inline-block;
+  			text-transform:uppercase;
+  			margin:0 21px 0 0;
+  			font-size: 0.875em;
+  			font-weight:600;
+	  		 a {
+	  			color:$black;
+	  		}
+  		}
 }
 @include current-page("view-register","nav-global-04",$polimi-ciano);
 @include current-page("view-about","nav-global-01",$polimi-ciano);
