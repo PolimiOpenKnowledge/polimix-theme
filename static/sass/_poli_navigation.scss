@@ -5,7 +5,7 @@
 	 
 	 	header.global li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
-	 		color:$selected-color !important // important in edx source file! Need to remove at origin
+	 		color:$selected-color !important; // important in edx source file! Need to remove at origin
 	 		&:after {
 				content: "";
 				position: absolute;
