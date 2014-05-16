@@ -22,7 +22,7 @@
 	 	.wrapper-footer footer {
 			.colophon .nav-colophon li.#{$link-selector} {
 			  		 a {
-			  			color:$selected-color ;
+			  			color:$selected-color !important;  // important in edx source file! Need to remove at origin
 			  		}
 		  	}
 		}
