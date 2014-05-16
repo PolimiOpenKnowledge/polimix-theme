@@ -157,4 +157,13 @@
 
 }
 
-
+.view-passwordreset {
+    header.global {
+		.nav-courseware, ol.nav-global {
+			display:none
+		} 
+	}
+	.wrapper-footer {
+		display:none
+	}
+}
