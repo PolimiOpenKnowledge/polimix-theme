@@ -15,15 +15,16 @@
 				<ol class="left nav-global">
 
 					<li class="nav-global-01"><a href="/about">About</a></li>
-
+					%if not user.is_authenticated():
 					<li class="nav-global-04"><a class="cta cta-register"
 						href="/register">Register Now</a></li>
+					%endif
 				</ol>
 			</nav>
 			
 		</div>
 		<div class="references">
-				<span>Built on <a href="http://code.edx.org">OpenEdX</a></span>
+				<span>Built on <a target="_blank" href="http://code.edx.org">OpenEdX</a></span>
 		</div>
 		<div class="terms">
 			<nav class="nav-terms">
