@@ -396,7 +396,10 @@
     <div>
       <form> <!-- Here for styling reasons -->
         <section>
-          <p>${_('An email has been sent to {email}. Follow the link in the email to change your password.').format(email=user.email)}</p>
+          <p>
+          	<span class="it">${_('An email has been sent to {email}. Follow the link in the email to change your password.').format(email=user.email)}</span>
+          	<span class="en">${_('È stata spedita una email a {email}. Cliccare sul link nell\'e-mail per reimpostare la password.').format(email=user.email)}</span>
+          </p>
         </section>
       </form>
     </div>
