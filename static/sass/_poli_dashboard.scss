@@ -5,6 +5,11 @@
 	.profile-sidebar header.profile {
 		background-color:$polimi-ciano;
 	}
+	.profile-sidebar .user-info>ul li span {
+		&.it , &.en, &.locale-separator {
+			display:inline;
+		}
+	}
 	.my-courses .course .cover {
 		border-bottom:1px solid $gray-3;
 		height:auto;
