@@ -1,0 +1,31 @@
+<%! from django.utils.translation import ugettext as _ %>
+${_("Abbiamo ricevuto una richiesta per cambiare e-mail associata al tuo account "
+    "{platform_name} da {old_email} a {new_email}. "
+    "Se corretto , conferma il nuovo indirizzo email visitando il link: ").format(platform_name=settings.PLATFORM_NAME, old_email=old_email, new_email=new_email)}
+
+% if is_secure:
+ https://${ site }/email_confirm/${ key }
+% else:
+ http://${ site }/email_confirm/${ key }
+% endif
+
+## TODO: fix this ugly hack
+  ${_("Se non hai fatto tu la richiesta, non fare nulla; non riceverai altre email da noi. "
+      "Se vuoi richiedere assistenza scrivici a {contact_email} ").format(contact_email=settings.TECH_SUPPORT_EMAIL)}
+
+
+${_("We received a request to change the e-mail associated with your "
+    "{platform_name} account from {old_email} to {new_email}. "
+    "If this is correct, please confirm your new e-mail address by "
+    "visiting:").format(platform_name=settings.PLATFORM_NAME, old_email=old_email, new_email=new_email)}
+
+% if is_secure:
+ https://${ site }/email_confirm/${ key }
+% else:
+ http://${ site }/email_confirm/${ key }
+% endif
+
+## TODO: fix this ugly hack
+  ${_("If you didn't request this, you don't need to do anything; you won't "
+      "receive any more email from us."
+      "if you require assistance, contact us at {contact_email} ").format(contact_email=settings.TECH_SUPPORT_EMAIL)}
