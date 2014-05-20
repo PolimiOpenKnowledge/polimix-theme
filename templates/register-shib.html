@@ -107,21 +107,29 @@
       </div>
 
       <p class="instructions">
-        ${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
+      	<span class="it">I campi obbligatori sono <strong>in grassetto e indicati con un asterisco (*)</strong>. 
+      
+      	</span>
+      	<br/>
+       <span class="en">${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
+        </span>
       </p>
 
       <fieldset class="group group-form group-form-requiredinformation">
         <legend class="sr">${_('Required Information')}</legend>
 
         <div class="message">
-          <p class="message-copy">${_("Enter a public username:")}</p>
+          <p class="message-copy">
+                <span class="it">Inserisci la tua Username pubblica:</span>
+	            <span class="en">${_("Enter a public username:")}</span>
+	       </p>
         </div>
 
         <ol class="list-input">
 
           <li class="field required text" id="field-username">
             <label for="username">${_('Public Username')}</label>
-            <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" />
+            <input id="username" type="text" name="username" value="${extauth_username}" placeholder="A-Z or 0-9 only, no space" required aria-required="true" />
 			<span class="tip tip-input" id="id="username-tip>
 	            <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong></span>
 	            <span class="en">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
