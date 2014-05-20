@@ -418,7 +418,7 @@
 
     <header>
       <h2>
-        <span id="change_email_title">${_("Change Email")}</span>
+        <span id="change_email_title"><span class="it">Cambia Email</span><span class="locale-separator">/</span><span class="en">${_("Change Email")}</span></span>
         <span class="sr">,
           ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
           ${_("window open")}
@@ -431,13 +431,13 @@
         <div id="change_email_error" class="modal-form-error"> </div>
         <fieldset>
           <div class="input-group">
-            <label>${_('Please enter your new email address:')}</label>
+            <label><span class="it">Inserisci il nuovo indirizzo email</span><span class="locale-separator">/</span><span class="en">${_('Please enter your new email address:')}</span></label>
             <input id="new_email_field" type="email" value="" />
-            <label>${_('Please confirm your password:')}</label>
+            <label><span class="it">Conferma la tua password</span><span class="locale-separator">/</span><span class="en">${_('Please confirm your password:')}</span></label>
             <input id="new_email_password" value="" type="password" />
           </div>
           <section>
-            <p>${_('We will send a confirmation to both {email} and your new email as part of the process.').format(email=user.email)}</p>
+            <p><span class="it">${_("Ti manderemo un messaggio di conferma sia a {email} che al tuo nuovo indirizzo email per concludere il processo").format(email=user.email)}</span><span class="locale-separator">/</span><span class="en">${_('We will send a confirmation to both {email} and your new email as part of the process.').format(email=user.email)}</span></p>
           </section>
           <div class="submit">
             <input type="submit" id="submit_email_change" value="${_('Change Email')}"/>
