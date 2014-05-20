@@ -19,6 +19,11 @@
 					<li class="nav-global-04"><a class="cta cta-register"
 						href="/register">Register Now</a></li>
 					%endif
+					%if user.is_authenticated():
+					  <li class="nav-global-02">
+    					<a href="${marketing_link('COURSES')}">Find Courses</a>
+  					</li>
+  					%endif
 				</ol>
 			</nav>
 			
