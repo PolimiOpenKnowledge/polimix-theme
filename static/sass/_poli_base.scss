@@ -21,6 +21,9 @@ html {
 	  		font-family:$sans-serif;
 	  	}
 	}
+	textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+		font-family:$sans-serif;
+	}
 }
 
 
@@ -57,7 +60,9 @@ margin-right:3px;
 .modal span.it {
 	display:block;
 }
-
+.modal #change_email_title span.it , .modal #change-name-title span.it {
+ display:inline;
+}
 
 // general link as button
 .link2button {

@@ -431,16 +431,16 @@
         <div id="change_email_error" class="modal-form-error"> </div>
         <fieldset>
           <div class="input-group">
-            <label><span class="it">Inserisci il nuovo indirizzo email</span><span class="locale-separator">/</span><span class="en">${_('Please enter your new email address:')}</span></label>
+            <label><span class="it">Inserisci il nuovo indirizzo email</span><span class="en">${_('Please enter your new email address:')}</span></label>
             <input id="new_email_field" type="email" value="" />
-            <label><span class="it">Conferma la tua password</span><span class="locale-separator">/</span><span class="en">${_('Please confirm your password:')}</span></label>
+            <label><span class="it">Conferma la tua password</span><span class="en">${_('Please confirm your password:')}</span></label>
             <input id="new_email_password" value="" type="password" />
           </div>
           <section>
-            <p><span class="it">${_("Ti manderemo un messaggio di conferma sia a {email} che al tuo nuovo indirizzo email per concludere il processo").format(email=user.email)}</span><span class="locale-separator">/</span><span class="en">${_('We will send a confirmation to both {email} and your new email as part of the process.').format(email=user.email)}</span></p>
+            <p><span class="it">${_("Ti manderemo un messaggio di conferma sia a {email} che al tuo nuovo indirizzo email per concludere il processo").format(email=user.email)}</span><span class="en">${_('We will send a confirmation to both {email} and your new email as part of the process.').format(email=user.email)}</span></p>
           </section>
           <div class="submit">
-            <input type="submit" id="submit_email_change" value="${_('Change Email')}"/>
+            <input type="submit" id="submit_email_change" value="${_('Cambia Email / Change Email')}"/>
           </div>
         </fieldset>
       </form>
@@ -462,7 +462,7 @@
 
     <header>
       <h2 id="change-name-title">
-        ${_("Change your name")}
+        <span class="it">Cambia Nome</span><span class="locale-separator">/</span><span class="en">${_("Change your name")}</span>
         <span class="sr">,
           ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
           ${_("window open")}

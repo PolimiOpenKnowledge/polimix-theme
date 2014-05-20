@@ -131,7 +131,7 @@
 			}
 		}
 		
-		.login form field.required label:after {
+		.login form .field.required label:after {
 			content:"";  //remove * for login form
 		}
 	}
