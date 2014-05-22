@@ -57,10 +57,10 @@ color:inherit;
 margin-left:3px;
 margin-right:3px;
 }
-.modal span.it {
+.modal span.it ,  .tip.tip-input span.it {
 	display:block;
 }
-.modal #change_email_title span.it , .modal #change-name-title span.it {
+.modal #change_email_title span.it , .modal #change-name-title span.it{
  display:inline;
 }
 
