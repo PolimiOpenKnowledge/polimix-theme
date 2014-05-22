@@ -131,9 +131,10 @@
             <label for="username">${_('Public Username')}</label>
             <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" />
 			<span class="tip tip-input" id="id="username-tip>
-	            <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong> Usa solo A-Z o 0-9 senza spazi</span>
-	            <span class="en">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')}). Use A-Z or 0-9 only, no space</strong></span>
-	        </span>          </li>
+	            <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong> Usa solo A-Z o 0-9, senza spazi</span>
+	            <span class="en">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')}).</strong>Use A-Z or 0-9 only, no space</span>
+	        </span> 
+	      </li>
 
           % if ask_for_email:
 
@@ -155,70 +156,7 @@
           % endif
 
         </ol>
-      <div class="group group-form group-form-secondary group-form-personalinformation">
-        <h2 class="sr">${_("Extra Personal Information")}</h2>
 
-        <ol class="list-input">
-          % if settings.REGISTRATION_EXTRA_FIELDS['city'] != 'hidden':
-          <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['city']} text" id="field-city">
-            <label for="city">${_('City')}</label>
-            <input id="city" type="text" name="city" value="" placeholder="${_('example: New York')}" aria-describedby="city-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['city'] == 'required' else ''} />
-          </li>
-          % endif
-          % if settings.REGISTRATION_EXTRA_FIELDS['country'] != 'hidden':
-          <li class="field-group">
-          <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['country']} select" id="field-country">
-              <label for="country">${_("Country")}</label>
-              <select id="country" name="country" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['country'] == 'required' else ''}>
-                <option value="">--</option>
-                %for code, country_name in COUNTRIES:
-                <option value="${code}">${ unicode(country_name) }</option>
-                %endfor
-              </select>
-            </div>
-          </li>
-          % endif
-          % if settings.REGISTRATION_EXTRA_FIELDS['level_of_education'] != 'hidden':
-          <li class="field-group">
-          <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['level_of_education']} select" id="field-education-level">
-              <label for="education-level">${_("Highest Level of Education Completed")}</label>
-              <select id="education-level" name="level_of_education" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['level_of_education'] == 'required' else ''}>
-                <option value="">--</option>
-                %for code, ed_level in UserProfile.LEVEL_OF_EDUCATION_CHOICES:
-                <option value="${code}">${_(ed_level)}</option>
-                %endfor
-              </select>
-            </div>
-          </li>
-          % endif
-          % if settings.REGISTRATION_EXTRA_FIELDS['gender'] != 'hidden':
-          <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['gender']} select" id="field-gender">
-              <label for="gender">${_("Gender")}</label>
-              <select id="gender" name="gender" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['gender'] == 'required' else ''}>
-                <option value="">--</option>
-                %for code, gender in UserProfile.GENDER_CHOICES:
-                <option value="${code}">${_(gender)}</option>
-                %endfor
-              </select>
-            </div>
-          </li>
-          % endif
-          % if settings.REGISTRATION_EXTRA_FIELDS['year_of_birth'] != 'hidden':
-          <li class="field-group">
-            <div class="field ${settings.REGISTRATION_EXTRA_FIELDS['year_of_birth']} select" id="field-yob">
-              <label for="yob">${_("Year of Birth")}</label>
-              <select id="yob" name="year_of_birth" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['year_of_birth'] == 'required' else ''}>
-                <option value="">--</option>
-                %for year in UserProfile.VALID_YEARS:
-                <option value="${year}">${year}</option>
-                %endfor
-              </select>
-            </div>
-            % endif
-          </li>
-        </ol>
-      </div>
       </fieldset>
 
       <fieldset class="group group-form group-form-accountacknowledgements">
