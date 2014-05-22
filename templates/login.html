@@ -140,9 +140,13 @@
       </div>
 
       <div role="alert" class="status message submission-error" tabindex="-1">
-        <h3 class="message-title">${_("The following errors occurred while logging you in:")} </h3>
+      	 <h3 class="message-title"><span class="it">SI È VERIFICATOUN ERRORE DURANTE IL TUO LOG IN:</span></h3>
         <ul class="message-copy">
-          <li>${_("Your email or password is incorrect")}</li>
+          <li><span class="it">Email o password scorrette</span></li>
+        </ul>
+        <h3 class="message-title"><span class="en">${_("The following errors occurred while logging you in:")}</span> </h3>
+        <ul class="message-copy">
+          <li><span class="en">${_("Your email or password is incorrect")}</span></li>
         </ul>
       </div>
 
@@ -157,7 +161,10 @@
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
             <input class="" id="email" type="email" name="email" value="" placeholder="${_('example: username@domain.com')}" required aria-required="true" aria-described-by="email-tip" />
-            <span class="tip tip-input" id="email-tip">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
+            <span class="tip tip-input" id="email-tip">
+            	<span class="it">${_("Questa &egrave; la email che hai utilizzato per registrarti a {platform}").format(platform=platform_name)}</span>
+            	<span class="en">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
+            </span>
           </li>
           <li class="field required password" id="field-password">
             <label for="password">${_('Password')}</label>
