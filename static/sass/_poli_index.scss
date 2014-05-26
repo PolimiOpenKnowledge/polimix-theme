@@ -92,7 +92,9 @@ html header.global {
 	}
 	
 	.title.legend-course-level {
-		width:flex-grid(6) + flex-gutter() + flex-grid(2) + flex-gutter(); //the size of .title + the size of .media to mantain alignment
+		width:100%; //flex-grid(6) + flex-gutter() + flex-grid(2) + flex-gutter(); //the size of .title + the size of .media to mantain alignment
+		margin-left:0;
+		
 		height:70px;
 		min-height:20px;
 		opacity:1;
@@ -101,6 +103,7 @@ html header.global {
 		ul {
 			line-height:35px;
 			list-style:none;
+			padding-left: 20px;
 			font-size:0.9em;
 			@include clearfix;
 			li {
