@@ -175,6 +175,12 @@
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
             <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
+            % if settings.FEATURES['AUTH_USE_SHIB']:	
+	            <span class="tip tip-input" id="id="email-tip>
+		            <span class="it">Se hai una mail @polimi.it, accedi con <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>
+		            <span class="en">If you have a @polimi.it e-mail account, sign in with <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>
+		        </span>
+		    % endif
           </li>
 
           % if settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH') and running_pipeline:
