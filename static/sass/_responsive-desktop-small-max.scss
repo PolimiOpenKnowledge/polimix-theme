@@ -14,21 +14,7 @@
 			}
 		}
 	}
-	.highlighted-courses .courses , .find-courses .courses {
-		.courses-listing .courses-listing-item {
-			width: flex-grid(6);
-			
-			// revert rule for desktop
-			&:nth-child(3n+3) {
-          		margin-right:  flex-gutter();
-        	}
-        	// apply rule for mobile
-			&:nth-child(2n+2) {
-          		margin-right: 0;
-        	}
-		}
-	
-	}
+
 	.container.about {
 		.media {
 			.hero {
