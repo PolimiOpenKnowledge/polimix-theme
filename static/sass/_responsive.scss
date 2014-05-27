@@ -2,7 +2,7 @@
 	//.#{$selector} {
 		#polimi-header, .polimi-container, header.global, header.global nav, .content-wrapper, .wrapper-footer , #polimi-footer{
 			max-width: ($width - $baseline);
-			margin:0 ($baseline / 2) 0 ($baseline / 2);
+			//margin:0 ($baseline / 2) 0 ($baseline / 2);
 		} 
 		 header.global nav , .wrapper-footer footer , content-wrapper section.container {
 		 	// contain float right element reducing min-width (760px in original version)
