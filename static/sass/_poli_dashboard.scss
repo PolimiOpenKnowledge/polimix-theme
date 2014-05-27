@@ -1,23 +1,44 @@
+.view-dashboard header.global {
+	border-bottom: 1px solid $polimi-ciano;
+}
+
 .content-wrapper .dashboard {
 	.activation-message span.it {
 		display:block;
 	}
 	.profile-sidebar header.profile {
 		background-color:$polimi-ciano;
+		
+		h1.user-name {
+			color: white;
+		}
 	}
 	.profile-sidebar .user-info>ul li span {
 		&.it , &.en, &.locale-separator {
 			display:inline;
 		}
 	}
-	.my-courses .course .cover {
-		border-bottom:1px solid $gray-3;
-		height:auto;
-		img {
-			min-height:0;
+	.my-courses {
+		header h2 {
+			font-weight:600;
+			color: $black;
 		}
+		.course .cover {
+			border-bottom:1px solid $gray-3;
+			height:auto;
+			img {
+				min-height:0;
+			}
+		}
+		
+		a.unenroll, a.email-settings {
+			color: $polimi-ciano;
+		}
+		
 	}
 	
 
+	
+	
 } 
 
