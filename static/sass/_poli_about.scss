@@ -84,7 +84,7 @@
  				min-height: 175px; // 5 lines 
  				
  				strong {
- 					color: black;
+ 					color: $$black-bold;
  				}
  				&.from-to {
  					strong {
@@ -95,13 +95,25 @@
 		}
 		&.before-box {
 			margin-left:0;
+			h3 {
+				background: $polimi-ciano url ($pok-before-legend) center 90%;
+			}
 		}
-      	
+      	&.during-box {
+      		h3 {
+				background: $polimi-ciano url ($pok-during-legend) center 90%;
+			}
+      	}
+      	&.after-box {
+      		h3 {
+				background: $polimi-ciano url ($pok-after-legend) center 90%;
+			}
+      	}
 
 		h3 {
 			font-size:2.2em;
 			line-height:1.6em;
-			background:$polimi-ciano;
+			
 			color:$gray-1;
 			text-transform:uppercase;
 			width:90%;

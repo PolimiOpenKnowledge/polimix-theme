@@ -44,9 +44,9 @@ $gray-1: #fbfbf9;
 $gray-0: #f0f0f0; //Main BG Color
 $white: #ffffff;
 
-$black: #707172;
+$black: #707172; //#878889
 $black-80: #585754;
-
+$black-bold: #444
 
 
 //-----------------
@@ -62,7 +62,14 @@ $theme-serif-font: 'Yanone Kaffeesatz';
 $serif: $theme-serif-font, $serif;
 
 
+//-----------------
+//  Image Assignment
+//-----------------
 $pok-logo-ciano-url: '../themes/polimix/images/POK_logo_ciano.png';
+
+$pok-before-legend: '../themes/polimix/images/level/before.png';
+$pok-during-legend: '../themes/polimix/images/level/during.png';
+$pok-after-legend: '../themes/polimix/images/level/after.png';
 
 //-----------------
 //  Theme Element Assignments
