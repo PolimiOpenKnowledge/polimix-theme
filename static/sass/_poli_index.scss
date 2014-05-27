@@ -95,15 +95,13 @@ html header.global {
 		width:100%; //flex-grid(6) + flex-gutter() + flex-grid(2) + flex-gutter(); //the size of .title + the size of .media to mantain alignment
 		margin-left:0;
 		
-		height:70px;
+		height:60px;
 		min-height:20px;
-		opacity:1;
-		border-radius: 5px 5px 0 0;
-		background:$container-bg;
 		ul {
-			line-height:35px;
+			height:60px;
+			margin:0.5em auto;
 			list-style:none;
-			padding-left: 20px;
+			padding-left: 2.3em;
 			font-size:0.9em;
 			@include clearfix;
 			li {

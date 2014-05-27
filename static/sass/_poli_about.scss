@@ -86,6 +86,11 @@
  				strong {
  					color: black;
  				}
+ 				&.from-to {
+ 					strong {
+ 						font-style:italic
+ 					}
+ 				}
       		}
 		}
 		&.before-box {
