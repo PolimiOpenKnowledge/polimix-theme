@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from courseware.courses import course_image_url, get_course_about_section
 %>
 <%page args="course" />
-<article id="${course.id}" class="course ${course.css_class or ''}">
+<article id="${course.id}" class="course">
   %if course.enrollment_domain == "polimi.it":
   ##  <span class="status enrollment">${_("For POLIMI Students")}</span>
   %endif
