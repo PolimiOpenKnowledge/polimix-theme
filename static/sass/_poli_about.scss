@@ -87,6 +87,7 @@
  					color: $black-bold;
  				}
  				&.from-to {
+ 					min-height:0;
  					strong {
  						font-style:italic;
  					}
@@ -96,17 +97,17 @@
 		&.before-box {
 			margin-left:0;
 			h3 {
-				background: $polimi-ciano url($pok-before-legend) center 90% no-repeat;
+				background: $polimi-ciano url($pok-before-legend) 92% center no-repeat;
 			}
 		}
       	&.during-box {
       		h3 {
-				background: $polimi-ciano url($pok-during-legend) center 90% no-repeat;
+				background: $polimi-ciano url($pok-during-legend) 92% center no-repeat;
 			}
       	}
       	&.after-box {
       		h3 {
-				background: $polimi-ciano url($pok-after-legend) center 90% no-repeat;
+				background: $polimi-ciano url($pok-after-legend) 92% center no-repeat;
 			}
       	}
 
