@@ -81,13 +81,13 @@
 				margin:20px auto;
 				width: 80%;
 				font-size:1.3em;
- 				min-height: 175px; // 5 lines 
+ 				min-height: 12em; // 5 lines 
  				
  				strong {
  					color: $black-bold;
  				}
  				&.from-to {
- 					min-height:0;
+ 					min-height: 6em;
  					strong {
  						font-style:italic;
  					}
