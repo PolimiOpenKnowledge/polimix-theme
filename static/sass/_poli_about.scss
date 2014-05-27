@@ -96,17 +96,17 @@
 		&.before-box {
 			margin-left:0;
 			h3 {
-				background: $polimi-ciano url ($pok-before-legend) center 90%;
+				background: $polimi-ciano url($pok-before-legend) center 90% no-repeat;
 			}
 		}
       	&.during-box {
       		h3 {
-				background: $polimi-ciano url ($pok-during-legend) center 90%;
+				background: $polimi-ciano url($pok-during-legend) center 90% no-repeat;
 			}
       	}
       	&.after-box {
       		h3 {
-				background: $polimi-ciano url ($pok-after-legend) center 90%;
+				background: $polimi-ciano url($pok-after-legend) center 90% no-repeat;
 			}
       	}
 
