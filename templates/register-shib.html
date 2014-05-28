@@ -230,7 +230,7 @@
         <ol class="list-input">
           <li class="field-group">
 
-            % if ask_for_tos :
+            
 
             <div class="field required checkbox" id="field-tos">
               <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
@@ -239,8 +239,7 @@
                 link_end='</a>')}</label>
             </div>
 
-            % endif
-			% if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
+            % if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
             <div class="field required checkbox" id="field-honorcode">
               <input id="honorcode-yes" type="checkbox" name="honor_code" value="true" />
               <%
