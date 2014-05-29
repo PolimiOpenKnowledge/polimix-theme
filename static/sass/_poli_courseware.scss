@@ -10,12 +10,27 @@
 	.pok-course-info-wrapper {
 		
 	 	
-	   section h2 {
-		 	font-size:1.5em;
-		 	background:none;
+	   section h2 { 
+		 	font-size:1.4em;
 		 	padding-left:0;
+		 	
 	 	}
 		
+		section.pok-course-info h2 {
+			background: $gray-3 url('../themes/polimix/images/ico_info.png';) left center no-repeat;
+		}
+		section.pok-course-grading h2 {
+			background: $gray-3 url('../themes/polimix/images/ico_quiz.png';) left center no-repeat;
+		}
+		section.pok-course-forum h2 {
+			background: $gray-3 url('../themes/polimix/images/ico_forum.png';) left center no-repeat;
+		}
+		section.pok-course-prerequisiti h2 {
+			background: $gray-3 url('../themes/polimix/images/ico_prerequisiti.png';) left center no-repeat;
+		}
+		section.pok-course-docente h2 {
+			background: $gray-3 url('../themes/polimix/images/ico_docente.png';) left center no-repeat;
+		}
 	
 	}
 
