@@ -75,7 +75,7 @@ margin-right:3px;
 
 
 @mixin legenda_corsi($parent-selector) {
-	.#{$selector} {
+	.#{$parent-selector} {
 		
 		.legend-wrapper {
 		 	margin: 0 auto;
