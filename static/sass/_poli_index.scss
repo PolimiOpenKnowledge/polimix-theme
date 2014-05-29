@@ -30,7 +30,13 @@ header.global {
   nav {
   	padding:10px 10px 0;
   	height:70px;
+  	
+  	ol.user {
+		margin-top:15px;
+	}
+	
   }
+  
   
   
 }
@@ -48,9 +54,6 @@ html header.global {
 	  		img {
 	  			height:80px;
 	  		}
-	  	}
-	  	ol.user {
-	  		margin-top:15px;
 	  	}
   }
 }
