@@ -36,15 +36,21 @@ header.global {
 }
 html header.global {
 	&.slim {
-  	nav {
-  		height:60px;
-  	}
-  	h1.logo {
-  		margin:-10px 10px 0 13px;
-  		img {
-  			height:80px;
-  		}
-  	}
+	  	nav {
+	  		height:60px;
+	  	}
+	  	h2 {
+	  		line-height:60px;
+	  	}
+	  	h1.logo {
+	  		margin:-10px 10px 0 13px;
+	  		img {
+	  			height:80px;
+	  		}
+	  	}
+	  	ol.user {
+	  		margin-top:15px;
+	  	}
   }
 }
 
