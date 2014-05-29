@@ -97,4 +97,19 @@
 
 }
 
+.view-courses .content-wrapper {
+	position:relative;
+	top:-110px;
+	
+}
+.find-courses > header {
+	height:650px;
+	
+	&.search {
+		
+	}
+	.inner-wrapper {
+		padding-top:320px;
+	}
+}
 @include legenda-corsi("find-courses > header");
