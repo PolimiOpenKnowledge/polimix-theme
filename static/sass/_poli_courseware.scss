@@ -1,14 +1,16 @@
 .info-wrapper {
+	section.updates h1 {
+ 		display:none;
+ 	}
+ 
+    section.handouts {
+    	display:none;
+    }
+
 	.pok-course-info-wrapper {
 		
-	 	section.updates h1 {
-	 		display:none;
-	 	}
-	 
-	    section.handouts {
-	    	display:none;
-	    }
-	    section.updates section h2 {
+	 	
+	   section h2 {
 		 	font-size:1.5em;
 		 	background:none;
 		 	padding-left:0;
