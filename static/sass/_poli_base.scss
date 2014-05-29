@@ -71,3 +71,49 @@ margin-right:3px;
 	display:block;
 	background-color:$polimi-ciano;
 }
+
+
+
+@mixin legenda_corsi($parent-selector) {
+	.#{$selector} {
+		
+		.legend-wrapper {
+		 	margin: 0 auto;
+			padding: 150px 10px 0px;
+			position: relative;
+			max-width: 1200px;
+			min-width: 760px;
+			@include clearfix;
+		}
+		
+		.title.legend-course-level {
+		width:100%; //flex-grid(6) + flex-gutter() + flex-grid(2) + flex-gutter(); //the size of .title + the size of .media to mantain alignment
+		margin-left:0;
+		
+		height:60px;
+		min-height:20px;
+		ul {
+			height:60px;
+			margin:0.5em auto;
+			list-style:none;
+			padding-left: 2.3em;
+			font-size:0.9em;
+			@include clearfix;
+			li {
+				display:inline;
+				float:left;
+				width:flex-grid(4);
+				font-weight:900;
+				
+				span {
+					padding-right:5px;
+				}
+				
+				
+			}
+
+		}
+	}
+		
+	}
+}
