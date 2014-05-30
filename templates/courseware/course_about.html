@@ -31,7 +31,8 @@
 
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
-  <meta property="og:title" content="${get_course_about_section(course, 'title')}" />
+  <meta property="og:title" content="POK - ${get_course_about_section(course, 'title')}" />
+  <meta property="og:image" content="https://${site}${course_image_url(course)}" />
   <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
 </%block>
 
@@ -240,6 +241,16 @@
               </a>
             % elif  self.theme_enabled(): 
             ## TEMP HACK FOR THIS THEME
+             <% 
+             site_domain = microsite.get_value('site_domain', 'www.pok.polimi.it')
+             platform_name = microsite.get_value('platform_name', 'POK')
+             facebook_link = u"https://{domain}{path}".format(
+                        domain=site_domain,
+                        path=reverse('about_course', args=[course.id])
+             %>
+              <a href="${facebook_link}" class="share">
+                <img src="${static.url('images/social/facebook-sharing.png')}" alt="Post a Facebook message to say you've registered for this course">
+              </a>
            	   <a target="_blank" href="http://twitter.com/intent/tweet?text=I+just+registered+for+${course.number}+${get_course_about_section(course, 'title')}!+(https://www.pok.polimi.it)" class="share">
                 <img src="${static.url('images/social/twitter-sharing.png')}" alt="Tweet that you've registered for this course">
               </a>
