@@ -38,4 +38,8 @@
 			width:auto;
 		}
 	}
+	
+	header.global.slim h2 {
+		width: flex-grid(6);
+	}
 }
