@@ -243,13 +243,9 @@
             % elif  self.theme_enabled(): 
             ## TEMP HACK FOR THIS THEME
              <% 
-             site_domain = microsite.get_value('site_domain', 'www.pok.polimi.it')
-             platform_name = microsite.get_value('platform_name', 'POK')
-             facebook_link = _("https://{domain}{path}").format(
-                        domain=site_domain,
-                        path=reverse('about_course', args=[course.id]))
+             cur_path = reverse('about_course', args=[course.id]))
              %>
-              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${facebook_link}" class="share">
+              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://${site}${cur_path}" class="share">
                 <img src="${static.url('images/social/facebook-sharing.png')}" alt="Post a Facebook message to say you've registered for this course">
               </a>
            	   <a target="_blank" href="http://twitter.com/intent/tweet?text=I+just+registered+for+${course.number}+${get_course_about_section(course, 'title')}!+(https://www.pok.polimi.it)" class="share">
