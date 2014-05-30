@@ -244,7 +244,7 @@
              <% 
              site_domain = microsite.get_value('site_domain', 'www.pok.polimi.it')
              platform_name = microsite.get_value('platform_name', 'POK')
-             facebook_link = u"https://{domain}{path}".format(
+             facebook_link = _("https://{domain}{path}").format(
                         domain=site_domain,
                         path=reverse('about_course', args=[course.id])
              %>
