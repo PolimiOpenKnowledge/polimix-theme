@@ -246,7 +246,7 @@
              platform_name = microsite.get_value('platform_name', 'POK')
              facebook_link = _("https://{domain}{path}").format(
                         domain=site_domain,
-                        path=reverse('about_course', args=[course.id])
+                        path=reverse('about_course', args=[course.id]))
              %>
               <a href="${facebook_link}" class="share">
                 <img src="${static.url('images/social/facebook-sharing.png')}" alt="Post a Facebook message to say you've registered for this course">
