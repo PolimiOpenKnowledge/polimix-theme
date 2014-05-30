@@ -243,7 +243,7 @@
             % elif  self.theme_enabled(): 
             ## TEMP HACK FOR THIS THEME
              <% 
-             cur_path = reverse('about_course', args=[course.id]))
+             cur_path = _("{path}").format(path=reverse('about_course', args=[course.id]))
              %>
               <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://${site}${cur_path}" class="share">
                 <img src="${static.url('images/social/facebook-sharing.png')}" alt="Post a Facebook message to say you've registered for this course">
