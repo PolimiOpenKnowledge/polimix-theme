@@ -32,7 +32,7 @@
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
   <meta property="og:title" content="POK - ${get_course_about_section(course, 'title')}" />
-  <meta property="og:image" content="https://${site}${course_image_url(course)}" />
+  <meta property="og:image:secure_url" content="https://${site}${course_image_url(course)}" />
   <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
 </%block>
 
