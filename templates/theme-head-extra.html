@@ -14,7 +14,11 @@
 <![endif]-->
 
 
+## OG (Open Graph) title and description added below to give social media info to display
+## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
+<meta property="og:site_name" content="POK"/>
+% if not course:
 <meta property="og:image" content="https://${ site }${static.url('themes/polimix/images/ogimage.jpg')}"/>
 <meta property="og:title" content="POK"/>
-<meta property="og:site_name" content="POK"/>
-<meta property="og:description" content="Polimi Open Knowledge -  Moocs to bridge the gaps"/>
+<meta property="og:description" content="Polimi Open Knowledge -  MOOCs to bridge the gaps"/>
+% endif
