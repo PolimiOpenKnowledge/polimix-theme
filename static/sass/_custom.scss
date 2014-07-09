@@ -37,8 +37,14 @@
 		      }
 		    }
   		}
+  		.references a.open-edx-logo {
+  			 &:hover, &:focus, &:active {
+		      	border-bottom:none;
+		      }
+  		}
   		.references .built-on {
   			font-size:0.8em;
+  			margin-top:25px;
   		}
   		.terms {
   		 clear:left;
@@ -55,6 +61,9 @@
   		   }
   		   a {
   		     color:$base-font-color;
+  		     &.standard-link {
+  		     	color:$link-color;
+  		     }
   		   }
   		  }
   		}
