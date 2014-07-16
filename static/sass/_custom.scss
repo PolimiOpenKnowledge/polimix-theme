@@ -19,7 +19,16 @@
 
 
 
+.contact-us-tab {
+	top:50%;
+	padding:5px;
+	z-index:99;
+	background-color:$polimi-ciano;
 
+	a {
+		color:white;
+	}
+}
 
 /***   Footer   ***/
 .wrapper-footer {
