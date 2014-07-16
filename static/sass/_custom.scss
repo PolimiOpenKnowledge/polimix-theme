@@ -21,12 +21,22 @@
 
 .contact-us-tab {
 	top:50%;
-	padding:5px;
+	
 	z-index:99;
-	background-color:$polimi-ciano;
+	
+	position:fixed;
     @include transform(rotate(-90deg));
+    
 	a {
-		color:white;
+		padding:5px;
+		background-color:$polimi-ciano;
+		&:link, &:visited {
+			color:$gray-1;
+		}
+		&:hover {
+			color:$polimi-ciano;
+			background-color:$gray-1;
+		}
 	}
 }
 
