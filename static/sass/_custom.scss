@@ -23,9 +23,9 @@
 	top:500px;
 	opacity:0.85;
 	z-index:99;
-	left:-35px;
+	right:-35px;
 	position:fixed;
-    @include transform(rotate(-90deg));
+    @include transform(rotate(90deg));
 	a {
 		padding:5px;
 		background-color:$polimi-ciano;
