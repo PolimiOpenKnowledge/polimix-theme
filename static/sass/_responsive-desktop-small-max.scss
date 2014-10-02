@@ -42,4 +42,12 @@
 	html header.global.slim h2 {
 		width: flex-grid(6);
 	}
+	
+	html .wrapper-footer footer {
+		.eco-references  {
+			width: 240px;
+			padding-right:25px;
+		}
+
+	}
 }

@@ -42,6 +42,9 @@
 /***   Footer   ***/
 .wrapper-footer {
 	footer {
+	    .references, .colophon {
+	    	width: flex-grid(6,12);
+	    }
     	h1.logo {
 		    float: left;
 		    margin: -2px 39px 0px 0px;
@@ -55,17 +58,56 @@
 		      }
 		    }
   		}
-  		.references a.open-edx-logo {
+  		.references a.open-edx-logo , .references a.eco-project-logo {
   			 &:hover, &:focus, &:active {
 		      	border-bottom:none;
 		      }
   		}
-  		.references .built-on {
+  		.references .additional-logo-info {
   			font-size:0.8em;
-  			margin-top:25px;
+  			margin-top:15px;
+  			
+  			.eco-agreement {
+  				font-size:0.9em;
+  			}
+  			span {
+  				display:block;
+  				
+  				&.in-collab {
+  					margin-top:-2px
+  				}
+  			}
+  		}
+  		.eco-references {
+  			float:right;
+  			width: 260px;
+  			border-right: 1px solid #ebebeb ;
+  			padding-right:30px;
+  			
+  			.additional-logo-info {
+  				display:block;
+  				text-align:right;
+  			}
+  			.eco-loghi-container {
+  				@include clearfix;
+  				margin-top:7px;
+  				.eco-loghi {
+  					float:left;
+  					width: flex-grid(6,12);
+  				}
+  				.eco-project-logo {
+  					float:right;
+  				}
+  			}
+  		}
+  		.built-on {
+  			float:right;
+  			width: 180px;
+  			@include clearfix;
   		}
   		.terms {
-  		 clear:left;
+  		 	clear:left;
+  		 	margin-top:10px;
   		}
   		nav.nav-terms {
   		  li {
