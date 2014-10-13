@@ -15,7 +15,6 @@
 <%! from microsite_configuration import microsite %>
 
 <%inherit file="../main.html" />
-
 <%block name="headextra">
 
   <%
@@ -85,7 +84,7 @@
       if(xhr.status == 200) {
         location.href = "${reverse('dashboard')}";
       } else if (xhr.status == 403) {
-        location.href = "${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}?course_id=${course.id.to_deprecated_string()}&enrollment_action=enroll";
+        location.href = "${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}?course_id=${course.id | u}&enrollment_action=enroll";
       } else if (xhr.status == 400) { //This means the user did not have permission
         $('#register_error').html("${perms_error}").css("display", "block");
       } else {
@@ -106,7 +105,7 @@
           location.href = xhr.responseText;
         }
       } else if (xhr.status == 403) {
-        location.href = "${reverse('register_user')}?course_id=${course.id.to_deprecated_string()}&enrollment_action=enroll";
+          location.href = "${reverse('register_user')}?course_id=${course.id | u}&enrollment_action=enroll";
       } else {
         $('#register_error').html(
             (xhr.responseText ? xhr.responseText : 'An error occurred. Please try again later.')
@@ -174,6 +173,13 @@
           <span class="register disabled">
             ${_("Course is full")}
           </span>
+        % elif invitation_only and not can_enroll:
+          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+        ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
+        ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
+        ## so that they can register and become a real user that can enroll.
+        % elif not is_shib_course and not can_enroll:
+          <span class="register disabled">${_("Enrollment is Closed")}</span>
         %else:
           <a href="#" class="register">
             ${_("Register for {course.display_number_with_default}").format(course=course) | h}
@@ -233,7 +239,7 @@
             ## TODO: this should probably be an overrideable block,
             ##       or something allowing themes to do whatever they
             ##       want here (and on this whole page, really).
-            % if self.stanford_theme_enabled() :
+            % if self.stanford_theme_enabled():
               <a href="http://twitter.com/intent/tweet?text=I+just+registered+for+${course.number}+${get_course_about_section(course, 'title')}!+(http://class.stanford.edu)" class="share">
                 <img src="${static.url('images/social/twitter-sharing.png')}" alt="Tweet that you've registered for this course">
               </a>
@@ -256,15 +262,15 @@
               </a>
             % else:
               <%
-                site_domain = microsite.get_value('site_domain', 'www.edx.org')
-                platform_name = microsite.get_value('platform_name', 'edX')
+                site_domain = microsite.get_value('site_domain', settings.SITE_NAME)
+                platform_name = microsite.get_value('platform_name', settings.PLATFORM_NAME)
 
                 # Translators: This text will be automatically posted to the student's
                 # Twitter account. {url} should appear at the end of the text.
                 tweet_text = _("I just registered for {number} {title} through {account}: {url}").format(
                     number=course.number,
                     title=get_course_about_section(course, 'title'),
-                    account=microsite.get_value('course_about_twitter_account', '@edxonline'),
+                    account=microsite.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
                     url=u"http://{domain}{path}".format(
                         domain=site_domain,
                         path=reverse('about_course', args=[course.id.to_deprecated_string()])
@@ -272,7 +278,7 @@
                 ).replace(u" ", u"+")
                 tweet_action = u"http://twitter.com/intent/tweet?text={tweet_text}".format(tweet_text=tweet_text)
 
-                facebook_link = microsite.get_value('course_about_facebook_link', 'http://www.facebook.com/EdxOnline')
+                facebook_link = microsite.get_value('course_about_facebook_link', settings.PLATFORM_FACEBOOK_ACCOUNT)
 
                 email_subject = u"mailto:?subject={subject}&body={body}".format(
                     subject=_("Take a course with {platform} online").format(platform=platform_name),
@@ -353,11 +359,14 @@
   </section>
 </section>
 
-%if not registered:
+## Need to put this hidden form on the page so that the registration button works.
+## Since it's no harm to display a hidden form, we display it with the most permissive conditional
+## which is when the student is not registered.
+%if active_reg_button or is_shib_course:
   <div style="display: none;">
     <form id="class_enroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
       <fieldset class="enroll_fieldset">
-        <input name="course_id" type="hidden" value="${course.id.to_deprecated_string()}">
+        <input name="course_id" type="hidden" value="${course.id | h}">
         <input name="enrollment_action" type="hidden" value="enroll">
       </fieldset>
       <div class="submit">

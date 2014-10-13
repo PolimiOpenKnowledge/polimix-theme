@@ -11,7 +11,7 @@
 <%! from microsite_configuration import page_title_breadcrumbs %>
 
 <%namespace name='static' file='static_content.html'/>
-<%! from django.utils import html %>
+<%! from django.utils.http import urlquote_plus %>
 
 ## Define a couple of helper functions to make life easier when
 ## embedding theme conditionals into templates. All inheriting
@@ -19,6 +19,9 @@
 ## into non-inheriting templates via the %namespace tag.
 <%def name="theme_enabled()">
   <% return settings.FEATURES.get("USE_CUSTOM_THEME", False) %>
+</%def>
+<%def name="is_microsite()">
+  <% return microsite.is_request_in_microsite() %>
 </%def>
 
 <%def name="stanford_theme_enabled()">
@@ -56,12 +59,16 @@
   <%static:css group='style-app-extend1'/>
   <%static:css group='style-app-extend2'/>
 
-  <%static:js group='main_vendor'/>
+  % if disable_courseware_js:
+    <%static:js group='base_vendor'/>
+  % else:
+    <%static:js group='main_vendor'/>
+  % endif
 
   <%block name="headextra"/>
 
 <%
-  if theme_enabled():
+  if theme_enabled() and not is_microsite():
     header_extra_file = 'theme-head-extra.html'
     header_file = 'theme-header.html'
     google_analytics_file = 'theme-google-analytics.html'
@@ -71,9 +78,22 @@
 
   else:
     header_extra_file = None
-    header_file = microsite.get_template_path('navigation.html')
+
+    if settings.FEATURES.get("ENABLE_NEW_EDX_HEADER", False):
+        header_file = microsite.get_template_path('navigation.html')
+    else:
+        header_file = microsite.get_template_path('original_navigation.html')
+
+
     google_analytics_file = microsite.get_template_path('google_analytics.html')
-    footer_file = microsite.get_template_path('footer.html')
+
+    if settings.FEATURES['IS_EDX_DOMAIN'] and not is_microsite():
+        if settings.FEATURES.get('ENABLE_NEW_EDX_FOOTER', False):
+            footer_file = microsite.get_template_path('footer-edx-new.html')
+        else:
+            footer_file = microsite.get_template_path('footer-edx.html')
+    else:
+      footer_file = microsite.get_template_path('footer.html')
 
     style_overrides_file = microsite.get_value('css_overrides_file')
 %>
@@ -86,15 +106,12 @@
     <script src="${static.url('js/html5shiv.js')}"></script>
   <![endif]-->
 
+  <%include file="widgets/optimizely.html" />
+
   <meta name="path_prefix" content="${EDX_ROOT_URL}">
   <meta name="google-site-verification" content="ZyswrIdUIIXboFQtBx6ha6R8DTvA46T-4yILTOTfF7o" />
 
-
-  % if not course:
-    <%include file="${google_analytics_file}" />
-  % endif
-
-  <%include file="widgets/segment-io.html" />
+  <%include file="${google_analytics_file}" />
 
 
 % if style_overrides_file:
@@ -108,32 +125,30 @@
 
   <%include file="mathjax_accessible.html" />
 
-% if not suppress_toplevel_navigation:
   <%include file="${header_file}" />
-%endif
 
   <div class="content-wrapper" id="content">
     ${self.body()}
     <%block name="bodyextra"/>
   </div>
 
-% if not suppress_toplevel_navigation:
   <%include file="${footer_file}" />
-% endif
 
   <script>window.baseUrl = "${settings.STATIC_URL}";</script>
-  <%static:js group='application'/>
-  <%static:js group='module-js'/>
+  % if not disable_courseware_js:
+    <%static:js group='application'/>
+    <%static:js group='module-js'/>
+  % endif
 
   <%block name="js_extra"/>
+
+  <%include file="widgets/segment-io.html" />
 </body>
 </html>
 
 <%def name="login_query()">${
   u"?course_id={0}&enrollment_action={1}".format(
-    html.escape(course_id),
-    html.escape(enrollment_action)
+    urlquote_plus(course_id),
+    urlquote_plus(enrollment_action)
   ) if course_id and enrollment_action else ""
 }</%def>
-
-
