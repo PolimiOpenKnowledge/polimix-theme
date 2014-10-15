@@ -26,7 +26,7 @@ else:
 
 % if cert_status['status'] == 'processing':
       <p class="message-copy">
-        <span class="it">I dettagli finali del corso sono in fase di elaborazione. Il tuo risultato finale sarà disponibile a breve.</span>
+        <span class="it">I dettagli finali del corso sono in fase di elaborazione. Il tuo risultato finale sarà disponibile a breve.</span> <br />
       	<span class="en">${_("Final course details are being wrapped up at this time. Your final standing will be available shortly.")}</span>
       </p>
 % elif cert_status['status'] in ('generating', 'ready', 'notpassing', 'restricted'):
