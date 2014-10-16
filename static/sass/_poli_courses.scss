@@ -71,6 +71,16 @@
 		color:$polimi-ciano;
 	}
 }
+.closing-warning {
+	border: 1px solid $error-red;
+	padding: 10px;
+	color: $error-red;
+	
+	p {
+		margin-bottom:0;
+		color:$error-red;
+	}
+}
 
 .course-info .container {
 		box-sizing: border-box;
