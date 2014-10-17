@@ -74,11 +74,13 @@
 .closing-warning {
 	border: 1px solid $error-red;
 	padding: 10px;
-	color: $error-red;
+	h3 {
+		color: $error-red;
+		padding: 0 10px;
+	}
 	
 	p {
 		margin-bottom:0;
-		color:$error-red;
 		padding: 0 10px;
 	}
 }
