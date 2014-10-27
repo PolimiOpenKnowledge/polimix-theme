@@ -2,6 +2,7 @@
 from django.utils.translation import ugettext as _ 
 from django.core.urlresolvers import reverse
 %>
+
 <%namespace file='main.html' import="login_query"/>
 <header>
   <h2 class="sr">${_("Helpful Information")}</h2>
@@ -38,4 +39,15 @@ from django.core.urlresolvers import reverse
    <p>${_('{email}').format(
     email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
  </div>
-
+ 
+% if microsite.get_value('ENABLE_THIRD_PARTY_AUTH', settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH')):
+<%
+ enabled=provider.Registry.get_by_backend_name("ecoopenid-auth")
+%>
+<div class="cta eco-login">
+  <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
+  <p class="instructions">
+    <button type="submit" class="button button-primary button-${enabled.NAME}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_LOGIN)}');"><span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.NAME)}</button>
+  </p>
+</div>
+% endif
