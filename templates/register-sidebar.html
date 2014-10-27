@@ -81,7 +81,6 @@ from django.core.urlresolvers import reverse
      <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_REGISTER)}');">
      	<span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}
      </a>
-    <button type="submit" class="button button-primary button-${enabled.NAME}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_REGISTER)}');"><span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}</button>
   </p>
 </div>
 % endif

@@ -48,7 +48,9 @@ from django.core.urlresolvers import reverse
 <div class="cta eco-login">
   <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
   <p class="instructions">
-    <button type="submit" class="button button-primary button-${enabled.NAME}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_LOGIN)}');"><span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.NAME)}</button>
+  <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_LOGIN)}');">
+     	<span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}
+     </a>
   </p>
 </div>
 % endif

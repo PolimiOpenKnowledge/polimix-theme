@@ -74,6 +74,9 @@
 				border-bottom:0;
 			}
 		}
+		.eco-login .link2button {
+		  background-color: $eco-yellow;
+		} 
 	
 	}
 	
@@ -130,6 +133,9 @@
 				border-bottom:0;
 			}
 		}
+		.eco-login .link2button {
+		  background-color: $eco-yellow;
+		} 
 		
 		.login form .field.required label:after {
 			content:"";  //remove * for login form
