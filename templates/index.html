@@ -88,9 +88,11 @@
         <section class="courses">
             <ul class="courses-listing">
             %for course in courses:
-              <li class="courses-listing-item">
-                <%include file="course.html" args="course=course" />
-              </li>
+	            % if not course.has_ended():
+	              <li class="courses-listing-item">
+	                <%include file="course.html" args="course=course" />
+	              </li>
+	             %endif
             %endfor
             </ul>
         </section>
