@@ -18,6 +18,10 @@
 			display:inline;
 		}
 	}
+	
+	.profile-sidebar .user-info>ul li span.data .auth-provider .provider {
+		width: flex-grid(8);
+	}
 	.my-courses {
 		header h2 {
 			font-weight:600;
