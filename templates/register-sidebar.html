@@ -1,12 +1,13 @@
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
+from microsite_configuration import microsite
+from third_party_auth import provider, pipeline
 %>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
 <%namespace name='static' file='static_content.html'/>
 
-<%! from microsite_configuration import microsite %>
-<%! from third_party_auth import provider, pipeline %>
+
 <header>
   <h3 class="sr">${_("Registration Help")}</h3>
 </header>

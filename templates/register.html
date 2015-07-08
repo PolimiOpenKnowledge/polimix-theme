@@ -80,6 +80,7 @@
       if(enable) {
         $submitButton.
           removeClass('is-disabled').
+          attr('aria-disabled', false).
           removeProp('disabled').
           html("${_('Create My {platform_name} Account').format(platform_name=platform_name)}");
       }
@@ -87,7 +88,7 @@
         $submitButton.
           addClass('is-disabled').
           prop('disabled', true).
-          text("${_(u'Processing your account information…')}");
+          text("${_('Processing your account information')}");
       }
     }
   </script>
@@ -132,8 +133,8 @@
         % for enabled in provider.Registry.enabled():
           % if not enabled.BACKEND_CLASS.name=="ecoopenid-auth":
           ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
-          <button type="submit" class="button button-primary button-${enabled.NAME}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_REGISTER)}');"><span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}</button>
-          % endif
+          <button type="submit" class="button button-primary button-${enabled.NAME} register-${enabled.NAME}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.NAME]}');"><span class="icon fa ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}</button>
+          %endif
         % endfor
 
         </div>
@@ -159,7 +160,7 @@
         <p class="instructions">
           ## Translators: selected_provider is the name of an external, third-party user authentication service (like Google or LinkedIn).
           ${_("You've successfully signed in with {selected_provider}.").format(selected_provider='<strong>%s</strong>' % selected_provider)}<br />
-          ${_("Finish your account registration below to start learning.")}
+          ${_("We just need a little more information before you start learning with {platform_name}.").format(platform_name=settings.PLATFORM_NAME)}
         </p>
 
         % endif
