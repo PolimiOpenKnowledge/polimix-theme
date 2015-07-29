@@ -26,9 +26,9 @@ from third_party_auth import provider, pipeline
 % endif
 
 <div class="cta already-registered">
-  <h3><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
+  <h3 class="title"><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
   <p class="instructions">
-  	 <a class="link2button" href="${reverse('signin_user')}${login_query()}">
+  	 <a class="link2button cta-login-action" href="${reverse('signin_user')}${login_query()}">
      POK Login
     </a>
   </p>
@@ -74,13 +74,13 @@ from third_party_auth import provider, pipeline
   
 % if microsite.get_value('ENABLE_THIRD_PARTY_AUTH', settings.FEATURES.get('ENABLE_THIRD_PARTY_AUTH')):
 <%
- enabled=provider.Registry.get_by_backend_name("ecoopenid-auth")
+ enabled=provider.Registry.get_enabled_by_backend_name("ecoopenid-auth")
 %>
 <div class="cta eco-login">
   <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
   <p class="instructions">
-     <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.NAME, pipeline.AUTH_ENTRY_REGISTER)}');">
-     	<span class="icon ${enabled.ICON_CLASS}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.NAME)}
+     <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_REGISTER)}');">
+     	<span class="icon ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}
      </a>
   </p>
 </div>

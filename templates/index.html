@@ -1,11 +1,12 @@
-<%! from django.utils.translation import ugettext as _ %>
-
-<%! from django.core.urlresolvers import reverse %>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+from microsite_configuration import microsite
+import branding
+%>
 
-<%! from microsite_configuration import microsite %>
-<%! import branding %>
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
@@ -31,27 +32,17 @@
              <h2>${_("MOOCs to BRIDGE THE GAPS")}</h2>
           % endif
         </hgroup>
+        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+          <div class="course-search">
+            <form method="get" action="/courses">
+              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+              <button class="search-button" type="submit">
+                <i class="icon fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        % endif
 
-        ## Disable social buttons for non-edX sites
-        % if not self.theme_enabled():
-          <section class="actions">
-            <div class="main-cta">
-              <a href="#signup-modal" id="signup_action" class="find-courses" rel="leanModal">${_("Sign Up")}</a>
-            </div>
-
-            <div class="secondary-actions">
-              <div class="social-sharing">
-                <div class="sharing-message">${_("Stay up to date with all {platform_name} has to offer!").format(platform_name=settings.PLATFORM_NAME)}</div>
-                <a href="https://twitter.com/polimi class="share">
-                  <img src="${static.url('images/social/twitter-sharing.png')}">
-                </a>
-                <a href="http://www.facebook.com/polimi" class="share">
-                  <img src="${static.url('images/social/facebook-sharing.png')}">
-                </a>
-              </div>
-            </div>
-          </section>
-          % endif
       </div>
 
       % if show_homepage_promo_video:
@@ -69,8 +60,6 @@
 	        </div>
 	    % endif
       % endif
-      
-      
     </div>
     <div class="legend-wrapper">
       <div class="title legend-course-level">
@@ -82,20 +71,28 @@
       </div>
      </div>
   </header>
-  <section class="container">
+  <section class="courses-container">
     <section class="highlighted-courses">
+
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <section class="courses">
             <ul class="courses-listing">
-            %for course in courses:
-	            % if not course.has_ended():
-	              <li class="courses-listing-item">
-	                <%include file="course.html" args="course=course" />
-	              </li>
-	             %endif
+            ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
+            %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
+                % if not course.has_ended():
+	          <li class="courses-listing-item">
+	            <%include file="course.html" args="course=course" />
+	          </li>
+	        %endif
             %endfor
             </ul>
         </section>
+        ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear
+        % if settings.HOMEPAGE_COURSE_MAX and len(courses) > settings.HOMEPAGE_COURSE_MAX:
+          <div class="courses-more">
+            <a class="courses-more-cta" href="${marketing_link('COURSES')}" > ${_("View all Courses")} </a>
+          </div>
+        % endif
       % endif
 
     </section>
@@ -109,7 +106,7 @@
       if self.stanford_theme_enabled():
         youtube_video_id = "2gmreZObCY4"
     %>
-    <iframe width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
 
