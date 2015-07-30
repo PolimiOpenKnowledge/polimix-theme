@@ -17,7 +17,7 @@ import branding
 
 %>
  <%block name="bodyclass">view-index</%block>
- 
+
 <%block name="pagetitle">POK - MOOCs portal of Politecnico di Milano</%block>
 
 <section class="home">
@@ -27,22 +27,11 @@ import branding
         <hgroup>
           % if homepage_overlay_html:
             ${homepage_overlay_html}
-          % else:   
+          % else:
              <h1>${_("Polimi OPEN KNOWLEDGE")}</h1>
              <h2>${_("MOOCs to BRIDGE THE GAPS")}</h2>
           % endif
         </hgroup>
-        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-          <div class="course-search">
-            <form method="get" action="/courses">
-              <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-              <button class="search-button" type="submit">
-                <i class="icon fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-        % endif
-
       </div>
 
       % if show_homepage_promo_video:
@@ -72,6 +61,16 @@ import branding
      </div>
   </header>
   <section class="courses-container">
+    % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+      <div class="course-search">
+        <form method="get" action="/courses">
+          <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+          <button class="search-button" type="submit">
+            <i class="icon fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    % endif
     <section class="highlighted-courses">
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):

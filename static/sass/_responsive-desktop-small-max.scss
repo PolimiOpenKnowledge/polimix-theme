@@ -27,7 +27,7 @@
 		}
 	}
 
-	//override edx _footer.scss file which set 960px 
+	//override edx _footer.scss file which set 960px
 	html .view-register .wrapper-footer footer, html .view-login .wrapper-footer footer {
 		width:auto;
 	}
@@ -38,11 +38,11 @@
 			width:auto;
 		}
 	}
-	
+
 	html header.global.slim h2 {
 		width: flex-grid(6);
 	}
-	
+
 	html .wrapper-footer footer {
 		.eco-references  {
 			width: 240px;

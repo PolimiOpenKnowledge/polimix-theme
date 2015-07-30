@@ -1,101 +1,93 @@
-$home-opacity:0.94 ;
 /*** Set opacity background banner ***/
 
 .view-index {
-     #polimi-header {
-     	position:relative;
-     	z-index:10;
-     	opacity:1 ;
-     } 
-	.content-wrapper {
-		position:relative;
-		top:-110px;
-	}
-}
-header.global {
-  height:80px;
-  opacity:$home-opacity ;
-  .nav-global li a {
-   color:$black;
-   padding:5px 5px 0 5px;
+  #polimi-header {
+    position: relative;
+    z-index: 10;
+    opacity: 1;
   }
-  h1.logo {
-  	margin:-10px 39px 0px 0px;
-   	a {
-		img {
-			height:80px;
-		}
-  	}
-  }
-  nav {
-  	padding:10px 10px 0;
-  	height:70px;
-  	
-  	ol.user {
-		margin-top:15px;
-	}
-	
-  }
-  
-  
-  
-}
-html header.global {
-	&.slim {
-	  	nav {
-	  		height:60px;
-	  	}
-	  	h2 {
-	  		line-height:60px;
-	  		margin-top:0;
-	  	}
-	  	h1.logo {
-	  		margin:-10px 10px 0 13px;
-	  		img {
-	  			height:80px;
-	  		}
-	  	}
+  .content-wrapper {
+    position: relative;
+    top: -110px;
   }
 }
 
-.home > header {
-	height:650px ;
-	.outer-wrapper {
-		padding-top: 320px;
-	}
-	
-	.title {
-		opacity:$home-opacity ;
-		width: flex-grid(6)+flex-gutter();
-		//margin-left: flex-grid(2);
-	}
-	.title > hgroup {
-		width:100%;
-		padding:11px 10px 0 10px;
-		 h1 {
-		  color: $polimi-ciano ;
-		  font-size:3em ;
-		  text-align:center;
-		  font-family:$serif;
-		  letter-spacing:4px;
-		  margin-left:3px;
-		 }
-		 h2 {
-			text-transform: initial ;
-			text-align: right;
-			font-style:normal;
-			margin-right:30px;
-			margin-top:-15px;
-		}
-	}
-	.media .hero {
-		 background: $polimi-ciano url($video-thumb-url) center;
-		 background-size:contain;
-		 background-repeat:no-repeat;
-	}
-	
-	
-	
+.polimix-theme header.global {
+  height: 80px;
+  opacity: $home-opacity;
+  .nav-global li a {
+    color: $black;
+    padding: 5px 5px 0 5px;
+  }
+  h1.logo {
+    margin: -10px 39px 0px 0px;
+    a {
+      img {
+        height: 80px;
+      }
+    }
+  }
+  nav {
+    padding: 10px 10px 0;
+    height: 70px;
+    ol.user {
+      margin-top: 15px;
+    }
+  }
+  &.slim {
+    nav {
+      height: 60px;
+    }
+    h2 {
+      line-height: 60px;
+      margin-top: 0;
+    }
+    h1.logo {
+      margin: -10px 10px 0 13px;
+      img {
+        height: 80px;
+      }
+    }
+  }
+}
+
+.polimix-theme .home > header {
+  height: 650px;
+  .outer-wrapper {
+    padding: 320px 10px 0 10px;
+    margin-bottom:0;
+  }
+  .title {
+    opacity: $home-opacity;
+    width: flex-grid(6) + flex-gutter();
+    //margin-left: flex-grid(2);
+    margin-right: 0;
+    padding: 0;
+  }
+  .title > hgroup {
+    width: 100%;
+    padding: 11px 10px 0 10px;
+    h1 {
+      color: $polimi-ciano;
+      font-size: 3em;
+      text-align: center;
+      font-family: $serif;
+      letter-spacing: 4px;
+      margin-left: 3px;
+    }
+    h2 {
+      text-transform: initial;
+      text-align: right;
+      font-style: normal;
+      margin-right: 30px;
+      margin-top: -15px;
+    }
+  }
+  .media .hero {
+    background: $polimi-ciano url($video-thumb-url) center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 @include legenda-corsi("home > header");

@@ -4,9 +4,9 @@
 *   Theme css are loaded after base/base but some customization is needed. Use extra-selectors to do it!
 *
 ****************************************************************************************************/
-// SEt basic color 
+// SEt basic color
 html, button, input, select, textarea { color:$base-font-color}
-// Change font serif to sans-serif for all paragraph. This can be deleted after picked better serif font (not Yanone as Polimi site?) 
+// Change font serif to sans-serif for all paragraph. This can be deleted after picked better serif font (not Yanone as Polimi site?)
 html {
 	.static-container ol li, .static-container ul li {
 		font-family:$sans-serif;
@@ -16,7 +16,7 @@ html {
 	}
     p a , a {
 	  	font-family:$sans-serif;
-	  	
+
 	  	&:visited,&:link {
 	  		font-family:$sans-serif;
 	  	}
@@ -35,7 +35,7 @@ html {
 
 // Set font for navigation link as $serif (??). This can be deleted after picked better serif font (not Yanone as Polimi site?)
 
-header.global .nav-global li a , .wrapper-footer footer .colophon .nav-colophon li a , header.global .nav-courseware li .cta { 
+header.global .nav-global li a , .wrapper-footer footer .colophon .nav-colophon li a , header.global .nav-courseware li .cta {
    font-family:$serif;
    @include font-size(21);
    @include line-height(21);
@@ -76,7 +76,7 @@ margin-right:3px;
 
 @mixin legenda_corsi($parent-selector) {
 	.#{$parent-selector} {
-		
+
 		.legend-wrapper {
 		 	margin: 0 auto;
 			padding: 150px 10px 0px;
@@ -85,7 +85,7 @@ margin-right:3px;
 			min-width: 760px;
 			@include clearfix;
 		}
-		
+
 		.title.legend-course-level {
 		width:100%; //flex-grid(6) + flex-gutter() + flex-grid(2) + flex-gutter(); //the size of .title + the size of .media to mantain alignment
 		margin-left:0;
@@ -94,7 +94,7 @@ margin-right:3px;
 		border: 1px solid $white;
 		box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
         @include box-sizing(border-box);
-		
+
 		height:60px;
 		min-height:20px;
 		ul {
@@ -109,16 +109,16 @@ margin-right:3px;
 				float:left;
 				width:flex-grid(4);
 				font-weight:900;
-				
+
 				span {
 					padding-right:5px;
 				}
-				
-				
+
+
 			}
 
 		}
 	}
-		
+
 	}
 }

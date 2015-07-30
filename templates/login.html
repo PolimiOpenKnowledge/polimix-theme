@@ -1,6 +1,6 @@
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
-
+<%namespace file='main.html' import="login_query"/>
 <%!
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
@@ -141,7 +141,7 @@ from microsite_configuration import microsite
   </header>
 </section>
 <section class="intro-polimi">
-	% if settings.FEATURES['AUTH_USE_SHIB']:	
+	% if settings.FEATURES['AUTH_USE_SHIB']:
 		  <p class="instructions">
 		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti inserisci le tue credenziali POK</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user you can directly using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise insert your POK credentials.</span>
 		  </p>
@@ -224,7 +224,7 @@ from microsite_configuration import microsite
 
     % if third_party_auth.is_enabled():
       <%
-       notecoprovider=[x for x in provider.Registry.enabled() if not x.BACKEND_CLASS.name == "ecoopenid-auth"]
+       notecoprovider=[x for x in provider.Registry.enabled() if not x.backend_name == "ecoopenid-auth"]
       %>
       % if len(notecoprovider)>0 :
       <span class="deco-divider">
@@ -236,7 +236,7 @@ from microsite_configuration import microsite
     <div class="form-actions form-third-party-auth">
 
     % for enabled in provider.Registry.enabled():
-       % if not enabled.BACKEND_CLASS.name=="ecoopenid-auth":
+       % if not enabled.backend_name=="ecoopenid-auth":
       ## Translators: provider_name is the name of an external, third-party user authentication provider (like Google or LinkedIn).
       <button type="submit" class="button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}</button>
        % endif

@@ -18,115 +18,115 @@
 @import "responsive";
 
 
-
 .contact-us-tab {
-	top:500px;
-	opacity:0.85;
-	z-index:99;
-	right:-35px;
-	position:fixed;
-    @include transform(rotate(90deg));
-	a {
-		padding:5px;
-		background-color:$polimi-ciano;
-		&:link, &:visited {
-			color:$gray-1;
-		}
-		&:hover {
-			color:$polimi-ciano;
-			background-color:$gray-1;
-		}
-	}
+  top: 500px;
+  opacity: 0.85;
+  z-index: 99;
+  right: -35px;
+  position: fixed;
+  @include transform(rotate(90deg));
+  a {
+    padding: 5px;
+    background-color: $polimi-ciano;
+    &:link, &:visited {
+      color: $gray-1;
+    }
+    &:hover {
+      color: $polimi-ciano;
+      background-color: $gray-1;
+    }
+  }
 }
 
 /***   Footer   ***/
-.wrapper-footer {
-	footer {
-	    .references, .colophon {
-	    	width: flex-grid(6,12);
-	    	margin:0;
-	    }
-    	h1.logo {
-		    float: left;
-		    margin: -2px 39px 0px 0px;
-		    position: relative;
-		
-		    a {
-		      color:$link-color;
-		      display: block;
-		      &:hover, &:focus, &:active {
-		      	border-bottom:none;
-		      }
-		    }
-  		}
-  		.references a.open-edx-logo , .references a.eco-project-logo {
-  			 &:hover, &:focus, &:active {
-		      	border-bottom:none;
-		      }
-  		}
-  		.references .additional-logo-info {
-  			font-size:0.8em;
-  			margin-top:15px;
-  			
-  			.eco-agreement {
-  				font-size:0.9em;
-  			}
-  			span {
-  				display:block;
-  				
-  				&.in-collab {
-  					margin-top:-2px
-  				}
-  			}
-  		}
-  		.eco-references {
-  			float:right;
-  			width: 260px;
-  			border-right: 1px solid #ebebeb ;
-  			padding-right:30px;
-  			
-  			.additional-logo-info {
-  				display:block;
-  				text-align:right;
-  			}
-  			.eco-loghi-container {
-  				@include clearfix;
-  				margin-top:7px;
-  				.eco-loghi {
-  					float:left;
-  					width: flex-grid(6,12);
-  				}
-  				.eco-project-logo {
-  					float:right;
-  				}
-  			}
-  		}
-  		.built-on {
-  			float:right;
-  			width: 180px;
-  			@include clearfix;
-  		}
-  		.terms {
-  		 	clear:left;
-  		 	margin-top:10px;
-  		}
-  		nav.nav-terms {
-  		  li {
-  		   float:left;
-  		   display:inline;
-  		   padding:5px;
-  		   font-size:0.8em;
-  		   border-right: 1px dotted $base-font-color ;
-  		   &:last-child {
-  		   	border:none;
-  		   }
-  		   a {
-  		     color:$base-font-color;
-  		     &.standard-link {
-  		     	color:$link-color;
-  		     }
-  		   }
-  		  }
-  		}
-	}
+html .wrapper-footer {
+  footer#footer-openedx {
+		.nav-colophon ol {
+      a {
+        font-family: $serif;
+      }
+    }
+    .references, .colophon {
+      width: flex-grid(6, 12);
+      margin: 0;
+    }
+    h1.logo {
+      float: left;
+      margin: -2px 39px 0px 0px;
+      position: relative;
+      a {
+        color: $link-color;
+        display: block;
+        &:hover, &:focus, &:active {
+          border-bottom: none;
+        }
+      }
+    }
+    .references a.open-edx-logo, .references a.eco-project-logo {
+      &:hover, &:focus, &:active {
+        border-bottom: none;
+      }
+    }
+    .references .additional-logo-info {
+      font-size: 0.8em;
+      margin-top: 15px;
+      .eco-agreement {
+        font-size: 0.9em;
+      }
+      span {
+        display: block;
+        &.in-collab {
+          margin-top: -2px;
+        }
+      }
+    }
+    .eco-references {
+      float: right;
+      width: 260px;
+      border-right: 1px solid #ebebeb;
+      padding-right: 30px;
+      .additional-logo-info {
+        display: block;
+        text-align: right;
+      }
+      .eco-loghi-container {
+        @include clearfix;
+        margin-top: 7px;
+        .eco-loghi {
+          float: left;
+          width: flex-grid(6, 12);
+        }
+        .eco-project-logo {
+          float: right;
+        }
+      }
+    }
+    .built-on {
+      float: right;
+      width: 180px;
+      @include clearfix;
+    }
+    .terms {
+      clear: left;
+      margin-top: 10px;
+    }
+    nav.nav-terms {
+      li {
+        float: left;
+        display: inline;
+        padding: 5px;
+        font-size: 0.8em;
+        border-right: 1px dotted $base-font-color;
+        &:last-child {
+          border: none;
+        }
+        a {
+          color: $base-font-color;
+          &.standard-link {
+            color: $link-color;
+          }
+        }
+      }
+    }
+  }
 }

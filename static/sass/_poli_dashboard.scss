@@ -8,7 +8,7 @@
 	}
 	.profile-sidebar header.profile {
 		background-color:$polimi-ciano;
-		
+
 		h1.user-name {
 			color: white;
 		}
@@ -18,7 +18,7 @@
 			display:inline;
 		}
 	}
-	
+
 	.profile-sidebar .user-info>ul li span.data .auth-provider .provider {
 		width: flex-grid(8);
 	}
@@ -39,21 +39,20 @@
 			margin-bottom:40px;
 			border-bottom:2px solid $gray-3;
 		}
-		
+
 		a.unenroll, a.email-settings {
 			color: $polimi-ciano;
 		}
-		
+
 		.message-status .actions .action.survey-url .cta {
 		  font-size: 20px;
 		}
-		
+
 	}
-	
+
 	.my-courses .course .info>hgroup h3 a,  .my-courses .course .info>hgroup h3 span {
 		font-size:28px;
 	}
-	
-	
-} 
 
+
+}

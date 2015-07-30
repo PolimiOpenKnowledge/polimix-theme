@@ -1,14 +1,14 @@
-## mako 
-<%! from django.core.urlresolvers import reverse %> 
+## mako
+<%! from django.core.urlresolvers import reverse %>
 <%namespace name='static' file='/static_content.html'/>
 
 
 <div class="wrapper-footer">
-	<footer>
+	<footer id="footer-openedx">
 		<div class="colophon">
 			<nav class="nav-colophon">
 				<h1 class="logo">
-					<a target="_blank"  href="http://www.polimi.it"> 
+					<a target="_blank"  href="http://www.polimi.it">
 					 	<img src="${static.url('themes/polimix/images/logo_poli_home.png')}"  alt="Home page" />
 					</a>
 				</h1>
@@ -35,7 +35,7 @@
 					</ol>
 				</nav>
 			</div>
-			
+
 		</div>
 		<div class="references">
 			<div class="built-on">
@@ -44,7 +44,7 @@
 	    				height="50" alt="Powered by Open edX" />
 				</a>
 				<div class="additional-logo-info">
-				 <span>Built on <a target="_blank" href="http://code.edx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a></span><span class="in-collab">in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></span> 
+				 <span>Built on <a target="_blank" href="http://code.edx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a></span><span class="in-collab">in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></span>
 				 </div>
 			 </div>
 			<div class="eco-references">
@@ -58,11 +58,11 @@
 			    				 alt="ECO Project" />
 						</a>
 					</div>
-				
+
 			</div>
-		
+
 		</div>
-		
+
 
 	</footer>
 </div>

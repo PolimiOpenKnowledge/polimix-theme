@@ -1,5 +1,23 @@
+html .find-courses > header.search {
+	height:650px;
+
+	.inner-wrapper {
+		padding-top:320px;
+		margin-bottom:20px;
+	}
+}
+
+body.view-incourse.polimix-theme {
+  background-color: $gray-3;
+}
+.view-courses .content-wrapper {
+	position:relative;
+	top:-110px;
+
+}
+
 /*** Course list ***/
-.highlighted-courses .courses , .find-courses .courses {
+html .highlighted-courses .courses ,html .find-courses .courses {
     .course {
     	.info .desc {
     		font-size:0.90em;
@@ -9,7 +27,7 @@
     		border-radius:0;
     		left:86%;
     		top:-11px;
-    		
+
     		&:after {
     			width: 0px;
 			height: 0px;
@@ -18,9 +36,9 @@
 			border-color: transparent transparent transparent shade($red, 50%); /* altrimenti #690002*/
 			right: -9px;
     		}
-    		
+
     	}
-    	
+
     	.status.enrollment {
     		background:$red;
     		@include transform(rotate(0deg));
@@ -65,7 +83,7 @@
 	border: 1px solid $polimi-ciano;
 	padding: 10px;
 	color: $polimi-ciano;
-	
+
 	p {
 		margin-bottom:0;
 		color:$polimi-ciano;
@@ -79,7 +97,7 @@
 		padding: 0 10px;
 		text-transform: uppercase;
 	}
-	
+
 	p {
 		margin-bottom:0;
 		padding: 0 10px;
@@ -97,13 +115,13 @@
 }
 
 .course-info .course-sidebar {
-	
+
 	.course-summary {
 		header::after {
 			background-image:linear-gradient( $black 0%,$black)
 		}
 		background:$gray-0;
-		
+
 		.important-dates li {
 			border-bottom:1px dotted $black;
 		}
@@ -111,16 +129,4 @@
 
 }
 
-.view-courses .content-wrapper {
-	position:relative;
-	top:-110px;
-	
-}
-.find-courses > header.search {
-	height:650px;
-	
-	.inner-wrapper {
-		padding-top:320px;
-	}
-}
 @include legenda-corsi("find-courses > header");

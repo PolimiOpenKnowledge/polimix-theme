@@ -109,7 +109,7 @@ import calendar
   </header>
 </section>
 <section class="intro-polimi">
-	% if settings.FEATURES['AUTH_USE_SHIB']:	
+	% if settings.FEATURES['AUTH_USE_SHIB']:
 		  <p class="instructions">
 		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti registrati a POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user you can log in directly using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise register to POK by filling out the form.</span>
 		  </p>
@@ -137,7 +137,7 @@ import calendar
         <div class="form-actions form-third-party-auth">
 
         % for enabled in provider.Registry.enabled():
-          % if not enabled.BACKEND_CLASS.name=="ecoopenid-auth":
+          % if not enabled.backend_name=="ecoopenid-auth":
           ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
           <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}</button>
           %endif
@@ -145,7 +145,7 @@ import calendar
 
         </div>
         <%
-         notecoprovider=[x for x in provider.Registry.enabled() if not x.BACKEND_CLASS.name == "ecoopenid-auth"]
+         notecoprovider=[x for x in provider.Registry.enabled() if not x.backend_name == "ecoopenid-auth"]
         %>
         % if len(notecoprovider)>0 :
         <span class="deco-divider">
@@ -174,8 +174,8 @@ import calendar
       % else:
 
       <p class="instructions">
-      	<span class="it">I campi obbligatori sono <strong>in grassetto e indicati con un asterisco (*)</strong>. 
-      
+      	<span class="it">I campi obbligatori sono <strong>in grassetto e indicati con un asterisco (*)</strong>.
+
       	</span>
       	<br/>
        <span class="en">${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
@@ -193,7 +193,7 @@ import calendar
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
             <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
-            % if settings.FEATURES['AUTH_USE_SHIB']:	
+            % if settings.FEATURES['AUTH_USE_SHIB']:
 	            <span class="tip tip-input" id="id="email-tip>
 		            <span class="it">Se hai una mail @polimi.it, accedi con <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>
 		            <span class="en">If you have a @polimi.it e-mail account, sign in with <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>

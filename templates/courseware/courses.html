@@ -41,15 +41,15 @@
     logo_alt_text = "Stanford Seal Logo"
 
   # course_index_overlay_text = microsite.get_value('course_index_overlay_text', _("Explore courses from {platform_name}.").format(platform_name=platform_name))
-  course_index_overlay_text = _("Explore free courses from Polimi Open knowledge") 
+  course_index_overlay_text = _("Explore free courses from Polimi Open knowledge")
 
   # not sure why this is, but if I use static.url('images/edx_bw.png') then the HTML rendering
   # of this template goes wonky
 
   # logo_file = microsite.get_value(
   #  'course_index_overlay_logo_file', settings.STATIC_URL + 'images/edx_bw.png')
-  
-  logo_file = static.url('themes/polimix/images/POK_logo.jpg')
+
+  logo_file = 'themes/polimix/images/POK_logo.jpg'
   logo_alt_text = _("{platform_name} Logo").format(platform_name=platform_name)
 %>
 
@@ -59,7 +59,7 @@
     <div class="inner-wrapper main-search">
       <hgroup>
         <div class="logo">
-          <img src="${static.url('themes/polimix/images/POK_logo.jpg')}" alt="${logo_alt_text}" />
+          <img src="${static.url(logo_file)}" alt="${logo_alt_text}" />
         </div>
         <h2>${course_index_overlay_text}</h2>
       </hgroup>

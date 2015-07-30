@@ -2,7 +2,7 @@
 
 @mixin current-page($page-selector,$link-selector,$selected-color){
 	 .#{$page-selector} {
-	 
+
 	 	header.global li.#{$link-selector} a {
 	 		border-bottom:1px $selected-color solid;
 	 		color:$selected-color !important; // important in edx source file! Need to remove at origin
@@ -18,7 +18,7 @@
 				top: 100%;
 			}
 	 	}
-	 	
+
 	 	.wrapper-footer footer {
 			.colophon .nav-colophon li.#{$link-selector} {
 			  		 a {
@@ -26,15 +26,15 @@
 			  		}
 		  	}
 		}
-	 	
+
 	 }
 }
 
-header.global .nav-global li a, .view-register .nav-global-04 a{
+/*header.global .nav-global li a, .view-register .nav-global-04 a{
 
 	color:$black !important;  // important in edx source file! Need to remove at origin
-}
-header.global .nav-courseware li .cta-login {
+}*/
+html header.global .nav-courseware li .cta-login {
 	font-weight: bold;
 	text-transform: uppercase;
 }
