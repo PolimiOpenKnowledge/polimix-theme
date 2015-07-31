@@ -1,58 +1,54 @@
 .view-dashboard header.global {
-	border-bottom: 1px solid $polimi-ciano;
+  border-bottom: 1px solid $polimi-ciano;
 }
 
 .content-wrapper .dashboard {
-	.activation-message span.it {
-		display:block;
-	}
-	.profile-sidebar header.profile {
-		background-color:$polimi-ciano;
-
-		h1.user-name {
-			color: white;
-		}
-	}
-	.profile-sidebar .user-info>ul li span {
-		&.it , &.en, &.locale-separator {
-			display:inline;
-		}
-	}
-
-	.profile-sidebar .user-info>ul li span.data .auth-provider .provider {
-		width: flex-grid(8);
-	}
-	.my-courses {
-		header h2 {
-			font-weight:600;
-			color: $black;
-		}
-		.course .cover {
-			border-bottom:1px solid $gray-3;
-			height:auto;
-			img {
-				min-height:0;
-			}
-		}
-		.listing-courses .course-item {
-			padding-bottom:40px;
-			margin-bottom:40px;
-			border-bottom:2px solid $gray-3;
-		}
-
-		a.unenroll, a.email-settings {
-			color: $polimi-ciano;
-		}
-
-		.course .wrapper-messages-primary .message.message-status .actions .action.survey-url .cta {
-		  font-size: 20px;
-		}
-
-	}
-
-	.my-courses .course .info>hgroup h3 a,  .my-courses .course .info>hgroup h3 span {
-		font-size:28px;
-	}
-
-
+  .activation-message span.it {
+    display: block;
+  }
+  .profile-sidebar header.profile {
+    background-color: $polimi-ciano;
+    h1.user-name {
+      color: white;
+    }
+  }
+  .profile-sidebar .user-info > ul li span {
+    &.it,
+    &.en,
+    &.locale-separator {
+      display: inline;
+    }
+  }
+  .profile-sidebar .user-info > ul li span.data .auth-provider .provider {
+    width: flex-grid(8);
+  }
+  .my-courses {
+    header h2 {
+      font-weight: 600;
+      color: $black;
+    }
+    .course .cover {
+      height: auto;
+      border-bottom: 1px solid $gray-3;
+      img {
+        min-height: 0;
+      }
+    }
+    .listing-courses .course-item {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid $gray-3;
+    }
+    a.unenroll,
+    a.email-settings {
+      color: $polimi-ciano;
+    }
+    .course .wrapper-messages-primary .message.message-status .actions .action.survey-url .cta {
+      font-size: 20px;
+    }
+  }
+  .my-courses .course .info > hgroup h3 a,
+  .my-courses .course .info > hgroup h3 span {
+    font-size: 28px;
+  }
 }

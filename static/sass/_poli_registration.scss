@@ -1,181 +1,177 @@
-@mixin account-header($background)  {
-	/*border:none;*/
-	height:150px;
-	h1.title {
-		background:$background;
-		margin-bottom:0;
-		padding:3px;
-		left:auto;
-		right:30px;
-		opacity:0.8;
-		span.title-sub, span.title-super {
-			display:inline;
-		}
-		span.title-sub {
-			text-transform:none;
-		}
-	}
+@mixin account-header($background) {
+  /*border:none;*/
+  height: 150px;
+  h1.title {
+    right: 30px;
+    left: auto;
+    margin-bottom: 0;
+    padding: 3px;
+    opacity: .8;
+    background: $background;
+    span.title-sub,
+    span.title-super {
+      display: inline;
+    }
+    span.title-sub {
+      text-transform: none;
+    }
+  }
 }
 
 .polimix-theme.view-register {
-
-	.form-actions button[type="submit"] {
-		width:270px;
-	}
-	header.global {
-		nav {
-			width:auto;
-		}
-	}
-	.introduction {
-		header {
-			 @include account-header($gray-1);
-		}
-	}
-
-	.register {
-		aside {
-			width:flex-grid(1,3);
-			.cta {
-				background:$gray-0;
-				padding:15px;
-				&.aunica-login {
-					background:$polimi-ciano-50;
-					border-radius:4px;
-					border:2px solid $polimi-ciano;
-
-				}
-				.instructions {
-				   margin-bottom:0;
-				}
-			}
-			.aunica-login h3 {
-				color:$polimi-ciano;
-			}
-		}
-		section.content {
-			width:flex-grid(2,3);
-			margin-right:flex-gutter(6);
-		}
-
-		section .aunica-login h3, section .pok-user h3 {
-		 font-size:1.6em;
-
-		}
-		.field .it {
-			display:block;
-		}
-		.link2button {
-			display:block;
-			color:$gray-1;
-			background-color:$polimi-ciano;
-			box-shadow:none;
-			&:hover , &:focus, &:active {
-				border-bottom:0;
-			}
-		}
-		.eco-login .link2button {
-		  background-color: $eco-yellow;
-		}
-
-	}
-
+  .form-actions button[type='submit'] {
+    width: 270px;
+  }
+  header.global {
+    nav {
+      width: auto;
+    }
+  }
+  .introduction {
+    header {
+      @include account-header($gray-1);
+    }
+  }
+  .register {
+    aside {
+      width: flex-grid(1, 3);
+      .cta {
+        padding: 15px;
+        background: $gray-0;
+        &.aunica-login {
+          border: 2px solid $polimi-ciano;
+          border-radius: 4px;
+          background: $polimi-ciano-50;
+        }
+        .instructions {
+          margin-bottom: 0;
+        }
+      }
+      .aunica-login h3 {
+        color: $polimi-ciano;
+      }
+    }
+    section.content {
+      width: flex-grid(2, 3);
+      margin-right: flex-gutter(6);
+    }
+    section .aunica-login h3,
+    section .pok-user h3 {
+      font-size: 1.6em;
+    }
+    .field .it {
+      display: block;
+    }
+    .link2button {
+      display: block;
+      color: $gray-1;
+      background-color: $polimi-ciano;
+      box-shadow: none;
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: 0;
+      }
+    }
+    .eco-login .link2button {
+      background-color: $eco-yellow;
+    }
+  }
 }
-
 
 .polimix-theme.view-login {
-	header.global {
-		nav {
-			width:auto;
-		}
-	}
-	.introduction {
-		header {
-			 @include account-header($gray-1);
-		}
-	}
-	.login {
-		section.content {
-			width:flex-grid(2,3);
-			margin-right:flex-gutter(6);
-		}
-		section .aunica-login h3 , section .pok-user h3 {
-			font-size:1.6em;
-		}
-		aside {
-			width:flex-grid(1,3);
-			.cta {
-				background:$gray-0;
-				padding:15px;
+  header.global {
+    nav {
+      width: auto;
+    }
+  }
+  .introduction {
+    header {
+      @include account-header($gray-1);
+    }
+  }
+  .login {
+    section.content {
+      width: flex-grid(2, 3);
+      margin-right: flex-gutter(6);
+    }
+    section .aunica-login h3,
+    section .pok-user h3 {
+      font-size: 1.6em;
+    }
+    aside {
+      width: flex-grid(1, 3);
+      .cta {
+        padding: 15px;
+        background: $gray-0;
+        &.aunica-login {
+          border: 2px solid $polimi-ciano;
+          border-radius: 4px;
+          background: $polimi-ciano-50;
+        }
+        .instructions {
+          margin-bottom: 0;
+        }
+      }
+      .aunica-login h3 {
+        color: $polimi-ciano;
+      }
+    }
+    .link2button {
+      display: block;
+      color: $gray-1;
+      background-color: $polimi-ciano;
+      box-shadow: none;
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: 0;
+      }
+    }
+    .eco-login .link2button {
+      background-color: $eco-yellow;
+    }
+    .login form .field.required label:after {
+      content: '';
+      //remove * for login form
 
-				&.aunica-login {
-					background:$polimi-ciano-50;
-					border-radius:4px;
-					border:2px solid $polimi-ciano;
-
-				}
-
-				.instructions {
-				   margin-bottom:0;
-				}
-			}
-			.aunica-login h3 {
-				color:$polimi-ciano;
-			}
-		}
-
-		.link2button {
-			display:block;
-			color:$gray-1;
-			background-color:$polimi-ciano;
-			box-shadow:none;
-			&:hover , &:focus, &:active {
-				border-bottom:0;
-			}
-		}
-		.eco-login .link2button {
-		  background-color: $eco-yellow;
-		}
-
-		.login form .field.required label:after {
-			content:"";  //remove * for login form
-		}
-	}
-
+    }
+  }
 }
 
-.view-register , .view-login {
-	.introduction {
-		width:960px;
-	}
-	.intro-polimi {
-		@include box-sizing(border-box);
-	    @include clearfix;
-	    margin: 0 auto;
-	    background: $container-bg;
-		width:960px;
-		margin:0 auto;
-		padding:10px;
-		.instructions {
-			.locale-separator {
-				display:none;
-			}
-			span.it, span.en {
-				display:block;
-			}
-		}
-
-	}
-
+.view-register,
+.view-login {
+  .introduction {
+    width: 960px;
+  }
+  .intro-polimi {
+    width: 960px;
+    margin: 0 auto;
+    margin: 0 auto;
+    padding: 10px;
+    background: $container-bg;
+    @include box-sizing(border-box);
+    @include clearfix;
+    .instructions {
+      .locale-separator {
+        display: none;
+      }
+      span.it,
+      span.en {
+        display: block;
+      }
+    }
+  }
 }
 
 .view-passwordreset {
-    header.global {
-		.nav-courseware, ol.nav-global {
-			display:none;
-		}
-	}
-	.wrapper-footer {
-		display:none;
-	}
+  header.global {
+    .nav-courseware,
+    ol.nav-global {
+      display: none;
+    }
+  }
+  .wrapper-footer {
+    display: none;
+  }
 }

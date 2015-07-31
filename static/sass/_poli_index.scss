@@ -16,11 +16,11 @@
   height: 80px;
   opacity: $home-opacity;
   .nav-global li a {
-    color: $black;
     padding: 5px 5px 0 5px;
+    color: $black;
   }
   h1.logo {
-    margin: -10px 39px 0px 0px;
+    margin: -10px 39px 0 0;
     a {
       img {
         height: 80px;
@@ -28,8 +28,8 @@
     }
   }
   nav {
-    padding: 10px 10px 0;
     height: 70px;
+    padding: 10px 10px 0;
     ol.user {
       margin-top: 15px;
     }
@@ -54,39 +54,39 @@
 .polimix-theme .home > header {
   height: 650px;
   .outer-wrapper {
+    margin-bottom: 0;
     padding: 320px 10px 0 10px;
-    margin-bottom:0;
   }
   .title {
-    opacity: $home-opacity;
     width: flex-grid(6) + flex-gutter();
     //margin-left: flex-grid(2);
     margin-right: 0;
     padding: 0;
+    opacity: $home-opacity;
   }
   .title > hgroup {
     width: 100%;
     padding: 11px 10px 0 10px;
     h1 {
-      color: $polimi-ciano;
-      font-size: 3em;
-      text-align: center;
       font-family: $serif;
-      letter-spacing: 4px;
+      font-size: 3em;
       margin-left: 3px;
+      text-align: center;
+      letter-spacing: 4px;
+      color: $polimi-ciano;
     }
     h2 {
-      text-transform: initial;
-      text-align: right;
       font-style: normal;
-      margin-right: 30px;
       margin-top: -15px;
+      margin-right: 30px;
+      text-align: right;
+      text-transform: initial;
     }
   }
   .media .hero {
     background: $polimi-ciano url($video-thumb-url) center;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 

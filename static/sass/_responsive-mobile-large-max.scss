@@ -1,49 +1,49 @@
 @media screen and (max-width: $mobile-large + $gw-gutter) {
-	@include mobile("responsive", $mobile-large);
-	.polimix-theme {
-		.home > header {
-			.title {
-				width: flex-grid(8);
-				margin-left: flex-grid(1);
-			}
-			.media .hero {
-				background-size:contain;
-				background-repeat:no-repeat;
-				background-position:center;
-			}
-		}
+  @include mobile("responsive", $mobile-large);
+  .polimix-theme {
+    .home > header {
+      .title {
+        width: flex-grid(8);
+        margin-left: flex-grid(1);
+      }
+      .media .hero {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .highlighted-courses .courses,
+    .find-courses .courses {
+      .courses-listing .courses-listing-item {
+        width: flex-grid(6);
+        // revert rule for desktop
+        &:nth-child(3n+3) {
+          margin-right: flex-gutter();
+        }
+        // apply rule for mobile
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+      }
+    }
+    .container.about {
+      font-size: .9em;
+      .media {
+        .hero {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      .vision {
+        top: -60px;
+        // goes on 2 lines
 
-			.highlighted-courses .courses , .find-courses .courses {
-			.courses-listing .courses-listing-item {
-				width: flex-grid(6);
-
-				// revert rule for desktop
-				&:nth-child(3n+3) {
-	          		margin-right:  flex-gutter();
-	        	}
-	        	// apply rule for mobile
-				&:nth-child(2n+2) {
-	          		margin-right: 0;
-	        	}
-			}
-
-		}
-		.container.about {
-			font-size:0.9em;
-		 	.media {
-				.hero {
-					background-size:contain;
-					background-repeat:no-repeat;
-					background-position:center;
-				}
-			}
-			.vision {
-				top:-60px // goes on 2 lines
-			}
-		}
-	}
-
+      }
+    }
+  }
 }
+
 @media screen and (max-width: $ipad-portrait + $gw-gutter) {
-	@include mobile("responsive", $ipad-portrait);
+  @include mobile("responsive", $ipad-portrait);
 }

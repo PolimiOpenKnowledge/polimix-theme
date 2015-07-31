@@ -1,131 +1,127 @@
 html .find-courses > header.search {
-	height:650px;
-
-	.inner-wrapper {
-		padding-top:320px;
-	}
+  height: 650px;
+  .inner-wrapper {
+    padding-top: 320px;
+  }
 }
 
 body.view-incourse.polimix-theme {
   background-color: $gray-3;
 }
-.view-courses .content-wrapper {
-	position:relative;
-	top:-110px;
 
+.view-courses .content-wrapper {
+  position: relative;
+  top: -110px;
 }
 
 /*** Course list ***/
-html .highlighted-courses .courses ,html .find-courses .courses {
-    .course {
-    	.info .desc {
-    		font-size:0.90em;
-    	}
-    	.status {
-    		background:$red;
-    		border-radius:0;
-    		left:83%;
-    		top:-11px;
-
-    		&:after {
-    			width: 0px;
-			height: 0px;
-			border-style: inset;
-			border-width: 10px 0 0 10px;
-			border-color: transparent transparent transparent shade($red, 50%); /* altrimenti #690002*/
-			right: -9px;
-    		}
-
-    	}
-
-    	.status.enrollment {
-    		background:$red;
-    		@include transform(rotate(0deg));
-    		left:2%;
-    		&:after {
-    			border-bottom: 6px solid shade($red, 50%);
-       			border-right: 6px solid transparent;
-		        content: "";
-		        display: block;
-		        height: 0;
-		        position: absolute;
-		        right: -9px;
-		        top: 0;
-		        width: 0;
-    		}
-    		&:before {
-    			display:none;
-    		}
-    	}
-    	header.course-preview {
-    		.info-link {
-    			color:$gray-1;
-    			background:$polimi-ciano;
-    		}
-    		&:hover, &:focus {
-    			.info-link {
-    				color:$polimi-ciano;
-    				background:$gray-1;
-    			}
-    		}
-    	}
+html .highlighted-courses .courses,
+html .find-courses .courses {
+  .course {
+    .info .desc {
+      font-size: .90em;
     }
+    .status {
+      top: -11px;
+      left: 83%;
+      border-radius: 0;
+      background: $red;
+      &:after {
+        right: -9px;
+        width: 0;
+        height: 0;
+        border-width: 10px 0 0 10px;
+        border-style: inset;
+        border-color: transparent transparent transparent shade($red, 50%);
+        /* altrimenti #690002*/
+      }
+    }
+    .status.enrollment {
+      left: 2%;
+      background: $red;
+      @include transform(rotate(0deg));
+      &:after {
+        position: absolute;
+        top: 0;
+        right: -9px;
+        display: block;
+        width: 0;
+        height: 0;
+        content: '';
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid shade($red, 50%);
+      }
+      &:before {
+        display: none;
+      }
+    }
+    header.course-preview {
+      .info-link {
+        color: $gray-1;
+        background: $polimi-ciano;
+      }
+      &:hover,
+      &:focus {
+        .info-link {
+          color: $polimi-ciano;
+          background: $gray-1;
+        }
+      }
+    }
+  }
 }
 
 /** About Course **/
 .short-desc {
-	line-height: 1.4;
-	font-size:1.5em;
-	margin-top:10px;
+  font-size: 1.5em;
+  line-height: 1.4;
+  margin-top: 10px;
 }
+
 .aunica-warning {
-	border: 1px solid $polimi-ciano;
-	padding: 10px;
-	color: $polimi-ciano;
-
-	p {
-		margin-bottom:0;
-		color:$polimi-ciano;
-	}
+  padding: 10px;
+  color: $polimi-ciano;
+  border: 1px solid $polimi-ciano;
+  p {
+    margin-bottom: 0;
+    color: $polimi-ciano;
+  }
 }
-.closing-warning {
-	border: 1px solid $error-red;
-	padding: 10px;
-	h3 {
-		color: $error-red;
-		padding: 0 10px;
-		text-transform: uppercase;
-	}
 
-	p {
-		margin-bottom:0;
-		padding: 0 10px;
-	}
+.closing-warning {
+  padding: 10px;
+  border: 1px solid $error-red;
+  h3 {
+    padding: 0 10px;
+    text-transform: uppercase;
+    color: $error-red;
+  }
+  p {
+    margin-bottom: 0;
+    padding: 0 10px;
+  }
 }
 
 .course-info .container {
-		box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register {
-	background-color: #E4FFFF;
-	border: 1px solid $polimi-ciano;
-	color: $polimi-ciano;
+  color: $polimi-ciano;
+  border: 1px solid $polimi-ciano;
+  background-color: #e4ffff;
 }
 
 .course-info .course-sidebar {
-
-	.course-summary {
-		header::after {
-			background-image:linear-gradient( $black 0%,$black)
-		}
-		background:$gray-0;
-
-		.important-dates li {
-			border-bottom:1px dotted $black;
-		}
-	}
-
+  .course-summary {
+    background: $gray-0;
+    header::after {
+      background-image: linear-gradient($black 0%, $black);
+    }
+    .important-dates li {
+      border-bottom: 1px dotted $black;
+    }
+  }
 }
 
 @include legenda-corsi("find-courses > header");

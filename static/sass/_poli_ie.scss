@@ -1,10 +1,10 @@
 .lte9 {
-	form {
-		input[type="text"],
-		input[type="email"],
-		input[type="password"],
-		textarea.text {
-			border: 1px $black solid;
-		}
-	}
+  form {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    textarea.text {
+      border: 1px $black solid;
+    }
+  }
 }

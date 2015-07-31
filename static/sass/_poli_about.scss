@@ -1,140 +1,131 @@
-html .container.about, section.about.outside-app {
-	padding:0 30px 20px 30px;
-	width:auto;
+html .container.about,
+section.about.outside-app {
+  width: auto;
+  padding: 0 30px 20px 30px;
 }
 
 .container.about {
-  	font-family:$sans-serif;
-  	letter-spacing: 1px;
-  	-webkit-font-smoothing: antialiased;
-
-	img {
-      display: block;
-      width: 100%;
-	}
-	#banner {
-		position: relative;
-
-	}
-	.media {
-      background: #FFF;
-      border: 1px solid $border-color-3;
-      border-left: 0;
+  font-family: $sans-serif;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  img {
+    display: block;
+    width: 100%;
+  }
+  #banner {
+    position: relative;
+  }
+  .media {
+    //float: right;
+    position: absolute;
+    z-index: 10;
+    top: 60%;
+    width: flex-grid(2, 10) + flex-gutter();
+    // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
+    height: 120px;
+    vertical-align: top;
+    border: 1px solid $border-color-3;
+    border-left: 0;
+    background: #fff;
+    @include box-sizing(border-box);
+    @include animation(harvard-slide 1.15s ease-out);
+    @include animation-fill-mode(both);
+    @include animation-delay(2s);
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      background: $white url($pok-logo-ciano-url) left no-repeat;
+    }
+  }
+  .vision {
+    position: relative;
+    top: -30px;
+    text-align: center;
+    opacity: $home-opacity;
+    background-color: $black;
+    .sub {
+      font-size: 1.3em;
+      color: $gray-1;
+    }
+  }
+  .intro-lego {
+    font-size: 2em;
+    padding: 10px 0;
+    text-align: center;
+    color: $polimi-ciano;
+  }
+  .boxes-wrapper {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .box {
+    float: left;
+    width: flex-grid(2, 6);
+    margin-left: flex-gutter(6);
+    .inner-box {
+      min-height: 400px;
+      margin: 0 auto;
+      padding-top: 10px;
+      background: #fff;
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
       @include box-sizing(border-box);
-      // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
-      height: 120px;
-      //float: right;
-      position: absolute;
-      top:60%;
-      vertical-align: top;
-      width: flex-grid(2,10) + flex-gutter();
-      z-index: 10;
-			@include animation(harvard-slide 1.15s ease-out);
-      @include animation-fill-mode(both);
-      @include animation-delay(2s);
-	      &:hover, &:focus {
-	        text-decoration: underline;
-	      }
-
-	      .hero {
-	        height: 100%;
-	        overflow: hidden;
-	        position: relative;
-	        background: $white url($pok-logo-ciano-url) left no-repeat;
-
-	      }
-     }
-     .vision {
-     	text-align:center;
-     	position:relative;
-     	top:-30px;
-     	background-color: $black;
-     	opacity:$home-opacity;
-     	.sub {
-     		font-size:1.3em;
-     		color:$gray-1;
-     	}
-     }
-     .intro-lego {
-     	font-size:2em;
-     	color:$polimi-ciano;
-     	text-align:center;
-     	padding:10px 0;
-     }
-	.boxes-wrapper {
-		margin:0 auto;
-		text-align:center;
-	}
-	.box {
-		float:left;
-		width:flex-grid(2,6);
-		margin-left: flex-gutter(6);
-
-		.inner-box {
-			min-height:400px;
-			padding-top:10px;
-			background: #fff;
-			@include box-sizing(border-box);
-      		box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
-      		margin:0 auto;
-      		p {
-
-      			text-align:left;
-				margin:20px auto;
-				width: 80%;
-				font-size:1.3em;
- 				min-height: 12em; // 5 lines
-
- 				strong {
- 					color: $black-bold;
- 				}
- 				&.from-to {
- 					min-height: 6em;
- 					strong {
- 						font-style:italic;
- 					}
- 				}
-      		}
-		}
-		&.before-box {
-			margin-left:0;
-			h3 {
-				background: $polimi-ciano url($pok-before-legend) 92% center no-repeat;
-			}
-		}
-      	&.during-box {
-      		h3 {
-				background: $polimi-ciano url($pok-during-legend) 92% center no-repeat;
-			}
-      	}
-      	&.after-box {
-      		h3 {
-				background: $polimi-ciano url($pok-after-legend) 92% center no-repeat;
-			}
-      	}
-
-		h3 {
-			font-size:2.2em;
-			line-height:1.6em;
-
-			color:$gray-1;
-			text-transform:uppercase;
-			width:90%;
-			margin-top:10px;
-			position:relative;
-			left:-10px;
-			padding-left:48px;
-			text-align:left;
-		}
-		img {
-			@include inline-block;
-  			max-width:80%;
-  			margin:flex-gutter();
-  			margin-bottom:30px;
-  			border:1px solid #efefef;
-		}
-	}
-
-
-
+      p {
+        font-size: 1.3em;
+        width: 80%;
+        min-height: 12em;
+        // 5 lines
+        margin: 20px auto;
+        text-align: left;
+        strong {
+          color: $black-bold;
+        }
+        &.from-to {
+          min-height: 6em;
+          strong {
+            font-style: italic;
+          }
+        }
+      }
+    }
+    &.before-box {
+      margin-left: 0;
+      h3 {
+        background: $polimi-ciano url($pok-before-legend) 92% center no-repeat;
+      }
+    }
+    &.during-box {
+      h3 {
+        background: $polimi-ciano url($pok-during-legend) 92% center no-repeat;
+      }
+    }
+    &.after-box {
+      h3 {
+        background: $polimi-ciano url($pok-after-legend) 92% center no-repeat;
+      }
+    }
+    h3 {
+      font-size: 2.2em;
+      line-height: 1.6em;
+      position: relative;
+      left: -10px;
+      width: 90%;
+      margin-top: 10px;
+      padding-left: 48px;
+      text-align: left;
+      text-transform: uppercase;
+      color: $gray-1;
+    }
+    img {
+      max-width: 80%;
+      margin: flex-gutter();
+      margin-bottom: 30px;
+      border: 1px solid #efefef;
+      @include inline-block;
+    }
+  }
 }

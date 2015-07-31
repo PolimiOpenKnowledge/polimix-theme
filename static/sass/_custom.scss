@@ -17,18 +17,18 @@
 @import "poli_ie";
 @import "responsive";
 
-
 .contact-us-tab {
-  top: 500px;
-  opacity: 0.85;
-  z-index: 99;
-  right: -35px;
   position: fixed;
+  z-index: 99;
+  top: 500px;
+  right: -35px;
+  opacity: .85;
   @include transform(rotate(90deg));
   a {
     padding: 5px;
     background-color: $polimi-ciano;
-    &:link, &:visited {
+    &:link,
+    &:visited {
       color: $gray-1;
     }
     &:hover {
@@ -41,37 +41,43 @@
 /***   Footer   ***/
 html .wrapper-footer {
   footer#footer-openedx {
-		.nav-colophon ol {
+    .nav-colophon ol {
       a {
         font-family: $serif;
       }
     }
-    .references, .colophon {
+    .references,
+    .colophon {
       width: flex-grid(6, 12);
       margin: 0;
     }
     h1.logo {
-      float: left;
-      margin: -2px 39px 0px 0px;
       position: relative;
+      float: left;
+      margin: -2px 39px 0 0;
       a {
-        color: $link-color;
         display: block;
-        &:hover, &:focus, &:active {
+        color: $link-color;
+        &:hover,
+        &:focus,
+        &:active {
           border-bottom: none;
         }
       }
     }
-    .references a.open-edx-logo, .references a.eco-project-logo {
-      &:hover, &:focus, &:active {
+    .references a.open-edx-logo,
+    .references a.eco-project-logo {
+      &:hover,
+      &:focus,
+      &:active {
         border-bottom: none;
       }
     }
     .references .additional-logo-info {
-      font-size: 0.8em;
+      font-size: .8em;
       margin-top: 15px;
       .eco-agreement {
-        font-size: 0.9em;
+        font-size: .9em;
       }
       span {
         display: block;
@@ -83,15 +89,15 @@ html .wrapper-footer {
     .eco-references {
       float: right;
       width: 260px;
-      border-right: 1px solid #ebebeb;
       padding-right: 30px;
+      border-right: 1px solid #ebebeb;
       .additional-logo-info {
         display: block;
         text-align: right;
       }
       .eco-loghi-container {
-        @include clearfix;
         margin-top: 7px;
+        @include clearfix;
         .eco-loghi {
           float: left;
           width: flex-grid(6, 12);
@@ -112,10 +118,10 @@ html .wrapper-footer {
     }
     nav.nav-terms {
       li {
-        float: left;
+        font-size: .8em;
         display: inline;
+        float: left;
         padding: 5px;
-        font-size: 0.8em;
         border-right: 1px dotted $base-font-color;
         &:last-child {
           border: none;

@@ -11,6 +11,7 @@ $ipad-portrait: 768px;
 $mobile-large: 780px;
 $desktop-small: 960px;
 $desktop-large: 1280px;
+
 //-----------------
 //  Color variables (from polimi palette unless noted)
 //-----------------
@@ -18,75 +19,94 @@ $desktop-large: 1280px;
 //Ciano Polimi
 $polimi-ciano: #00acd7;
 $polimi-ciano-50: #eefcff;
-$polimi-ciano-25: lighten($polimi-ciano, 20%); //Important Heading BG Color
+$polimi-ciano-25: lighten($polimi-ciano, 20%);
 
-$red:#dc292d ;
+//Important Heading BG Color
+
+$red: #dc292d;
 
 //Cardinal Color Variables
 $cardinal-blue: #515790;
-$dark-blue: $polimi-ciano; //Link Color
-$cardinal-light:lighten($cardinal-blue, 18.5%); //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #afcde9; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$dark-blue: $polimi-ciano;
+
+//Link Color
+$cardinal-light: lighten($cardinal-blue, 18.5%);
+
+//Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #afcde9;
+
+//Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Azzurro Color Variables
 $azzurro: #fffff2;
-$azzurro-60: lighten($azzurro, 18.5%); //Main Border/HR Color
+$azzurro-60: lighten($azzurro, 18.5%);
+
+//Main Border/HR Color
 $azzurro-25: lighten($azzurro, 25%);
 
-
 //Gray Color Variables
-$gray: #3f3c30; //Main Text Color
-$gray-75: lighten($gray, 18.25%); //Lighter Text Color
+$gray: #3f3c30;
 
-$gray-3: #e9e6df; //Block/Course BG Color
+//Main Text Color
+$gray-75: lighten($gray, 18.25%);
+
+//Lighter Text Color
+
+$gray-3: #e9e6df;
+
+//Block/Course BG Color
 $gray-2: #f2f1eb;
 $gray-1: #fbfbf9;
-$gray-0: #f0f0f0; //Main BG Color
+$gray-0: #f0f0f0;
+
+//Main BG Color
 $white: #ffffff;
 
-$black: #707172; //#878889
+$black: #707172;
+
+//#878889
 $black-80: #585754;
 $black-bold: #444444;
 
-$eco-yellow:#EAAF31;
+$eco-yellow: #EAAF31;
 
 //-----------------
 //  Font Assignment
 //-----------------
 
-$theme-sans-font: 'Trebuchet MS';
+$theme-sans-font: "Trebuchet MS";
 $sans-serif: $theme-sans-font, $sans-serif;
 $body-font-family: $sans-serif;
 
-
-$theme-serif-font: 'Yanone Kaffeesatz';
+$theme-serif-font: "Yanone Kaffeesatz";
 $serif: $theme-serif-font, $serif;
-
 
 //-----------------
 //  Image Assignment
 //-----------------
-$pok-logo-ciano-url: '../themes/polimix/images/POK_logo_ciano.png';
+$pok-logo-ciano-url: "../themes/polimix/images/POK_logo_ciano.png";
 
-$pok-before-legend: '../themes/polimix/images/level/before.png';
-$pok-during-legend: '../themes/polimix/images/level/during.png';
-$pok-after-legend: '../themes/polimix/images/level/after.png';
+$pok-before-legend: "../themes/polimix/images/level/before.png";
+$pok-during-legend: "../themes/polimix/images/level/during.png";
+$pok-after-legend: "../themes/polimix/images/level/after.png";
 
 //-----------------
 //  Theme Element Assignments
 //-----------------
 
-$body-bg: $gray-1;    // eventually $gray-0
+$body-bg: $gray-1;
+
+// eventually $gray-0
 $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
 $header-image: none;
 $header-bg: $white;
 $courseware-header-image: none;
-$courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), .25);
+$courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), 0.25);
 $footer-bg: $white;
 $courseware-footer-border: 1px solid $azzurro-60;
-$courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
+$courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, 0.1));
 $courseware-footer-margin: 50px;
 
 $faded-hr-image-1: linear-gradient($azzurro-60 0%, $azzurro-60);
@@ -142,8 +162,6 @@ $action-primary-active-focused-shadow: none;
 $action-primary-disabled-bg: $gray-75;
 $action-prmary-disabled-fg: $gray-1;
 
-
-
 // actions - secondary
 $action-secondary-bg: $polimi-ciano;
 $action-secondary-fg: $gray;
@@ -183,10 +201,10 @@ $course-bg-image: none;
 $account-content-wrapper-bg: $gray-1;
 
 $course-profile-bg: $gray-1;
-$course-header-bg: transparentize($gray-1, .1);
+$course-header-bg: transparentize($gray-1, 0.1);
 
-$sidebar-chapter-bg-top: transparentize($gray-1, .3);
-$sidebar-chapter-bg-bottom: transparentize($gray-1, .9);
+$sidebar-chapter-bg-top: transparentize($gray-1, 0.3);
+$sidebar-chapter-bg-bottom: transparentize($gray-1, 0.9);
 $sidebar-chapter-bg: $gray-2;
 $sidebar-active-image: $gray-3;
 
@@ -194,36 +212,36 @@ $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
 //TOP HEADER IMAGE MARGIN
-$header_image_margin: 0px;
+$header-image-margin: 0px;
 
 //FOOTER MARGIN
-$footer_margin: ($baseline/4) 0;
+$footer-margin: ($baseline / 4) 0;
 
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url('../themes/polimix/images/polimi-pano.jpg');
+$homepage-bg-image: url("../themes/polimix/images/polimi-pano.jpg");
 
-$login-banner-image: url('../themes/polimix/images/group-of-people.jpg');
-$register-banner-image: url('../themes/polimix/images/group-of-people.jpg');
+$login-banner-image: url("../themes/polimix/images/group-of-people.jpg");
+$register-banner-image: url("../themes/polimix/images/group-of-people.jpg");
 
-$video-thumb-url: '../themes/polimix/images/POK_logo.png';
+$video-thumb-url: "../themes/polimix/images/POK_logo.png";
 
 //-----------------
 //  Mixin Styles
 //-----------------
-@mixin login_register_h1_style {
-   /* clip: auto !important;
-    height: 50px;
-    width: 550px;
-    margin-top: 50px;*/
+@mixin login-register-h1-style {
+  /* clip: auto !important;
+   height: 50px;
+   width: 550px;
+   margin-top: 50px;*/
 }
 
-@mixin footer_references_style {
-    margin: 0 !important;
-    text-align: right;
+@mixin footer-references-style {
+  margin: 0 !important;
+  text-align: right;
 }
 
-$home-opacity:0.94 ;
+$home-opacity: 0.94;
 
 @import "custom";
