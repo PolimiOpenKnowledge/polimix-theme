@@ -7,14 +7,14 @@
   	font-family:$sans-serif;
   	letter-spacing: 1px;
   	-webkit-font-smoothing: antialiased;
-	
+
 	img {
       display: block;
       width: 100%;
 	}
 	#banner {
 		position: relative;
-		 
+
 	}
 	.media {
       background: #FFF;
@@ -29,7 +29,9 @@
       vertical-align: top;
       width: flex-grid(2,10) + flex-gutter();
       z-index: 10;
-	  @extend .animation-harvard-slide;
+			@include animation(harvard-slide 1.15s ease-out);
+      @include animation-fill-mode(both);
+      @include animation-delay(2s);
 	      &:hover, &:focus {
 	        text-decoration: underline;
 	      }
@@ -39,7 +41,7 @@
 	        overflow: hidden;
 	        position: relative;
 	        background: $white url($pok-logo-ciano-url) left no-repeat;
-	
+
 	      }
      }
      .vision {
@@ -67,22 +69,22 @@
 		float:left;
 		width:flex-grid(2,6);
 		margin-left: flex-gutter(6);
-		
+
 		.inner-box {
-			min-height:400px;	
+			min-height:400px;
 			padding-top:10px;
 			background: #fff;
 			@include box-sizing(border-box);
       		box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.15), inset 0 0 0 1px rgba(255,255,255, 0.9);
       		margin:0 auto;
       		p {
-      			
+
       			text-align:left;
 				margin:20px auto;
 				width: 80%;
 				font-size:1.3em;
- 				min-height: 12em; // 5 lines 
- 				
+ 				min-height: 12em; // 5 lines
+
  				strong {
  					color: $black-bold;
  				}
@@ -114,7 +116,7 @@
 		h3 {
 			font-size:2.2em;
 			line-height:1.6em;
-			
+
 			color:$gray-1;
 			text-transform:uppercase;
 			width:90%;
