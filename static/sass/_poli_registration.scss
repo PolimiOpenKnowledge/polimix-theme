@@ -1,8 +1,8 @@
-%account-header {
+@mixin account-header($background)  {
 	/*border:none;*/
 	height:150px;
 	h1.title {
-		background:$gray-1;
+		background:$background;
 		margin-bottom:0;
 		padding:3px;
 		left:auto;
@@ -29,7 +29,7 @@
 	}
 	.introduction {
 		header {
-			 /*@extend %account-header;*/
+			 @include account-header($gray-1);
 		}
 	}
 
@@ -91,7 +91,7 @@
 	}
 	.introduction {
 		header {
-			 /*@extend %account-header;*/
+			 @include account-header($gray-1);
 		}
 	}
 	.login {
