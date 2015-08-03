@@ -13,14 +13,14 @@ body.view-incourse.polimix-theme {
   position: relative;
   top: -110px;
 }
-
+html .courses-container .courses .course .course-info .course-title {
+  font-size:0.87em;
+  margin: 5px 0 45px 0
+}
 /*** Course list ***/
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
-    .info .desc {
-      font-size: .90em;
-    }
     .status {
       top: -11px;
       left: 83%;
