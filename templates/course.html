@@ -6,7 +6,7 @@ from courseware.courses import course_image_url, get_course_about_section
 %>
 <%page args="course" />
 <article class="course" id="${course.id | h}" role="region" aria-label="${get_course_about_section(course, 'title')}">
-  <span class="course-classification">
+  <span class="course-more-info">
     ${get_course_about_section(course, 'more_info')}
   </span>
   %if course.is_newish:
