@@ -1,0 +1,23 @@
+%bg-before {
+    background-color: $color-classification-before;
+}
+%bg-during {
+    background-color: $color-classification-during;
+}
+%bg-after {
+    background-color: $color-classification-after;
+}
+%bg-teachers {
+    background-color: $color-classification-teachers;
+}
+%bg-citizens {
+    background-color: $color-classification-citizens;
+}
+%bg-researchers {
+    background-color: $color-classification-researchers;
+}
+@mixin classification-span-color($classification) {
+  &.classification-#{$classification} {
+    @extend %bg-#{$classification};
+  }
+}

@@ -69,6 +69,20 @@ html .find-courses .courses {
       }
     }
   }
+  // course classification
+  .course-more-info {
+     span {
+       color: $white;
+       text-align:center;
+       @include classification-span-color("before");
+       @include classification-span-color("during");
+       @include classification-span-color("after");
+       @include classification-span-color("teachers");
+       @include classification-span-color("citizens");
+       @include classification-span-color("researchers");
+
+     }
+  }
 }
 
 /** About Course **/
