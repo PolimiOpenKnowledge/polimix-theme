@@ -9,9 +9,6 @@ from courseware.courses import course_image_url, get_course_about_section
   <span class="course-more-info">
     ${get_course_about_section(course, 'more_info')}
   </span>
-  %if course.is_newish:
-    <span class="status">${_("New")}</span>
-  %endif
   <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
     <header class="course-image">
       <div class="cover-image">
@@ -20,6 +17,9 @@ from courseware.courses import course_image_url, get_course_about_section
       </div>
     </header>
     <section class="course-info" aria-hidden=true>
+      %if course.is_newish:
+        <span class="status">${_("New")}</span>
+      %endif
       <h2 class="course-name">
         <span class="course-organization">${get_course_about_section(course, 'university')}</span>
         <span class="course-code">${course.display_number_with_default}</span>

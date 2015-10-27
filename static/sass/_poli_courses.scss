@@ -21,8 +21,11 @@ html .courses-container .courses .course .course-info .course-title {
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
+    .course-info {
+      position:relative;
+    }
     .status {
-      top: -11px;
+      top: -22px;
       left: 83%;
       border-radius: 0;
       background: $red;
