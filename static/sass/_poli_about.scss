@@ -81,8 +81,6 @@ section.about.outside-app {
       @include box-sizing(border-box);
       p {
         font-size: 1em;
-        min-height: 9em;
-        // 5 lines
         margin: 20px 0 20px 30px;
         text-align: left;
         strong {
@@ -107,9 +105,9 @@ section.about.outside-app {
         position: relative;
         vertical-align: middle;
         word-break: break-word;
+        min-height: 9em;
       }
       .card-col-image {
-        display: table-cell;
         width:20%;
         img {
           border-radius: 50%;
