@@ -94,7 +94,7 @@ section.about.outside-app {
     }
     .card-horizontal {
       position: relative;
-
+      min-height: 14em;
       .card-row {
         display: table;
         width: 100%;
@@ -105,7 +105,6 @@ section.about.outside-app {
         position: relative;
         vertical-align: middle;
         word-break: break-word;
-        min-height: 9em;
       }
       .card-col-image {
         width:20%;
