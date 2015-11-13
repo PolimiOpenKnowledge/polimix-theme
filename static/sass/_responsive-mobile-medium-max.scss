@@ -1,6 +1,9 @@
 @media screen and (max-width: $mobile-medium + $gw-gutter) {
   @include mobile("responsive", $mobile-medium);
 
+  header.global .nav-global li , header.global .nav-global div {
+    margin: 0;
+  }
   //hide username with ignored size
   header.global .user a.user-link div {
     display: none ;
@@ -26,7 +29,15 @@
           width: 100%;
         }
       }
-
+      &.dashboard {
+        .my-courses {
+          width: 100%;
+          float: none;
+        }
+        ..profile-sidebar {
+          display :none;
+        }
+      }
 
     }
 
