@@ -11,6 +11,7 @@ from courseware.courses import course_image_url, get_course_about_section
   </span>
   <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
     <header class="course-image">
+      <span class="${course.language}"></span>
       %if course.language == "en":
         <span class="course-language course-language-${course.language}"></span>
       %endif
