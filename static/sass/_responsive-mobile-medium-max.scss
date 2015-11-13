@@ -15,6 +15,20 @@
       }
     }
 
-    
+    .content-wrapper section.container {
+      &.login , &.register {
+        section.content {
+          float: none;
+          width:100%;
+        }
+        aside {
+          float: none;
+          width: 100%;
+        }
+      }
+
+
+    }
+
   }
 }
