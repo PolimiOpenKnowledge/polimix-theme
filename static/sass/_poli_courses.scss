@@ -29,7 +29,8 @@ html .find-courses .courses {
     }
     .status {
       top: -22px;
-      left: 80%;
+      left: inherit;
+      right: 18px;
       border-radius: 0;
       background: $red;
       &:after {
