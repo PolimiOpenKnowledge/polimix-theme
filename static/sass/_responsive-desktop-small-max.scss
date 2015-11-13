@@ -22,8 +22,13 @@
         background-size: contain;
       }
     }
-    .box .inner-box p {
+    /*.box .inner-box p {
       min-height: 200px;
+    }*/
+    .box {
+      width: 100%;
+      display:block;
+      float: none;
     }
   }
   //override edx _footer.scss file which set 960px

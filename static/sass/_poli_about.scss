@@ -135,13 +135,13 @@ section.about.outside-app {
       color: $polimi-ciano;
       text-align: left;
       margin-left: 30px;
-      .classification-citizens {
+      &.classification-citizens {
         color:$color-classification-citizens;
       }
-      .classification-researchers {
+      &.classification-researchers {
         color:$color-classification-researchers;
       }
-      .classification-teachers {
+      &.classification-teachers {
         color:$color-classification-teachers;
       }
     }
