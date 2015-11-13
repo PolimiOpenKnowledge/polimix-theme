@@ -1,0 +1,3 @@
+@media screen and (max-width: $mobile-medium + $gw-gutter) {
+  @include mobile("responsive", $mobile-medium);
+}
