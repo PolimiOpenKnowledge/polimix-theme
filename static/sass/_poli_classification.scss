@@ -16,7 +16,7 @@
 %bg-researchers {
     background-color: $color-classification-researchers;
 }
-@mixin classification-span-color($classification) {
+@mixin classification-span-bg-color($classification) {
   &.classification-#{$classification} {
     @extend %bg-#{$classification};
   }

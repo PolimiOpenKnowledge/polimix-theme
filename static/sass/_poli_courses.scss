@@ -81,12 +81,12 @@ html .find-courses .courses {
        color: $white;
        text-align:center;
        display:block;
-       @include classification-span-color("before");
-       @include classification-span-color("during");
-       @include classification-span-color("after");
-       @include classification-span-color("teachers");
-       @include classification-span-color("citizens");
-       @include classification-span-color("researchers");
+       @include classification-span-bg-color("before");
+       @include classification-span-bg-color("during");
+       @include classification-span-bg-color("after");
+       @include classification-span-bg-color("teachers");
+       @include classification-span-bg-color("citizens");
+       @include classification-span-bg-color("researchers");
 
      }
   }
