@@ -14,11 +14,5 @@
     .course-info .container {
       box-sizing: content-box;
     }
-    .container.about .box .inner-box p {
-      min-height: 9em;
-      &.from-to {
-        min-height: 2em;
-      }
-    }
   }
 }

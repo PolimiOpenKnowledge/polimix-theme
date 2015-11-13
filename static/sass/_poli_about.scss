@@ -81,19 +81,12 @@ section.about.outside-app {
       @include box-sizing(border-box);
       p {
         font-size: 1em;
-        width: 70%;
-        min-height: 12em;
+        min-height: 9em;
         // 5 lines
-        margin: 20px 30px;
+        margin: 20px 0 20px 30px;
         text-align: left;
         strong {
           color: $black-bold;
-        }
-        &.from-to {
-          min-height: 6em;
-          strong {
-            font-style: italic;
-          }
         }
       }
     }
