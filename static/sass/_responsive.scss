@@ -13,7 +13,7 @@
   }
   header.global nav,
   .wrapper-footer footer,
-  content-wrapper section.container {
+  .content-wrapper section.container {
     // contain float right element reducing min-width (760px in original version)
     min-width: $width - $width / 4;
   }

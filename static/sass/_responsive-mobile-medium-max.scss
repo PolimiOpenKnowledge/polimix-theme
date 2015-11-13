@@ -1,3 +1,20 @@
 @media screen and (max-width: $mobile-medium + $gw-gutter) {
   @include mobile("responsive", $mobile-medium);
+
+  //hide username with ignored size
+  header.global .user a.user-link div {
+    display: none ;
+  }
+  .polimix-theme {
+    .home > header {
+      .outer-wrapper  .title {
+          width: 100%;
+      }
+      .media {
+        display: none;
+      }
+    }
+
+    
+  }
 }
