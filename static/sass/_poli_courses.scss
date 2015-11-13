@@ -92,6 +92,8 @@ html .find-courses .courses {
     position:absolute;
     right: 15px;
     top: 10px;
+    width: 32px;
+    height: 20px;
 
     &.course-language-en {
       background-image: url("../themes/polimix/images/flag_en.png");
