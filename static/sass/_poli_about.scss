@@ -84,7 +84,7 @@ section.about.outside-app {
         width: 70%;
         min-height: 12em;
         // 5 lines
-        margin: 20px auto;
+        margin: 20px 30px;
         text-align: left;
         strong {
           color: $black-bold;
@@ -99,6 +99,7 @@ section.about.outside-app {
     }
     ul {
       list-style: none;
+      margin-top: 20px;
     }
     .card-horizontal {
       position: relative;
@@ -133,6 +134,7 @@ section.about.outside-app {
     h4 {
       color: $polimi-ciano;
       text-align: left;
+      margin-left: 30px;
       .classification-citizens {
         color:$color-classification-citizens;
       }
