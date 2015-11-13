@@ -27,6 +27,14 @@
 
       }
     }
+
+    .content-wrapper .course-info {
+      .details , .course-sidebar {
+        width: 100%;
+        float: none;
+      }
+    }
+
   }
 }
 
