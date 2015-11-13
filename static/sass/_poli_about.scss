@@ -65,7 +65,7 @@ section.about.outside-app {
   }
   .box {
     float: left;
-    width: flex-grid(2, 6);
+    width: flex-grid(3, 6);
     margin-left: flex-gutter(6);
     .inner-box {
       min-height: 400px;
@@ -92,22 +92,7 @@ section.about.outside-app {
         }
       }
     }
-    &.before-box {
-      margin-left: 0;
-      h3 {
-        background: $polimi-ciano url($pok-before-legend) 92% center no-repeat;
-      }
-    }
-    &.during-box {
-      h3 {
-        background: $polimi-ciano url($pok-during-legend) 92% center no-repeat;
-      }
-    }
-    &.after-box {
-      h3 {
-        background: $polimi-ciano url($pok-after-legend) 92% center no-repeat;
-      }
-    }
+  
     h3 {
       font-size: 2.2em;
       line-height: 1.6em;
