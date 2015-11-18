@@ -76,35 +76,35 @@ html .find-courses .courses {
       }
     }
   }
-  // course classification
-  .course-more-info {
-     span {
-       color: $white;
-       text-align:center;
-       display:block;
-       @include classification-span-bg-color("before");
-       @include classification-span-bg-color("during");
-       @include classification-span-bg-color("after");
-       @include classification-span-bg-color("teachers");
-       @include classification-span-bg-color("citizens");
-       @include classification-span-bg-color("researchers");
 
-     }
-  }
+}
+// course classification
+.course-more-info {
+   span {
+     color: $white;
+     text-align:center;
+     display:block;
+     @include classification-span-bg-color("before");
+     @include classification-span-bg-color("during");
+     @include classification-span-bg-color("after");
+     @include classification-span-bg-color("teachers");
+     @include classification-span-bg-color("citizens");
+     @include classification-span-bg-color("researchers");
 
-  .course-language {
-    position:absolute;
-    right: 15px;
-    top: 10px;
-    width: 32px;
-    height: 20px;
-
-    &.course-language-en {
-      background-image: url("../themes/polimix/images/flag_en.png");
-    }
-  }
+   }
 }
 
+.course-language {
+  position:absolute;
+  right: 15px;
+  top: 10px;
+  width: 32px;
+  height: 20px;
+
+  &.course-language-en {
+    background-image: url("../themes/polimix/images/flag_en.png");
+  }
+}
 /** About Course **/
 .short-desc {
   font-size: 1.5em;
@@ -154,6 +154,17 @@ html .find-courses .courses {
     }
     .important-dates li {
       border-bottom: 1px dotted $black;
+      &.item-category {
+        .important-dates-item-title {
+          width:29%;
+        }
+        .important-dates-item-text {
+          width: 71%;
+          span {
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
 }

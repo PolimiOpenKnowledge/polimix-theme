@@ -47,6 +47,9 @@ from student.helpers import (
   <% course_target = reverse('info', args=[unicode(course.id)]) %>
   <section class="details">
     <div class="wrapper-course-image" aria-hidden="true">
+      <span class="course-more-info">
+        ${get_course_about_section(course, 'more_info')}
+      </span>
       % if show_courseware_link:
         % if not is_course_blocked:
             <a href="${course_target}" class="cover">
@@ -277,7 +280,7 @@ from student.helpers import (
 
       % if credit_status is not None:
         <%include file="_dashboard_credit_info.html" args="credit_status=credit_status"/>
-      % endif 
+      % endif
 
         % if verification_status.get('status') in [VERIFY_STATUS_NEED_TO_VERIFY, VERIFY_STATUS_SUBMITTED, VERIFY_STATUS_APPROVED, VERIFY_STATUS_NEED_TO_REVERIFY] and not is_course_blocked:
         <div class="message message-status wrapper-message-primary is-shown">

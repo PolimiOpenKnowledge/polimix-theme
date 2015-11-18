@@ -6,7 +6,6 @@ section.about.outside-app {
 
 .container.about {
   font-family: $sans-serif;
-  letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   img {
     display: block;
@@ -125,6 +124,7 @@ section.about.outside-app {
       color: $polimi-ciano;
       text-align: left;
       margin-left: 30px;
+      font-family: $sans-serif;
       &.classification-citizens {
         color:$color-classification-citizens;
       }
