@@ -355,7 +355,7 @@ from edxmako.shortcuts import marketing_link
             <li class="important-dates-item"><i class="icon fa fa-book"></i><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(course, "prerequisites")}</span></li>
           % endif
           % if course.language:
-          <li class="important-dates-item"><p class="important-dates-item-title">${_("Language")}</p><span class="important-dates-item-text language">${_("{language}").format(language=(filter(lambda x: (x[0] == course.language), settings.ALL_LANGUAGES))[0][1])}</span></li>
+          <li class="important-dates-item"><i class="icon fa fa-language"></i><p class="important-dates-item-title">${_("Language")}</p><span class="important-dates-item-text language">${_("{language}").format(language=(filter(lambda x: (x[0] == course.language), settings.ALL_LANGUAGES))[0][1])}</span></li>
           % endif
           <li class="important-dates-item item-category"><p class="important-dates-item-title">${_("Category")}</p><span class="important-dates-item-text category"> ${get_course_about_section(course, 'more_info')}</span></li>
         </ol>
