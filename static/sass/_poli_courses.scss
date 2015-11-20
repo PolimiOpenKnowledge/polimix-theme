@@ -155,9 +155,10 @@ html .find-courses .courses {
     .important-dates li {
       border-bottom: 1px dotted $black;
       &.course-more-info {
-
+        border-bottom: 0;
         .important-dates-item-text {
           text-align: center;
+          float:none;
           span {
             font-weight: 700;
           }
