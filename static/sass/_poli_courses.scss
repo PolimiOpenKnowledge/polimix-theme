@@ -156,6 +156,8 @@ html .find-courses .courses {
       border-bottom: 1px dotted $black;
       &.course-more-info {
         border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
         .important-dates-item-text {
           text-align: center;
           float:none;
