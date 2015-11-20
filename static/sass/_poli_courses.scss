@@ -154,13 +154,10 @@ html .find-courses .courses {
     }
     .important-dates li {
       border-bottom: 1px dotted $black;
-      &.item-category {
-        .important-dates-item-title {
-          width:29%;
-        }
+      &.course-more-info {
+
         .important-dates-item-text {
-          width: 71%;
-          text-align: right;
+          text-align: center;
           span {
             font-weight: 700;
           }
