@@ -27,6 +27,10 @@
       font-weight: 600;
       color: $black;
     }
+    .course-title a {
+      font-size:2em;
+      margin-top:-0.4em;
+    }
     .course .cover {
       height: auto;
       border-bottom: 1px solid $gray-3;
