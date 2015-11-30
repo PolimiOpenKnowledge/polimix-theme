@@ -19,5 +19,7 @@
 @mixin classification-span-bg-color($classification) {
   &.classification-#{$classification} {
     @extend %bg-#{$classification};
+    text-align: left;
+    padding-left: 15px;
   }
 }

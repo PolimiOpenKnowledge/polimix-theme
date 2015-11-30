@@ -47,6 +47,9 @@ from student.helpers import (
   <% course_target = reverse('info', args=[unicode(course.id)]) %>
   <section class="details">
     <div class="wrapper-course-image" aria-hidden="true">
+      <span class="course-more-info">
+        ${get_course_about_section(course, 'more_info')}
+      </span>
       % if show_courseware_link:
         % if not is_course_blocked:
             <a href="${course_target}" class="cover">
