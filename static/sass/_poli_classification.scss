@@ -21,5 +21,6 @@
     @extend %bg-#{$classification};
     text-align: left;
     padding-left: 15px;
+    box-shadow: 0 1px 8px 0 $shadow-l1;
   }
 }
