@@ -80,6 +80,8 @@ html .find-courses .courses {
 }
 // course classification
 .course-more-info {
+  display: block;
+  margin-bottom: 5px;
    span {
      color: $white;
      text-align:center;
