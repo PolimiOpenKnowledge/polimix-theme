@@ -16,7 +16,7 @@
 @import "poli_registration";
 @import "poli_dashboard";
 @import "poli_ie";
-@import "responsive";
+
 
 .contact-us-tab {
   position: fixed;
@@ -76,7 +76,7 @@ html .wrapper-footer {
     }
     .references .additional-logo-info {
       font-size: .8em;
-      margin-top: 25px;
+      margin-top: 45px;
       .eco-agreement {
         font-size: .9em;
       }
@@ -119,7 +119,7 @@ html .wrapper-footer {
     }
     .terms {
       clear: left;
-      margin-top: 30px;
+      margin-top: 50px;
     }
     nav.nav-terms {
       li {
@@ -141,3 +141,4 @@ html .wrapper-footer {
     }
   }
 }
+@import "responsive";
