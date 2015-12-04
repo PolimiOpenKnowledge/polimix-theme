@@ -106,7 +106,7 @@ section.about.outside-app {
         word-break: break-word;
       }
       .card-col-image {
-        width:20%;
+        width:76px;
         vertical-align: top;
         img {
           border-radius: 50%;
@@ -115,10 +115,11 @@ section.about.outside-app {
       }
     }
     h3 {
-      font-size: 1.7em;
+      font-size: 1.5em;
+      font-family: $sans-serif;
       line-height: 1.6em;
       position: relative;
-      padding-left: 48px;
+      padding-left: 146px;
       text-align: left;
       color: $polimi-ciano;
     }
