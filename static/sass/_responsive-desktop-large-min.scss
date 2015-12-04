@@ -14,5 +14,13 @@
     .course-info .container {
       box-sizing: content-box;
     }
+    .wrapper-footer footer#footer-openedx  {
+      .eco-references {
+        padding-right: 30px;
+      }
+      .built-on {
+        padding-left: 30px;
+      }
+    }
   }
 }
