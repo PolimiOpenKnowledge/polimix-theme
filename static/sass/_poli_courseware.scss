@@ -1,3 +1,10 @@
+@mixin section_header_info($className, $imgName) {
+  section.#{$className} h2 {
+    padding: 5px 5px 5px 38px;
+    background: $gray-3 url("../themes/polimix/images/$imgName") 5px center no-repeat;
+  }
+}
+
 .content-wrapper div.info-wrapper {
   section.updates h1 {
     display: none;
@@ -13,10 +20,11 @@
       font-size: 1.4em;
       padding-left: 0;
     }
-    section.pok-course-info h2 {
+    /*section.pok-course-info h2 {
       padding: 5px 5px 5px 38px;
       background: $gray-3 url("../themes/polimix/images/ico_info.png") 5px center no-repeat;
-    }
+    }*/
+    @include section_header_info("pok-course-info","ico_info.png");
     section.pok-course-grading h2 {
       padding: 5px 5px 5px 38px;
       background: $gray-3 url("../themes/polimix/images/ico_quiz.png") 5px center no-repeat;
