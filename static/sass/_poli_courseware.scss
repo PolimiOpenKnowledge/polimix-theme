@@ -1,6 +1,6 @@
 @mixin section_header_info($className, $imgName) {
   section.#{$className} h2 {
-    padding: 5px 5px 5px 38px;
+    padding: 5px 5px 5px 48px;
     background: $gray-3 url("../themes/polimix/images/$imgName") 5px center no-repeat;
   }
 }
