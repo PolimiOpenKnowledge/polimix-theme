@@ -1,6 +1,6 @@
 @mixin section_header_info($className, $imgName) {
   section.#{$className} h2 {
-    padding: 5px 5px 5px 48px;
+    padding: 5px 5px 5px 38px;
     background: $gray-3 url($imgName) 5px center no-repeat;
   }
 }
@@ -20,35 +20,14 @@
       font-size: 1.4em;
       padding-left: 0;
     }
-    /*section.pok-course-info h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_info.png") 5px center no-repeat;
-    }*/
     @include section_header_info("pok-course-info","../themes/polimix/images/ico_info.png");
-    section.pok-course-grading h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_quiz.png") 5px center no-repeat;
-    }
-    section.pok-course-forum h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_forum.png") 5px center no-repeat;
-    }
-    section.pok-course-prerequisiti h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_prerequisiti.png") 5px center no-repeat;
-    }
-    section.pok-course-docente h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_docente.png") 5px center no-repeat;
-    }
-    section.pok-course-approfondimento h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_approfondimento.png") 5px center no-repeat;
-    }
-    section.pok-course-sottotitoli h2 {
-      padding: 5px 5px 5px 38px;
-      background: $gray-3 url("../themes/polimix/images/ico_sottotitoli.png") 5px center no-repeat;
-    }
+    @include section_header_info("pok-course-grading","../themes/polimix/images/ico_quiz.png");
+    @include section_header_info("pok-course-forum","../themes/polimix/images/ico_forum.png");
+    @include section_header_info("pok-course-prerequisiti","../themes/polimix/images/ico_prerequisiti.png");
+    @include section_header_info("pok-course-docente","../themes/polimix/images/ico_info.png");
+    @include section_header_info("pok-course-approfondimento","../themes/polimix/images/ico_approfondimento.png");
+    @include section_header_info("pok-course-sottotitoli","../themes/polimix/images/ico_sottotitoli.png");
+    @include section_header_info("pok-course-certificato","../themes/polimix/images/ico_certificate.png");
   }
 }
 
