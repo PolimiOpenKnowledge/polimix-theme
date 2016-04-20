@@ -1,7 +1,7 @@
 @mixin section_header_info($className, $imgName) {
   section.#{$className} h2 {
     padding: 5px 5px 5px 48px;
-    background: $gray-3 url("../themes/polimix/images/$imgName") 5px center no-repeat;
+    background: $gray-3 url($imgName) 5px center no-repeat;
   }
 }
 
@@ -24,7 +24,7 @@
       padding: 5px 5px 5px 38px;
       background: $gray-3 url("../themes/polimix/images/ico_info.png") 5px center no-repeat;
     }*/
-    @include section_header_info("pok-course-info","ico_info.png");
+    @include section_header_info("pok-course-info","../themes/polimix/images/ico_info.png");
     section.pok-course-grading h2 {
       padding: 5px 5px 5px 38px;
       background: $gray-3 url("../themes/polimix/images/ico_quiz.png") 5px center no-repeat;
