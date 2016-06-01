@@ -101,6 +101,11 @@ from student.helpers import (
             ${_("Starts - {start_date}").format(start_date=course.start_datetime_text("SHORT_DATE"))}
           % endif
           </span>
+          % if not course.has_ended() and not course.start_date_is_still_default:
+          <span class="info-date-block" data-tooltip="Hi">
+              ${_("End - {end_date}").format(end_date=course.end_datetime_text("SHORT_DATE"))}
+          </span>
+          % endif
         </div>
         <div class="wrapper-course-actions">
           <div class="course-actions">
