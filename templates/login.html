@@ -143,7 +143,7 @@ from microsite_configuration import microsite
 <section class="intro-polimi">
 	% if settings.FEATURES['AUTH_USE_SHIB']:
 		  <p class="instructions">
-		  	  <span class="it">Se sei un utente POLIMI accedi direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a></span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with your <a href="${reverse('shib-login')}${login_query()}">Person Code</a></span>
+		  	  <span class="it">Se sei un utente POLIMI accedi direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>.</span>
 		  </p>
 	% endif
 </section>
