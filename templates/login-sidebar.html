@@ -21,8 +21,13 @@ from third_party_auth import provider, pipeline
 
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta aunica-login">
-  <h3><span class="it">Utente POLIMI</span><span class="locale-separator">/</span><span class="en">POLIMI user</span></h3>
+  <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
   <p class="instructions">
+     <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span>
+     <span class="locale-separator">/</span>
+     <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>.</span>
+  </p>
+  <p class="button-login">
     <a class="link2button" href="${reverse('shib-login')}${login_query()}">
      POLIMI Login
     </a>
@@ -30,28 +35,20 @@ from third_party_auth import provider, pipeline
 </div>
 % endif
 
-<div class="cta cta-signup">
-  <h3><span class="it">Non sei iscritto?</span><span class="locale-separator">/</span><span class="en">Not Enrolled?</span></h3>
-  <p><a class="link2button" href="${reverse('register_user')}">Register Now</a></p>
-</div>
-
-
-
-<div class="cta cta-help">
-   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
-   <p>${_('{email}').format(
-    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
- </div>
-
 % if third_party_auth.is_enabled():
     % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
       <div class="cta eco-login">
         <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
         <p class="instructions">
         <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}');">
-           	<span class="icon ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}
+           	<span class="icon ${enabled.icon_class}"></span>Sign in with <span class="provider-name">${_('{provider_name}').format(provider_name=enabled.name)}</span>
            </a>
         </p>
       </div>
     % endfor
 % endif
+<div class="cta cta-help">
+   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <p>${_('{email}').format(
+    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
+ </div>

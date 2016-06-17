@@ -108,15 +108,41 @@ import calendar
     </h1>
   </header>
 </section>
-<section class="intro-polimi">
-	% if settings.FEATURES['AUTH_USE_SHIB']:
-		  <p class="instructions">
-		  	  <span class="it">Se sei un utente POLIMI puoi accedere direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>, altrimenti registrati a POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user you can log in directly using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>, otherwise register to POK by filling out the form.</span>
-		  </p>
-	% endif
-</section>
 <section class="register container">
+  <aside role="complementary">
+
+<%
+  # allow for microsite overrides on the registration sidebars, otherwise default to pre-existing ones
+  sidebar_file = microsite.get_template_path('register-sidebar.html')
+%>
+
+    <%include file="${sidebar_file}" />
+
+  </aside>
   <section role="main" class="content">
+    <div class="cta already-registered">
+      <h3 class="title"><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
+      <p class="instructions">
+          <span class="it"> Vai al
+      	     <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
+               Login
+             </a>
+          </span>
+          <span class="locale-separator">/</span>
+            <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
+              <span class="en">
+              Log in
+              </span>
+            </a>
+            .
+      </p>
+    </div>
+    <div class="cta new-user-external">
+      <h3 class="title"><span class="it">Sei un nuovo utente?</span><span class="locale-separator">/</span><span class="en">Are you a new user?</span></h3>
+      <p class="instructions">
+      	<span class="it">Se non sei un utente POLIMI puoi registrarti a POK compilando la form.</span><span class="locale-separator">/</span><span class="en">If you are not POLIMI user you can register to POK by filling out the form.</span>
+      </p>
+    </div>
     <form role="form" id="register-form" method="post" data-remote="true" action="/create_account" novalidate>
       <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
 
@@ -131,36 +157,30 @@ import calendar
       </div>
 
       % if third_party_auth.is_enabled():
+        <%
+          notecoprovider=[x for x in provider.Registry.enabled() if not x.backend_name == "ecoopenid-auth"]
+        %>
 
         % if not running_pipeline:
+          %if len(notecoprovider)>0 :
+            <div class="form-actions form-third-party-auth">
 
-        <div class="form-actions form-third-party-auth">
+            % for enabled in provider.Registry.enabled():
+              % if not enabled.backend_name=="ecoopenid-auth":
+              ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
+              <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}</button>
+              %endif
+            % endfor
 
-        % for enabled in provider.Registry.enabled():
-          % if not enabled.backend_name=="ecoopenid-auth":
-          ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
-          <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}</button>
-          %endif
-        % endfor
-
-        </div>
-        <%
-         notecoprovider=[x for x in provider.Registry.enabled() if not x.backend_name == "ecoopenid-auth"]
-        %>
-        % if len(notecoprovider)>0 :
-        <span class="deco-divider">
-          ## Developers: this is a sentence fragment, which is usually frowned upon.  The design of the pags uses this fragment to provide an "else" clause underneath a number of choices.  It's OK to leave it.
-          ## Translators: this is the last choice of a number of choices of how to log in to the site.
-          <span class="copy">${_('or')}</span>
-        </span>
-        % endif
-
-        <p class="instructions">
-          ${_('Create your own {platform_name} account below').format(platform_name=platform_name)}
-          <span class="note">${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}</span>
-        </p>
+            </div>
 
 
+            <span class="deco-divider">
+              ## Developers: this is a sentence fragment, which is usually frowned upon.  The design of the pags uses this fragment to provide an "else" clause underneath a number of choices.  It's OK to leave it.
+              ## Translators: this is the last choice of a number of choices of how to log in to the site.
+              <span class="copy">${_('or')}</span>
+            </span>
+          % endif
         % else:
 
         <p class="instructions">
@@ -173,9 +193,8 @@ import calendar
 
       % else:
 
-      <p class="instructions">
+      <p class="instructions mandatory-fields ">
       	<span class="it">I campi obbligatori sono <strong>in grassetto e indicati con un asterisco (*)</strong>.
-
       	</span>
       	<br/>
        <span class="en">${_('Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.')}
@@ -191,6 +210,9 @@ import calendar
 
         <ol class="list-input">
           <li class="field required text" id="field-email">
+            <p class="instructions mandatory-fields">
+              <span class="note">Required fields are noted by <strong class="indicator">bold text and an asterisk (*)</strong>.</span>
+            </p>
             <label for="email">${_('E-mail')}</label>
             <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
             % if settings.FEATURES['AUTH_USE_SHIB']:
@@ -403,14 +425,4 @@ import calendar
     </form>
   </section>
 
-  <aside role="complementary">
-
-<%
-  # allow for microsite overrides on the registration sidebars, otherwise default to pre-existing ones
-  sidebar_file = microsite.get_template_path('register-sidebar.html')
-%>
-
-    <%include file="${sidebar_file}" />
-
-  </aside>
 </section>

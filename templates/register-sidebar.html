@@ -17,23 +17,29 @@ from third_party_auth import provider, pipeline
 
 % if settings.FEATURES['AUTH_USE_SHIB']:
 <div class="cta aunica-login">
-  <h3><span class="it">Utente POLIMI</span><span class="locale-separator">/</span><span class="en">POLIMI user</span></h3>
+  <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
   <p class="instructions">
+     <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span>
+     <span class="locale-separator">/</span>
+     <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>.</span>
+  </p>
+  <p class="button-login">
     <a class="link2button" href="${reverse('shib-login')}${login_query()}">
      POLIMI Login
     </a>
   </p>
+  <h3 class="it-planning"><span class="it">Hai intenzione di studiare al Politecnico di Milano?</span></h3>
+  <p class="instructions">
+    <span class="it"><strong>Devi creare fin da subito  il tuo account POLIMI</strong> e usarlo per accedere ai corsi. <br /> Clicca su <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>, quindi su &ldquo;Registrati&rdquo;.</span>
+  </p>
+  <h3 class="en-planning"><span class="en">Are you planning to study at Politecnico di Milano?</span></h3>
+  <p class="instructions">
+    <span class="en"><strong>You need to create your POLIMI account now</strong> and use it to access the courses.<br /> Click on <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>, then on &ldquo;Register&rdquo;.</span>
+  </p>
 </div>
 % endif
 
-<div class="cta already-registered">
-  <h3 class="title"><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
-  <p class="instructions">
-  	 <a class="link2button cta-login-action" href="${reverse('signin_user')}${login_query()}">
-     POK Login
-    </a>
-  </p>
-</div>
+
 
 
 % endif
@@ -67,11 +73,6 @@ from third_party_auth import provider, pipeline
 <!--       ${_("Once registered, most questions can be answered in the course specific discussion forums or through the FAQs.")}</p> -->
 <!--   </div> -->
 <!-- % endif -->
-<div class="cta cta-help">
-   <h3><span class="it">Serve AIUTO?</span><span class="locale-separator">/</span><span class="en">Need HELP?</span></h3>
-   <p>${_('{email}').format(
-    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
-  </div>
 
 % if third_party_auth.is_enabled():
     % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
@@ -79,9 +80,14 @@ from third_party_auth import provider, pipeline
         <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
         <p class="instructions">
            <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_REGISTER)}');">
-           	<span class="icon ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}
+           	<span class="icon ${enabled.icon_class}"></span>Sign up with <span class="provider-name">${_('{provider_name}').format(provider_name=enabled.name)}</span>
            </a>
         </p>
       </div>
     % endfor
 % endif
+<div class="cta cta-help">
+   <h3><span class="it">Serve AIUTO?</span><span class="locale-separator">/</span><span class="en">Need HELP?</span></h3>
+   <p>${_('{email}').format(
+    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
+</div>

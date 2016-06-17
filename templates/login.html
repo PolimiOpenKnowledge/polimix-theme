@@ -140,15 +140,25 @@ from microsite_configuration import microsite
     </h1>
   </header>
 </section>
-<section class="intro-polimi">
-	% if settings.FEATURES['AUTH_USE_SHIB']:
-		  <p class="instructions">
-		  	  <span class="it">Se sei un utente POLIMI accedi direttamente con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span><span class="locale-separator">/</span><span class="en">If you are a POLIMI user log in with your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>.</span>
-		  </p>
-	% endif
-</section>
 <section class="login container">
+  <aside role="complementary">
+
+<%
+  # allow for microsite overrides on the registration sidebars, otherwise default to pre-existing ones
+  sidebar_file = microsite.get_template_path('login-sidebar.html')
+%>
+
+    <%include file="${sidebar_file}" />
+
+  </aside>
   <section role="main" class="content">
+    <div class="info-register">
+      <h3><span class="it">Non sei iscritto?</span><span class="locale-separator">/</span><span class="en">Not Enrolled?</span></h3>
+      <p><a class="" href="${reverse('register_user')}"><span class="it">Registrati</span><span class="locale-separator">/</span><span class="en">Register Now</span></a>.</p>
+    </div>
+    <div class="cta pok-login">
+      <h3 class="title"><span class="it">Sei un utente POK?</span><span class="locale-separator">/</span><span class="en">Are you a POK user?</span></h3>
+    </div>
     <form role="form" id="login-form" method="post" data-remote="true" action="/login_ajax" novalidate>
 
       <!-- status messages -->
@@ -248,14 +258,5 @@ from microsite_configuration import microsite
 
   </section>
 
-  <aside role="complementary">
 
-<%
-  # allow for microsite overrides on the registration sidebars, otherwise default to pre-existing ones
-  sidebar_file = microsite.get_template_path('login-sidebar.html')
-%>
-
-    <%include file="${sidebar_file}" />
-
-  </aside>
   </section>
