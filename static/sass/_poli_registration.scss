@@ -292,3 +292,9 @@
     display: none;
   }
 }
+
+.bolder-shame {
+    .instructions  span , h3 span, .button-login a{
+      font-weight: 600;
+    }
+}

@@ -16,7 +16,7 @@ from third_party_auth import provider, pipeline
 % if has_extauth_info is UNDEFINED:
 
 % if settings.FEATURES['AUTH_USE_SHIB']:
-<div class="cta aunica-login">
+<div class="cta aunica-login bolder-shame">
   <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
   <p class="instructions">
      <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span>
