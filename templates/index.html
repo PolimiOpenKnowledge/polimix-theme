@@ -11,7 +11,7 @@ import branding
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
   ## To display a welcome video, change False to True, and add a YouTube ID (11 chars, eg "123456789xX") in the following line
-  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', False)
+  show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
   homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', None)
 
   show_partners = microsite.get_value('show_partners', True)
@@ -33,18 +33,7 @@ import branding
              <h2>${_("MOOCs to BRIDGE THE GAPS")}</h2>
           % endif
         </hgroup>
-        % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-          <div class="course-search">
-            <form method="get" action="/courses">
-              <label><span class="sr">${_("Search for a course")}</span>
-                <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-              </label>
-              <button class="search-button" type="submit">
-                <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
-              </button>
-            </form>
-          </div>
-        % endif
+
 
       </div>
 
@@ -67,6 +56,18 @@ import branding
 
   </header>
   <section class="courses-container">
+    % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+      <div class="course-search">
+        <form method="get" action="/courses">
+          <label><span class="sr">${_("Search for a course")}</span>
+            <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+          </label>
+          <button class="search-button" type="submit">
+            <i class="icon fa fa-search" aria-hidden="true"></i><span class="sr">${_("Search")}</span>
+          </button>
+        </form>
+      </div>
+    % endif
     <section class="highlighted-courses">
 
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):

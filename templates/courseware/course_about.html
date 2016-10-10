@@ -11,21 +11,9 @@ from openedx.core.lib.courses import course_image_url
 
 <%inherit file="../main.html" />
 <%block name="headextra">
-
-  <%
-    if self.theme_enabled():
-      google_analytics_file = u'../{ga}'.format(
-        ga=microsite.get_value('google_analytics_file', 'theme-google-analytics.html')
-      )
-    else:
-      google_analytics_file = '../google_analytics.html'
-  %>
-
-  <%include file="${google_analytics_file}" />
-
   ## OG (Open Graph) title and description added below to give social media info to display
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
-  <meta property="og:title" content="POK - ${get_course_about_section(request,course, 'title')}" />
+  <meta property="og:title" content="POK - ${course.display_name_with_default}" />
   <meta property="og:image" content="https://${site}${course_image_url(course)}" />
   <meta property="og:image:secure_url" content="https://${site}${course_image_url(course)}" />
   <meta property="og:description" content="${get_course_about_section(request,course, 'short_description')}" />
@@ -125,7 +113,7 @@ from openedx.core.lib.courses import course_image_url
       <section class="intro">
         <hgroup>
           <h1>
-            ${course.display_number_with_default | h} - ${get_course_about_section(request,course, "title")}
+            ${course.display_number_with_default | h} - ${course.display_name_with_default}
             % if not self.theme_enabled():
               <a href="#">${course.display_org_with_default | h}</a>
             % endif
@@ -238,7 +226,7 @@ from openedx.core.lib.courses import course_image_url
               <a href="http://twitter.com/intent/tweet?text=I+just+enrolled+in+${course.number}+${course.display_name_with_default}!+(http://class.stanford.edu)" class="share">
                 <i class="icon fa fa-twitter"></i><span class="sr">${_("Tweet that you've enrolled in this course")}</span>
               </a>
-              <a href="mailto:?subject=Take%20a%20course%20at%20Stanford%20online!&body=I%20just%20registered%20for%20${course.number}%20${get_course_about_section(course, 'title')}+(http://class.stanford.edu)" class="share">
+              <a href="mailto:?subject=Take%20a%20course%20at%20Stanford%20online!&body=I%20just%20registered%20for%20${course.number}%20${course.display_name_with_default}+(http://class.stanford.edu)" class="share">
                 <i class="icon fa fa-envelope"></i><span class="sr">${_("Email someone to say you've registered for this course")}</span>
               </a>
             % elif  self.theme_enabled():
@@ -249,10 +237,10 @@ from openedx.core.lib.courses import course_image_url
               <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://${site}${cur_path}" class="share">
 		<i class="icon fa fa-facebook"></i><span class="sr">${_("Post a Facebook message to say you've registered for this course")}</span>
               </a>
-              <a target="_blank" href="http://twitter.com/intent/tweet?text=I+just+registered+for+${course.number}+${get_course_about_section(request,course, 'title')}!+(https://www.pok.polimi.it)" class="share">
+              <a target="_blank" href="http://twitter.com/intent/tweet?text=I+just+registered+for+${course.number}+${course.display_name_with_default}!+(https://www.pok.polimi.it)" class="share">
 		<i class="icon fa fa-twitter"></i><span class="sr">${_("Tweet that you've registered for this course")}</span>
               </a>
-              <a href="mailto:?subject=Take%20a%20course%20at%20POK!&body=Mi%20sono%20appena%20iscritto%20al%20corso+${course.number}+${get_course_about_section(request,course, 'title')}!%0A%0A%0AI%20just%20registered%20for%20${course.number}%20${get_course_about_section(request,course, 'title')}+(https://www.pok.polimi.it)" class="share">
+              <a href="mailto:?subject=Take%20a%20course%20at%20POK!&body=Mi%20sono%20appena%20iscritto%20al%20corso+${course.number}+${course.display_name_with_default}!%0A%0A%0AI%20just%20registered%20for%20${course.number}%20${course.display_name_with_default}+(https://www.pok.polimi.it)" class="share">
 		<i class="icon fa fa-envelope"></i><span class="sr">${_("Email someone to say you've registered for this course")}</span>
               </a>
             % else:

@@ -2,16 +2,21 @@
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
-from courseware.courses import course_image_url, get_course_about_section
+from courseware.courses import get_course,get_course_about_section
+from openedx.core.lib.courses import course_image_url
 %>
 <%page args="course" />
+<%
+ # access to full course is slow need to find other solution to access to language,more_info and newish
+ full_course =  get_course(course.id)
+%>
 <article class="course" id="${course.id | h}" role="region" aria-label="${course.display_name_with_default}">
   <span class="course-more-info">
-    ${get_course_about_section(request, course, 'more_info')}
+    ${get_course_about_section(request, full_course, 'more_info')}
   </span>
   <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
     <header class="course-image">
-      %if course.language == 'en':
+      %if full_course.language == 'en':
         <span class="course-language course-language-${course.language}"></span>
       %endif
       <div class="cover-image">
@@ -20,7 +25,7 @@ from courseware.courses import course_image_url, get_course_about_section
       </div>
     </header>
     <div class="course-info" aria-hidden=true>
-      %if course.is_newish:
+      %if full_course.is_newish:
         <span class="status">${_("New")}</span>
       %endif
       <h2 class="course-name">
