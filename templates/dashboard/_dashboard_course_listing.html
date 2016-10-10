@@ -8,7 +8,7 @@ from django.utils.translation import ungettext
 from django.core.urlresolvers import reverse
 from markupsafe import escape
 from openedx.core.lib.courses import course_image_url
-from courseware.courses import get_course_about_section
+from courseware.courses import get_course, get_course_about_section
 from course_modes.models import CourseMode
 from course_modes.helpers import enrollment_mode_display
 from student.helpers import (
@@ -59,11 +59,14 @@ from student.helpers import (
   </div>
  % endif
 <article class="course${mode_class}">
-  <% course_target = reverse('info', args=[unicode(course_overview.id)]) %>
+  <%
+  course_target = reverse('info', args=[unicode(course_overview.id)])
+  full_course =  get_course(course_overview.id)
+  %>
   <section class="details">
     <div class="wrapper-course-image" aria-hidden="true">
       <span class="course-more-info">
-        ${get_course_about_section(request,course, 'more_info')}
+        ${get_course_about_section(request,full_course, 'more_info')}
       </span>
       % if show_courseware_link:
         % if not is_course_blocked:
@@ -118,7 +121,7 @@ from student.helpers import (
             ${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE"))}
           % endif
           </span>
-          % if not course.has_ended() and not course.start_date_is_still_default:
+          % if not full_course.has_ended() and not full_course.start_date_is_still_default:
           <span class="info-date-block" data-tooltip="Hi">
               ${_("End - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE"))}
           </span>
