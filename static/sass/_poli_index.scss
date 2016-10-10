@@ -32,6 +32,14 @@
     padding: 10px 10px 0;
     ol.user {
       margin-top: 15px;
+      li a.dropdown {
+        background-color:$gray-3;
+        padding:9px 12px;
+        border-right:1px $gray-1 solid;
+        &.focus {
+          background-color:$gray-3;
+        }
+      }
     }
   }
   &.slim {

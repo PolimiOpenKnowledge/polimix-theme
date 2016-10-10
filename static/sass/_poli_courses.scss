@@ -18,6 +18,9 @@ html .courses-container .courses .course .course-info .course-title {
   margin: 5px 0 45px 0
 }
 /*** Course list ***/
+html .find-courses, html .university-profile {
+  background: $gray-1;
+}
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
@@ -170,7 +173,7 @@ html .find-courses .courses {
     }
   }
 }
-.find-courses .wrapper-search-context .search-status-label {
-  font-size:30px;
+.polimix-theme .find-courses .wrapper-search-context .search-status-label {
+  font-size:22px;
 }
 /*@include legenda-corsi("find-courses > header");*/
