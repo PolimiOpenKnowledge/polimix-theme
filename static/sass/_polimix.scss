@@ -251,5 +251,12 @@ $color-classification-after: $polimi-ciano;
 $color-classification-teachers: #F85F39;
 $color-classification-citizens: #D43C67;
 $color-classification-researchers: #E79A32;
-
+$course-map-classification: (
+  "from-high-school-to-university": "before",
+  "from-university-to-job": "after",
+  "from-bachelors-to-master": "during",
+  "moocs-for-theachers": "teachers",
+  "moocs-for-citizens": "citizens",
+  "moocs-for-researchers": "researchers"
+);
 @import "custom";

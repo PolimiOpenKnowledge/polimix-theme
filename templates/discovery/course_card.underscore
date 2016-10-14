@@ -1,4 +1,9 @@
 <article class="course" role="region" aria-label="<%= content.display_name %>">
+    <span class="course-more-info">
+      <span class="classification-card classification-<%= more_info.trim().toLowerCase().replace(/ /g, '-') %>">
+        <%= more_info %>
+      </span>
+    </span>
     <a href="/courses/<%- course %>/about">
         <header class="course-image">
             <span class="course-language course-language-<%= language %>"></span>

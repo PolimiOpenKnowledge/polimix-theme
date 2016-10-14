@@ -86,6 +86,7 @@ html .find-courses .courses {
   display: block;
    span {
      color: $white;
+     font: normal 1em/1.6em $sans-serif;
      text-align:center;
      display:block;
      @include classification-span-bg-color("before");
