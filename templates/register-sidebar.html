@@ -15,28 +15,29 @@ from third_party_auth import provider, pipeline
 
 % if has_extauth_info is UNDEFINED:
 
-% if settings.FEATURES['AUTH_USE_SHIB']:
+% if third_party_auth.is_enabled():
+  % for enabled in provider.Registry.get_enabled_by_backend_name("tpa-saml"):
 <div class="cta aunica-login bolder-shame">
   <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
   <p class="instructions">
-     <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a href="${reverse('shib-login')}${login_query()}">Codice Persona</a>.</span>
+     <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">Codice Persona</a>.</span>
      <span class="locale-separator">/</span>
-     <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a href="${reverse('shib-login')}${login_query()}">Person Code</a>.</span>
+     <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">Person Code</a>.</span>
   </p>
   <p class="button-login">
-    <a class="link2button" href="${reverse('shib-login')}${login_query()}">
-     POLIMI Login
-    </a>
+
+    <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>Polimi LOGIN</button>
   </p>
   <h3 class="it-planning"><span class="it">Hai intenzione di studiare al Politecnico di Milano?</span></h3>
   <p class="instructions">
-    <span class="it"><strong>Devi creare fin da subito  il tuo account POLIMI</strong> e usarlo per accedere ai corsi. <br /> Clicca su <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>, quindi su &ldquo;Registrati&rdquo;.</span>
+    <span class="it"><strong>Devi creare fin da subito  il tuo account POLIMI</strong> e usarlo per accedere ai corsi. <br /> Clicca su <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">POLIMI Login</a>, quindi su &ldquo;Registrati&rdquo;.</span>
   </p>
   <h3 class="en-planning"><span class="en">Are you planning to study at Politecnico di Milano?</span></h3>
   <p class="instructions">
-    <span class="en"><strong>You need to create your POLIMI account now</strong> and use it to access the courses.<br /> Click on <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>, then on &ldquo;Register&rdquo;.</span>
+    <span class="en"><strong>You need to create your POLIMI account now</strong> and use it to access the courses.<br /> Click on <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">POLIMI Login</a>, then on &ldquo;Register&rdquo;.</span>
   </p>
 </div>
+  % endfor
 % endif
 
 

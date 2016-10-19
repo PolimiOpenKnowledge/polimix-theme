@@ -158,7 +158,7 @@ import calendar
 
       % if third_party_auth.is_enabled():
         <%
-          notecoprovider=[x for x in provider.Registry.accepting_logins() if not x.backend_name == "ecoopenid-auth"]
+          notecoprovider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name="tpa-saml")]
         %>
 
         % if not running_pipeline:
@@ -166,7 +166,7 @@ import calendar
             <div class="form-actions form-third-party-auth">
 
             % for enabled in provider.Registry.accepting_logins():
-              % if not enabled.backend_name=="ecoopenid-auth":
+              % if (not enabled.backend_name=="ecoopenid-auth") and (not enabled.backend_name=="tpa-saml"):
               ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
               <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign up with {provider_name}').format(provider_name=enabled.name)}</button>
               %endif
@@ -209,12 +209,6 @@ import calendar
           <li class="field required text" id="field-email">
             <label for="email">${_('E-mail')}</label>
             <input class="" id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
-            % if settings.FEATURES['AUTH_USE_SHIB']:
-	            <span class="tip tip-input" id="id="email-tip>
-		            <span class="it">Se hai una mail @polimi.it, accedi con <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>
-		            <span class="en">If you have a @polimi.it e-mail account, sign in with <a href="${reverse('shib-login')}${login_query()}">POLIMI Login</a>.</span>
-		        </span>
-		    % endif
           </li>
 
           % if third_party_auth.is_enabled() and running_pipeline:

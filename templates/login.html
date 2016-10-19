@@ -234,7 +234,7 @@ from microsite_configuration import microsite
 
     % if third_party_auth.is_enabled():
       <%
-       notecoprovider=[x for x in provider.Registry.accepting_logins() if not x.backend_name == "ecoopenid-auth"]
+       notecoprovider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name="tpa-saml")]
       %>
       % if len(notecoprovider)>0 :
       <span class="deco-divider">
@@ -246,7 +246,7 @@ from microsite_configuration import microsite
     <div class="form-actions form-third-party-auth">
 
     % for enabled in provider.Registry.accepting_logins():
-       % if not enabled.backend_name=="ecoopenid-auth":
+       % if (not enabled.backend_name=="ecoopenid-auth") and (not enabled.backend_name=="tpa-saml"):
       ## Translators: provider_name is the name of an external, third-party user authentication provider (like Google or LinkedIn).
       <button type="submit" class="button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}</button>
        % endif
