@@ -5,7 +5,7 @@ html .find-courses > header.search {
   }
 }
 
-body.view-in-course.polimix-theme {
+body.view-in-course {
   background-color: $gray-3;
 }
 
@@ -174,7 +174,7 @@ html .find-courses .courses {
     }
   }
 }
-.polimix-theme .find-courses .wrapper-search-context .search-status-label {
+ .find-courses .wrapper-search-context .search-status-label {
   font-size:22px;
 }
 /*@include legenda-corsi("find-courses > header");*/

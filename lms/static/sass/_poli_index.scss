@@ -12,7 +12,7 @@
   }
 }
 
-.polimix-theme header.global {
+ html .header-global {
   height: 80px;
   opacity: $home-opacity;
   .nav-global li a {
@@ -20,14 +20,14 @@
     color: $black;
   }
   h1.logo {
-    margin: -10px 39px 0 0;
+    margin: -20px 39px 0 0;
     a {
       img {
         height: 80px;
       }
     }
   }
-  nav {
+  .nav-container {
     height: 70px;
     padding: 10px 10px 0;
     ol.user {
@@ -58,8 +58,22 @@
     }
   }
 }
-
-.polimix-theme .home > header {
+.header-global-new {
+  nav {
+    height: 60px;
+  }
+  h2 {
+    line-height: 60px;
+    margin-top: 0;
+  }
+  h1.logo {
+    margin: -10px 10px 0 13px;
+    img {
+      height: 80px;
+    }
+  }
+}
+ .home > header {
   height: 650px;
   .outer-wrapper {
     margin-bottom: 0;
@@ -72,7 +86,7 @@
     padding: 0;
     opacity: $home-opacity;
   }
-  .title > hgroup {
+  .title > .heading-group {
     width: 100%;
     padding: 11px 10px 0 10px;
     h1 {

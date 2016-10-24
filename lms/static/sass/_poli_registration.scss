@@ -18,12 +18,12 @@
   }
 }
 
-.polimix-theme.view-register {
+.view-register {
   span {
     line-height: 1.3em;
   }
 
-  header.global {
+  .header-global {
     nav {
       width: auto;
     }
@@ -140,16 +140,16 @@
       }
     }
   }
-  .wrapper-footer footer {
+  .footer-content-wrapper footer {
     width:auto;
   }
 }
 
-.polimix-theme.view-login {
+.view-login {
   span {
     line-height: 1.3em;
   }
-  header.global {
+  .header-global {
     nav {
       width: auto;
     }
@@ -250,7 +250,7 @@
       }
     }
   }
-  .wrapper-footer footer {
+  .footer-content-wrapper footer {
     width:auto;
   }
 }
@@ -282,13 +282,13 @@
 }
 
 .view-passwordreset {
-  header.global {
+  .header-global {
     .nav-courseware,
     ol.nav-global {
       display: none;
     }
   }
-  .wrapper-footer {
+  .footer-content-wrapper {
     display: none;
   }
 }

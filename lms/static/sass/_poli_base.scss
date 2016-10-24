@@ -52,12 +52,16 @@ html {
 
 // Set font for navigation link as $serif (??). This can be deleted after picked better serif font (not Yanone as Polimi site?)
 
-header.global .nav-global li a,
-.wrapper-footer footer .colophon .nav-colophon li a,
-header.global .nav-courseware li .cta {
+.header-global .nav-global li a,
+.header-global-new .nav-global li a,
+footer#footer-edx-v3 .footer-content-wrapper .site-nav li a,
+.header-global .nav-courseware li .cta {
   font-family: $serif;
-  @include font-size(21);
-  @include line-height(21);
+  //@include font-size(21);
+  font-size:21px;
+  //@include line-height(21);
+  line-height: 21px;
+  color: $black;
 }
 
 .is-hidden {
