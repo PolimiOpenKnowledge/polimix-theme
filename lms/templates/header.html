@@ -14,7 +14,13 @@ from status.status import get_site_status_msg
 %>
 
 ## Provide a hook for themes to inject branding on top.
-<%block name="navigation_top" />
+<%block name="navigation_top">
+<div id="polimi-header">
+  <div class="polimi-container">
+    <div class="polimi-name"> <a href="http://www.polimi.it" target="_blank"><img src="${static.url('polimix-theme/images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
+   </div>
+ </div>
+</%block>
 
 ## Add UI Toolkit components if using the Pattern Library
 % if uses_pattern_library:
@@ -53,7 +59,7 @@ site_status_msg = get_site_status_msg(course_id)
     <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
       <a href="${marketing_link('ROOT')}" itemprop="url">
         <%block name="navigation_logo">
-            <img src="${static.url("images/logo.png")}" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}" itemprop="logo" />
+            <img src="${static.url('polimix-theme/images/POK_logo_80.png')}"  alt="Home page" />
         </%block>
       </a>
     </h1>
@@ -75,13 +81,10 @@ site_status_msg = get_site_status_msg(course_id)
               % if not nav_hidden:
                 <%block name="navigation_global_links_authenticated">
                   <li class="item nav-global-01">
-                    <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
+                    <a href="${marketing_link('ABOUT')}">About</a>
                   </li>
                   <li class="item nav-global-02">
-                    <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
-                  </li>
-                  <li class="item nav-global-03">
-                    <a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>
+                    <a href="${marketing_link('COURSES')}">Find Courses</a>
                   </li>
                 </%block>
               % endif

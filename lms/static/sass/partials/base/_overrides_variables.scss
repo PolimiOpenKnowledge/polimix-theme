@@ -70,6 +70,19 @@ $black-bold: #444444;
 
 $eco-yellow: #EAAF31;
 
+// ----------------------------
+// #TYPOGRAPHY
+// ----------------------------
+$sans-serif: 'Open Sans', $verdana, sans-serif !default;
+$monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace !default;
+$body-font-family: $sans-serif !default;
+$serif: $georgia !default;
+
+// newer variables/standards
+$f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace !default;
+
 //-----------------
 //  Font Assignment
 //-----------------
@@ -79,16 +92,16 @@ $sans-serif: $theme-sans-font, $sans-serif;
 $body-font-family: $sans-serif;
 
 $theme-serif-font: "Yanone Kaffeesatz";
-$serif: $theme-serif-font, $serif;
+$serif: $theme-serif-font, $f-serif;
 
 //-----------------
 //  Image Assignment
 //-----------------
-$pok-logo-ciano-url: "../themes/polimix/images/POK_logo_ciano.png";
+$pok-logo-ciano-url: "../images/POK_logo_ciano.png";
 
-$pok-before-legend: "../themes/polimix/images/level/before.png";
-$pok-during-legend: "../themes/polimix/images/level/during.png";
-$pok-after-legend: "../themes/polimix/images/level/after.png";
+$pok-before-legend: "../images/level/before.png";
+$pok-during-legend: "../images/level/during.png";
+$pok-after-legend: "../images/level/after.png";
 
 //-----------------
 //  Theme Element Assignments
@@ -220,12 +233,12 @@ $footer-margin: ($baseline / 4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url("../themes/polimix/images/polimi-pano.jpg");
+$homepage-bg-image: url("../images/polimi-pano.jpg");
 
-$login-banner-image: url("../themes/polimix/images/group-of-people.jpg");
-$register-banner-image: url("../themes/polimix/images/group-of-people.jpg");
+$login-banner-image: url("../images/group-of-people.jpg");
+$register-banner-image: url("../images/group-of-people.jpg");
 
-$video-thumb-url: "../themes/polimix/images/POK_logo.png";
+$video-thumb-url: "../images/POK_logo.png";
 
 //-----------------
 //  Mixin Styles
@@ -259,4 +272,3 @@ $course-map-classification: (
   "moocs-for-citizens": "citizens",
   "moocs-for-researchers": "researchers"
 );
-@import "custom";

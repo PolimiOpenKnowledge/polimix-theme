@@ -7,40 +7,40 @@
 <%namespace name='static' file='static_content.html'/>
 
 
-<div class="wrapper-footer">
-	<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}">
-		<div class="colophon">
-			<nav class="nav-colophon">
-				<h1 class="logo">
-					<a target="_blank"  href="http://www.polimi.it">
-					 	<img src="${static.url('themes/polimix/images/logo_poli_home.png')}"  alt="Home page" />
-					</a>
-				</h1>
-				<ol class="left nav-global">
 
-					<li class="nav-global-01"><a href="/about">About</a></li>
-					%if not user.is_authenticated():
-					<li class="nav-global-04"><a class="cta cta-register"
-						href="/register">Register Now</a></li>
-					%endif
-					%if user.is_authenticated():
-					  <li class="nav-global-02">
-    					<a href="${marketing_link('COURSES')}">Find Courses</a>
-  					</li>
+	<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}">
+    <div class="footer-content-wrapper">
+    <h2 class="sr footer-about-title">${_("About POK")}</h2>
+		  <div class="footer-logo">
+        <a target="_blank"  href="http://www.polimi.it">
+          <img src="${static.url('polimix-theme/images/logo_poli_home.png')}"  alt="Home page" />
+        </a>
+      </div>
+      <div class="site-details">
+  			<nav lass="site-nav" aria-label="${_("About POK")}">
+
+  					<li class="nav-global-01"><a href="/about">About</a></li>
+  					%if not user.is_authenticated():
+  					<li class="nav-global-04"><a class="cta cta-register"
+  						href="/register">Register Now</a></li>
   					%endif
-				</ol>
-			</nav>
+  					%if user.is_authenticated():
+  					  <li class="nav-global-02">
+      					<a href="${marketing_link('COURSES')}">Find Courses</a>
+    					</li>
+    				%endif
+  			</nav>
+      </div>
 			<div class="terms">
 				<nav class="nav-terms clearfix">
 					<ol>
-						<li><a href="${reverse('tos')}">Terms of Service & Copyright</a></li>
-						<li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
+						<li><a href="/tos">Terms of Service & Copyright</a></li>
+						<li><a href="/tos#privacy">Privacy Policy</a></li>
 						<li><a class="standard-link" href="mailto:pok@polimi.it">pok@polimi.it</a></li>
 					</ol>
 				</nav>
 			</div>
 
-		</div>
 		<div class="references">
       % if not hide_openedx_link:
 			<div class="built-on">
@@ -56,17 +56,17 @@
 			<div class="eco-references">
 					<div class="eco-loghi-container">
 						<div class="cip-eu-logo eco-loghi">
-							<img src="${static.url('themes/polimix/images/cip-eu_logo.jpg')}"
+							<img src="${static.url('polimix-theme/images/cip-eu_logo.jpg')}"
 			    				 alt="ECO Project" />
 						</div>
 						<a class="eco-project-logo eco-loghi" href="http://ecolearning.eu">
-			  				<img src="${static.url('themes/polimix/images/eco_logo.jpg')}"
+			  				<img src="${static.url('polimix-theme/images/eco_logo.jpg')}"
 			    				 alt="ECO Project" />
 						</a>
 					</div>
 					<div class="reimagine-award clearfix">
 						<a class="award-link" href="http://www.reimagine-education.com/">
-								<img src="${static.url('themes/polimix/images/award_big.png')}"
+								<img src="${static.url('polimix-theme/images/award_big.png')}"
 									alt="Reimagine Education" />
 						</a>
 						<div class="award-desc">
@@ -77,12 +77,13 @@
 
 			</div>
 		</div>
+    </div>
 	</footer>
-</div>
+
 
 <div id="polimi-footer">
 	<div class="polimi-container">
-		<div class="polimi-name"><a href="http://www.polimi.it" target="_blank"><img src="${static.url('themes/polimix/images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
+		<div class="polimi-name"><a href="http://www.polimi.it" target="_blank"><img src="${static.url('polimix-theme/images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
 	</div>
 </div>
 

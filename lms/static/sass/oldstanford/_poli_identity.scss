@@ -1,0 +1,157 @@
+/**
+ * polimi-identity.css
+ * ========================================================
+ * Custom base styles
+ */
+.polimi-name {
+	color:#fff;
+	text-transform:uppercase;
+	line-height:17px;
+	font-size:0.8em;
+}
+#polimi-header .polimi-container,
+#polimi-footer .polimi-container {
+  margin: 0 auto;
+  text-align:center;
+}
+
+#polimi-header .polimi-container:after,
+#polimi-footer .polimi-container:after {
+  clear: both;
+}
+
+
+#polimi-header, #polimi-footer {
+	background: #00acd7;
+	height: 20px;
+	box-shadow: inset 0 -4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
+   
+}
+#polimi-header {
+  position:relative;
+  opacity:0.92;
+  z-index:10;
+}
+
+
+#polimi-header a,#polimi-footer a {
+  color: #fff;
+}
+
+
+/*
+========================================================
+Media queries
+*/
+
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+  /* Prevent double background gradient */
+  #polimi-footer .polimi-container {
+    background:none;
+    box-shadow:none;
+  }
+
+  #bottom-text {
+    margin-top:2px;
+  }
+
+  
+  /* Bootstrap style */
+  #polimi-header .polimi-container,
+  #polimi-footer .polimi-container {
+    width:724px;
+  }
+
+
+  #polimi-footer ul li.alt {
+  	clear:right;
+  }
+  /* Footer two column */
+  #polimi-footer ul {
+    width:100%;
+    float:left;
+  }
+
+  #polimi-footer ul li {
+  	width:auto;
+  	margin:0 13px 3px 0;
+  	padding:0;
+  	float:none;
+  	clear:left;
+    display:inline-block;
+  }
+  
+  #polimi-footer .clear {
+    clear:none;
+  }
+
+}
+
+@media screen and (min-width: 980px) {
+  /* Bootstrap style */
+  #polimi-header .polimi-container,
+  #polimi-footer .polimi-container {
+    width:940px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  /* Bootstrap style */
+  
+  #polimi-header .polimi-container,
+  #polimi-footer .polimi-container {
+    width:1180px;
+  }
+
+}
+
+/*
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+/*html, body {*/
+	/*height: 100%;*/
+/*}*/
+/*#polimi-wrap {*/
+	/*min-height: 100%;*/
+/*}*/
+/*#polimi-content {*/
+	/*overflow:visible;*/
+	/*padding-bottom: 120px; [> must be same height as the footer <]*/
+/*}*/
+/*#polimi-footer {*/
+	/*position: relative;*/
+	/*margin-top: -120px; [> negative value of footer height <]*/
+	/*height: 120px;*/
+	/*clear:both;*/
+/*} */
+
+/*[> IE6/7 uses media, <]*/
+/*@media, {*/
+  /*#polimi-footer {*/
+    /*height: 219px;*/
+  /*}*/
+/*}*/
+
+/*[> IE8 uses \0/ <]*/
+/*@media all {*/
+  /*#polimi-footer {*/
+    /*height: 196px\0/;*/
+  /*}*/
+/*}*/
+
+/*[>Opera Fix<]*/
+	/*body:before { [> thanks to Maleika (Kohoutec)<]*/
+	/*content:"";*/
+	/*height:100%;*/
+	/*float:left;*/
+	/*width:0;*/
+	/*margin-top:-32767px;[> thank you Erik J - negate effect of float<]*/
+/*}*/
