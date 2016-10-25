@@ -48,12 +48,17 @@ html  footer#footer-edx-v3 {
     }
     li {
       font-size: .875em;
-      font-weight: 600;
+      font-weight: 500;
       display: inline-block;
       margin: 0 21px 0 0;
 
       a {
         color: $black; //#707172
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 1px dotted $polimi-ciano;
+        }
       }
     }
     .site-details .site-nav {
@@ -159,6 +164,7 @@ html  footer#footer-edx-v3 {
         float: left;
         padding: 5px;
         border-right: 1px dotted $base-font-color;
+        margin-right:0;
         &:last-child {
           border: none;
         }

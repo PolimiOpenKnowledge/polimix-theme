@@ -62,6 +62,10 @@ footer#footer-edx-v3 .footer-content-wrapper .site-nav li a,
   //@include line-height(21);
   line-height: 21px;
   color: $black;
+
+  &:hover {
+    color: $polimi-ciano;
+  }
 }
 
 .is-hidden {

@@ -30,17 +30,7 @@
   .nav-container {
     height: 70px;
     padding: 10px 10px 0;
-    ol.user {
-      margin-top: 15px;
-      li a.dropdown {
-        background-color:$gray-3;
-        padding:9px 12px;
-        border-right:1px $gray-1 solid;
-        &.focus {
-          background-color:$gray-3;
-        }
-      }
-    }
+
   }
   &.slim {
     nav {
@@ -59,19 +49,35 @@
   }
 }
 .header-global-new {
+  height: 80px;
+  opacity: $home-opacity;
   nav {
-    height: 60px;
+    height: 70px;
+    padding: 10px 10px 0;
   }
-  h2 {
+  .nav-container {
+    ol.user {
+      li .dropdown {
+        background-color:$gray-3;
+        padding:9px 12px;
+        border-right:1px $gray-1 solid;
+        &.focus {
+          background-color:$gray-3;
+        }
+      }
+    }
+  }
+/*  h2 {
     line-height: 60px;
     margin-top: 0;
-  }
+  }*/
   h1.logo {
-    margin: -10px 10px 0 13px;
+    margin: -15px 10px 0 13px;
     img {
       height: 80px;
     }
   }
+
 }
  .home > header {
   height: 650px;

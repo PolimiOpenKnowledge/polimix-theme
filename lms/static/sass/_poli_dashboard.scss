@@ -1,7 +1,9 @@
 .view-dashboard .header-global {
   border-bottom: 1px solid $polimi-ciano;
 }
-
+.view-dashboard .header-global-new .user .user-link .user-image-frame {
+  max-width:44px;
+}
 .content-wrapper .dashboard {
   .activation-message span.it {
     display: block;

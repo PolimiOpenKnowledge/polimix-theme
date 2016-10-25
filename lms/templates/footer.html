@@ -13,13 +13,12 @@
     <h2 class="sr footer-about-title">${_("About POK")}</h2>
 
       <div class="site-details">
-        <div class="footer-logo">
-          <a target="_blank"  href="http://www.polimi.it">
-            <img src="${static.url('polimix-theme/images/logo_poli_home.png')}"  alt="Home page" />
-          </a>
-        </div>
-  			<nav class="site-nav" aria-label="${_("About POK")}">
-
+  			<nav class="clearfix site-nav" aria-label="${_("About POK")}">
+            <li class="footer-logo">
+              <a target="_blank"  href="http://www.polimi.it">
+                <img src="${static.url('polimix-theme/images/logo_poli_home.png')}"  alt="Home page" />
+              </a>
+            </li>
   					<li class="nav-global-01"><a href="/about">About</a></li>
   					%if not user.is_authenticated():
   					<li class="nav-global-04"><a class="cta cta-register"
