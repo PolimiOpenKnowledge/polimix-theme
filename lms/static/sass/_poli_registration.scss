@@ -227,6 +227,9 @@
     .button-login {
       margin-top:30px;
       margin-bottom:30px;
+      .fa-sign-in {
+          display:none;
+      }
     }
     .link2button {
       display: block;
@@ -310,4 +313,8 @@
     font-size: 15px;
     border-radius: 0;
     letter-spacing: initial;
+
+    &:hover {
+      background-image: none;
+    }
 }

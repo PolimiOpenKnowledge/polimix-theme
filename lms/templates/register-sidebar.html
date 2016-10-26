@@ -1,0 +1,49 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+import third_party_auth
+from third_party_auth import provider, pipeline
+%>
+<%namespace file='main.html' import="login_query"/>
+<%namespace name='static' file='static_content.html'/>
+
+
+<header>
+  <h3 class="sr">${_("Registration Help")}</h3>
+</header>
+
+% if has_extauth_info is UNDEFINED:
+
+% if third_party_auth.is_enabled():
+  % for enabled in provider.Registry.get_enabled_by_backend_name("tpa-saml"):
+<div class="cta aunica-login bolder-shame">
+  <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
+  <p class="instructions">
+     <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">Codice Persona</a>.</span>
+     <span class="locale-separator">/</span>
+     <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">Person Code</a>.</span>
+  </p>
+  <p class="button-login">
+
+    <button type="submit" class="link2button button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>Polimi LOGIN</button>
+  </p>
+  <h3 class="it-planning"><span class="it">Hai intenzione di studiare al Politecnico di Milano?</span></h3>
+  <p class="instructions">
+    <span class="it"><strong>Devi creare fin da subito  il tuo account POLIMI</strong> e usarlo per accedere ai corsi. <br /> Clicca su <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">POLIMI Login</a>, quindi su &ldquo;Registrati&rdquo;.</span>
+  </p>
+  <h3 class="en-planning"><span class="en">Are you planning to study at Politecnico di Milano?</span></h3>
+  <p class="instructions">
+    <span class="en"><strong>You need to create your POLIMI account now</strong> and use it to access the courses.<br /> Click on <a onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');" href="#">POLIMI Login</a>, then on &ldquo;Register&rdquo;.</span>
+  </p>
+</div>
+  % endfor
+% endif
+
+% endif
+
+<div class="cta cta-help">
+   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <p>${_('{email}').format(
+    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
+ </div>

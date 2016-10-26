@@ -72,11 +72,11 @@ site_status_msg = get_site_status_msg(course_id)
     </h2>
     % endif
 
-
+    <nav aria-label="Main" class="nav-main">
     % if user.is_authenticated():
       % if not course or disable_courseware_header:
         % if not nav_hidden or show_program_listing:
-          <nav aria-label="Main" class="nav-main">
+
             <ul class="left list-inline nav-global authenticated">
               % if not nav_hidden:
                 <%block name="navigation_global_links_authenticated">
@@ -101,24 +101,27 @@ site_status_msg = get_site_status_msg(course_id)
                 </li>
               % endif
             </ul>
-          </nav>
+
+
+        % endif
+
+
+        % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
+          <ul class="user">
+            <li class="primary">
+              <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
+                <span class="icon fa fa-shopping-cart" aria-hidden="true"></span> ${_("Shopping Cart")}
+              </a>
+            </li>
+          </ul>
         % endif
       % endif
 
-      <%include file="user_dropdown.html"/>
+    <%include file="user_dropdown.html"/>
 
-      % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
-        <ul class="user">
-          <li class="primary">
-            <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
-              <span class="icon fa fa-shopping-cart" aria-hidden="true"></span> ${_("Shopping Cart")}
-            </a>
-          </li>
-        </ul>
-      % endif
 
     % else:
-    <nav aria-label="Main" class="nav-main">
+
       <ul class="left list-inline nav-global">
         <li class="item nav-global-01">
           <a href="${marketing_link('ABOUT')}">About</a>
@@ -147,11 +150,12 @@ site_status_msg = get_site_status_msg(course_id)
         </li>
 
       </ul>
-    </nav>
+
 
 
 
     % endif
+    </nav>
   </div>
 </header>
 % if course:
