@@ -59,7 +59,8 @@
     ol.user {
       li .dropdown {
         background-color:$gray-3;
-        padding:9px 12px;
+        padding:9px 12px 10px 12px;
+        border-radius: 0;
         border-right:1px $gray-1 solid;
         &.focus {
           background-color:$gray-3;

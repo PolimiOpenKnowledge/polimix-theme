@@ -1,0 +1,49 @@
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+import third_party_auth
+from third_party_auth import provider, pipeline
+%>
+
+<header>
+  <h2 class="sr">${_("Helpful Information")}</h2>
+</header>
+
+% if settings.FEATURES.get('AUTH_USE_OPENID'):
+<!-- <div class="cta cta-login-options-openid">
+  <h3>${_("Login via OpenID")}</h3>
+  <p>${_('You can now start learning with {platform_name} by logging in with your <a rel="external" href="http://openid.net/">OpenID account</a>.').format(platform_name=platform_name)}</p>
+  <a class="action action-login-openid" href="#">${_("Login via OpenID")}</a>
+</div> -->
+% endif
+
+% if third_party_auth.is_enabled():
+    % for enabled in provider.Registry.get_enabled_by_backend_name("tpa-saml"):
+    <div class="cta aunica-login bolder-shame">
+      <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
+      <p class="instructions">
+         <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Codice Persona</a>.</span>
+         <span class="locale-separator">/</span>
+         <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Person Code</a>.</span>
+      </p>
+      <p class="button-login">
+        <button type="submit" class="link2button button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>   POLIMI Login</button>
+      </p>
+    </div>
+    % endfor
+    % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
+      <div class="cta eco-login">
+        <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
+        <p class="instructions">
+        <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}');">
+           	<span class="icon ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}
+           </a>
+        </p>
+      </div>
+    % endfor
+% endif
+<div class="cta cta-help">
+   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <p>${_('{email}').format(
+    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
+ </div>
