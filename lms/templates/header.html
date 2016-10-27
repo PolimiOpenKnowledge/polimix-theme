@@ -72,19 +72,22 @@ site_status_msg = get_site_status_msg(course_id)
     </h2>
     % endif
 
-    <nav aria-label="Main" class="nav-main">
+
     % if user.is_authenticated():
       % if not course or disable_courseware_header:
         % if not nav_hidden or show_program_listing:
-
+          <nav aria-label="Main" class="nav-main">
             <ul class="left list-inline nav-global authenticated">
               % if not nav_hidden:
                 <%block name="navigation_global_links_authenticated">
                   <li class="item nav-global-01">
-                    <a href="${marketing_link('ABOUT')}">About</a>
+                    <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
                   </li>
                   <li class="item nav-global-02">
-                    <a href="${marketing_link('COURSES')}">Find Courses</a>
+                    <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
+                  </li>
+                  <li class="item nav-global-03">
+                    <a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>
                   </li>
                 </%block>
               % endif
@@ -101,61 +104,54 @@ site_status_msg = get_site_status_msg(course_id)
                 </li>
               % endif
             </ul>
-
-
-        % endif
-
-
-        % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
-          <ul class="user">
-            <li class="primary">
-              <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
-                <span class="icon fa fa-shopping-cart" aria-hidden="true"></span> ${_("Shopping Cart")}
-              </a>
-            </li>
-          </ul>
+          </nav>
         % endif
       % endif
 
-    <%include file="user_dropdown.html"/>
+      <%include file="user_dropdown.html"/>
 
+      % if should_display_shopping_cart_func(): # see shoppingcart.context_processor.user_has_cart_context_processor
+        <ul class="user">
+          <li class="primary">
+            <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
+              <span class="icon fa fa-shopping-cart" aria-hidden="true"></span> ${_("Shopping Cart")}
+            </a>
+          </li>
+        </ul>
+      % endif
 
     % else:
-
-      <ul class="left list-inline nav-global">
-        <li class="item nav-global-01">
-          <a href="${marketing_link('ABOUT')}">About</a>
-        </li>
-        % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
-          % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-            <li class="item nav-global-04">
-              <a class="btn-neutral btn-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">${_("Register now")}</a>
-            </li>
-          % else:
-            <li class="item nav-global-04">
-              <a class="btn-neutral btn-register" href="/register">${_("Register now")}</a>
-            </li>
-          % endif
-        % endif
-      </ul>
-      <ul class="right nav-courseware list-inline">
-        <li class="item nav-courseware-01">
+      <nav aria-label="Account" class="nav-account-management">
+        <div class="left nav-global list-inline">
+          <div class="item nav-global-01">
+              <a href="${marketing_link('ABOUT')}">About</a>
+          </div>
           % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
             % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-              <a class="btn btn-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">Login</a>
+              <div class="item nav-courseware-02">
+                <a class="btn-neutral btn-register" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">${_("Register")}</a>
+              </div>
             % else:
-              <a class="btn btn-login" href="/login${login_query()}">Login</a>
+              <div class="item nav-courseware-02">
+                <a class="btn-neutral btn-register" href="/register">${_("Register")}</a>
+              </div>
             % endif
           % endif
-        </li>
+        </div>
+        <div class="right nav-courseware list-inline">
+          <div class="item nav-courseware-01">
+            % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
+              % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+                <a class="btn btn-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Sign in")}</a>
+              % else:
+                <a class="btn btn-login" href="/login${login_query()}">${_("Sign in")}</a>
+              % endif
+            % endif
+          </div>
 
-      </ul>
-
-
-
-
+        </div>
+      </nav>
     % endif
-    </nav>
   </div>
 </header>
 % if course:

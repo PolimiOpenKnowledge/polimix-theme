@@ -46,34 +46,30 @@
         height: 80px;
       }
     }
+    ol.user {
+      margin-top:10px;
+      li .dropdown {
+        padding-bottom:19px;  
+      }
+    }
   }
 }
 .header-global-new {
   height: 80px;
   opacity: $home-opacity;
+
   nav {
-    height: 70px;
-    padding: 10px 10px 0;
+    height: 80px;
+    padding:0;
+    margin-top:-18px
   }
-  .nav-container {
-    ol.user {
-      li .dropdown {
-        background-color:$gray-3;
-        padding:9px 12px 10px 12px;
-        border-radius: 0;
-        border-right:1px $gray-1 solid;
-        &.focus {
-          background-color:$gray-3;
-        }
-      }
-    }
-  }
+
 /*  h2 {
     line-height: 60px;
     margin-top: 0;
   }*/
   h1.logo {
-    margin: -15px 10px 0 13px;
+    margin: -20px 10px 0 13px;
     img {
       height: 80px;
     }
