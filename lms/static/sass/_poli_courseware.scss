@@ -20,15 +20,15 @@
       font-size: 1.4em;
       padding-left: 0;
     }
-    @include section_header_info("pok-course-info","../themes/polimix/images/ico_info.png");
-    @include section_header_info("pok-course-grading","../themes/polimix/images/ico_quiz.png");
-    @include section_header_info("pok-course-forum","../themes/polimix/images/ico_forum.png");
-    @include section_header_info("pok-course-prerequisiti","../themes/polimix/images/ico_prerequisiti.png");
-    @include section_header_info("pok-course-docente","../themes/polimix/images/ico_info.png");
-    @include section_header_info("pok-course-approfondimento","../themes/polimix/images/ico_approfondimento.png");
-    @include section_header_info("pok-course-sottotitoli","../themes/polimix/images/ico_sottotitoli.png");
-    @include section_header_info("pok-course-certificato","../themes/polimix/images/ico_certificate.png");
-    @include section_header_info("pok-course-bibliografia","../themes/polimix/images/ico_bibliografia.png");
+    @include section_header_info("pok-course-info","/polimix-theme/images/ico_info.png");
+    @include section_header_info("pok-course-grading","/polimix-theme/images/ico_quiz.png");
+    @include section_header_info("pok-course-forum","/polimix-theme/images/ico_forum.png");
+    @include section_header_info("pok-course-prerequisiti","/polimix-theme/images/ico_prerequisiti.png");
+    @include section_header_info("pok-course-docente","/polimix-theme/images/ico_info.png");
+    @include section_header_info("pok-course-approfondimento","/polimix-theme/images/ico_approfondimento.png");
+    @include section_header_info("pok-course-sottotitoli","/polimix-theme/images/ico_sottotitoli.png");
+    @include section_header_info("pok-course-certificato","/polimix-theme/images/ico_certificate.png");
+    @include section_header_info("pok-course-bibliografia","/polimix-theme/images/ico_bibliografia.png");
   }
 }
 

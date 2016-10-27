@@ -5,7 +5,11 @@ from django.utils.translation import ugettext as _
 from django_countries import countries
 from student.models import UserProfile
 %>
-
+<%
+other_third_party_provider = []
+if third_party_auth.is_enabled():
+  other_third_party_provider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name=="tpa-saml")]
+%>
 <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
 
 <!-- status messages -->
@@ -19,15 +23,12 @@ from student.models import UserProfile
 </div>
 
 % if third_party_auth.is_enabled():
-<%
-  notecoprovider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name=="tpa-saml")]
-%>
+
   % if not running_pipeline:
-      %if len(notecoprovider)>0 :
+      %if len(other_third_party_provider) > 0 :
         <div class="form-actions form-third-party-auth">
 
-            % for enabled in provider.Registry.accepting_logins():
-              % if (not enabled.backend_name=="ecoopenid-auth") or (not enabled.backend_name=="tpa-saml"):
+            % for enabled in other_third_party_provider:
               ## Translators: provider_name is the name of an external, third-party user authentication service (like Google or LinkedIn).
               <button type="submit" class="button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');">
                 % if enabled.icon_class:
@@ -37,8 +38,7 @@ from student.models import UserProfile
                 % endif
                 ${_('Sign up with {provider_name}').format(provider_name=enabled.name)}
               </button>
-              % endif
-            % endfor
+             % endfor
 
         </div>
 

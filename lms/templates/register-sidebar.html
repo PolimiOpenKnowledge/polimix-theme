@@ -42,8 +42,25 @@ from third_party_auth import provider, pipeline
 
 % endif
 
+% if third_party_auth.is_enabled():
+    % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
+      <div class="cta eco-login">
+        <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
+        <p class="instructions">
+          <button type="submit" class="link2button button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_urls[enabled.provider_id]}');">
+            % if enabled.icon_class:
+            <span class="icon fa ${enabled.icon_class}" aria-hidden="true"></span>
+            % else:
+            <span class="icon" aria-hidden="true"><img class="icon-image" src="${enabled.icon_image.url}" alt="${enabled.name} icon" /></span>
+            % endif
+            Sign up with <span class="provider-name">${_('{provider_name}').format(provider_name=enabled.name)}</span>
+          </button>
+
+        </p>
+      </div>
+    % endfor
+% endif
 <div class="cta cta-help">
    <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
-   <p>${_('{email}').format(
-    email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
+   <p><a href="mailto: pok@polimi.it">pok@polimi.it</a></p>
  </div>
