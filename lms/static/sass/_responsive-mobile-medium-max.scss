@@ -2,23 +2,24 @@
   @include mobile("responsive", $mobile-medium);
 
 
-    header.global .nav-global li , header.global .nav-global div {
+    header.header-global .nav-global li , header.header-global .nav-global div {
       margin: 0;
     }
     //hide username with ignored size
-    header.global .user a.user-link div {
+    header.header-global .user a.user-link div {
       display: none ;
     }
     .home > header {
       .outer-wrapper  .title {
           width: 100%;
+          margin:0 auto;
       }
       .media {
         display: none;
       }
     }
 
-    .content-wrapper section.container {
+    .content-wrapper section .container {
       &.login , &.register {
         section.content {
           float: none;

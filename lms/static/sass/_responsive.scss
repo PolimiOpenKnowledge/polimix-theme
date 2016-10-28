@@ -2,22 +2,25 @@
   //.#{$selector} {
   #polimi-header,
   .polimi-container,
-  header.global,
-  header.global nav,
+  header.header-global,
+  header.header-global nav,
   .content-wrapper,
-  .wrapper-footer,
+  .footer-content-wrapper,
+  .header-global-new .wrapper-header:not(.rwd),
   #polimi-footer {
     max-width: $width - $baseline;
     //margin:0 ($baseline / 2) 0 ($baseline / 2);
 
   }
-  header.global nav,
-  .wrapper-footer footer,
-  .content-wrapper section.container {
+  header.header-global nav,
+  footer .footer-content-wrapper,
+  .header-global-new .wrapper-header:not(.rwd),
+  .content-wrapper section .container {
     // contain float right element reducing min-width (760px in original version)
-    min-width: $width - $width / 4;
+    min-width: auto; //$width - $width / 4;
   }
   .content-wrapper section {
+    .container,
     /*selector with class needed to override default edx css*/
     &.introduction,
     &.intro-polimi,
@@ -29,7 +32,7 @@
       margin-left: 0;
     }
   }
-  html body .wrapper-footer footer {
+  html body footer#footer-edx-v3 .footer-content-wrapper {
     max-width: $width - $baseline;
     margin-right: 0;
     margin-left: 0;

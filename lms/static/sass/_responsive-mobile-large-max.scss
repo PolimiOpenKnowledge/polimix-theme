@@ -1,6 +1,6 @@
 @media screen and (max-width: $mobile-large + $gw-gutter) {
   @include mobile("responsive", $mobile-large);
-  
+
     .home > header {
       .outer-wrapper  .title {
         width: flex-grid(8);
@@ -36,6 +36,19 @@
       }
     }
 
+    html footer#footer-edx-v3 .footer-content-wrapper .references {
+      width:100%;
+      margin-top:50%;
+
+      .built-on {
+        float:left;
+      }
+      .eco-references {
+        float:left;
+      }
+
+
+    }
 
 }
 
