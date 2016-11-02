@@ -32,29 +32,11 @@
   }
 }
 
-.content-wrapper .course-index div#accordion ul.ui-accordion-content li {
-  &.graded {
-    > a {
-      background-image: url("../themes/polimix/images/graded.png");
-      background-repeat: no-repeat;
-      background-position: 97% center;
-      img {
-        //nasconde sveglia
-        display: none;
-        visibility: hidden;
-      }
+.content-wrapper .accordion .graded span.menu-icon.icon.fa.fa-pencil-square-o{
+    font-size: 1.5em;
+    &:before {
+      content: "\f11e";
     }
-    &.active > a {
-      background-repeat: no-repeat;
-      background-position: 97% center;
-      @include background-image(url("../themes/polimix/images/graded.png"), linear-gradient(top, #e6e6e6, #d6d6d6));
-      img {
-        //nasconde sveglia
-        display: none;
-        visibility: hidden;
-      }
-    }
-  }
 }
 
 .content-wrapper section.tutorial {

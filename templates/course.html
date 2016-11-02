@@ -2,37 +2,42 @@
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
-from courseware.courses import course_image_url, get_course_about_section
+from courseware.courses import get_course,get_course_about_section
+from openedx.core.lib.courses import course_image_url
 %>
 <%page args="course" />
-<article class="course" id="${course.id | h}" role="region" aria-label="${get_course_about_section(course, 'title')}">
+<%
+ # access to full course is slow need to find other solution to access to language,more_info and newish
+ full_course =  get_course(course.id)
+%>
+<article class="course" id="${course.id | h}" role="region" aria-label="${course.display_name_with_default}">
   <span class="course-more-info">
-    ${get_course_about_section(course, 'more_info')}
+    ${get_course_about_section(request, full_course, 'more_info')}
   </span>
   <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
-    <header class="course-image">
-      %if course.language == 'en':
-        <span class="course-language course-language-${course.language}"></span>
+    <header class="course-image ${full_course.language}">
+      %if full_course.language == 'en':
+        <span class="course-language course-language-${full_course.language}"></span>
       %endif
       <div class="cover-image">
-        <img src="${course_image_url(course)}" alt="${get_course_about_section(course, 'title')} ${course.display_number_with_default}" />
+        <img src="${course.course_image_url | h}" alt="${course.display_name_with_default} ${course.display_number_with_default | h}" />
         <div class="learn-more" aria-hidden=true>${_("LEARN MORE")}</div>
       </div>
     </header>
-    <section class="course-info" aria-hidden=true>
-      %if course.is_newish:
+    <div class="course-info" aria-hidden=true>
+      %if full_course.is_newish:
         <span class="status">${_("New")}</span>
       %endif
       <h2 class="course-name">
-        <span class="course-organization">${get_course_about_section(course, 'university')}</span>
-        <span class="course-title">${get_course_about_section(course, 'title')}</span>
+        <span class="course-organization">${course.display_org_with_default | h}</span>
+        <span class="course-title">${course.display_name_with_default}</span>
       </h2>
       <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.start_datetime_text()}</div>
-    </section>
+    </div>
     <div class="sr">
       <ul>
-      <li>${get_course_about_section(course, 'university')}</li>
-      <li>${course.display_number_with_default}</li>
+      <li>${course.display_org_with_default | h}</li>
+      <li>${course.display_number_with_default | h}</li>
       <li>${_("Starts")}: <time itemprop="startDate" datetime="${course.start_datetime_text()}">${course.start_datetime_text()}</time></li>
     </ul>
     </div>

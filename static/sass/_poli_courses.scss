@@ -5,7 +5,7 @@ html .find-courses > header.search {
   }
 }
 
-body.view-incourse.polimix-theme {
+body.view-in-course.polimix-theme {
   background-color: $gray-3;
 }
 
@@ -18,6 +18,9 @@ html .courses-container .courses .course .course-info .course-title {
   margin: 5px 0 45px 0
 }
 /*** Course list ***/
+html .find-courses, html .university-profile {
+  background: $gray-1;
+}
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
@@ -83,6 +86,7 @@ html .find-courses .courses {
   display: block;
    span {
      color: $white;
+     font: normal 1em/1.6em $sans-serif;
      text-align:center;
      display:block;
      @include classification-span-bg-color("before");
@@ -125,11 +129,11 @@ html .find-courses .courses {
 
 .closing-warning {
   padding: 10px;
-  border: 1px solid $error-red;
+  border: 1px solid $red;
   h3 {
     padding: 0 10px;
     text-transform: uppercase;
-    color: $error-red;
+    color: $red;
   }
   p {
     margin-bottom: 0;
@@ -170,5 +174,7 @@ html .find-courses .courses {
     }
   }
 }
-
+.polimix-theme .find-courses .wrapper-search-context .search-status-label {
+  font-size:22px;
+}
 /*@include legenda-corsi("find-courses > header");*/

@@ -12,7 +12,11 @@ select,
 textarea {
   color: $base-font-color;
 }
-
+p {
+  color: $base-font-color;
+  font: normal 1em/1.6em $serif;
+  margin: 0;
+}
 // Change font serif to sans-serif for all paragraph. This can be deleted after picked better serif font (not Yanone as Polimi site?)
 html {
   .static-container ol li,

@@ -1,3 +1,4 @@
+
 %bg-before {
     background-color: $color-classification-before;
 }
@@ -27,3 +28,17 @@
     z-index: 2;
   }
 }
+@each $course, $classification in $course-map-classification {
+  span.classification-card {
+    &.classification-#{$course} {
+      @extend %bg-#{$classification};
+      text-align: left;
+      padding-left: 15px;
+      display: block;
+      box-shadow: 0 1px 8px 0px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+ 
