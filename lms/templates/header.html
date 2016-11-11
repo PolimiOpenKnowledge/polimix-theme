@@ -17,7 +17,7 @@ from status.status import get_site_status_msg
 <%block name="navigation_top">
 <div id="polimi-header">
   <div class="polimi-container">
-    <div class="polimi-name"> <a href="http://www.polimi.it" target="_blank"><img src="${static.url('polimix-theme/images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
+    <div class="polimi-name"> <a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
    </div>
  </div>
 </%block>
@@ -59,7 +59,7 @@ site_status_msg = get_site_status_msg(course_id)
     <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
       <a href="${marketing_link('ROOT')}" itemprop="url">
         <%block name="navigation_logo">
-            <img src="${static.url('polimix-theme/images/POK_logo_80.png')}"  alt="Home page" />
+            <img src="${static.url('images/POK_logo_80.png')}"  alt="Home page" />
         </%block>
       </a>
     </h1>
