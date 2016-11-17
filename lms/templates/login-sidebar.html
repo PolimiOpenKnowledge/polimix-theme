@@ -27,17 +27,17 @@ from third_party_auth import provider, pipeline
          <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Person Code</a>.</span>
       </p>
       <p class="button-login">
-        <button type="submit" class="link2button button button-primary button-${enabled.provider_id} register-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>   POLIMI Login</button>
+        <button type="submit" class="link2button button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>   POLIMI Login</button>
       </p>
     </div>
     % endfor
     % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
       <div class="cta eco-login">
         <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
-        <p class="instructions">
-        <a class="link2button" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}');">
+        <p class="button-login">
+        <button type="submit" class="link2button button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}');">
            	<span class="icon ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}
-           </a>
+        </button>
         </p>
       </div>
     % endfor
