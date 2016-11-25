@@ -35,6 +35,10 @@ html body.discussion {
           line-height: 60px;
           margin-top: 0;
         }
+        .wrapper-user-menu {
+          background-color: $gray-3;
+          margin-top: 10px;
+        }
       }
   }
 
@@ -50,12 +54,9 @@ html body.discussion {
     color: $base-font-color;
     font-weight: normal;
     font-family: $sans-serif
-    
+
   }
-  .wrapper-user-menu {
-    background-color: $gray-3;
-    margin-top: 10px;
-  }
+
 
   footer#footer-edx-v3 {
     .site-details , .references {

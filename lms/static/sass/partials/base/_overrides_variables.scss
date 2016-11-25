@@ -90,7 +90,7 @@ $f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace !default;
 $theme-sans-font: "Trebuchet MS";
 $sans-serif: $theme-sans-font, $sans-serif;
 $body-font-family: $sans-serif;
-
+$f-sans-serif: $theme-sans-font, $f-sans-serif;
 $theme-serif-font: "Yanone Kaffeesatz";
 $serif: $theme-serif-font, $f-serif;
 
