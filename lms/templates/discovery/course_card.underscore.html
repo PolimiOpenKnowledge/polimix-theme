@@ -4,9 +4,11 @@
 <script type="text/template" id="course_card-tpl">
   ${HTML("""<article class="course" role="region" aria-label="<%= content.display_name %>">
       <span class="course-more-info">
+        <% if(!_.isUndefined(arguments[0].content.more_info)) { %>
         <span class="classification-card classification-<%= content.more_info.trim().toLowerCase().replace(/ /g, '-') %>">
           <%= content.more_info %>
         </span>
+        <% } %>
       </span>
       <a href="/courses/<%- course %>/about">
           <header class="course-image">
