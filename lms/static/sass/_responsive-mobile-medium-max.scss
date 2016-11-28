@@ -1,7 +1,7 @@
 @media screen and (max-width: $mobile-medium + $gw-gutter) {
   @include mobile("responsive", $mobile-medium);
 
-  .content-wrapper {
+  body .content-wrapper {
     margin-left:0;
     margin-right:0;
   }
