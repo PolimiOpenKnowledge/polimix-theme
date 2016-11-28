@@ -1,7 +1,10 @@
 @media screen and (max-width: $mobile-medium + $gw-gutter) {
   @include mobile("responsive", $mobile-medium);
 
-
+  .content-wrapper {
+    margin-left:0;
+    margin-right:0;
+  }
     header.header-global .nav-global li , header.header-global .nav-global div {
       margin: 0;
     }
@@ -46,16 +49,22 @@
           width: 100%;
         }
       }
-      &.dashboard {
-        .my-courses {
-          width: 100%;
-          float: none;
-        }
-        .profile-sidebar {
-          display: none;
-        }
-      }
 
+
+    }
+    .dashboard {
+      .my-courses {
+        width: 100%;
+        float: none;
+      }
+      .profile-sidebar {
+        display: none;
+      }
+      .wrapper-course-image, .cover, .wrapper-course-details, .course-info, .wrapper-course-actions {
+        float: none;
+        display:block;
+        width:100%;
+      }
     }
 
 }

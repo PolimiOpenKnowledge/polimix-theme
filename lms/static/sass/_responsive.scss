@@ -34,6 +34,13 @@
       margin-left: 0;
     }
   }
+  .content-wrapper {
+    .course-item, .course-wrapper  {
+      max-width: $width - $baseline;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
   html body footer#footer-edx-v3 .footer-content-wrapper {
     max-width: $width - $baseline;
     margin-right: 0;
