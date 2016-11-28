@@ -19,7 +19,23 @@
       }
     }
 
-    .content-wrapper section .container {
+    .header-global-new {
+      height: auto;
+      .wrapper-header {
+        height: auto;
+        h1.logo {
+          float:none;
+        }
+        nav {
+          height: auto;
+        }
+      }
+    }
+    .view-index .content-wrapper {
+      top: -170px;
+    }
+
+    .content-wrapper section.container {
       &.login , &.register {
         section.content {
           float: none;

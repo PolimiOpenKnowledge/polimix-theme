@@ -15,7 +15,7 @@
   header.header-global nav,
   footer .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
-  .content-wrapper section .container {
+  .content-wrapper section.container {
     // contain float right element reducing min-width (760px in original version)
     min-width: auto; //$width - $width / 4;
   }
@@ -26,7 +26,9 @@
     &.intro-polimi,
     &.container,
     &.home,
-    &.about {
+    &.about,
+    &.lego,
+    .box .innerbox {
       max-width: $width - $baseline;
       margin-right: 0;
       margin-left: 0;
