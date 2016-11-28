@@ -35,7 +35,10 @@
         float: none;
       }
     }
-
+    .content-wrapper .course-content , .content-wrapper .course-index {
+      display:block;
+      width: 100%;
+    }
     html footer#footer-edx-v3 .footer-content-wrapper .references {
       width:100%;
       margin-top:50px;
