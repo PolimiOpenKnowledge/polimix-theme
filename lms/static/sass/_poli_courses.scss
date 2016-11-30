@@ -180,4 +180,7 @@ html .find-courses .courses {
  .view-course-info .home {
     display:none;
  }
+ html .home .courses-container .courses .courses-listing .courses-listing-item {
+   margin-top: 10px;
+ }
 /*@include legenda-corsi("find-courses > header");*/
