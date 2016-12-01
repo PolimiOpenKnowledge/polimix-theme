@@ -15,7 +15,8 @@
   header.header-global nav,
   footer .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
-  .content-wrapper section.container {
+  .content-wrapper section.container,
+  .content-wrapper .container {
     // contain float right element reducing min-width (760px in original version)
     min-width: auto; //$width - $width / 4;
   }

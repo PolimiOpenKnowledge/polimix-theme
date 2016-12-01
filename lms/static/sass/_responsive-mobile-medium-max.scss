@@ -56,14 +56,16 @@
       .my-courses {
         width: 100%;
         float: none;
+        .course .details {
+          .wrapper-course-image, .cover, .wrapper-course-details, .course-info, .wrapper-course-actions {
+            float: none;
+            display:block;
+            width:100%;
+          }
+        }
       }
       .profile-sidebar {
         display: none;
-      }
-      .wrapper-course-image, .cover, .wrapper-course-details, .course-info, .wrapper-course-actions {
-        float: none;
-        display:block;
-        width:100%;
       }
     }
 
