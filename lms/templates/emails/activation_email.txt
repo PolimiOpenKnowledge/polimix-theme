@@ -9,7 +9,7 @@ Grazie per esserti registrato a Polimi Open Knowledge! Per attivare il tuo accou
   http://${ site }/activate/${ key }
 % endif
 
-Se non hai fatto richiesta di un account non devi fare nulla: non riceverai nessun'altra mail da ${_("{platform_name}").format(platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)))}.
+Se non hai fatto richiesta di un account non devi fare nulla: non riceverai nessun'altra mail da ${_("{platform_name}").format(platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))}.
 
 Se ti serve assistenza scrivi a ${_('{email}').format(email=configuration_helpers.get_value('TECH_SUPPORT_EMAIL', settings.TECH_SUPPORT_EMAIL))}
 
