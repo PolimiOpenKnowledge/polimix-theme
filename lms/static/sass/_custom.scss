@@ -19,6 +19,10 @@
 @import "poli_dashboard";
 @import "poli_ie";
 
+// This is at this moment the only way to hide orders in account settings. Waiting for some feature flag
+button#orders-tab {
+  display:none;
+}
 
 .contact-us-tab {
   position: fixed;
