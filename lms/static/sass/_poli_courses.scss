@@ -109,6 +109,9 @@ html .find-courses .courses {
   &.course-language-en {
     background-image: url("../images/flag_en.png");
   }
+  &.course-language-it {
+    display:none
+  }
 }
 /** About Course **/
 .short-desc {
