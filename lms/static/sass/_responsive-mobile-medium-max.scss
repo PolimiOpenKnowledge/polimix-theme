@@ -1,0 +1,72 @@
+@media screen and (max-width: $mobile-medium + $gw-gutter) {
+  @include mobile("responsive", $mobile-medium);
+
+  body .content-wrapper {
+    margin-left:0;
+    margin-right:0;
+  }
+    header.header-global .nav-global li , header.header-global .nav-global div {
+      margin: 0;
+    }
+    //hide username with ignored size
+    header.header-global .user a.user-link div {
+      display: none ;
+    }
+    .home > header {
+      .outer-wrapper  .title {
+          width: 100%;
+          margin:0 auto;
+      }
+      .media {
+        display: none;
+      }
+    }
+
+    .header-global-new {
+      height: auto;
+      .wrapper-header {
+        height: auto;
+        h1.logo {
+          float:none;
+        }
+        nav {
+          height: auto;
+        }
+      }
+    }
+    .view-index .content-wrapper {
+      top: -170px;
+    }
+
+    .content-wrapper section.container {
+      &.login , &.register {
+        section.content {
+          float: none;
+          width:100%;
+        }
+        aside {
+          float: none;
+          width: 100%;
+        }
+      }
+
+
+    }
+    body .content-wrapper .dashboard {
+      .my-courses {
+        width: 100%;
+        float: none;
+        .course .details {
+          .wrapper-course-image, .cover, .wrapper-course-details, .course-info, .wrapper-course-actions {
+            float: none;
+            display:block;
+            width:100%;
+          }
+        }
+      }
+      .profile-sidebar {
+        display: none;
+      }
+    }
+
+}

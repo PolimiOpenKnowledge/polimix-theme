@@ -1,0 +1,21 @@
+@media screen and (min-width: $desktop-large) {
+    .home > header .title > hgroup h1 {
+      font-size: 3.4em;
+    }
+
+    .course-info .container {
+      box-sizing: content-box;
+    }
+    footer#footer-edx-v3 .footer-content-wrapper {
+      .eco-references {
+        padding-right: 30px;
+      }
+      .built-on {
+        padding-left: 30px;
+      }
+      .site-details {
+        width:flex-grid(6, 12);
+      }
+    }
+
+}

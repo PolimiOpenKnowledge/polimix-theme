@@ -1,0 +1,274 @@
+/****************************************************************************************************
+*   polimi Theming File
+*
+*   Contains all the theme color definitions for the polimi Open Source MOOC Project
+*
+****************************************************************************************************/
+/* DIMENSIONI */
+$mobile-small: 320px;
+$mobile-medium: 480px;
+$ipad-portrait: 768px;
+$mobile-large: 780px;
+$desktop-small: 960px;
+$desktop-large: 1280px;
+
+//-----------------
+//  Color variables (from polimi palette unless noted)
+//-----------------
+
+//Ciano Polimi
+$polimi-ciano: #00acd7;
+$polimi-ciano-50: #eefcff;
+$polimi-ciano-25: lighten($polimi-ciano, 20%);
+
+//Important Heading BG Color
+
+$red: #dc292d;
+
+//Cardinal Color Variables
+$cardinal-blue: #515790;
+$dark-blue: $polimi-ciano;
+
+//Link Color
+$cardinal-light: lighten($cardinal-blue, 18.5%);
+
+//Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #afcde9;
+
+//Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+
+//Azzurro Color Variables
+$azzurro: #fffff2;
+$azzurro-60: lighten($azzurro, 18.5%);
+
+//Main Border/HR Color
+$azzurro-25: lighten($azzurro, 25%);
+
+//Gray Color Variables
+$gray: #3f3c30;
+
+//Main Text Color
+$gray-75: lighten($gray, 18.25%);
+
+//Lighter Text Color
+
+$gray-3: #e9e6df;
+
+//Block/Course BG Color
+$gray-2: #f2f1eb;
+$gray-1: #fbfbf9;
+$gray-0: #f0f0f0;
+
+//Main BG Color
+$white: #ffffff;
+
+$black: #707172;
+
+//#878889
+$black-80: #585754;
+$black-bold: #444444;
+
+$eco-yellow: #EAAF31;
+
+// ----------------------------
+// #TYPOGRAPHY
+// ----------------------------
+$sans-serif: 'Open Sans', $verdana, sans-serif !default;
+$monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace !default;
+$body-font-family: $sans-serif !default;
+$serif: $georgia !default;
+
+// newer variables/standards
+$f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace !default;
+
+//-----------------
+//  Font Assignment
+//-----------------
+
+$theme-sans-font: "Trebuchet MS";
+$sans-serif: $theme-sans-font, $sans-serif;
+$body-font-family: $sans-serif;
+$f-sans-serif: $theme-sans-font, $f-sans-serif;
+$theme-serif-font: "Yanone Kaffeesatz";
+$serif: $theme-serif-font, $f-serif;
+
+//-----------------
+//  Image Assignment
+//-----------------
+$pok-logo-ciano-url: "../images/POK_logo_ciano.png";
+
+$pok-before-legend: "../images/level/before.png";
+$pok-during-legend: "../images/level/during.png";
+$pok-after-legend: "../images/level/after.png";
+
+//-----------------
+//  Theme Element Assignments
+//-----------------
+
+$body-bg: $gray-1;
+
+// eventually $gray-0
+$container-bg: $gray-1;
+$login-register-bg: $gray-1;
+$content-wrapper-bg: $gray-1;
+$header-image: none;
+$header-bg: $white;
+$courseware-header-image: none;
+$courseware-header-bg: transparentize(lighten($polimi-ciano, 18.5%), 0.25);
+$footer-bg: $white;
+$courseware-footer-border: 1px solid $azzurro-60;
+$courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, 0.1));
+$courseware-footer-margin: 50px;
+
+$faded-hr-image-1: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-2: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-3: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-4: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-5: linear-gradient($azzurro-60 0%, $azzurro-60);
+$faded-hr-image-6: linear-gradient($azzurro-60 0%, $azzurro-60);
+
+$base-font-color: $black;
+$baseFontColor: $black;
+$lighter-base-font-color: $black-80;
+$very-light-text: $gray-1;
+
+$link-color: $polimi-ciano;
+$link-color-d1: $dark-blue;
+$link-hover: $cardinal-light;
+$site-status-color: $cardinal-blue;
+
+$header-graphic-super-color: $dark-blue;
+$header-graphic-sub-color: $lighter-base-font-color;
+
+$header-link-color: $dark-blue;
+$header-link-hover: $cardinal-light;
+
+$button-color: $polimi-ciano;
+$button-archive-color: $gray-3;
+
+$shadow-color: $gray;
+
+// actions
+$button-bg-image: none;
+$button-bg-color: $gray-3;
+$button-bg-hover-color: $gray-1;
+
+// actions - primary
+$action-primary-bg: $polimi-ciano;
+$action-primary-fg: $gray-2;
+$action-primary-shadow: none;
+
+// focused - hover/active pseudo states
+$action-primary-focused-bg: $dark-blue;
+$action-primary-focused-fg: $gray-1;
+
+// current or active navigation item
+$action-primary-active-bg: $dark-blue;
+$action-primary-active-fg: $gray-1;
+$action-primary-active-shadow: none;
+$action-primary-active-focused-fg: $gray-2;
+$action-primary-active-focused-shadow: none;
+
+// disabled
+$action-primary-disabled-bg: $gray-75;
+$action-prmary-disabled-fg: $gray-1;
+
+// actions - secondary
+$action-secondary-bg: $polimi-ciano;
+$action-secondary-fg: $gray;
+$action-secondary-shadow: none;
+
+// focused - hover/active pseudo states
+$action-secondary-focused-bg: $polimi-ciano-50;
+$action-secondary-focused-fg: $gray;
+
+// current or active navigation item
+$action-secondary-active-bg: $polimi-ciano-50;
+$action-secondary-active-fg: $gray;
+$action-secondary-active-shadow: none;
+$action-secondary-active-focused-fg: $gray-75;
+$action-secondary-active-focused-shadow: none;
+
+// disabled
+$action-secondary-disabled-bg: $gray-3;
+$action-secondary-disabled-fg: $gray;
+
+//
+
+$border-color-1: $azzurro-60;
+$border-color-2: $azzurro-60;
+$border-color-3: $azzurro-60;
+$outer-border-color: $azzurro-60;
+
+$sidebar-color: $gray-1;
+
+$dashboard-profile-header-image: none;
+$dashboard-profile-header-color: $polimi-ciano-25;
+$dashboard-profile-color: $gray-3;
+$dot-color: $azzurro-60;
+
+$course-bg-color: $gray-3;
+$course-bg-image: none;
+$account-content-wrapper-bg: $gray-1;
+
+$course-profile-bg: $gray-1;
+$course-header-bg: transparentize($gray-1, 0.1);
+
+$sidebar-chapter-bg-top: transparentize($gray-1, 0.3);
+$sidebar-chapter-bg-bottom: transparentize($gray-1, 0.9);
+$sidebar-chapter-bg: $gray-2;
+$sidebar-active-image: $gray-3;
+
+$form-bg-color: $gray-1;
+$modal-bg-color: $gray-1;
+
+//TOP HEADER IMAGE MARGIN
+$header-image-margin: 0px;
+
+//FOOTER MARGIN
+$footer-margin: ($baseline / 4) 0;
+
+//-----------------
+//  CSS BG Images
+//-----------------
+$homepage-bg-image: url("../images/polimi-pano.jpg");
+
+$login-banner-image: url("../images/group-of-people.jpg");
+$register-banner-image: url("../images/group-of-people.jpg");
+
+$video-thumb-url: "../images/POK_logo.png";
+
+//-----------------
+//  Mixin Styles
+//-----------------
+@mixin login-register-h1-style {
+  /* clip: auto !important;
+   height: 50px;
+   width: 550px;
+   margin-top: 50px;*/
+}
+
+@mixin footer-references-style {
+  margin: 0 !important;
+  text-align: right;
+}
+
+$home-opacity: 0.94;
+
+// CLASSIFICATION STYLES
+$color-classification-before: $polimi-ciano;
+$color-classification-during: $polimi-ciano;
+$color-classification-after: $polimi-ciano;
+$color-classification-teachers: #F85F39;
+$color-classification-citizens: #D43C67;
+$color-classification-researchers: #E79A32;
+$course-map-classification: (
+  "from-high-school-to-university": "before",
+  "from-university-to-job": "after",
+  "from-bachelors-to-master": "during",
+  "moocs-for-teachers": "teachers",
+  "moocs-for-citizens": "citizens",
+  "moocs-for-researchers": "researchers"
+);

@@ -1,0 +1,48 @@
+/****************************************************************************************************
+*   Custom Theming File
+*
+*   Contains style for overridden template files
+*
+****************************************************************************************************/
+
+// using poli prefix to prevent names collision with original edx files
+@import "poli_base";
+@import "poli_identity";
+@import "poli_footer";
+@import "poli_navigation";
+@import "poli_index";
+@import "poli_about";
+@import "poli_classification";
+@import "poli_courses";
+@import "poli_courseware";
+@import "poli_registration";
+@import "poli_dashboard";
+@import "poli_ie";
+
+// This is at this moment the only way to hide orders in account settings. Waiting for some feature flag
+button#orders-tab {
+  display:none;
+}
+
+.contact-us-tab {
+  position: fixed;
+  z-index: 99;
+  top: 500px;
+  right: -35px;
+  opacity: .85;
+  @include transform(rotate(90deg));
+  a {
+    padding: 5px;
+    background-color: $polimi-ciano;
+    &:link,
+    &:visited {
+      color: $gray-1;
+    }
+    &:hover {
+      color: $polimi-ciano;
+      background-color: $gray-1;
+    }
+  }
+}
+
+@import "responsive";

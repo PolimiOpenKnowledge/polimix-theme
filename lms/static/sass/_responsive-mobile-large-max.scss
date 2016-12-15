@@ -1,0 +1,60 @@
+@media screen and (max-width: $mobile-large + $gw-gutter) {
+  @include mobile("responsive", $mobile-large);
+
+    .home > header {
+      .outer-wrapper  .title {
+        width: flex-grid(8);
+        margin-left: flex-grid(1);
+      }
+      .media .hero {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .container.about {
+      font-size: .9em;
+      .media {
+        height: 80px;
+        .hero {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      .vision {
+        top: -60px;
+        // goes on 2 lines
+
+      }
+    }
+
+    .content-wrapper .course-info {
+      .details , .course-sidebar {
+        width: 100%;
+        float: none;
+      }
+    }
+    html .content-wrapper .course-content , html .content-wrapper .course-index {
+      display:block;
+      width: 100%;
+    }
+    html footer#footer-edx-v3 .footer-content-wrapper .references {
+      width:100%;
+      margin-top:50px;
+
+      .built-on {
+        float:left;
+      }
+      .eco-references {
+        float:left;
+      }
+
+
+    }
+
+}
+
+@media screen and (max-width: $ipad-portrait + $gw-gutter) {
+  @include mobile("responsive", $ipad-portrait);
+}

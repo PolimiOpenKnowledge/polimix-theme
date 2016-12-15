@@ -1,0 +1,147 @@
+html .container.about,
+section.about.outside-app {
+  width: auto;
+  padding: 0 30px 20px 30px;
+}
+
+.container.about {
+  font-family: $sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  img {
+    display: block;
+
+  }
+  #banner {
+    position: relative;
+  }
+  .media {
+    //float: right;
+    position: absolute;
+    z-index: 10;
+    top: 60%;
+    width: flex-grid(2, 10) + flex-gutter();
+    // box-shadow: 0 4px 25px 0 rgba(0,0,0, 0.5);
+    height: 120px;
+    vertical-align: top;
+    border: 1px solid $border-color-3;
+    border-left: 0;
+    background: #fff;
+    @include box-sizing(border-box);
+    @include animation(harvard-slide 1.15s ease-out);
+    @include animation-fill-mode(both);
+    @include animation-delay(2s);
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      background: $white url($pok-logo-ciano-url) left no-repeat;
+    }
+  }
+  .vision {
+    position: relative;
+    top: -30px;
+    text-align: center;
+    opacity: $home-opacity;
+    background-color: $black;
+    .sub {
+      font-size: 1.3em;
+      color: $gray-1;
+    }
+  }
+  .lego {
+    border-bottom: 1px solid $gray-3;
+  }
+  .intro-lego {
+    font-size: 1.7em;
+    padding: 10px 10px 10px 50px;
+    text-align: left;
+    color: $polimi-ciano;
+  }
+  .boxes-wrapper {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .box {
+    float: left;
+    width: flex-grid(3, 6);
+    margin-left: flex-gutter(6);
+    margin-top: 20px;
+    &:first-child {
+      margin-left:0;
+    }
+    .inner-box {
+      min-height: 400px;
+      margin: 0 auto;
+      padding-top: 10px;
+      @include box-sizing(border-box);
+      p {
+        font-size: 1em;
+        margin: 20px 0 20px 30px;
+        text-align: left;
+        strong {
+          color: $black-bold;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+    .card-horizontal {
+      position: relative;
+      min-height: 14em;
+      .card-row {
+        display: table;
+        width: 100%;
+        height: 100%;
+      }
+      .card-row [class*="card-col"] {
+        display: table-cell;
+        position: relative;
+        vertical-align: top;
+        word-break: break-word;
+      }
+      .card-col-image {
+        width:76px;
+        vertical-align: top;
+        img {
+          border-radius: 50%;
+          margin: 0;
+        }
+      }
+    }
+    h3 {
+      font-size: 1.5em;
+      font-family: $sans-serif;
+      line-height: 1.6em;
+      position: relative;
+      padding-left: 146px;
+      text-align: left;
+      color: $polimi-ciano;
+    }
+    h4 {
+      color: $polimi-ciano;
+      text-align: left;
+      margin-left: 30px;
+      font-family: $sans-serif;
+      &.classification-citizens {
+        color:$color-classification-citizens;
+      }
+      &.classification-researchers {
+        color:$color-classification-researchers;
+      }
+      &.classification-teachers {
+        color:$color-classification-teachers;
+      }
+    }
+    img {
+      margin: flex-gutter();
+      margin-bottom: 30px;
+    }
+  }
+}

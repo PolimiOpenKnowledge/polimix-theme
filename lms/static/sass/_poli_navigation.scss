@@ -1,0 +1,124 @@
+/*** Navigation ***/
+
+@mixin current-page($page-selector, $link-selector, $selected-color) {
+  .#{$page-selector} {
+    .header-global-new li.#{$link-selector} a, .header-global li.#{$link-selector} a {
+      color: $selected-color;
+      border-bottom: 1px $selected-color solid;
+    }
+  }
+}
+
+
+html .header-global-new .nav-courseware {
+  &.right {
+    margin-top: 0
+  }
+  .item {
+    font-weight: bold;
+    text-transform: uppercase;
+    a.btn-login {
+        display: block;
+        font-family: $serif;
+        font-size:21px;
+        line-height: 21px;
+        border-radius: 2px;
+        padding: 15px 20px;
+        text-align: center;
+        color: $gray-1;
+        background-color: $polimi-ciano;
+    }
+  }
+}
+
+
+@include current-page("view-register", "nav-global-04", $polimi-ciano);
+
+@include current-page("view-about", "nav-global-01", $polimi-ciano);
+
+@include current-page("view-courses", "nav-global-02", $polimi-ciano);
+
+
+.nav-container {
+  ol.user {
+    li .dropdown {
+      background-color:$gray-3;
+      padding:9px 12px 10px 12px;
+      border-radius: 0;
+      border-right:1px $gray-1 solid;
+      min-height:44px;
+      &.focus {
+        background-color:$gray-3;
+      }
+    }
+  }
+}
+
+
+ html .header-global {
+  height: 80px;
+  opacity: $home-opacity;
+  .nav-global li a {
+    padding: 5px 5px 0 5px;
+    color: $black;
+  }
+  h1.logo {
+    margin: -20px 39px 0 0;
+    a {
+      img {
+        height: 80px;
+      }
+    }
+  }
+  .nav-container {
+    height: 70px;
+    padding: 10px 10px 0;
+
+  }
+  &.slim .wrapper-header{
+    nav {
+      height: 60px;
+    }
+    h2 {
+      line-height: 60px;
+      margin-top: 0;
+    }
+    h1.logo {
+      margin: -10px 10px 0 13px;
+      img {
+        height: 80px;
+      }
+    }
+    ol.user {
+      margin-top:10px;
+      li .dropdown {
+        min-height:44px;
+      }
+    }
+  }
+}
+.header-global-new {
+  height: 80px;
+  opacity: $home-opacity;
+
+  nav {
+    height: 80px;
+    padding:0;
+    float:left;
+    &.nav-account-management {
+      float:none;
+    }
+  }
+
+  h1.logo {
+    margin: -20px 10px 0 13px;
+    img {
+      height: 80px;
+    }
+  }
+
+}
+
+html header .nav-container .user .user-link .user-image-frame {
+  max-width:44px;
+}

@@ -1,0 +1,118 @@
+## mako
+<%!
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
+
+
+
+	<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}">
+    <div class="footer-content-wrapper">
+    <h2 class="sr footer-about-title">${_("About POK")}</h2>
+
+      <div class="site-details">
+  			<nav class="clearfix site-nav" aria-label="${_("About POK")}">
+            <li class="footer-logo">
+              <a target="_blank"  href="http://www.polimi.it">
+                <img src="${static.url('images/logo_poli_home.png')}"  alt="Home page" />
+              </a>
+            </li>
+  					<li class="nav-global-01"><a href="/about">About</a></li>
+  					%if not user.is_authenticated():
+  					<li class="nav-global-04"><a class="cta cta-register"
+  						href="/register">Register Now</a></li>
+  					%endif
+  					%if user.is_authenticated():
+  					  <li class="nav-global-02">
+      					<a href="${marketing_link('COURSES')}">Find Courses</a>
+    					</li>
+    				%endif
+  			</nav>
+        <div class="terms">
+            <nav class="nav-terms clearfix">
+    					<ol>
+    						<li><a href="/tos">Terms of Service & Copyright</a></li>
+    						<li><a href="/tos#privacy">Privacy Policy</a></li>
+    						<li><a class="standard-link" href="mailto:pok@polimi.it">pok@polimi.it</a></li>
+    					</ol>
+    				</nav>
+        </div>
+      </div>
+
+
+
+
+		<div class="references">
+      % if not hide_openedx_link:
+			<div class="built-on">
+				<a  class="open-edx-logo" href="http://openedx.org">
+	  				<img src="${static.url('images/edx-openedx-logo-tag-light.png')}"
+	    				height="50" alt="Powered by Open edX" />
+				</a>
+				<div class="additional-logo-info">
+				 <span>Built on <a target="_blank" href="http://openedx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a></span><span class="in-collab">in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></span>
+				</div>
+			</div>
+      % endif
+			<div class="eco-references">
+					<div class="eco-loghi-container">
+						<div class="cip-eu-logo eco-loghi">
+							<img src="${static.url('images/cip-eu_logo.jpg')}"
+			    				 alt="ECO Project" />
+						</div>
+						<a class="eco-project-logo eco-loghi" href="http://ecolearning.eu">
+			  				<img src="${static.url('images/eco_logo.jpg')}"
+			    				 alt="ECO Project" />
+						</a>
+					</div>
+					<div class="reimagine-award clearfix">
+						<a class="award-link" href="http://www.reimagine-education.com/">
+								<img src="${static.url('images/award_big.png')}"
+									alt="Reimagine Education" />
+						</a>
+						<div class="award-desc">
+							<div>Reimagine Education Award</div>
+							<div>2015 - Shortlisted</div>
+						</div>
+					</div>
+
+			</div>
+		</div>
+    </div>
+	</footer>
+
+
+<div id="polimi-footer">
+	<div class="polimi-container">
+		<div class="polimi-name"><a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
+	</div>
+</div>
+
+
+<div class="contact-us-tab">
+  <a href="mailto:pok@polimi.it" role="button">CONTACT US</a>
+</div>
+
+
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+  <%include file="widgets/segment-io-footer.html" />
+% endif
+% if bidi == 'rtl':
+<%static:css group='style-lms-footer-edx-rtl'/>
+% else:
+<%static:css group='style-lms-footer-edx'/>
+% endif
+
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
+% if footer_js_url:
+  <script type="text/javascript" src="${footer_js_url}"></script>
+% endif

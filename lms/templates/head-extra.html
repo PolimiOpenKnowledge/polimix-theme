@@ -1,0 +1,46 @@
+## mako
+
+<%namespace name='static' file='/static_content.html'/>
+<link href='//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:500,400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic,400italic,700italic,900italic,' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      alert("Warning: you are using an unsupported browser\nand may be unable to use some features.\n\nWe suggest you use either Mozilla Firefox or\nGoogle Chrome.");
+    });
+  </script>
+<![endif]-->
+
+## <!--  <meta name="keywords" content="MOOC, MOOCs, Politecnico  di Milano, METID, POK, Polimi Open Knowledge, courses">-->
+## OG (Open Graph) title and description added below to give social media info to display
+## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
+<meta property="og:site_name" content="POK - MOOCs portal of Politecnico di Milano"/>
+% if not course:
+<meta property="og:image" content="https://${ site }${static.url('images/ogimage.jpg')}"/>
+<meta property="og:image:secure_url" content="https://${ site }${static.url('images/ogimage.jpg')}"/>
+<meta property="og:title" content="POK - MOOCs portal of Politecnico di Milano"/>
+<meta property="og:description" content="Polimi Open Knowledge -  MOOCs to bridge the gaps"/>
+% endif
+
+  <meta name="google-site-verification" content="ZyswrIdUIIXboFQtBx6ha6R8DTvA46T-4yILTOTfF7o" />
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"This site uses cookies for statistics and to improve your user experience. More information is available at","dismiss":"Accept it!","learnMore":"Privacy Policy page","link":"https://${ site }/tos#privacy","theme":"light-bottom"};
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50835798-1', 'www.pok.polimi.it');
+  ga('require', 'displayfeatures');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
