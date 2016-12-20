@@ -7,6 +7,7 @@
   .content-wrapper,
   .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
+  .header-global .wrapper-header,
   #polimi-footer {
     max-width: $width - $baseline;
     //margin:0 ($baseline / 2) 0 ($baseline / 2);
@@ -16,7 +17,8 @@
   footer .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
   .content-wrapper section.container,
-  .content-wrapper .container {
+  .content-wrapper .container,
+  html body.view-in-course .window-wrap {
     // contain float right element reducing min-width (760px in original version)
     min-width: auto; //$width - $width / 4;
   }

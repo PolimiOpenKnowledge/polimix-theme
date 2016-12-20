@@ -34,6 +34,22 @@
         }
       }
     }
+    .header-global {
+      height: auto;
+      .wrapper-header {
+        height:auto;
+
+        .course-header {
+          clear:both;
+          width:90%;
+        }
+        ol.user , .wrapper-user-menu {
+          position: absolute;
+          right:20px;
+          float:none;
+        }
+      }
+    }
     .view-index .content-wrapper {
       top: -170px;
     }
@@ -66,6 +82,13 @@
       }
       .profile-sidebar {
         display: none;
+      }
+    }
+
+    .content-wrapper .wrapper-course-material .course-tabs li a {
+
+      &.active, &:hover {
+          padding-bottom:9px;
       }
     }
 
