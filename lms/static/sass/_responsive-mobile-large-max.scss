@@ -50,8 +50,18 @@
         float:left;
       }
 
-
     }
+    .container .discussion-body {
+      .forum-nav, .discussion-column {
+        float:none;
+        width: 100%;
+      }
+      .view-discussion-home {
+        // Hide discussion home with table for this level ..need to recreate template without table
+        display:none;
+      }
+    }
+
 
 }
 
