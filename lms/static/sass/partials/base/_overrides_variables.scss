@@ -233,10 +233,10 @@ $footer-margin: ($baseline / 4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url("../images/polimi-pano.jpg");
+$homepage-bg-image: url("../images/homepage_bg.jpg");
 
-$login-banner-image: url("../images/group-of-people.jpg");
-$register-banner-image: url("../images/group-of-people.jpg");
+$login-banner-image: url("../images/login_picture.jpg");
+$register-banner-image: $login-banner-image;
 
 $video-thumb-url: "../images/POK_logo.png";
 
