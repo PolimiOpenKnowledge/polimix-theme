@@ -1,0 +1,129 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='/static_content.html'/>
+<%inherit file="/main.html" />
+<%block name="title">
+<title>About ${_("{platform_name}").format(platform_name=settings.PLATFORM_NAME)}</title>
+</%block>
+ <%block name="bodyclass">view-about</%block>
+<section class="container about">
+	<section class="banner">
+		<div id="banner">
+			<img src="${static.url('images/banner_about.jpg')}"
+				class="jpg" alt="">
+			<div class="media">
+				<div class="hero">
+					<div class="no-play-intro"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--  <section class="vision">
+		<p class="sub">Polimi offers the opportunity to widen your skills
+			before, during and after your university carrier/education</p>
+	</section>-->
+	<section class="lego">
+		<p class="intro-lego">MOOCs to bridge the gaps ...</p>
+		<div class="boxes-wrapper">
+			<div class="box students-box ">
+				<div class="inner-box">
+					<h3>MOOCs for Students</h3>
+					<ul>
+            <li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon01.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-before">from High school to University</h4>
+                      <p>Improve and consolidate your high school skills before you start your courses at Politecnico di Milano.</p>
+                    </div>
+                </div>
+              </article>
+            </li><li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon02.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-during">from Bachelor of science to Master of science</h4>
+                      <p>Align your acquired skills to the ones of Politecnico di Milano Master of Science if you come from another educational path.</p>
+                    </div>
+                </div>
+              </article>
+            </li><li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon03.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-after">from University to job</h4>
+                      <p>Strengthen and enahnce your soft skills to smooth your step into the job scene.</p>
+                    </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+				</div>
+
+			</div>
+			<div class="box all-box ">
+				<div class="inner-box">
+					<h3>MOOCs for All</h3>
+          <ul>
+            <li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon04.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-citizens">MOOCs for Citizens</h4>
+                      <p>To open up the expertise of Politecnico di Milano for the benefit of a general audience, promoting conscious citizenship in compliance with the third mission of universities.</p>
+                    </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon05.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-teachers">MOOCs for Teachers</h4>
+                      <p>To support teaching innovation in both Higher Education institutions and schools.</p>
+                    </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="card-horizontal">
+                <div class="card-row">
+                    <div class="card-col-image">
+                      <img src="${static.url('images/icon06.png')}"
+          								class="jpg" alt="">
+                    </div>
+                    <div class="card-col-content">
+                      <h4 class="classification-researchers">MOOCs for Researchers</h4>
+                      <p>To support researcher to develop trasversal skills useful for their activities.</p>
+                    </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+</section>
