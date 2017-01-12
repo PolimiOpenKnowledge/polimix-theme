@@ -1,12 +1,23 @@
 .faq .panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.faq .panel p:last-child {
+  margin-bottom: 25px;
+}
+
+.faq .panel p:first-child {
+    margin-top: 10px;
 }
 
 .faq h2 {
   border-top: 1px solid;
   padding-top: 30px;
+  font-family: trebuchet MS;
 }
 
 .faq h2.first {
@@ -23,18 +34,34 @@
   padding: 2px 10px;
 }
 
+.faq p a:hover, .faq p a:focus, .faq p a:visited:hover, .faq p a:visited:focus {
+  color: #00acd7;
+  text-decoration: none;
+}
+
 .faq ol.faqit > li, .faq ol.faqen >li {
   margin-bottom: 0;
+}
+
+.faq ul {
+  list-style-type: disc;
+}
+
+.faq ul li {
+  line-height: 1.8;
 }
 
 .faq .accordion h4 {
   font-weight: 200;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
+  font-family: trebuchet MS;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .faq .accordion.active h4, .faq .accordion:hover h4 {
-  color: #0079bc;
+  color: #00acd7;
 }
 
 .faq .accordion.active h4 {
