@@ -18,9 +18,7 @@ from openedx.core.djangolib.markup import HTML, Text
   </span>
   <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
     <header class="course-image ${full_course.language}">
-      %if full_course.language == 'en':
         <span class="course-language course-language-${full_course.language}"></span>
-      %endif
       <div class="cover-image">
         <img src="${course.course_image_url}" alt="${course.display_name_with_default} ${course.display_number_with_default}" />
         <div class="learn-more" aria-hidden="true">${_("LEARN MORE")}</div>
