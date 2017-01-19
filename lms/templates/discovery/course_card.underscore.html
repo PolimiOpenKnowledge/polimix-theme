@@ -27,10 +27,14 @@
                   <span class="course-title"><%= content.display_name %></span>
               </h2>
               <div class="course-date" aria-hidden="true">
-                  <%= interpolate(
-                        gettext("Starts: %(start_date)s"),
-                        { start_date: start }, true
-                      ) %>
+              <% if(!_.isUndefined(arguments[0].advertised_start)) { %>
+                  <%= advertised_start %>
+              <% } else {%>
+                <%= interpolate(
+                      gettext("Starts: %(start_date)s"),
+                      { start_date: start }, true
+                    ) %>
+              <% } %>
               </div>
           </section>
           <div class="sr">
