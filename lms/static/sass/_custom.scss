@@ -18,6 +18,7 @@
 @import "poli_registration";
 @import "poli_dashboard";
 @import "poli_ie";
+@import "poli_faq";
 
 // This is at this moment the only way to hide orders in account settings. Waiting for some feature flag
 button#orders-tab {
@@ -28,9 +29,10 @@ button#orders-tab {
   position: fixed;
   z-index: 99;
   top: 500px;
-  right: -35px;
+  right: 5px;
   opacity: .85;
   @include transform(rotate(90deg));
+  transform-origin: top right;
   a {
     padding: 5px;
     background-color: $polimi-ciano;
