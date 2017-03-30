@@ -59,3 +59,16 @@
     padding: 1px;
   }
 }
+
+// h3 style for problems and videos
+
+.hd-2, .xblock .xblock h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.xmodule_display.xmodule_CapaModule div.problem-progress {
+  display:block;
+}
