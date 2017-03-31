@@ -59,3 +59,20 @@
     padding: 1px;
   }
 }
+
+// h3 style like h2
+
+.vert-mod .vert {
+  .hd-2, .xblock .xblock h3, .xmodule_display.xmodule_HtmlModule h3 {
+    text-transform: uppercase;
+    font-weight:400;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+  }
+
+  .xmodule_display.xmodule_CapaModule div.problem-progress {
+    display:block;
+  }
+}
