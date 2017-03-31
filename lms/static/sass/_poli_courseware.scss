@@ -60,13 +60,15 @@
   }
 }
 
-// h3 style for problems and videos
+// h3 style like h2
 
 .vert-mod .vert {
-  .hd-2, .xblock .xblock h3 {
+  .hd-2, .xblock .xblock h3, .xmodule_display.xmodule_HtmlModule h3 {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight:400;
     font-size: 1.2em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
     margin: 0 0 10px 0;
   }
 
