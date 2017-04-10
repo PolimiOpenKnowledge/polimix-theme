@@ -8,7 +8,7 @@ from django.conf import settings
 <header>
   % if static.get_value('course_about_show_social_links', True):
   <div class="social-sharing">
-    <div class="sharing-message">${_("Share with friends and family!")}</div>
+    <div class="sharing-message">${_("Share with your friend")}</div>
     ## TODO: this should probably be an overrideable block,
     ##       or something allowing themes to do whatever they
     ##       want here (and on this whole page, really).
@@ -18,15 +18,15 @@ from django.conf import settings
 
         ## Translators: This text will be automatically posted to the student's
         ## Twitter account. {url} should appear at the end of the text.
-        tweet_text = _("I just enrolled in {number} {title} through {account}: {url}").format(
+        tweet_text = _("I just enrolled in {number} {title}: {url}").format(
             number=course.number,
             title=course.display_name_with_default_escaped,
-            account=static.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
+            ## account=static.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
             url=u"http://{domain}{path}".format(
                 domain=site_domain,
                 path=reverse('about_course', args=[course.id.to_deprecated_string()])
             )
-        ).replace(u" ", u"+")
+        ).replace(u"+", u"%2B")
         tweet_action = u"http://twitter.com/intent/tweet?text={tweet_text}".format(tweet_text=tweet_text)
 
         ## facebook_link = static.get_value('course_about_facebook_link', settings.PLATFORM_FACEBOOK_ACCOUNT)
@@ -34,7 +34,7 @@ from django.conf import settings
             url=u"http://{domain}{path}".format(
                 domain=site_domain,
                 path=reverse('about_course', args=[course.id.to_deprecated_string()])
-            )
+            ).replace(u"+", u"%2B")
         )
         email_subject = u"mailto:?subject={subject}&body={body}".format(
             subject=_("Take a course with {platform} online").format(platform=platform_name),
