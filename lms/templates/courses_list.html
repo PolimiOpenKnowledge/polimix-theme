@@ -3,18 +3,21 @@
 <%! from django.utils.translation import ugettext as _ %>
 
 <section class="courses-container">
-  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-    <div class="course-search">
-      <form method="get" action="/courses">
-        <label><span class="sr">${_("Search for a course")}</span>
-          <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-        </label>
-        <button class="search-button" type="submit">
-          <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-        </button>
-      </form>
-    </div>
-  % endif
+  <div class="top-bar">
+    <div class="banner-book"><p>Stay tuned also with <a href="#">BOOK</a> (BOlogna Open Knowledge platform) for a growing offer of MOOC contents!</p></div>
+    % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+      <div class="course-search">
+        <form method="get" action="/courses">
+          <label><span class="sr">${_("Search for a course")}</span>
+            <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+          </label>
+          <button class="search-button" type="submit">
+            <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+          </button>
+        </form>
+      </div>
+    % endif
+  </div>
   <section class="highlighted-courses">
 
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
