@@ -51,9 +51,28 @@
   }
 }
 
+.top-bar {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.banner-book {
+  border: 2px solid #c8c8c8;
+  border-radius: 3px;
+  padding: 12px;
+  flex-grow: 1;
+  margin-right: 2.35765%;
+  margin-top: 20px;
+  p {
+    font-size:17px;
+  }
+}
+
 .course-search {
-   float:right;
-   position:relative;
+  min-width: 220px;
+  margin-top: 20px;
+  position:relative;
   .search-input {
     @include border-radius(3px);
     @include padding-right(55px);
