@@ -60,10 +60,13 @@
 .banner-book {
   border: 2px solid #c8c8c8;
   border-radius: 3px;
-  padding: 13px 12px;
+  padding: 12px;
   flex-grow: 1;
   margin-right: 2.35765%;
   margin-top: 20px;
+  p {
+    font-size:17px;
+  }
 }
 
 .course-search {
