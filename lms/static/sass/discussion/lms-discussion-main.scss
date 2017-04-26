@@ -63,5 +63,8 @@ html body.discussion {
       // strange override ...flex-grid(6,12) for other pages is working...in forum not!
       width: flex-grid(4,8);
     }
+    nav ol {
+      margin:0;
+    }
   }
 }
