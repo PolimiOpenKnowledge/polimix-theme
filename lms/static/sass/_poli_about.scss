@@ -58,9 +58,13 @@ section.about.outside-app {
   }
   .intro-lego {
     font-size: 1.7em;
-    padding: 10px 10px 10px 50px;
+    padding: 25px 10px 5px 0;
     text-align: left;
     color: $polimi-ciano;
+
+    + p {
+      margin: 0 0 15px;
+    }
   }
   .boxes-wrapper {
     margin: 0 auto;
