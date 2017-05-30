@@ -80,4 +80,8 @@
     &.tabbed:focus h4, &.active h4 {
       font-weight: 600;
     }
+
+    &.active.tabbed {
+      color: $black;
+    }
   }
