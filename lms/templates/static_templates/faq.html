@@ -455,6 +455,17 @@
         }
       }
     }
+
+    /* this is to detect if focus state is by tab key */
+    $(window).keyup(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 9 && $('.accordion:focus').length) {
+            for (i = 0; i < acc.length; i++) {
+                acc[i].classList.remove('tabbed');
+            }
+            e.target.classList.add('tabbed');
+        }
+    });
   </script>
 
 </section>

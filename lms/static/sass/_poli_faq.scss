@@ -58,17 +58,26 @@
 
   .faq .accordion h4 {
     font-weight: 200;
-    cursor: pointer;
     transition: color 0.2s ease-in-out;
     font-family: trebuchet MS;
     font-size: 16px;
     line-height:1;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
-  .faq .accordion.active h4, .faq .accordion:hover h4 {
-    color: #00acd7;
-  }
+  .faq.accordion {
+    &:focus {
+      outline: none;
+    }
 
-  .faq .accordion.active h4 {
-    font-weight: 600;
+    &.tabbed:focus h4, &.active h4, &:hover h4 {
+      color: #00acd7;
+    }
+
+    &.active h4 {
+      font-weight: 600;
+    }
   }
