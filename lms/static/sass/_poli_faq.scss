@@ -77,7 +77,7 @@
       color: #00acd7;
     }
 
-    &.active h4 {
+    &.tabbed:focus h4, &.active h4 {
       font-weight: 600;
     }
   }
