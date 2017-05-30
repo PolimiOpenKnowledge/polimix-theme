@@ -35,9 +35,11 @@
     padding: 2px 10px;
   }
 
-  .faq p a:hover, .faq p a:focus, .faq p a:visited:hover, .faq p a:visited:focus {
-    color: #00acd7;
-    text-decoration: none;
+  .faq p a, .faq li a {
+    &:hover, &:focus, &:visited:hover, &:visited:focus {
+      color: #00acd7;
+      text-decoration: none;
+    }
   }
 
   .faq ol {
