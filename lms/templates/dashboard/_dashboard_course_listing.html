@@ -127,7 +127,7 @@ from student.helpers import (
           </span>
           % if not full_course.has_ended() and not full_course.start_date_is_still_default:
           <span class="info-date-block" data-tooltip="Hi">
-              ${_("End - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE"))}
+              ${_("Ends - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE"))}
           </span>
           % endif
         </div>
