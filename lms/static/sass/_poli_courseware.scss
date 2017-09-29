@@ -57,6 +57,11 @@
     background-color: transparent;
     @include clearfix;
 
+    h3 {
+      line-height: 0.7;
+      padding-bottom: 11px;
+    }
+
     h3, p {
       @media (min-width:768px) {
         padding-left:145px; /* image width is fixed */
