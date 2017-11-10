@@ -133,6 +133,9 @@
     background-image: linear-gradient(#f1f1f1,#d9d1d1);
     text-shadow: 0 1px 0 #fcfbfb;
 
+    float: left; // invert order
+    margin-right: 15px; // shame on me
+
     &:hover:not(:disabled){
       box-shadow: inset 0 1px 0 0 #fefefe;
       cursor: pointer;
