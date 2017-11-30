@@ -65,6 +65,7 @@ import calendar
 
       $('#register-form').on('ajax:error', function(event, jqXHR, textStatus) {
         toggleSubmitButton(true);
+	grecaptcha.reset(); // questo che è il reset del recaptcha
         json = $.parseJSON(jqXHR.responseText);
         $('.status.message.submission-error').addClass('is-shown').focus();
         $('.status.message.submission-error .message-copy').html(json.value).stop().css("display", "block");
@@ -85,7 +86,7 @@ import calendar
         $submitButton.
           removeClass('is-disabled').
           attr('aria-disabled', false).
-          removeProp('disabled').
+          prop('disabled', false).
           html("${_('Create My {platform_name} Account').format(platform_name=platform_name)}");
       }
       else {
