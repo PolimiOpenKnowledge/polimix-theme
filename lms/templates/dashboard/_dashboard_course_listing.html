@@ -1,4 +1,4 @@
-<%page args="course_overview, enrollment, show_courseware_link, cert_status, can_unenroll, credit_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements, dashboard_index, share_settings, course_program_info" expression_filter="h"/>
+<%page args="course_overview, enrollment, show_courseware_link, cert_status, can_unenroll, credit_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements, dashboard_index, share_settings" expression_filter="h"/>
 
 <%!
 import urllib
@@ -10,7 +10,7 @@ from course_modes.models import CourseMode
 from course_modes.helpers import enrollment_mode_display
 from openedx.core.djangolib.js_utils import dump_js_escaped_json
 from openedx.core.djangolib.markup import HTML, Text
-from openedx.core.lib.time_zone_utils import get_user_time_zone
+
 from courseware.courses import get_course, get_course_about_section
 from student.helpers import (
   VERIFY_STATUS_NEED_TO_VERIFY,
@@ -21,6 +21,7 @@ from student.helpers import (
   DISABLE_UNENROLL_CERT_STATES,
 )
 %>
+
 
 <%
   reverify_link = reverse('verify_student_reverify')
@@ -54,12 +55,7 @@ from student.helpers import (
     <% mode_class = '' %>
   % endif
 <div class="course-container">
- % if course_program_info and course_program_info.get('category')=='xseries':
-  <div class="label-xseries-association">
-    <span class="xseries-icon" aria-hidden="true"></span>
-    <p class="message-copy">${_("{category} Program Course").format(category=course_program_info['display_category'])}</p>
-  </div>
- % endif
+
 <article class="course${mode_class}">
   <%
   course_target = reverse('info', args=[unicode(course_overview.id)])
@@ -108,29 +104,41 @@ from student.helpers import (
             <span>${course_overview.display_name_with_default}</span>
           % endif
         </h3>
-        <div class="course-info">
+        <!--<div class="course-info">
           <span class="info-university">${course_overview.display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
-          <span class="info-date-block" data-tooltip="Hi">
-          <% time_zone = get_user_time_zone(user) %>
-          % if course_overview.has_ended():
-            ${_("Ended - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE", time_zone))}
-          % elif course_overview.has_started():
-            ${_("Started - {start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE", time_zone))}
-          % elif course_overview.start_date_is_still_default: # Course start date TBD
-            ${_("Coming Soon")}
-          % elif course_overview.starts_within(days=5):   # hasn't started yet
-            ${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("DAY_AND_TIME", time_zone))}
-          % else:   # hasn't started yet
-            ${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE", time_zone))}
-          % endif
-          </span>
-          % if not full_course.has_ended() and not full_course.start_date_is_still_default:
-          <span class="info-date-block" data-tooltip="Hi">
-              ${_("Ends - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE"))}
-          </span>
-          % endif
-        </div>
+          <%
+            if course_overview.start_date_is_still_default:
+                container_string = _("Coming Soon")
+                course_date = None
+            else:
+                format = 'shortDate'
+                if course_overview.has_ended():
+                    container_string = _("Ended - {date}")
+                    course_date = course_overview.end
+                elif course_overview.has_started():
+                    container_string = _("Started - {date}")
+                    course_date = course_overview.start
+                elif course_overview.starts_within(days=5):
+                    container_string = _("Starts - {date}")
+                    course_date = course_overview.start
+                    format = 'defaultFormat'
+                else: ## hasn't started yet
+                    container_string = _("Starts - {date}")
+                    course_date = course_overview.start
+                endif
+            endif
+          %>
+
+                % if isinstance(course_date, basestring):
+                    <span class="info-date-block" data-tooltip="Hi">${_(container_string).format(date=course_date)}</span>
+                % elif course_date is not None:
+                    <%
+                        course_date_string = course_date.strftime('%Y-%m-%dT%H:%M:%S%z')
+                    %>
+                    <span class="info-date-block localized-datetime" data-language="${user_language}" data-tooltip="Hi" data-timezone="${user_timezone}" data-datetime="${course_date_string}" data-format=${format} data-string="${container_string}"></span>
+                % endif
+	</div>-->
         <div class="wrapper-course-actions">
           <div class="course-actions">
             % if show_courseware_link:
@@ -382,11 +390,7 @@ from student.helpers import (
           </div>
         %endif
 
-        % if course_program_info and course_program_info.get('category')=='xseries':
-          %for program_data in course_program_info.get('course_program_list', []):
-            <%include file = "_dashboard_xseries_info.html" args="program_data=program_data, enrollment_mode=enrollment.mode, display_category=course_program_info['display_category']" />
-          %endfor
-        % endif
+
 
         % if is_course_blocked:
           <p id="block-course-msg" class="course-block">
