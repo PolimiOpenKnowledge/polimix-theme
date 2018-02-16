@@ -35,6 +35,26 @@
     @include section_header_info("pok-course-sottotitoli","../images/ico_sottotitoli.png");
     @include section_header_info("pok-course-certificato","../images/ico_certificate.png");
     @include section_header_info("pok-course-bibliografia","../images/ico_bibliografia.png");
+
+    // syllabus-download-button like video-download-button
+
+    a.syllabus-download-button {
+      margin-top:30px;
+      border-radius: 3px;
+      transition: all 0.25s ease-in-out 0s;
+      font-size: 14px;
+      line-height: 14px;
+      border: 1px solid $black-80;
+      padding: 15px;
+      color: $black-80;
+    	display: inline-block;
+
+      &:hover, &:focus {
+        background-color: $polimi-ciano;
+    		border-color: $polimi-ciano;
+        color: $gray-1;
+      }
+    }
   }
 }
 
