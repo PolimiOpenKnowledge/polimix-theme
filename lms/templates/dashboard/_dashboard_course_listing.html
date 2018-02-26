@@ -104,7 +104,7 @@ from student.helpers import (
             <span>${course_overview.display_name_with_default}</span>
           % endif
         </h3>
-        <!--<div class="course-info">
+        <div class="course-info">
           <span class="info-university">${course_overview.display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
           <%
@@ -114,17 +114,17 @@ from student.helpers import (
             else:
                 format = 'shortDate'
                 if course_overview.has_ended():
-                    container_string = _("Ended - {date}")
+                    container_string = _("Ended - {course_date}")
                     course_date = course_overview.end
                 elif course_overview.has_started():
-                    container_string = _("Started - {date}")
+                    container_string = _("Started - {course_date}")
                     course_date = course_overview.start
                 elif course_overview.starts_within(days=5):
-                    container_string = _("Starts - {date}")
+                    container_string = _("Starts - {course_date}")
                     course_date = course_overview.start
                     format = 'defaultFormat'
                 else: ## hasn't started yet
-                    container_string = _("Starts - {date}")
+                    container_string = _("Starts - {course_date}")
                     course_date = course_overview.start
                 endif
             endif
@@ -134,11 +134,11 @@ from student.helpers import (
                     <span class="info-date-block" data-tooltip="Hi">${_(container_string).format(date=course_date)}</span>
                 % elif course_date is not None:
                     <%
-                        course_date_string = course_date.strftime('%Y-%m-%dT%H:%M:%S%z')
+                        course_date_string = course_date.strftime('%b %d, %Y')
                     %>
-                    <span class="info-date-block localized-datetime" data-language="${user_language}" data-tooltip="Hi" data-timezone="${user_timezone}" data-datetime="${course_date_string}" data-format=${format} data-string="${container_string}"></span>
+                    <span class="info-date-block localized-datetime" data-language="${user_language}" data-tooltip="Hi" data-timezone="${user_timezone}" data-datetime="${course_date_string}" data-format=${format} data-string="${container_string}">${_(container_string).format(course_date=course_date_string)}</span>
                 % endif
-	</div>-->
+	</div>
         <div class="wrapper-course-actions">
           <div class="course-actions">
             % if show_courseware_link:
