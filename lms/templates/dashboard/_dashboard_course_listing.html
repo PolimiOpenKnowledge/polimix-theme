@@ -107,37 +107,26 @@ from student.helpers import (
         <div class="course-info">
           <span class="info-university">${course_overview.display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
-          <%
-            if course_overview.start_date_is_still_default:
-                container_string = _("Coming Soon")
-                course_date = None
-            else:
-                format = 'shortDate'
-                if course_overview.has_ended():
-                    container_string = _("Ended - {course_date}")
-                    course_date = course_overview.end
-                elif course_overview.has_started():
-                    container_string = _("Started - {course_date}")
-                    course_date = course_overview.start
-                elif course_overview.starts_within(days=5):
-                    container_string = _("Starts - {course_date}")
-                    course_date = course_overview.start
-                    format = 'defaultFormat'
-                else: ## hasn't started yet
-                    container_string = _("Starts - {course_date}")
-                    course_date = course_overview.start
-                endif
-            endif
-          %>
-
-                % if isinstance(course_date, basestring):
-                    <span class="info-date-block" data-tooltip="Hi">${_(container_string).format(date=course_date)}</span>
-                % elif course_date is not None:
-                    <%
-                        course_date_string = course_date.strftime('%b %d, %Y')
-                    %>
-                    <span class="info-date-block localized-datetime" data-language="${user_language}" data-tooltip="Hi" data-timezone="${user_timezone}" data-datetime="${course_date_string}" data-format=${format} data-string="${container_string}">${_(container_string).format(course_date=course_date_string)}</span>
-                % endif
+          
+	 <span class="info-date-block" data-tooltip="Hi">
+          % if course_overview.has_ended():
+            ${_("Ended - {end_date}").format(end_date=course_overview.end.strftime('%b %d, %Y'))}
+          % elif course_overview.has_started():
+            ${_("Started - {start_date}").format(start_date=course_overview.start.strftime('%b %d, %Y'))}
+          % elif course_overview.start_date_is_still_default: # Course start date TBD
+            ${_("Coming Soon")}
+          <!--% elif course_overview.starts_within(days=5):   # hasn't started yet
+            #${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("DAY_AND_TIME", time_zone))}
+	    ${_("Starts - {start_date}").format(start_date=course_overview.start('%b %d,'))} #%k %p %a -->
+          % else:   # hasn't started yet
+            ${_("Starts - {start_date}").format(start_date=course_overview.start.strftime('%b %d, %Y'))}
+          % endif
+	</span>
+	% if not full_course.has_ended() and not full_course.start_date_is_still_default:
+          <span class="info-date-block" data-tooltip="Hi">
+              ${_("Ends - {end_date}").format(end_date=course_overview.end.strftime('%b %d, %Y'))}
+          </span>
+	% endif
 	</div>
         <div class="wrapper-course-actions">
           <div class="course-actions">
