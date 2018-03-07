@@ -10,7 +10,7 @@ from third_party_auth import provider, pipeline
 <%
   other_third_party_provider = []
   if third_party_auth.is_enabled():
-     other_third_party_provider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name=="tpa-saml")]
+     other_third_party_provider=[x for x in provider.Registry.displayed_for_login() if (not x.backend_name=="tpa-saml")]
 %> 
 
 <%block name="pagetitle">${_("Log into your {platform_name} Account").format(platform_name=platform_name)}</%block>
@@ -246,7 +246,7 @@ from third_party_auth import provider, pipeline
 
     <div class="form-actions form-third-party-auth">
 
-    % for enabled in provider.Registry.accepting_logins():
+    % for enabled in provider.Registry.displayed_for_login():
       % if (not enabled.backend_name=="tpa-saml"):
       ## Translators: provider_name is the name of an external, third-party user authentication provider (like Google or LinkedIn).
       <button type="submit" class="button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');">
