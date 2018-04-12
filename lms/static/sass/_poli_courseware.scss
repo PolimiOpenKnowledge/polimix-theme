@@ -118,30 +118,18 @@
 
 // week 0
 
-img[src*="tip_navigation"] {
-    width:830px;
-    height:463px;
-
-    &:after {
-      content:"You can use the vertical bar on the left to move through the modules and the horizontal bar at the top to move through the lessons (videos, texts...) and the quizzes inside each module. A flag icon next to the module title means that there are quizzes included.";
-
-      @media(min-width:992px) { // not visible but screen-readable
-        position: absolute !important;
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
-      }
-    }
-
-    @media (max-width:991px) {
-      height:0;
-    }
+@media(min-width:992px) {
+  p.replacement_text { // not visible but screen-readable
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
 }
 
-img[src*="tip_navigation_it"] {
-
-  &:after {
-    content:"Usa la barra verticale sulla sinistra per spostarti tra i moduli e la barra orizzontale in alto per spostarti tra le lezioni (video, testi...) e i quiz all'interno di ogni modulo. L'icona di una bandiera accanto al titolo di un modulo indica la presenza di quiz al suo interno.";
+@media(max-width:991px) {
+  img.tip {
+    display:none;
   }
 }
