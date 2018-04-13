@@ -115,3 +115,21 @@
     display:block;
   }
 }
+
+// week 0
+
+@media(min-width:992px) {
+  p.replacement_text { // not visible but screen-readable
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media(max-width:991px) {
+  img.tip {
+    display:none;
+  }
+}
