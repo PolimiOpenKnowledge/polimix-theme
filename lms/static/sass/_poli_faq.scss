@@ -1,89 +1,95 @@
-.faq .panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    box-sizing: border-box;
-    padding: 8px 0;
-  }
+.faq, .tos {
+  .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      box-sizing: border-box;
+      padding: 8px 0;
+    }
 
-  .faq .panel p:last-child {
-    margin-bottom: 25px;
-  }
+    .panel p:last-child {
+      margin-bottom: 25px;
+    }
 
-  .faq .panel p:first-child {
-      margin-top: 10px;
-  }
+    .panel p:first-child {
+        margin-top: 10px;
+    }
 
-  .faq h2 {
-    border-top: 1px solid;
-    padding-top: 30px;
-    font-family: trebuchet MS;
-  }
+    h2 {
+      border-top: 1px solid;
+      padding-top: 30px;
+      font-family: trebuchet MS;
+    }
 
-  .faq h2.first {
-    border-top:0;
-  }
+    h2.first {
+      border-top:0;
+    }
 
-  .faq h3 {
-    padding: 15px 0;
-    font-family: trebuchet MS;
-  }
+    h3 {
+      padding: 15px 0;
+      font-family: trebuchet MS;
+    }
 
-  .faq h3 span {
-    background-color: #1d9dd9;
-    color: #fff;
-    padding: 2px 10px;
-  }
+    h3 span {
+      background-color: #1d9dd9;
+      color: #fff;
+      padding: 2px 10px;
+    }
 
-  .faq p a, .faq li a {
-    &:hover, &:focus, &:visited:hover, &:visited:focus {
-      color: #00acd7;
-      text-decoration: none;
+    p a, li a {
+      &:hover, &:focus, &:visited:hover, &:visited:focus {
+        color: #00acd7;
+        text-decoration: none;
+      }
+    }
+
+    ol {
+      padding: 0 0 0 28px;
+    }
+
+    ol.faqit > li, ol.faqen >li {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    ul li, ol li {
+      line-height: 1.8;
+    }
+
+    .accordion h4 {
+      font-weight: 200;
+      transition: color 0.2s ease-in-out;
+      font-family: trebuchet MS;
+      font-size: 16px;
+      line-height:1;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .accordion {
+      &:focus {
+        outline: none;
+      }
+
+      &.tabbed:focus h4, &.active h4, &:hover h4 {
+        color: #00acd7;
+      }
+
+      &.tabbed:focus h4, &.active h4 {
+        font-weight: 600;
+      }
+
+      &.active.tabbed h4 {
+        color: $black;
+      }
     }
   }
 
-  .faq ol {
-    padding: 0 0 0 28px;
-  }
-
-  .faq ol.faqit > li, .faq ol.faqen >li {
-    margin-bottom: 0;
-  }
-
-  .faq ul {
-    list-style-type: disc;
-  }
-
-  .faq ul li {
-    line-height: 1.8;
-  }
-
-  .faq .accordion h4 {
-    font-weight: 200;
-    transition: color 0.2s ease-in-out;
-    font-family: trebuchet MS;
-    font-size: 16px;
-    line-height:1;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  .faq .accordion {
-    &:focus {
-      outline: none;
-    }
-
-    &.tabbed:focus h4, &.active h4, &:hover h4 {
-      color: #00acd7;
-    }
-
-    &.tabbed:focus h4, &.active h4 {
-      font-weight: 600;
-    }
-
-    &.active.tabbed h4 {
-      color: $black;
-    }
+  .tos h4 {
+    padding: 30px 0 5px;
   }
