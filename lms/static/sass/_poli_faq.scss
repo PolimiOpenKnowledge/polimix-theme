@@ -18,7 +18,7 @@
     h2 {
       border-top: 1px solid;
       padding-top: 30px;
-      font-family: trebuchet MS;
+      font-family: 'trebuchet MS';
     }
 
     h2.first {
@@ -27,7 +27,7 @@
 
     h3 {
       padding: 15px 0;
-      font-family: trebuchet MS;
+      font-family: 'trebuchet MS';
     }
 
     h3 span {
@@ -62,7 +62,7 @@
     .accordion h4 {
       font-weight: 200;
       transition: color 0.2s ease-in-out;
-      font-family: trebuchet MS;
+      font-family: 'trebuchet MS';
       font-size: 16px;
       line-height:1;
 
@@ -93,7 +93,10 @@
   .tos h3 {
     padding-top: 30px;
   }
-  
+
   .tos h4 {
-    padding: 30px 0 5px;
+    padding: 30px 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'trebuchet MS';
   }
