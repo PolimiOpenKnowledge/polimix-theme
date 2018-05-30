@@ -49,6 +49,23 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+
+  .updates-box {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    max-width: 808px;
+    border: 2px solid #00acd7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 20px auto;
+
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 .top-bar {
@@ -108,22 +125,5 @@
     &:hover, &:focus {
       background: $m-blue-d5;
     }
-  }
-}
-
-.updates-box {
-  text-align: center;
-  background-color: white;
-  width: 100%;
-  padding: 20px;
-  max-width: 808px;
-  border: 2px solid #00acd7;
-  box-sizing: border-box;
-  border-radius: 3px;
-  margin: 20px auto;
-
-  h3 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 }
