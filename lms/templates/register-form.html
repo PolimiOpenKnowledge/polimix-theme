@@ -253,17 +253,13 @@ if third_party_auth.is_enabled():
     <li class="field-group">
 
       % if has_extauth_info is UNDEFINED or ask_for_tos :
-      <div class="field required checkbox" id="field-notice">
-        <input id="notice-yes" type="checkbox" name="notice" value="true" required aria-required="true" />
-        <label for="notice-yes">${_('I give my consent to the processing of my personal data as set out in the {link_start}Privacy Notice{link_end}').format(
-          link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('NOTICE')),
-          link_end='</a>')}</label>
-      </div>
       <div class="field required checkbox" id="field-tos">
         <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
-        <label for="tos-yes">${_('I agree to the {link_start}Terms of Service{link_end}').format(
-          link_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
-          link_end='</a>')}</label>
+        <label for="tos-yes">${_('I give my consent to the processing of my personal data as set out in the {notice_start}Privacy Notice{notice_end} and to the {tos_start}Terms of Service{tos_end}').format(
+          notice_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('NOTICE')),
+          notice_end='</a>',
+          tos_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
+          tos_end='</a>')}</label>
       </div>
       % endif
 
