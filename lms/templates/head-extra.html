@@ -17,16 +17,17 @@
 ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
 <meta property="og:site_name" content="POK - MOOCs portal of Politecnico di Milano"/>
 % if not course:
+<meta name="description" content="Polimi Open Knowledge - MOOCs to bridge the gaps" />
 <meta property="og:image" content="https://${ site }${static.url('images/ogimage.jpg')}"/>
 <meta property="og:image:secure_url" content="https://${ site }${static.url('images/ogimage.jpg')}"/>
 <meta property="og:title" content="POK - MOOCs portal of Politecnico di Milano"/>
-<meta property="og:description" content="Polimi Open Knowledge -  MOOCs to bridge the gaps"/>
+<meta property="og:description" content="Polimi Open Knowledge - MOOCs to bridge the gaps"/>
 % endif
 
   <meta name="google-site-verification" content="ZyswrIdUIIXboFQtBx6ha6R8DTvA46T-4yILTOTfF7o" />
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script type="text/javascript">
-    window.cookieconsent_options = {"message":"This site uses cookies for statistics and to improve your user experience. More information is available at","dismiss":"Accept it!","learnMore":"Privacy Policy page","link":"https://${ site }/tos#privacy","theme":"light-bottom"};
+    window.cookieconsent_options = {"message":"This site uses cookies for statistics and to improve your user experience. More information is available at","dismiss":"Accept it!","learnMore":"Privacy Policy page","link":"https://${ site }/privacy","theme":"light-bottom"};
 </script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
@@ -44,3 +45,5 @@
   ga('send', 'pageview');
 
 </script>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>

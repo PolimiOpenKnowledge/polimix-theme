@@ -49,11 +49,47 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+
+  .updates-box {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px;
+    border: 2px solid $polimi-ciano;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 20px auto;
+
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+.banner-book {
+  border: 2px solid #c8c8c8;
+  border-radius: 3px;
+  padding: 12px;
+  flex-grow: 1;
+  margin-right: 2.35765%;
+  margin-top: 20px;
+  p {
+    font-size:17px;
+  }
 }
 
 .course-search {
-   float:right;
-   position:relative;
+  min-width: 220px;
+  margin-top: 20px;
+  position:relative;
   .search-input {
     @include border-radius(3px);
     @include padding-right(55px);

@@ -278,7 +278,10 @@ if third_party_auth.is_enabled():
     </li>
   </ol>
 </div>
-
+<div id="field-captcha" data-field="captcha">
+	<div class="g-recaptcha" data-sitekey="${settings.GOOGLE_RECAPTCHA_SITE_KEY}"></div>
+</div>
+<br />
 <div class="form-actions">
   <button name="submit" type="submit" id="submit" class="action action-primary action-update register-button">${_('Register')} <span class="orn-plus">+</span> ${_('Create My Account')}</button>
 </div>

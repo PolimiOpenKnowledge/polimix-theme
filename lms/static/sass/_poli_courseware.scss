@@ -6,6 +6,12 @@
 }
 
 .content-wrapper div.info-wrapper {
+  background-color:white;
+
+  section.updates {
+    padding-left:40px;
+  }
+
   section.updates h1 {
     display: none;
   }
@@ -29,6 +35,26 @@
     @include section_header_info("pok-course-sottotitoli","../images/ico_sottotitoli.png");
     @include section_header_info("pok-course-certificato","../images/ico_certificate.png");
     @include section_header_info("pok-course-bibliografia","../images/ico_bibliografia.png");
+
+    // syllabus-download-button like video-download-button
+
+    a.syllabus-download-button {
+      margin-top:30px;
+      border-radius: 3px;
+      transition: all 0.25s ease-in-out 0s;
+      font-size: 14px;
+      line-height: 14px;
+      border: 1px solid $black-80;
+      padding: 15px;
+      color: $black-80;
+    	display: inline-block;
+
+      &:hover, &:focus {
+        background-color: $polimi-ciano;
+    		border-color: $polimi-ciano;
+        color: $gray-1;
+      }
+    }
   }
 }
 
@@ -47,15 +73,63 @@
 // doc page inside courseware
 .content-wrapper .course-staff {
   .teacher {
-    margin-bottom: 40px;
+    padding: 10px 0;
+    background-color: transparent;
     @include clearfix;
+
+    h3 {
+      line-height: 0.8;
+      padding-bottom: 11px;
+    }
+
+    h3, p {
+      @media (min-width:768px) {
+        padding-left:145px; /* image width is fixed */
+      }
+    }
   }
   .teacher-image {
-    float: left;
+    @media(min-width:450px) {
+      float: left;
+    }
     overflow: hidden;
     width: 115px;
     height: 115px;
     margin: 0 30px 0 0;
-    padding: 1px;
+  }
+}
+
+// h3 style like h2
+
+.vert-mod .vert {
+  .hd-2, .xblock .xblock h3, .xmodule_display.xmodule_HtmlModule h3 {
+    text-transform: uppercase;
+    font-weight:400;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+  }
+
+  .xmodule_display.xmodule_CapaModule div.problem-progress {
+    display:block;
+  }
+}
+
+// week 0
+
+@media(min-width:992px) {
+  p.replacement_text { // not visible but screen-readable
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media(max-width:991px) {
+  img.tip {
+    display:none;
   }
 }
