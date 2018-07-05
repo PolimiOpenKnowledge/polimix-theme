@@ -8,7 +8,7 @@ from student.models import UserProfile
 <%
 other_third_party_provider = []
 if third_party_auth.is_enabled():
-  other_third_party_provider=[x for x in provider.Registry.accepting_logins() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name=="tpa-saml")]
+  other_third_party_provider=[x for x in provider.Registry.displayed_for_login() if (not x.backend_name == "ecoopenid-auth") and (not x.backend_name=="tpa-saml")]
 %>
 <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
 
