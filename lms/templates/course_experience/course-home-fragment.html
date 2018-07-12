@@ -166,6 +166,9 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   }
 
   /* footer */
+  .footer-content-wrapper {
+    display:flex;
+  }
   .footer-logo {
     width:auto;
     position: relative;
@@ -179,14 +182,17 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     margin: 0 21px 0 0;
   }
   .footer-content-wrapper li a {
-    color: #707172
+    color: #707172;
   }
   .footer-content-wrapper li a:hover, .footer-content-wrapper li a:focus, .footer-content-wrapper li a:active {
     border-bottom: 1px dotted #00acdf;
   }
-  .footer-content-wrapper .site-details .site-nav a {
+  footer#footer-edx-v3 .footer-content-wrapper .site-details .site-nav a {
     text-transform: uppercase;
     font-family: "Yanone Kaffeesatz","Bree Serif",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 21px;
+    line-height: 21px;
+    color: #707172;
   }
   .banner-book-footer {
     clear:both;
@@ -195,14 +201,9 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     padding: 5px;
     font-size: .8em;
   }
-  @media screen and (min-width: 980px) {
-    footer#footer-edx-v3 .site-details, footer#footer-edx-v3 .references {
-      width: 48.82117%;
-    }
-  }
   .references {
-    margin: 0;
-    display:inline-block;
+    display: flex;
+    flex-direction: row-reverse;
   }
   .footer-logo a {
     display: block;
@@ -225,6 +226,12 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     display: block;
     text-align: left;
     padding-left: 10px;
+  }
+  .references .additional-logo-info span {
+    display: block;
+  }
+  .references .additional-logo-info span.in-colla b{
+    margin-top: -2px;
   }
   .eco-references {
     float: right;
