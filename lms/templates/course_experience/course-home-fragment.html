@@ -111,7 +111,7 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   /* header */
   h2.course-header {
     color: #707172;
-    line-height: 30px;
+    line-height: 40px;
   }
   #polimi-header {
     background: #00acd7;
@@ -126,8 +126,8 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   }
   .header-global.slim .wrapper-header .logo img {
     height:80px;
-    margin-top: -15px;
-    margin-left: 13px;
+    margin-top: -14px;
+    margin-left: 3px;
   }
   .wrapper-course-material .course-tabs li {
     margin-right:4px;
@@ -166,24 +166,117 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   }
 
   /* footer */
-  .footer-content-wrapper {
-    .footer-logo {
-      width:auto;
-    }
-    li {
-      font-size: .875em;
-      font-weight: 500;
-      display: inline-block;
-      margin: 0 21px 0 0;
-
-      a {
-        color: #707172
-        &:hover,
-        &:focus,
-        &:active {
-          border-bottom: 1px dotted #00acdf;
-        }
-      }
-    }
+  .footer-logo {
+    width:auto;
+    position: relative;
+    float: left;
+    margin: -10px 39px 0 0;
   }
+  .footer-content-wrapper li {
+    font-size: .875em;
+    font-weight: 500;
+    display: inline-block;
+    margin: 0 21px 0 0;
+  }
+  .footer-content-wrapper li a {
+    color: #707172
+  }
+  .footer-content-wrapper li a:hover, .footer-content-wrapper li a:focus, .footer-content-wrapper li a:active {
+    border-bottom: 1px dotted #00acdf;
+  }
+  .footer-content-wrapper .site-details .site-nav a {
+    text-transform: uppercase;
+    font-family: "Yanone Kaffeesatz","Bree Serif",Georgia,Cambria,"Times New Roman",Times,serif;
+  }
+  .banner-book-footer {
+    clear:both;
+  }
+  .banner-book-footer p {
+    padding: 5px;
+    font-size: .8em;
+  }
+  .references {
+    width: flex-grid(6, 12);
+    margin: 0;
+    display:inline-block;
+  }
+  .footer-logo a {
+    display: block;
+    color: #00acd7;
+  }
+  .footer-logo a:hover, .footer-logo a:focus, .footer-logo a:active {
+    border-bottom: none;
+  }
+  .references a.open-edx-logo:hover, .references a.open-edx-logo:active, .references a.open-edx-logo:focus,
+  .references a.eco-project-logo:hover, .references a.eco-project-logo:active, .references a.eco-project-logo:focus {
+    border-bottom: none;
+  }
+  a.open-edx-logo {
+    display: block;
+    text-align:left;
+  }
+  .references .additional-logo-info {
+    font-size: .8em;
+    margin-top: 75px;
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+  }
+  .eco-references {
+    float: right;
+    padding-right: 20px;
+    border-right: 1px solid #ebebeb;
+  }
+  .eco-loghi-container {
+    margin-top: 7px;
+    text-align:left;
+  }
+  .eco-loghi {
+    float: left;
+    width: flex-grid(6, 12);
+  }
+  .eco-project-logo {
+    float: right;
+    text-align:center;
+  }
+  .reimagine-award {
+    font-size:0.8em;
+    line-height:1.6em;
+    margin-top:60px;
+  }
+  .award-link {
+    float: left;
+  }
+  .award-desc {
+    float: left;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+  .built-on {
+    float: right;
+    padding-left: 20px;
+  }
+  .terms {
+    clear: left;
+    margin-top: 30px;
+  }
+  nav.nav-terms li {
+    font-size: .8em;
+    display: inline;
+    float: left;
+    padding: 5px;
+    border-right: 1px dotted #707172;
+    margin-right:0;
+  }
+  nav.nav-terms li:last-child {
+    border: none;
+  }
+  nav.nav-terms li a {
+    color: #707172;
+  }
+  nav.nav-terms li a.standard-link {
+    color: #00acd7;
+  }
+
 </style>
