@@ -102,3 +102,88 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     ${HTML(course_sock_fragment.body_html())}
 </div>
 </%block>
+
+<style>
+  body {
+    font-family: "Trebuchet MS","Open Sans",Verdana,Geneva,sans-serif,sans-serif;
+  }
+
+  /* header */
+  h2.course-header {
+    color: #707172;
+    line-height: 30px;
+  }
+  #polimi-header {
+    background: #00acd7;
+    height: 20px;
+    box-shadow: inset 0 -4px 8px -2px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 17px;
+  }
+  .header-global.slim {
+    border-bottom: 1px solid #0079bc;
+    min-height: 91px;
+  }
+  .header-global.slim .wrapper-header .logo img {
+    height:80px;
+    margin-top: -15px;
+    margin-left: 13px;
+  }
+  .wrapper-course-material .course-tabs li {
+    margin-right:4px;
+  }
+  .header-global.slim .wrapper-header .wrapper-user-menu {
+    background-color: #e9e6df;
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-menu-container {
+    height:44px;
+  }
+  .dropdown-menu-container .menu-title {
+    color: #707172;
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-menu-container .menu-title:hover {
+    text-decoration: none;
+  }
+  .dropdown-menu-container .menu-title img {
+    width: 44px;
+    height: 44px;
+  }
+  .list-divided .item {
+    border-bottom:0;
+  }
+  .dropdown-menu-container .dropdown-menu .dropdown-item a {
+    padding: 3px 5px;
+    font-size: .92em;
+    color: #00acd7;
+  }
+  .dropdown-menu-container .dropdown-menu .dropdown-item a:hover {
+    text-decoration: none;
+    color: #707172;
+  }
+
+  /* footer */
+  .footer-content-wrapper {
+    .footer-logo {
+      width:auto;
+    }
+    li {
+      font-size: .875em;
+      font-weight: 500;
+      display: inline-block;
+      margin: 0 21px 0 0;
+
+      a {
+        color: #707172
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 1px dotted #00acdf;
+        }
+      }
+    }
+  }
+</style>
