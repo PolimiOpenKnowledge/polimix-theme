@@ -6,9 +6,8 @@
 
 // Fix some missing style from courseware in discussion
 html body.discussion {
-  background-color: $gray-3;
-  .content-wrapper , .window-wrap{
-    background-color: $gray-3;
+  .window-wrap{
+    background-color: #f5f5f5;
   }
   .header-global.slim {
       border-bottom:0;
