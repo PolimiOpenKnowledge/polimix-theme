@@ -168,12 +168,20 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   /* footer */
   .footer-content-wrapper {
     display:flex;
+    flex-wrap: wrap;
   }
-  .footer-logo {
+  footer#footer-edx-v3 .footer-content-wrapper .footer-logo {
     width:auto;
     position: relative;
     float: left;
     margin: -10px 39px 0 0;
+  }
+  .footer-content-wrapper .footer-logo a {
+    display: block;
+    color: #00acd7;
+  }
+  .footer-content-wrapper .footer-logo a:hover, .footer-content-wrapper .footer-logo a:focus, .footer-content-wrapper .footer-logo a:active {
+    border-bottom: none;
   }
   .footer-content-wrapper li {
     font-size: .875em;
@@ -205,13 +213,6 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     display: flex;
     flex-direction: row-reverse;
   }
-  .footer-logo a {
-    display: block;
-    color: #00acd7;
-  }
-  .footer-logo a:hover, .footer-logo a:focus, .footer-logo a:active {
-    border-bottom: none;
-  }
   .references a.open-edx-logo:hover, .references a.open-edx-logo:active, .references a.open-edx-logo:focus,
   .references a.eco-project-logo:hover, .references a.eco-project-logo:active, .references a.eco-project-logo:focus {
     border-bottom: none;
@@ -234,7 +235,8 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     margin-top: -2px;
   }
   .eco-references {
-    float: right;
+    display: flex;
+    flex-direction: column;
     padding-right: 20px;
     border-right: 1px solid #ebebeb;
   }
@@ -271,6 +273,9 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   .terms {
     clear: left;
     margin-top: 30px;
+  }
+  .terms ol {
+    margin-left: 0;
   }
   footer#footer-edx-v3 nav.nav-terms li {
     font-size: .8em;
