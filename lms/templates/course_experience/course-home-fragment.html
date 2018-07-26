@@ -122,7 +122,17 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   }
   .header-global.slim {
     border-bottom: 1px solid #0079bc;
+  
+   h2 {
+      margin-bottom: 0;
+      text-transform: none;
+      text-shadow: 0 1px 0 #fff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
+  
   .header-global.slim .wrapper-header .logo img {
     height:80px;
     margin-top: -14px;

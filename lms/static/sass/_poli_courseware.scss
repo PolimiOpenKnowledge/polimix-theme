@@ -135,5 +135,15 @@
 }
 
 .header-global.slim {
-  height: 80px;
+  height: 80px!important;
+
+  h2 {
+      margin-bottom: 0;
+      text-transform: none;
+      text-shadow: 0 1px 0 #fff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
 }
+
