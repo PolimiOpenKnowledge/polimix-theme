@@ -258,16 +258,16 @@ $video-thumb-url: "../images/POK_logo.png";
 $home-opacity: 0.94;
 
 // CLASSIFICATION STYLES
-$color-classification-before: $polimi-ciano;
-$color-classification-during: $polimi-ciano;
-$color-classification-after: $polimi-ciano;
+$color-classification-bachelor: $polimi-ciano;
+$color-classification-master: $polimi-ciano;
+$color-classification-job: $polimi-ciano;
 $color-classification-teachers: #F85F39;
 $color-classification-citizens: #D43C67;
 $color-classification-researchers: #E79A32;
 $course-map-classification: (
-  "from-high-school-to-university": "before",
-  "from-university-to-job": "after",
-  "from-bachelors-to-masters": "during",
+  "moocs-for-bachelor-of-science": "bachelor",
+  "moocs-for-master-of-science": "master",
+  "from-university-to-job": "job",
   "moocs-for-teachers": "teachers",
   "moocs-for-citizens": "citizens",
   "moocs-for-researchers": "researchers"
