@@ -70,7 +70,7 @@ site_status_msg = get_site_status_msg(course_id)
     </nav>
   </header>
 % else:
-  <header id="global-navigation" class="header-global ${"slim" if course else ""}">
+  <header id="global-navigation" class="header-global ${"slim" if course else "header-global"}">
     <nav class="wrapper-header" aria-label="${_('Global')}">
       <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
       % if user.is_authenticated():
