@@ -89,13 +89,12 @@ html .find-courses .courses {
      font: normal 1em/1.6em $sans-serif;
      text-align:center;
      display:block;
-     @include classification-span-bg-color("before");
-     @include classification-span-bg-color("during");
-     @include classification-span-bg-color("after");
+     @include classification-span-bg-color("bachelor");
+     @include classification-span-bg-color("master");
+     @include classification-span-bg-color("job");
      @include classification-span-bg-color("teachers");
      @include classification-span-bg-color("citizens");
      @include classification-span-bg-color("researchers");
-
    }
 }
 
