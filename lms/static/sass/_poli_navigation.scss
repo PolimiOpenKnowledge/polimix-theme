@@ -122,3 +122,26 @@ html .header-global .nav-courseware {
 html header .nav-container .user .user-link .user-image-frame {
   max-width:44px;
 }
+
+.header-global ol.user {
+  background-color: $gray-3;
+}
+
+.header-global .user-menu .user-dropdown {
+  width: calc(40px * 0.75);
+  height: calc(40px * 0.75);
+  padding: 0;
+  margin-top: 5px;
+  border: none;
+  vertical-align: top;
+  position: relative;
+}
+
+.header-global .user .user-dropdown{
+  background-color: transparent!important;
+}
+
+.dropdown-menu-container .menu-button{
+  margin-top:0px!important;
+}
+
