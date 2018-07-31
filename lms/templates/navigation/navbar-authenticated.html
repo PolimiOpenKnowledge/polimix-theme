@@ -12,7 +12,7 @@ from django.utils.translation import ugettext as _
 <ol class="left nav-global list-inline authenticated">
   <div class="left nav-global list-inline authenticated">
   <%block name="navigation_global_links_authenticated">
-    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing and not course:
+    % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
       <li class="item nav-global-01">
         <a href="${marketing_link('ABOUT')}">About</a>
       </li>

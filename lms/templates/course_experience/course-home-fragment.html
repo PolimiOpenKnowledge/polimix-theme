@@ -46,9 +46,9 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
                 % if resume_course_url:
                     <a class="btn btn-brand action-resume-course" href="${resume_course_url}">
                         % if has_visited_course:
-                            ${_("Resume Course Pippa")}
+                            ${_("Resume Course")}
                         % else:
-                            ${_("Start Course Pippo")}
+                            ${_("Start Course")}
                         % endif
                     </a>
                 % endif
@@ -122,15 +122,16 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   }
   .header-global.slim {
     border-bottom: 1px solid #0079bc;
-    min-height:80px;
+    min-height:95px;
   }
-  .header-global.slim.course-header{
+  .header-global.slim h2{
        margin-bottom: 0;
        text-transform: none;
        text-shadow: 0 1px 0 #fff;
        white-space: nowrap;
        text-overflow: ellipsis;
        overflow: hidden;
+       width: 65%;
     }
  
   .header-global.slim .wrapper-header .logo img {
@@ -145,6 +146,7 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     background-color: #e9e6df;
     display: flex;
     align-items: center;
+    margin-top: 7px!important;
   }
   .dropdown-menu-container {
     height:44px;
@@ -153,13 +155,11 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     color: #707172;
     display: flex;
     align-items: center;
+    margin-right: 5px;
   }
   .dropdown-menu-container .menu-title:hover {
     text-decoration: none;
-  }
-  .dropdown-menu-container .menu-title img {
-    width: 44px;
-    height: 44px;
+    background: #fbfbf9;
   }
   .list-divided .item {
     border-bottom:0;
@@ -326,5 +326,14 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     color: #00acd7;
     background-color: #fbfbf9;
   }
-
+  .dropdown-menu-container .menu-image {
+    margin: 5px 5px 8px 5px;
+    max-width: 35px !important;
+  }
+  .header-global.slim .wrapper-header .course-header {
+    margin-top: 10px;
+  }
+  .header-global.slim .wrapper-header .list-inline.authenticated {
+    display:none;
+  }
 </style>
