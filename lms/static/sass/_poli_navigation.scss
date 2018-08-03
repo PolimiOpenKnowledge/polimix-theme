@@ -121,6 +121,12 @@ html .header-global .nav-courseware {
 
 html header .nav-container .user .user-link .user-image-frame {
   max-width:44px;
+  border-radius: 0%;
+  margin-left: 5px;
+}
+
+.header-global .user .user-link .label-username {
+  margin-left: 10px;
 }
 
 .header-global ol.user {
