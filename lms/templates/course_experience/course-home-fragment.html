@@ -124,14 +124,6 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     border-bottom: 1px solid #0079bc;
     min-height:80px;
   }
-  .header-global.slim.course-header{
-       margin-bottom: 0;
-       text-transform: none;
-       text-shadow: 0 1px 0 #fff;
-       white-space: nowrap;
-       text-overflow: ellipsis;
-       overflow: hidden;
-    }
   .header-global.slim h2{
        margin-bottom: 0;
        text-transform: none;
@@ -139,6 +131,7 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
        white-space: nowrap;
        text-overflow: ellipsis;
        overflow: hidden;
+       width: 65%;
     }
  
   .header-global.slim .wrapper-header .logo img {
@@ -153,6 +146,7 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     background-color: #e9e6df;
     display: flex;
     align-items: center;
+    margin-top: 7px!important;
   }
   .dropdown-menu-container {
     height:44px;
@@ -335,5 +329,8 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   .dropdown-menu-container .menu-image {
     margin: 5px 5px 8px 5px;
     max-width: 35px !important;
+  }
+  .header-global.slim .wrapper-header .course-header {
+    margin-top: 10px;
   }
 </style>
