@@ -1,0 +1,31 @@
+## mako
+
+<%page expression_filter="h" args="online_help_token"/>
+
+<%namespace name='static' file='../static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from lms.djangoapps.ccx.overrides import get_current_ccx
+
+# App that handles subdomain specific branding
+from branding import api as branding_api
+%>
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="${marketing_link('ROOT')}" itemprop="url">
+        <%block name="navigation_logo">
+            <img src="${static.url('images/POK_logo_80.png')}"  alt="Home page" />
+        </%block>
+      </a>
+    </h1>
+
+    % if course:
+    <h2 class="course-header">
+      <span class="course-name">${course.display_name_with_default}</span>
+    </h2>
+    % endif
+
+
+
+
+
+

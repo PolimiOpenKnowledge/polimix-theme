@@ -10,7 +10,7 @@
 }
 
 
-html .header-global-new .nav-courseware {
+html .header-global .nav-courseware {
   &.right {
     margin-top: 0
   }
@@ -121,4 +121,33 @@ html .header-global-new .nav-courseware {
 
 html header .nav-container .user .user-link .user-image-frame {
   max-width:44px;
+  border-radius: 0%;
+  margin-left: 5px;
 }
+
+.header-global .user .user-link .label-username {
+  margin-left: 10px;
+}
+
+.header-global ol.user {
+  background-color: $gray-3;
+}
+
+.header-global .user-menu .user-dropdown {
+  width: calc(40px * 0.75);
+  height: calc(40px * 0.75);
+  padding: 0;
+  margin-top: 5px;
+  border: none;
+  vertical-align: top;
+  position: relative;
+}
+
+.header-global .user .user-dropdown{
+  background-color: transparent!important;
+}
+
+.dropdown-menu-container .menu-button{
+  margin-top:0px!important;
+}
+

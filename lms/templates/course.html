@@ -33,7 +33,18 @@ from openedx.core.djangolib.markup import HTML, Text
         <span class="course-code">${course.display_number_with_default}</span>
         <span class="course-title">${course.display_name_with_default}</span>
       </h2>
-      <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.advertised_start}</div>
+      <%
+      if course.start is not None:
+          course_date_string = course.start.strftime('%b %d, %Y')
+      else:
+          course_date_string = ''
+      %>
+      % if course.advertised_start is not None:
+          <div class="course-date" aria-hidden="true">${_("Starts")}: ${course.advertised_start}</div>
+      % else:
+          <div class="course-date localized_datetime" aria-hidden="true">${_("Starts")}: ${course_date_string}</div>
+      % endif
+
     </div>
     <div class="sr">
       <ul>
