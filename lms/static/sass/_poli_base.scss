@@ -21,11 +21,11 @@ p {
 // custom font files (not from google)
 @font-face {
   font-family: 'Trebuchet MS'; 
-  src: url('${static.url('fonts/Trebuchet/Trebuchet_MS.ttf')}');
+  src: url('fonts/Trebuchet/Trebuchet_MS.ttf');
   }
 @font-face {
   font-family: "Trebuchet MS";
-  src: url('${static.url('fonts/Trebuchet/Trebuchet-Bold.ttf')}');
+  src: url('fonts/Trebuchet/Trebuchet-Bold.ttf');
   font-weight: bold;
   }
 
