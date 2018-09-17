@@ -9,8 +9,9 @@
 
             <%! from django.utils.translation import ugettext as _ %>
 
-                <head>
+<head>
   <title>Certificate template</title>
+  <link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css">
   <style>
   :root {
     --brand:#00acd7;
@@ -238,8 +239,8 @@
       <img class="head_stripes right_stripes" src="${static.url('images/head_stripes.svg')}" />
 
       <div class="loghi">
-        <img src="logo_polimi.svg" alt="Politecnico di Milano" />
-        <img src="logo_pok.svg" alt="Polimi Open Knowledge" />
+        <img src="${static.url('images/logo_polimi.svg')}" alt="Politecnico di Milano" />
+        <img src="${static.url('images/logo_pok.svg')}" alt="Polimi Open Knowledge" />
       </div>
 
       <table>
