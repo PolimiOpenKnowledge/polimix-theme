@@ -9,320 +9,277 @@
 
             <%! from django.utils.translation import ugettext as _ %>
 
-                <head dir="ltr">
-                    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <head>
+  <title>Certificate template</title>
+  <style>
+  :root {
+    --brand:#00acd7;
+    --cwidth: 295px;
+  }
+  body {
+    font-size:13px;
+    line-height:16px;
+    background-color: #f5f5f5;
+    color: #707172;
+    font-family: "Trebuchet MS", sans-serif;
+  }
+  table, tr, td {
+    border:0;
+    border-spacing:0;
+    padding:0;
+  }
+  h1, h2, .card p, .card h6 {
+    font-family: "Yanone Kaffeesatz", serif;
+    font-weight: normal;
+  }
+  h1, h2 {
+    text-transform:uppercase;
+    text-align:center;
+  }
+  h1 {
+    font-size:42px;
+    margin: 18px 0;
+  }
+  h2 {
+    display:inline;
+    font-size:24px;
+  }
+  .head_stripes {
+    width:377px;
+  }
+  .head_stripes.right_stripes {
+    transform: rotate(180deg);
+  }
+  h6 {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  p, h6 {
+    margin-top: 18px;
+    margin-bottom:20px;
+    line-height: 27px;
+  }
+  p+p {
+    margin-top: 35px;
+  }
+  p.highlighted {
+    font-size:21px;
+    font-weight: bold;
+    color:var(--brand);
+  }
+  p.username {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .loghi {
+    text-align:center;
+    margin: 35px 0;
+  }
+  .loghi img {
+    height: 50px;
+    width: auto;
+    margin: 0 10px;
+  }
+  .card {
+    position: relative;
+  }
+  .card:after { /* hack for printable background */
+    border-left: var(--cwidth) solid var(--brand);
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .card p, .card h6 {
+    color: white;
+    text-align:right;
+    margin-right:30px;
+  }
+  .card p:after, .card h6:after {
+    content: "";
+    border: 10px solid var(--brand);
+    transform: rotate(45deg);
+    position: absolute;
+    right: -10px;
+    margin-top: 5px;
+  }
+  .card p{
+    font-size:19px;
+  }
+  .stripes {
+    background-color:white;
+    width: var(--cwidth);
+    height: 85px;
+  }
+  .preview {
+    width: var(--cwidth);
+    height:auto;
+    display:block;
+  }
+  .core {
+    float: left;
+    padding: 0 0 0 45px;
+    max-width: 603px;
+    display:flex;
+    flex-direction: column;
+    height: 434px;
+    justify-content: space-between;
+  }
+  p.date {
+    margin-top:0;
+  }
+  p.code {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+  p.disclaimer {
+    margin-bottom: 0;
+  }
+  .teachers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .teachers img {
+    height: 80px;
+    display:block;
+  }
+  .teachers img, .teachers span {
+    max-width: 90%;
+  }
 
-                    <title>${document_title}</title>
-                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Yanone+Kaffeesatz" rel="stylesheet">
-                    <style type="text/css">
-                    /*  reset */
+  /* scaling proportionally */
 
-                    body,
-                    div,
-                    h1,
-                    h2,
-                    h3,
-                    h4,
-                    h5,
-                    h6,
-                    p,
-                    blockquote,
-                    pre,
-                    dl,
-                    dt,
-                    dd,
-                    ol,
-                    ul,
-                    li,
-                    fieldset,
-                    form,
-                    label,
-                    legend,
-                    th,
-                    td,
-                    article,
-                    aside,
-                    figure,
-                    footer,
-                    header,
-                    hgroup,
-                    menu,
-                    nav,
-                    section {
-                      margin: 0;
-                      padding: 0;
-                      border: 0;
-                    }
+  #certificate_wrapper {
+    position:absolute;
+     left:20px;
+     top:20px;
+     right:20px;
+     bottom:20px;
+  }
 
-                    html {
-                      height: 100%;
-                      -webkit-text-size-adjust: 100%;
-                      -ms-text-size-adjust: 100%;
-                    }
-                    body {
-                      min-height: 100%;
-                      font-size: 100%;
-                    }
+  #certificate {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    background-color: white;
+    padding: 30px;
+    width: 1003px;
+    height:700px;
+    box-sizing: border-box;
+    transform-origin: top left;
+    position:absolute;
+  }
 
-                    article, aside, details, figcaption, figure,
-                    footer, header, hgroup, nav, section, audio, canvas, video {
-                      display: block;
-                    }
-                    b, strong {
-                      font-weight: bold;
-                    }
-                    figure img, figure object, figure embed, figure video {
-                      max-width: 100%;
-                      display: block;
-                    }
-                    img {
-                      border: 0;
-                      -ms-interpolation-mode: bicubic;
-                    }
+  @media print{
+    #certificate {
+      left:0!important;
+      top:0!important;
+      box-shadow:none;
+    }
+  }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var pageWidth, pageHeight;
 
-                </style>
-                <style type="text/css">
-                body{
-                    font-size: 100%;
-                    font-family: 'Open Sans', sans-serif;
+    var basePage = {
+      width: 1003,
+      height: 700,
+      scale: 1,
+      scaleX: 1,
+      scaleY: 1
+    };
 
-                }
-                .wrapper-header{
-                    text-align: center;
-                    margin-top: 0.5em;
-                }
-                img{
-                    max-width: 100%;
-                    /*
-                    max-width: calc(100% - 4em);
-                    padding: 0 2em;
-                    */
-                }
-                .wrapper-view{
-                    border: 3px solid #bb2e29;
-                    width: 1280px;
-                    margin: 2em auto;
-                }
+    $(function(){
+      var $page = $('#certificate');
 
-                .accomplishment-type{
-                    font-family: 'Yanone Kaffeesatz', sans-serif;
+      getPageSize();
+      scalePages($page, pageWidth, pageHeight);
 
-                }
-
-
-                svg{
-                    max-width: 100%;
-                }
-
-                .wrapper-statement-and-signatories{
-                    margin: 3em 4em;
-                }
-                .accomplishment-summary{
-                    display: block;
-                    font-size: 1.2em;
-                    font-weight: 300;
-                    color: #444;
-                }
-                .accomplishment-recipient{
-                    font-size: 2.2em;
-                    color: #555;
-                }
-                .accomplishment-course{
-                    font-size: 2.2em;
-                    font-style: italic;
-                    color: #555;
-                    padding: 0.3em 0;
-                    display: inline-block;
-                }
-                .date{
-                    font-style: italic;
-                }
-                .accomplishment-statement-detail{
-                    font-family: 'Yanone Kaffeesatz', sans-serif;
-                    font-size: 16px;
-                    color: #444;
-                    margin-top: 1.5em;
-                    margin-bottom: 1.5em;
-                }
-                .wrapper-signatories{
-                    margin-top: 1em;
-                    text-align: center;
-                }
-                .signatory-name,
-                .role,
-                .organization{
-                    font-weight: normal;
-                    display: block;
-                    font-family: 'Yanone Kaffeesatz', sans-serif;
-                    font-size: 1em;
-                    color: #444;
-                }
-                .signatory{
-                    display: inline-block;
-                    margin: 0 10px;
-                    max-width: 120px;
-                }
-
-                .wrapper-metadata  .accomplishment-summary.date{
-                    float: right;
-                    font-size: 16px;
-                    padding-right: 5px;
-                }
-
-                .wrapper-metadata{
-                    overflow: hidden;
-                }
-
-                .wrapper-metadata .metadata.accomplishment-id{
-                    float: left;
-                }
-
-                .wrapper-metadata .metadata.accomplishment-id .accomplishment-summary.date{
-                    font-size: 10px;
-                    float: none;
-                }
-
-                /* css di stampa */
-
-                @media print{
-
-                    @page {
-                        size: 12.5in 9.5in;
-                        margin: 0;
-                   }
-
-                    body  {
-                        -webkit-print-color-adjust: exact;
-                        color-adjust: exact;
-                        height: 100%;
-                        max-width: 30cm;
-                    }
-
-                    html {
-                      height: auto;
-                      -webkit-text-size-adjust: auto;
-                      -ms-text-size-adjust: auto;
-                        margin: 0.5cm 1.6cm;
-                    }
-                    .wrapper-view{
-                        width: auto;
-                    }
-
-                }
-
-                @media print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                    /* IE10+ CSS styles go here */
-                    html{
-                        margin: 0;
-                    }
-                    .wrapper-view{
-                        margin: 0;
-                    }
-                }
-
-                </style>
-                <!--[if IE]>
-                <style type="text/css">
-                    @media print{
-
-                    @page {
-                        size: auto;
-                   }
-
-                }
-                </style>
-                <![endif]-->
-
-            </head>
-
-                <body class="layout-accomplishment view-valid-accomplishment ltr certificate certificate-honor" data-view="valid-accomplishment">
-
-                    <div class="wrapper-view" dir="ltr">
-
-                        <div class="wrapper-header">
-
-                            <header class="header-app" role="banner">
-                                <img src="${static.url('images/certificate_header.png')}" />
-                            </header>
-
-                        </div>
-
-                        <main class="accomplishment accomplishment-main">
-                            <div class="wrapper-accomplishment-rendering">
-                                <div class="accomplishment-rendering">
-
-                                    <div class="accomplishment-type">
-                                        <svg width="100%" height="65">
-         <rect fill="#bb2e29" x="0" y="0" width="100%" height="100%"></rect>
-            <text fill="#ffffff" font-size="38px" dx="0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0" x="37%" y="45">
-                    UniBO OPEN KNOWLEDGE
-            </text>
-        </svg>
-                                    </div>
-
-                                    <div class="wrapper-statement-and-signatories">
-                                        <div class="accomplishment-statement">
-                                            <p class="accomplishment-statement-lead">
-                                                <span class="accomplishment-summary">Si attesta che</span>
-                                                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name | h}</strong>
-                                                <span class="accomplishment-summary copy copy-lead">ha partecipato con successo al corso:</span>
-
-                                                <strong class="accomplishment-course hd-1 emphasized">
-                                                <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
-
-                                              </strong>
-                                                <!--<span></span>-->
-                                                <!--<span class="accomplishment-summary date">${certificate_date_issued}</span>-->
-                                            </p>
-                                            <br />
-                                            <br />
-                                            <!-- <br /> tolto per  stampa in una pagina su firefox -->
-
-                                            <p style="text-align:center" class="accomplishment-statement-detail copy copy-lead">
-                                                Il conseguimento di questo attestato non vale ai fini del riconoscimento di crediti universitari né costituisce titolo per il superamento del test di ingresso all’Università di Bologna o ad altre università.</p>                                   </p>
-                                        </div>
-
-                                        % if mode != 'base':
-                                        <div class="accomplishment-signatories">
-
-                                            <div class="wrapper-signatories">
-                                                <div class="list-signatories">
-                                                    % if certificate_data:
-                                                       % for signatory in certificate_data.get('signatories', []):
-                                                    <div class="signatory">
-                                                        <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
-
-                                                        <h4 class="signatory-name hd-5">${signatory['name']}</h4>
-                                                        <p class="signatory-credentials copy copy-micro">
-                                                            <span class="role">${signatory['title']}</span>
-                                                            <span class="organization">${signatory['organization']}</span>
-
-                                                        </p>
-                                                    </div>
-                                                    % endfor
-                                                  % endif
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="wrapper-metadata">
-
-                                            <span class="accomplishment-summary date">Bologna, ${certificate_date_issued}</span>
-                                             <dl class="metadata accomplishment-id">
-                                                <dt class="accomplishment-summary date">${certificate_id_number_title}:</dt>
-                                                <dd class="accomplishment-summary date">${certificate_id_number}</dd>
-                                            </dl>
-
-                                        </div>
-                                        % endif
-                                    </div>
+      $(window).resize(function () {
+        getPageSize();
+        scalePages($page, pageWidth, pageHeight);
+      });
 
 
-                                </div>
-                            </div>
-                        </main>
-                    </div>
-                </body>
+    function getPageSize() {
+      pageHeight = $('#certificate_wrapper').height();
+      pageWidth = $('#certificate_wrapper').width();
+    }
+
+    function scalePages(page, maxWidth, maxHeight) {
+      var scaleX = 1, scaleY = 1;
+      scaleX = maxWidth / basePage.width;
+      scaleY = maxHeight / basePage.height;
+      basePage.scaleX = scaleX;
+      basePage.scaleY = scaleY;
+      basePage.scale = (scaleX > scaleY) ? scaleY : scaleX;
+
+      if(basePage.scale>1) {
+        basePage.scale=1;
+      }
+
+      var newLeftPos = Math.abs(Math.floor(((basePage.width * basePage.scale) - maxWidth)/2));
+      var newTopPos = Math.abs(Math.floor(((basePage.height * basePage.scale) - maxHeight)/2));
+
+      page.attr('style', 'transform:scale(' + basePage.scale + ');left:' + newLeftPos + 'px;top:' + newTopPos + 'px;');
+    }
+    });
+  </script>
+</head>
+<body>
+
+  <div id="certificate_wrapper">
+    <div id="certificate">
+      <h1>Certificate of accomplishment</h1>
+      <img class="head_stripes left_stripes" src="head_stripes.svg" />
+      <h2>Polimi Open Knowledge</h2>
+      <img class="head_stripes right_stripes" src="head_stripes.svg" />
+
+      <div class="loghi">
+        <img src="logo_polimi.svg" alt="Politecnico di Milano" />
+        <img src="logo_pok.svg" alt="Polimi Open Knowledge" />
+      </div>
+
+      <table>
+        <tr>
+          <td class="card">
+            <p>This is to certify that</p>
+            <p>succesfully completed</p>
+            <div class="stripes">
+              <img src="side_stripes.svg" />
+            </div>
+            <img class="preview" src="preview.jpg" />
+            <h6>Honor code certificate</h6>
+          </td>
+
+          <td class="core">
+            <div>
+              <p class="highlighted username">${accomplishment_copy_name}</p>
+              <p class="highlighted">${accomplishment_copy_course_name}</p>
+              <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
+            </div>
+            <div>
+              <p class="date">Milano, ${certificate_date_issued}</p>
+              <div class="teachers">
+                <div class="single_teacher">
+                  <img src="garrone.png" />
+                  <span>Prof. Paola Garrone<br/>Politecnico di Milano</span>
+                </div>
+                <div class="single_teacher">
+                  <img src="giussani.png" />
+                  <span>Dott. Andrea Giussani<br/>Fondazione Banco Alimentare ONLUS</span>
+                </div>
+              </div>
+              <p class="code">${certificate_id_number}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+</body>
+</html>
