@@ -12,9 +12,13 @@
 <head>
   <title>Certificate template</title>
   <link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css">
-  <link href="${static.url('fonts/Trebuchet/Trebuchet_MS.ttf')}" rel='stylesheet' type='text/css'>
-  <link href="${static.url('fonts/Trebuchet/Trebuchet-Bold.ttf')}" rel='stylesheet' type='text/css'>
   <style>
+  @font-face {font-family: 'Trebuchet MS'; src: url('${static.url('fonts/Trebuchet/Trebuchet_MS.ttf')}');}
+  @font-face {
+    font-family: "Trebuchet MS";
+    src: url('${static.url('fonts/Trebuchet/Trebuchet-Bold.ttf')}');
+    font-weight: bold;
+    }
   :root {
     --brand:#00acd7;
     --cwidth: 295px;
@@ -253,7 +257,7 @@
             <div class="stripes">
               <img src="${static.url('images/side_stripes.svg')}" />
             </div>
-            <img class="preview" src="${static.url('images/preview.svg')}" />
+            <img class="preview" src="${static.url('images/preview.jpg')}" />
             <h6>Honor code certificate</h6>
           </td>
 
