@@ -12,241 +12,22 @@
 <head>
   <title>Certificate template</title>
   <link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css">
-  <style>
-  @font-face {font-family: 'Trebuchet MS'; src: url('${static.url('fonts/Trebuchet/Trebuchet_MS.ttf')}');}
-  @font-face {
-    font-family: "Trebuchet MS";
-    src: url('${static.url('fonts/Trebuchet/Trebuchet-Bold.ttf')}');
-    font-weight: bold;
-    }
-  :root {
-    --brand:#00acd7;
-    --cwidth: 295px;
-  }
-  body {
-    font-size:13px;
-    line-height:16px;
-    background-color: #f5f5f5;
-    color: #707172;
-    font-family: "Trebuchet MS", sans-serif;
-  }
-  table, tr, td {
-    border:0;
-    border-spacing:0;
-    padding:0;
-  }
-  h1, h2, .card p, .card h6 {
-    font-family: "Yanone Kaffeesatz", serif;
-    font-weight: normal;
-  }
-  h1, h2 {
-    text-transform:uppercase;
-    text-align:center;
-  }
-  h1 {
-    font-size:42px;
-    margin: 18px 0;
-  }
-  h2 {
-    display:inline;
-    font-size:24px;
-  }
-  .head_stripes {
-    width:377px;
-  }
-  .head_stripes.right_stripes {
-    transform: rotate(180deg);
-  }
-  h6 {
-    text-transform: uppercase;
-    font-size: 14px;
-  }
-  p, h6 {
-    margin-top: 18px;
-    margin-bottom:20px;
-    line-height: 27px;
-  }
-  p+p {
-    margin-top: 35px;
-  }
-  p.highlighted {
-    font-size:21px;
-    font-weight: bold;
-    color:var(--brand);
-  }
-  p.username {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .loghi {
-    text-align:center;
-    margin: 35px 0;
-  }
-  .loghi img {
-    height: 50px;
-    width: auto;
-    margin: 0 10px;
-  }
-  .card {
-    position: relative;
-  }
-  .card:after { /* hack for printable background */
-    border-left: var(--cwidth) solid var(--brand);
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  .card p, .card h6 {
-    color: white;
-    text-align:right;
-    margin-right:30px;
-  }
-  .card p:after, .card h6:after {
-    content: "";
-    border: 10px solid var(--brand);
-    transform: rotate(45deg);
-    position: absolute;
-    right: -10px;
-    margin-top: 5px;
-  }
-  .card p{
-    font-size:19px;
-  }
-  .stripes {
-    background-color:white;
-    width: var(--cwidth);
-    height: 85px;
-  }
-  .preview {
-    width: var(--cwidth);
-    height:auto;
-    display:block;
-  }
-  .core {
-    float: left;
-    padding: 0 0 0 45px;
-    max-width: 603px;
-    display:flex;
-    flex-direction: column;
-    height: 434px;
-    justify-content: space-between;
-  }
-  p.date {
-    margin-top:0;
-  }
-  p.code {
-    margin-top: 10px;
-    font-size: 11px;
-  }
-  p.disclaimer {
-    margin-bottom: 0;
-  }
-  .teachers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .teachers img {
-    height: 80px;
-    display:block;
-  }
-  .teachers img, .teachers span {
-    max-width: 90%;
-  }
-
-  /* scaling proportionally */
-
-  #certificate_wrapper {
-    position:absolute;
-     left:20px;
-     top:20px;
-     right:20px;
-     bottom:20px;
-  }
-
-  #certificate {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    background-color: white;
-    padding: 30px;
-    width: 1003px;
-    height:700px;
-    box-sizing: border-box;
-    transform-origin: top left;
-    position:absolute;
-  }
-
-  @media print{
-    #certificate {
-      left:0!important;
-      top:0!important;
-      box-shadow:none;
-    }
-  }
-  </style>
+  <link href="${static.url('../templates/certificates/template_data/cert_style.css')}" rel="stylesheet" type="text/css">
+  <link href="${static.url('../templates/certificates/template_data/cert_script.js')}" type="text/javascript">
   <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    var pageWidth, pageHeight;
-
-    var basePage = {
-      width: 1003,
-      height: 700,
-      scale: 1,
-      scaleX: 1,
-      scaleY: 1
-    };
-
-    $(function(){
-      var $page = $('#certificate');
-
-      getPageSize();
-      scalePages($page, pageWidth, pageHeight);
-
-      $(window).resize(function () {
-        getPageSize();
-        scalePages($page, pageWidth, pageHeight);
-      });
-
-
-    function getPageSize() {
-      pageHeight = $('#certificate_wrapper').height();
-      pageWidth = $('#certificate_wrapper').width();
-    }
-
-    function scalePages(page, maxWidth, maxHeight) {
-      var scaleX = 1, scaleY = 1;
-      scaleX = maxWidth / basePage.width;
-      scaleY = maxHeight / basePage.height;
-      basePage.scaleX = scaleX;
-      basePage.scaleY = scaleY;
-      basePage.scale = (scaleX > scaleY) ? scaleY : scaleX;
-
-      if(basePage.scale>1) {
-        basePage.scale=1;
-      }
-
-      var newLeftPos = Math.abs(Math.floor(((basePage.width * basePage.scale) - maxWidth)/2));
-      var newTopPos = Math.abs(Math.floor(((basePage.height * basePage.scale) - maxHeight)/2));
-
-      page.attr('style', 'transform:scale(' + basePage.scale + ');left:' + newLeftPos + 'px;top:' + newTopPos + 'px;');
-    }
-    });
-  </script>
 </head>
 <body>
 
   <div id="certificate_wrapper">
     <div id="certificate">
       <h1>Certificate of accomplishment</h1>
-      <img class="head_stripes left_stripes" src="${static.url('images/head_stripes.svg')}" />
+      <img class="head_stripes left_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
       <h2>Polimi Open Knowledge</h2>
-      <img class="head_stripes right_stripes" src="${static.url('images/head_stripes.svg')}" />
+      <img class="head_stripes right_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
 
       <div class="loghi">
-        <img src="${static.url('images/logo_polimi.svg')}" alt="Politecnico di Milano" />
-        <img src="${static.url('images/logo_pok.svg')}" alt="Polimi Open Knowledge" />
+        <img src="${static.url('images/certificates/logo_polimi.svg')}" alt="Politecnico di Milano" />
+        <img src="${static.url('images/certificates/logo_pok.svg')}" alt="Polimi Open Knowledge" />
       </div>
 
       <table>
@@ -255,9 +36,9 @@
             <p>This is to certify that</p>
             <p>succesfully completed</p>
             <div class="stripes">
-              <img src="${static.url('images/side_stripes.svg')}" />
+              <img src="${static.url('images/certificates/side_stripes.svg')}" />
             </div>
-            <img class="preview" src="${static.url('images/preview.jpg')}" />
+            <img class="preview" src="${static.url('images/certificates/preview.jpg')}" />
             <h6>Honor code certificate</h6>
           </td>
 
@@ -271,11 +52,11 @@
               <p class="date">Milano, ${certificate_date_issued}</p>
               <div class="teachers">
                 <div class="single_teacher">
-                  <img src="${static.url('images/garrone.png')}" />
+                  <img src="${static.url('images/certificates/garrone.png')}" />
                   <span>Prof. Paola Garrone<br/>Politecnico di Milano</span>
                 </div>
                 <div class="single_teacher">
-                  <img src="${static.url('images/giussani.png')}" />
+                  <img src="${static.url('images/certificates/giussani.png')}" />
                   <span>Dott. Andrea Giussani<br/>Fondazione Banco Alimentare ONLUS</span>
                 </div>
               </div>
