@@ -12,19 +12,6 @@
   src: url('${static.url('fonts/Trebuchet/Trebuchet-Bold.ttf')}');
   font-weight: bold;
 }
-#certificate_wrapper {
-  font-size:13px;
-  line-height:16px;
-  background-color: var(--background);
-  color: #707172;
-  font-family: "Trebuchet MS", sans-serif;
-}
-#certificate {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  background-color: white;
-  padding: 30px;
-  box-sizing: border-box;
-}
 table, tr, td {
   border:0;
   border-spacing:0;
@@ -160,13 +147,21 @@ p.disclaimer {
   top:0;
   right:0;
   bottom:0;
-  border: 20px solid var(--background);
+  border: 20px solid var(--background);font-size:13px;
+  line-height:16px;
+  background-color: var(--background);
+  color: #707172;
+  font-family: "Trebuchet MS", sans-serif;
 }
 #certificate {
   width: 1003px;
   height:700px;
   transform-origin: top left;
   position:absolute;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  background-color: white;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 @media print{
