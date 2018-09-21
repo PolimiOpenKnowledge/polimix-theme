@@ -1,13 +1,18 @@
 <%! from django.utils.translation import ugettext as _ %>
-
-
-
-
-    <%! from django.utils.translation import ugettext as _ %>
-        <%namespace name='static' file='../../static_content.html'/>
+<%namespace name='static' file='../../static_content.html'/>
 <%course_mode_class = course_mode if course_mode else ''%>
 
-            <%! from django.utils.translation import ugettext as _ %>
+<%! from django.utils.translation import ugettext as _ %>
+
+<%! from courseware.courses import get_course %>
+<%! from opaque_keys.edx.keys import CourseKey %>
+<%! from openedx.core.lib.courses import course_image_url %>
+
+<%
+ # access to full course is slow need to find other solution to access to language
+ courseid = CourseKey.from_string(course_id)
+ full_course = get_course(courseid)
+%>
 
 
 <head>
@@ -18,10 +23,15 @@
   <script src="${static.url('certificates/cert_script.js')}" type="text/javascript"></script>
 </head>
 <body>
+
 <div id="cert_body">
   <div id="certificate_wrapper">
     <div id="certificate">
+      % if full_course.language == "en":
       <h1>Certificate of accomplishment</h1>
+      % else: 
+      <h1>Attestato di partecipazione</h1>
+      % endif
       <img class="head_stripes left_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
       <h2>Polimi Open Knowledge</h2>
       <img class="head_stripes right_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
@@ -33,15 +43,28 @@
 
       <table>
         <tr>
+          % if full_course.language == "en":
           <td class="card">
             <p>This is to certify that</p>
             <p>succesfully completed</p>
             <div class="stripes">
               <img src="${static.url('images/certificates/side_stripes.svg')}" />
             </div>
-            <img class="preview" src="${static.url('images/certificates/preview.jpg')}" />
+            <img class="preview" src="${course_image_url(full_course)}" />
             <h6>Honor code certificate</h6>
           </td>
+          % else: 
+          <td class="card">
+            <p>Si attesta che</p>
+            <p>ha partecipato con successo</p>
+            <div class="stripes">
+              <img src="${static.url('images/certificates/side_stripes.svg')}" />
+            </div>
+            <img class="preview" src="${course_image_url(full_course)}" />
+            <h6>Honor code certificate</h6>
+          </td>
+          % endif 
+
 
           <td class="core">
             <div>
@@ -50,7 +73,13 @@
               <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
             </div>
             <div>
-              <p class="date">Milano, ${certificate_date_issued}</p>
+              <p class="date"> 
+              % if full_course.language == "en":
+              Milan,
+              % else: 
+              Milano,
+              % endif
+               ${certificate_date_issued}</p>
               <div class="teachers">
                 <div class="single_teacher">
                   <img src="${static.url('images/certificates/garrone.png')}" />
@@ -61,7 +90,12 @@
                   <span>Dott. Andrea Giussani<br/>Fondazione Banco Alimentare ONLUS</span>
                 </div>
               </div>
-              <p class="code">Authenticity of this certificate can be verified at ${certificate_id_number}</p>
+              % if full_course.language == "en":
+              <p class="code">Authenticity of this certificate can be verified at
+              % else: 
+              <p class="code">L'autenticità di questo attestato può essere verificata a 
+              % endif
+              <a href="${certificate_id_number}">${certificate_id_number}</a></p>
             </div>
           </td>
         </tr>
