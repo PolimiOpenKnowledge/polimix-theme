@@ -74,12 +74,11 @@
             </div>
             <div>
               <p class="date"> 
-              
               % if full_course.language == "it":
-              Milan, ${certificate_date_issued|date:'d n H:i:s e'}</p>
+              Milan, ${certificate_date_issued}</p>
               % else:
               {% language 'it' %}
-              Milano, ${certificate_date_issued|date:'d n H:i:s e'}</p>
+              Milano, ${certificate_date_issued}</p>
               % endif
                
               <div class="teachers">
