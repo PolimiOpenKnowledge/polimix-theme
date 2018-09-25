@@ -7,11 +7,14 @@
 <%! from courseware.courses import get_course %>
 <%! from opaque_keys.edx.keys import CourseKey %>
 <%! from openedx.core.lib.courses import course_image_url %>
+<%! from datetime import datetime %>
+<%! import locale %>
 
 <%
  # access to full course is slow need to find other solution to access to language
  courseid = CourseKey.from_string(course_id)
  full_course = get_course(courseid)
+ certificate_date_formatted = datetime.strptime(certificate_date_issued, '%B %d, %Y').strftime('%d %B %Y')
 %>
 
 
@@ -75,12 +78,14 @@
             <div>
               <p class="date"> 
               
-              % if full_course.language == "it":
-              Milan, {{${certificate_date_issued}|date:'d n H:i:s e'}}</p>
+              % if full_course.language == "en":
+              <% locale.setlocale(locale.LC_TIME, "en_US.utf8") %>
+              Milan, ${certificate_date_formatted}</p>
               % else:
-              {% language 'it' %}
-              Milano, {{${certificate_date_issued}|date:'d n H:i:s e'}}</p>
+              <% locale.setlocale(locale.LC_TIME, "it_IT") %>
+              Milano, ${certificate_date_formatted}</p>
               % endif
+
                
               <div class="teachers">
                 <div class="single_teacher">
