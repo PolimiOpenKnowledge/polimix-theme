@@ -336,3 +336,29 @@
     @include reset-button();
   }
 }
+
+.login-register {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    min-height: 100%;
+    width: 100%;
+    display: inherit;
+
+    form {
+        border: 1px solid $gray-0;
+        border-radius: 5px;
+        padding: 0 25px 20px 25px;
+    }
+
+    .action-primary {
+        width: 100%;
+        margin-top: 1em;
+        padding: 10px;
+        text-transform: none;
+        font-weight: 600;
+        letter-spacing: normal;
+    }
+}
