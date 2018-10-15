@@ -17,6 +17,10 @@ table, tr, td {
   border-spacing:0;
   padding:0;
 }
+table {
+  font-size: 13px;
+  color: #707172;
+}
 h1, h2, .card p, .card h6 {
   font-family: "Yanone Kaffeesatz", serif;
   font-weight: normal;
@@ -61,6 +65,13 @@ p.username {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color:var(--brand);
+}
 .loghi {
   text-align:center;
   margin: 35px 0;
@@ -72,6 +83,7 @@ p.username {
 }
 .card {
   position: relative;
+  padding: 0;
 }
 .card:after { /* hack for printable background */
   border-left: var(--cwidth) solid var(--brand);
@@ -123,6 +135,7 @@ p.date {
 p.code {
   margin-top: 10px;
   font-size: 11px;
+  line-height: 14px;
 }
 p.disclaimer {
   margin-bottom: 0;
