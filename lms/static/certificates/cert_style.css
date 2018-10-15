@@ -1,8 +1,3 @@
-:root {
-  --brand:#00acd7;
-  --background:#f5f5f5;
-  --cwidth: 295px;
-}
 @font-face {
   font-family: 'Trebuchet MS';
   src: url('${static.url('fonts/Trebuchet/Trebuchet_MS.ttf')}');
@@ -16,6 +11,10 @@ table, tr, td {
   border:0;
   border-spacing:0;
   padding:0;
+}
+table {
+  font-size: 13px;
+  color: #707172;
 }
 h1, h2, .card p, .card h6 {
   font-family: "Yanone Kaffeesatz", serif;
@@ -54,12 +53,19 @@ p+p {
 p.highlighted {
   font-size:21px;
   font-weight: bold;
-  color:var(--brand);
+  color:#00acd7;
 }
 p.username {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color:#00acd7;
 }
 .loghi {
   text-align:center;
@@ -72,9 +78,10 @@ p.username {
 }
 .card {
   position: relative;
+  padding: 0;
 }
 .card:after { /* hack for printable background */
-  border-left: var(--cwidth) solid var(--brand);
+  border-left: 295px solid #00acd7;
   content: "";
   position: absolute;
   height: 100%;
@@ -89,7 +96,7 @@ p.username {
 }
 .card p:after, .card h6:after {
   content: "";
-  border: 10px solid var(--brand);
+  border: 10px solid #00acd7;
   transform: rotate(45deg);
   position: absolute;
   right: -10px;
@@ -100,22 +107,29 @@ p.username {
 }
 .stripes {
   background-color:white;
-  width: var(--cwidth);
+  width: 295px;
   height: 85px;
 }
 .preview {
-  width: var(--cwidth);
+  width: 295px;
   height:auto;
   display:block;
 }
 .core {
   float: left;
-  padding: 0 0 0 45px;
-  max-width: 603px;
-  display:flex;
-  flex-direction: column;
+  position: relative;
+  width: 603px;
   height: 434px;
-  justify-content: space-between;
+}
+.core > div:first-child {
+  position: absolute;
+  top: 0;
+  left: 45px;
+}
+.core > div:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 45px;
 }
 p.date {
   margin-top:0;
@@ -123,6 +137,7 @@ p.date {
 p.code {
   margin-top: 10px;
   font-size: 11px;
+  line-height: 14px;
 }
 p.disclaimer {
   margin-bottom: 0;
@@ -147,9 +162,9 @@ p.disclaimer {
   top:0;
   right:0;
   bottom:0;
-  border: 20px solid var(--background);font-size:13px;
+  border: 20px solid #f5f5f5;font-size:13px;
   line-height:16px;
-  background-color: var(--background);
+  background-color: #f5f5f5;
   color: #707172;
   font-family: "Trebuchet MS", sans-serif;
 }
