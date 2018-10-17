@@ -10,7 +10,7 @@
 }
 
 
-html .header-global .nav-courseware {
+.header-global .nav-courseware {
   &.right {
     margin-top: 0
   }
@@ -53,44 +53,48 @@ html .header-global .nav-courseware {
     }
   }
 }
+nav.wrapper-course-material .course-tabs li a, nav.wrapper-course-material .course-tabs li a:visited {
+  color: #065683!important;
+}
 
+nav.wrapper-course-material .course-tabs li:hover, nav.wrapper-course-material .course-tabs li:visited:hover,
+nav.wrapper-course-material .course-tabs li:visited:focus, nav.wrapper-course-material .course-tabs li a.active {
+    color: #0075b4!important;
+    border-bottom-color: #0075b4!important;
+}
 
- html .header-global {
-  height: 80px;
+header.header-global, header.header-global.slim {
   opacity: $home-opacity;
+  padding: 5px 0 10px 0;
+
   .nav-global li a {
     padding: 5px 5px 0 5px;
     color: $black;
   }
-  h1.logo {
-    margin: -20px 39px 0 0;
-    a {
-      img {
-        height: 80px;
-      }
-    }
-  }
   .nav-container {
-    height: 70px;
     padding: 10px 10px 0;
-
   }
-  &.slim .wrapper-header{
-    nav {
-      height: 60px;
-    }
-    h2 {
-      line-height: 60px;
-      margin-top: 0;
+  .wrapper-header {
+    height:auto;
+    padding:0 15px;
+
+    h2.course-header {
+      line-height: 50px;
+      margin: 0 15px;
+      width: auto;
+      letter-spacing:0;
     }
     h1.logo {
-      margin: -10px 10px 0 13px;
+      margin: 0 15px 0 0;
+
       img {
-        height: 80px;
+        height: 41px;
+        margin-top: 4px;
       }
     }
     ol.user {
-      margin-top:10px;
+      margin-top:5px;
+
       li .dropdown {
         min-height:44px;
       }
@@ -98,31 +102,23 @@ html .header-global .nav-courseware {
   }
 }
 .header-global-new {
-  /*height: 80px;*/
   opacity: $home-opacity;
 
   nav {
-    height: 80px;
     padding:0;
     float:left;
     &.nav-account-management {
       float:none;
     }
   }
-
-  h1.logo {
-    margin: -20px 10px 0 13px;
-    img {
-      height: 80px;
-    }
-  }
-
 }
-
-html header .nav-container .user .user-link .user-image-frame {
-  max-width:44px;
+.header-global {
+  height:auto;
+}
+header .nav-container .user .user-link .user-image-frame, .header-global .user .user-link .user-image-frame {
+  max-height:44px;
+  max-width:unset;
   border-radius: 0%;
-  margin-left: 5px;
 }
 
 .header-global .user .user-link .label-username {
@@ -150,4 +146,3 @@ html header .nav-container .user .user-link .user-image-frame {
 .dropdown-menu-container .menu-button{
   margin-top:0px!important;
 }
-

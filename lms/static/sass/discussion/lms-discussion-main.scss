@@ -6,45 +6,43 @@
 
 // Fix some missing style from courseware in discussion
 html body.discussion {
-  background-color: $gray-3;
-  .content-wrapper , .window-wrap{
-    background-color: $gray-3;
-  }
+
   .header-global.slim {
-      border-bottom:0;
+      border-bottom: 1px solid $polimi-ciano;
       box-shadow: none;
+      padding: 0;
       .wrapper-header {
-        h1.logo {
-          padding-right:20px;
+        padding: 5px 15px 10px;
+        height:auto;
+        h1.logo img {
+          margin-top:8px;
         }
         h2.course-header {
           display: block;
-          width: 65%;
           @include float(left);
-          font-size: 0.9em;
-          font-weight: 600;
+          font-family: $sans-serif;
           color: $lighter-base-font-color;
           letter-spacing: 0;
-          margin-top: 9px;
           margin-bottom: 0;
           text-transform: none;
           text-shadow: 0 1px 0 #fff;
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
-          line-height: 60px;
+          line-height: 50px;
           margin-top: 0;
         }
         .wrapper-user-menu {
           background-color: $gray-3;
-          margin-top: 10px;
+          margin-top: 6px;
         }
       }
   }
-
+  .wrapper-course-material .course-tabs li {
+    margin-right: 4px;
+  }
   .course-material .tabs .tab a {
     padding: 10px 15px 13px 15px;
-    color: #5e5e5e;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -52,9 +50,33 @@ html body.discussion {
   .dropdown-menu-container .menu-title {
     line-height: inherit;
     color: $base-font-color;
-    font-weight: normal;
-    font-family: $sans-serif
+    font-family: $sans-serif;
+    text-shadow: 0 1px rgba(255,255,255,0.6);
+  }
+  .dropdown-menu-container .dropdown-menu {
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+    width: auto;
+    min-width: 120px;
+    padding: 5px 10px;
+  }
+  .dropdown-menu-container .dropdown-menu .dropdown-item {
+    border-top: 1px dotted #fff;
+    border-bottom:0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    a {
+      color: #00acd7;
+      border: 1px solid transparent;
+      margin: 8px 0px;
+      padding: 3px 5px 4px;
+      line-height: 22.4px;
 
+      &:hover, &:focus {
+        color: #707172;
+        text-decoration: none;
+      }
+    }
   }
 
 

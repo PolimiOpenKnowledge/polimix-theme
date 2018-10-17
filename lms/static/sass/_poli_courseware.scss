@@ -9,20 +9,28 @@
   background-color: #f5f5f5; // gimcko gray
 }
 
+body.view-in-course .container {
+  padding:0;
+}
+
 .content-wrapper div.info-wrapper {
   background-color:white;
 
   section.updates {
     padding-left:40px;
-  }
 
-  section.updates h1 {
-    display: none;
+    h3 {
+      display: none;
+    }
+    div.box-info {
+      padding-left: 24px;
+    }
   }
   section.handouts {
     display: none;
   }
-  .pok-course-info-wrapper {
+  section.updates .pok-course-info-wrapper {
+    padding-left:0;
     section {
       margin-bottom: lh() + lh();
     }
@@ -34,7 +42,7 @@
     @include section_header_info("pok-course-grading","../images/ico_quiz.png");
     @include section_header_info("pok-course-forum","../images/ico_forum.png");
     @include section_header_info("pok-course-prerequisiti","../images/ico_prerequisiti.png");
-    @include section_header_info("pok-course-docente","../images/ico_info.png");
+    @include section_header_info("pok-course-docente","../images/ico_docente.png");
     @include section_header_info("pok-course-approfondimento","../images/ico_approfondimento.png");
     @include section_header_info("pok-course-sottotitoli","../images/ico_sottotitoli.png");
     @include section_header_info("pok-course-certificato","../images/ico_certificate.png");
@@ -120,6 +128,19 @@
   }
 }
 
+h2.hd.hd-2.progress-certificates-title {
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #707172;
+}
+
+.progress-container {
+  padding:0;
+}
+
 // week 0
 
 @media(min-width:992px) {
@@ -138,8 +159,8 @@
   }
 }
 
-.header-global.slim {
-  height: 80px!important;
+header.header-global.slim {
+  border-bottom: 1px solid $polimi-ciano;
 
   h2 {
       margin-bottom: 0;
