@@ -55,7 +55,7 @@
 }
 
 
-.header-global {
+.header-global, .header-global.slim {
   opacity: $home-opacity;
   padding:0;
 
@@ -66,7 +66,7 @@
   .nav-container {
     padding: 10px 10px 0;
   }
-  &.slim .wrapper-header, .wrapper-header {
+  .wrapper-header, .wrapper-header {
     padding:10px 10px;
 
     h2.course-header {
