@@ -17,10 +17,14 @@ p {
   font: normal 1em/1.6em $serif;
   margin: 0;
 }
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 // custom font files (not from google)
 @font-face {
-  font-family: 'Trebuchet MS'; 
+  font-family: 'Trebuchet MS';
   src: url('fonts/Trebuchet/Trebuchet_MS.ttf');
   }
 @font-face {

@@ -147,6 +147,10 @@ html .find-courses .courses {
   box-sizing: border-box;
 }
 
+.course-info header.course-profile {
+  overflow:visible;
+}
+
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register {
   color: $polimi-ciano;
   border: 1px solid $polimi-ciano;
