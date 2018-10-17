@@ -57,6 +57,7 @@
 
 .header-global {
   opacity: $home-opacity;
+  padding:0;
 
   .nav-global li a {
     padding: 5px 5px 0 5px;
@@ -70,7 +71,7 @@
 
     h2.course-header {
       line-height: 60px;
-      margin: 12px 10px;
+      margin: 0 15px;
       width: auto;
     }
     h1.logo {

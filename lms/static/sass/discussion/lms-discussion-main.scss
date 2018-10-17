@@ -15,11 +15,10 @@ html body.discussion {
       box-shadow: none;
       .wrapper-header {
         h1.logo {
-          padding-right:20px;
+          padding-right:15px;
         }
         h2.course-header {
           display: block;
-          width: 65%;
           @include float(left);
           font-size: 0.9em;
           font-weight: 600;
