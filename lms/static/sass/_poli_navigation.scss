@@ -10,7 +10,7 @@
 }
 
 
-html .header-global .nav-courseware {
+.header-global .nav-courseware {
   &.right {
     margin-top: 0
   }
@@ -55,29 +55,19 @@ html .header-global .nav-courseware {
 }
 
 
- html .header-global {
-  height: 80px;
+.header-global {
   opacity: $home-opacity;
+
   .nav-global li a {
     padding: 5px 5px 0 5px;
     color: $black;
   }
-  h1.logo {
-    margin: -20px 39px 0 0;
-    a {
-      img {
-        height: 80px;
-      }
-    }
-  }
   .nav-container {
-    height: 70px;
     padding: 10px 10px 0;
-
   }
-  &.slim .wrapper-header, .wrapper-header{
-      min-height: 60px;
-      padding:10px 10px;
+  &.slim .wrapper-header, .wrapper-header {
+    padding:10px 10px;
+
     h2.course-header {
       line-height: 60px;
       margin: 12px 10px;
@@ -85,12 +75,14 @@ html .header-global .nav-courseware {
     }
     h1.logo {
       margin: 0 15px 0 0;
+
       img {
         height: 41px;
       }
     }
     ol.user {
       margin-top:10px;
+
       li .dropdown {
         min-height:44px;
       }
@@ -98,28 +90,18 @@ html .header-global .nav-courseware {
   }
 }
 .header-global-new {
-  /*height: 80px;*/
   opacity: $home-opacity;
 
   nav {
-    height: 80px;
     padding:0;
     float:left;
     &.nav-account-management {
       float:none;
     }
   }
-
-  h1.logo {
-    margin: -20px 10px 0 13px;
-    img {
-      height: 80px;
-    }
-  }
-
 }
 
-html header .nav-container .user .user-link .user-image-frame {
+header .nav-container .user .user-link .user-image-frame {
   max-height:44px;
   border-radius: 0%;
   margin-left: 5px;
