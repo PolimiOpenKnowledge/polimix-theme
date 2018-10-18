@@ -6,12 +6,9 @@
 
 // Fix some missing style from courseware in discussion
 html body.discussion {
-  background-color: $gray-3;
-  .content-wrapper , .window-wrap{
-    background-color: $gray-3;
-  }
+
   .header-global.slim {
-      border-bottom:0;
+      border-bottom: 1px solid $polimi-ciano;
       box-shadow: none;
       .wrapper-header {
         h1.logo {
@@ -20,6 +17,7 @@ html body.discussion {
         h2.course-header {
           display: block;
           @include float(left);
+          font-family: $sans-serif;
           font-size: 0.9em;
           font-weight: 600;
           color: $lighter-base-font-color;

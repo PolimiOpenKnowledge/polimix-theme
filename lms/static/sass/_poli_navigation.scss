@@ -66,13 +66,14 @@
   .nav-container {
     padding: 10px 10px 0;
   }
-  .wrapper-header, .wrapper-header {
+  .wrapper-header {
     padding:10px 10px;
 
     h2.course-header {
       line-height: 60px;
       margin: 0 15px;
       width: auto;
+      letter-spacing:0;
     }
     h1.logo {
       margin: 0 15px 0 0;
@@ -102,8 +103,9 @@
   }
 }
 
-header .nav-container .user .user-link .user-image-frame {
+header .nav-container .user .user-link .user-image-frame, .header-global .user .user-link .user-image-frame {
   max-height:44px;
+  max-width:unset;
   border-radius: 0%;
   margin-left: 5px;
 }

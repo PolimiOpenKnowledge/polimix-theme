@@ -14,15 +14,19 @@
 
   section.updates {
     padding-left:40px;
-  }
 
-  section.updates h1 {
-    display: none;
+    h3 {
+      display: none;
+    }
+    > div {
+      padding-left: inherit;
+    }
   }
   section.handouts {
     display: none;
   }
   .pok-course-info-wrapper {
+    padding-left:0;
     section {
       margin-bottom: lh() + lh();
     }
@@ -139,6 +143,7 @@
 }
 
 .header-global.slim {
+  border-bottom: 1px solid $polimi-ciano;
 
   h2 {
       margin-bottom: 0;

@@ -24,8 +24,18 @@ html .find-courses, html .university-profile {
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
-    .course-image .cover-image:before {
-      height:150px;
+    .course-image .cover-image {
+      height:147px;
+
+      &:before {
+        height:147px;
+        transition-delay: 0s;
+
+        .learn-more {
+          transition-delay: 0s;
+          top: 49px;
+        }
+      }
     }
     .course-info {
       position:relative;
