@@ -121,8 +121,9 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
     line-height: 17px;
   }
   .header-global.slim {
-    border-bottom: 1px solid #a1a5a5;
-    min-height:95px;
+    border-bottom: 1px solid #00acd7;
+    min-height:unset;
+    padding: 5px 0 10px 0;
   }
   .header-global.slim h2{
        margin-bottom: 0;
@@ -133,11 +134,12 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
        overflow: hidden;
        width: 65%;
     }
-
+    .header-global.slim .wrapper-header {
+      height:auto;
+      padding:0 15px;
+    }
   .header-global.slim .wrapper-header .logo img {
-    height:80px;
-    margin-top: -14px;
-    margin-left: 3px;
+    height:41px;
   }
   .wrapper-course-material .course-tabs li {
     margin-right:4px;
@@ -172,6 +174,11 @@ from openedx.features.course_experience.course_tools import CourseToolsPluginMan
   .dropdown-menu-container .dropdown-menu .dropdown-item a:hover {
     text-decoration: none;
     color: #707172;
+  }
+  .dropdown-menu-container .menu-image {
+    max-height:44px;
+    max-width:unset!important;
+    margin:0;
   }
 
   /* footer */

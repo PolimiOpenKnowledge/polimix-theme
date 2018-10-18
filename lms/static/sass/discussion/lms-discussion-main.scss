@@ -10,7 +10,9 @@ html body.discussion {
   .header-global.slim {
       border-bottom: 1px solid $polimi-ciano;
       box-shadow: none;
+      padding: 5px 0 10px 0;
       .wrapper-header {
+        padding: 0 15px;
         h1.logo {
           padding-right:15px;
         }
@@ -18,8 +20,6 @@ html body.discussion {
           display: block;
           @include float(left);
           font-family: $sans-serif;
-          font-size: 0.9em;
-          font-weight: 600;
           color: $lighter-base-font-color;
           letter-spacing: 0;
           margin-top: 9px;
