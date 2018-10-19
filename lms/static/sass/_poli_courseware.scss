@@ -9,6 +9,10 @@
   background-color: #f5f5f5; // gimcko gray
 }
 
+body.view-in-course .container {
+  padding:0;
+}
+
 .content-wrapper div.info-wrapper {
   background-color:white;
 
@@ -122,6 +126,19 @@
   .xmodule_display.xmodule_CapaModule div.problem-progress {
     display:block;
   }
+}
+
+h2.hd.hd-2.progress-certificates-title {
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #707172;
+}
+
+.progress-container {
+  padding:0;
 }
 
 // week 0

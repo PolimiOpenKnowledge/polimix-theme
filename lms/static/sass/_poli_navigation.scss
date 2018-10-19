@@ -54,13 +54,13 @@
   }
 }
 nav.wrapper-course-material .course-tabs li a, nav.wrapper-course-material .course-tabs li a:visited {
-  color: #065683;
+  color: #065683!important;
 }
 
 nav.wrapper-course-material .course-tabs li:hover, nav.wrapper-course-material .course-tabs li:visited:hover,
 nav.wrapper-course-material .course-tabs li:visited:focus, nav.wrapper-course-material .course-tabs li a.active {
-    color: #0075b4;
-    border-bottom-color: #0075b4;
+    color: #0075b4!important;
+    border-bottom-color: #0075b4!important;
 }
 
 header.header-global, header.header-global.slim {
@@ -93,7 +93,7 @@ header.header-global, header.header-global.slim {
       }
     }
     ol.user {
-      margin-top:2px;
+      margin-top:5px;
 
       li .dropdown {
         min-height:44px;
@@ -112,7 +112,9 @@ header.header-global, header.header-global.slim {
     }
   }
 }
-
+.header-global {
+  height:auto;
+}
 header .nav-container .user .user-link .user-image-frame, .header-global .user .user-link .user-image-frame {
   max-height:44px;
   max-width:unset;
