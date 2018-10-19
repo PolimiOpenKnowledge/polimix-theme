@@ -26,6 +26,9 @@
     width: flex-grid(8);
   }
   .my-courses {
+    .course {
+      margin: 24px;
+    }
 
     .course .details .wrapper-course-image {
       @include margin-right(flex-gutter(9));
@@ -51,10 +54,9 @@
         min-height: 0;
       }
     }
-    .listing-courses .course-item {
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 2px solid $gray-3;
+    .listing-courses .course-item .course-container {
+      background-color: white;
+      border: 1px solid #d9d9d9;
     }
     a.unenroll,
     a.email-settings {
@@ -62,6 +64,9 @@
     }
     .course .wrapper-messages-primary .message.message-status .actions .action.survey-url .cta {
       font-size: 20px;
+    }
+    .course .wrapper-messages-primary .message {
+      padding: 20px 0 0;
     }
   }
   .my-courses .course .info > hgroup h3 a,

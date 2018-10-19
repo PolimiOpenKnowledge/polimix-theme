@@ -18,8 +18,8 @@
     h3 {
       display: none;
     }
-    div {
-      padding-left: inherit;
+    div.box-info {
+      padding-left: 24px;
     }
   }
   section.handouts {
@@ -38,7 +38,7 @@
     @include section_header_info("pok-course-grading","../images/ico_quiz.png");
     @include section_header_info("pok-course-forum","../images/ico_forum.png");
     @include section_header_info("pok-course-prerequisiti","../images/ico_prerequisiti.png");
-    @include section_header_info("pok-course-docente","../images/ico_info.png");
+    @include section_header_info("pok-course-docente","../images/ico_docente.png");
     @include section_header_info("pok-course-approfondimento","../images/ico_approfondimento.png");
     @include section_header_info("pok-course-sottotitoli","../images/ico_sottotitoli.png");
     @include section_header_info("pok-course-certificato","../images/ico_certificate.png");

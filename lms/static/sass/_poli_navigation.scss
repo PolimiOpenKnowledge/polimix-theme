@@ -53,18 +53,19 @@
     }
   }
 }
-.wrapper-course-material .course-tabs li a, .wrapper-course-material .course-tabs li a:visited {
+nav.wrapper-course-material .course-tabs li a, nav.wrapper-course-material .course-tabs li a:visited {
   color: #065683;
 }
 
-.tabs .tab a:hover, .tabs .tab a:focus, .tabs .tab a:visited:hover, .tabs .tab a:visited:focus, .wrapper-course-material .course-tabs li a.active {
+nav.wrapper-course-material .course-tabs li:hover, nav.wrapper-course-material .course-tabs li:visited:hover,
+nav.wrapper-course-material .course-tabs li:visited:focus, nav.wrapper-course-material .course-tabs li a.active {
     color: #0075b4;
     border-bottom-color: #0075b4;
 }
 
 header.header-global, header.header-global.slim {
   opacity: $home-opacity;
-  padding:0;
+  padding: 5px 0 10px 0;
 
   .nav-global li a {
     padding: 5px 5px 0 5px;
@@ -75,7 +76,7 @@ header.header-global, header.header-global.slim {
   }
   .wrapper-header {
     height:auto;
-    padding:9px 10px 17px;
+    padding:0 15px;
 
     h2.course-header {
       line-height: 50px;
@@ -88,6 +89,7 @@ header.header-global, header.header-global.slim {
 
       img {
         height: 41px;
+        margin-top: 4px;
       }
     }
     ol.user {
