@@ -10,9 +10,10 @@ html body.discussion {
   .header-global.slim {
       border-bottom: 1px solid $polimi-ciano;
       box-shadow: none;
-      padding: 10px 0 0;
+      padding: 0;
       .wrapper-header {
-        padding: 0 15px;
+        padding: 5px 15px 10px;
+        height:auto;
         h2.course-header {
           display: block;
           @include float(left);
@@ -34,10 +35,11 @@ html body.discussion {
         }
       }
   }
-
+  .wrapper-course-material .course-tabs li {
+    margin-right: 4px;
+  }
   .course-material .tabs .tab a {
     padding: 10px 15px 13px 15px;
-    color: #5e5e5e;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -45,7 +47,6 @@ html body.discussion {
   .dropdown-menu-container .menu-title {
     line-height: inherit;
     color: $base-font-color;
-    font-weight: normal;
     font-family: $sans-serif;
     text-shadow: 0 1px rgba(255,255,255,0.6);
   }

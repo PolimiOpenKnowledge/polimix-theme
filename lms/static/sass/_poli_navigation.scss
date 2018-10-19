@@ -53,7 +53,14 @@
     }
   }
 }
+.wrapper-course-material .course-tabs li a, .wrapper-course-material .course-tabs li a:visited {
+  color: #065683;
+}
 
+.tabs .tab a:hover, .tabs .tab a:focus, .tabs .tab a:visited:hover, .tabs .tab a:visited:focus, .wrapper-course-material .course-tabs li a.active {
+    color: #0075b4;
+    border-bottom-color: #0075b4;
+}
 
 header.header-global, header.header-global.slim {
   opacity: $home-opacity;
@@ -67,6 +74,7 @@ header.header-global, header.header-global.slim {
     padding: 10px 10px 0;
   }
   .wrapper-header {
+    height:auto;
     padding:9px 10px 17px;
 
     h2.course-header {
