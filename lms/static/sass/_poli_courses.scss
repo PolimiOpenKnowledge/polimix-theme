@@ -30,11 +30,11 @@ html .find-courses .courses {
       &:before {
         height:147px;
         transition-delay: 0s;
+      }
 
-        .learn-more {
-          transition-delay: 0s;
-          top: 49px;
-        }
+      .learn-more {
+        transition-delay: 0s;
+        top: 49px;
       }
     }
     .course-info {
@@ -159,6 +159,8 @@ html .find-courses .courses {
 
 .course-info header.course-profile {
   overflow:visible;
+  margin: 0 -15px;
+  width: calc(100% + 25px);
 }
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register {
