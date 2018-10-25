@@ -159,6 +159,8 @@ html .find-courses .courses {
 
 .course-info header.course-profile {
   overflow:visible;
+  margin: 0 -15px;
+  width: calc(100% + 25px);
 }
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register {
