@@ -39,9 +39,9 @@ else:
 
     % if cert_status['status'] == 'notpassing':
       % if enrollment.mode != 'audit':
-         <div class="fail"><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}:</strong><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
+         <div class="fail"><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}:</strong><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required:</span><span class="grade-value">
       % else:
-         <div class="fail"><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
+         <div class="fail"><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required:</span><span class="grade-value">
       % endif
       ${"{0:.0f}%".format(float(course_overview.lowest_passing_grade)*100)}</span>
       </p>
@@ -94,7 +94,7 @@ else:
         <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}">
                ${_("Complete our course feedback survey")}</a></div>
       % endif
-    
+
   </div>
 
   % if cert_status['show_download_url'] and cert_status['linked_in_url']:
