@@ -62,8 +62,21 @@
     a.email-settings {
       color: $polimi-ciano;
     }
-    .course .wrapper-messages-primary .message.message-status .actions .action.survey-url .cta {
-      font-size: 20px;
+    .course .wrapper-messages-primary .message.message-status .actions .action .btn, p.fail {
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-shadow: none;
+      background-color: $polimi-ciano;
+      color: white;
+      border-radius: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    p.fail {
+      background-color: #dcdcda;
     }
     .course .wrapper-messages-primary .message {
       padding: 20px 0 0;

@@ -34,15 +34,17 @@ else:
     <span class="en">${_("Final course details are being wrapped up at this time. Your final standing will be available shortly.")}</span>
   </p>
 % elif cert_status['status'] in ('generating', 'ready', 'notpassing', 'restricted', 'auditing', 'unverified'):
-  <p class="message-copy"><span class="it"> Il tuo risultato finale </span><span class="locale-separator">/</span><span class="en">${_("Your final grade:")}</span>
+  <p class="message-copy"><span class="it">Il tuo risultato finale</span><span class="locale-separator">/</span><span class="en">${_("Your final grade:")}</span>
   <span class="grade-value">${"{0:.0f}%".format(float(cert_status['grade'])*100)}</span>.
+
     % if cert_status['status'] == 'notpassing':
       % if enrollment.mode != 'audit':
-         <br /><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}: </strong> <span class="it">risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required</span><span class="grade-value">
+         <p class="fail"><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}:</strong><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
       % else:
-         <span class="it">risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required</span><span class="grade-value">
+         <p class="fail"><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
       % endif
-      ${"{0:.0f}%".format(float(course_overview.lowest_passing_grade)*100)}</span>.
+      ${"{0:.0f}%".format(float(course_overview.lowest_passing_grade)*100)}</span>
+      </p>
     % elif cert_status['status'] == 'restricted' and enrollment.mode == 'verified':
     <p class="message-copy">
       ${Text(_("Your verified {cert_name_long} is being held pending confirmation that the issuance of your {cert_name_short} is in compliance with strict U.S. embargoes on Iran, Cuba, Syria and Sudan. If you think our system has mistakenly identified you as being connected with one of those countries, please let us know by contacting {email}. If you would like a refund on your {cert_name_long}, please contact our billing address {billing_email}")).format(email=HTML('<a class="contact-link" href="mailto:{email}">{email}</a>.').format(email=settings.CONTACT_EMAIL), billing_email=HTML('<a class="contact-link" href="mailto:{email}">{email}</a>').format(email=settings.PAYMENT_SUPPORT_EMAIL), cert_name_short=cert_name_short, cert_name_long=cert_name_long)}
@@ -89,7 +91,7 @@ else:
       % endif
 
       % if cert_status['show_survey_button']:
-        <li class="action survey-url"><a class="cta" href="${cert_status['survey_url']}">
+        <li class="action survey-url"><a class="btn" href="${cert_status['survey_url']}">
                ${_("Complete our course feedback survey")}</a></li>
       % endif
     </ul>

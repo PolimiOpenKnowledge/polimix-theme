@@ -19,7 +19,7 @@ body.view-in-course .container {
   section.updates {
     padding-left:40px;
 
-    h3 {
+    h3.hd { // "course updates and news"
       display: none;
     }
     div.box-info {
@@ -118,7 +118,7 @@ h2.unit-title {
 // h3 style like h2
 
 .vert-mod .vert {
-  .hd-2, .xblock .xblock h3, .xmodule_display.xmodule_HtmlModule h3 {
+  .hd-2, .xblock .xblock h3, .xmodule_display.xmodule_HtmlModule h3, .xmodule_display.xmodule_HtmlModule h2 {
     text-transform: uppercase;
     font-weight:400;
     font-size: 1.2em;
