@@ -39,9 +39,9 @@ else:
 
     % if cert_status['status'] == 'notpassing':
       % if enrollment.mode != 'audit':
-         <p class="fail"><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}:</strong><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
+         <div class="fail"><strong>${_("{cert_name_short}").format(cert_name_short=cert_name_short)}:</strong><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required:</span><span class="grade-value">
       % else:
-         <p class="fail"><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en"> grade required:</span><span class="grade-value">
+         <div class="fail"><span class="it"> risultato minimo richiesto</span><span class="locale-separator">/</span><span class="en">grade required:</span><span class="grade-value">
       % endif
       ${"{0:.0f}%".format(float(course_overview.lowest_passing_grade)*100)}</span>
       </p>
@@ -64,37 +64,37 @@ else:
 
 % if cert_status['show_disabled_download_button'] or cert_status['show_download_url'] or cert_status['show_survey_button']:
   <div class="wrapper-message-primary">
-    <ul class="actions actions-primary">
+
       % if cert_status['show_disabled_download_button']:
-        <li class="action"><span class="disabled">
-            <span class="it">${_("Il tuo {cert_name_short} &egrave; in fase di generazione").format(cert_name_short=cert_name_short)}</span><span class="en">${_("Your {cert_name_short} is Generating").format(cert_name_short=cert_name_short)}</span></span></li>
+        <div class="action"><span class="disabled">
+            <span class="it">${_("Il tuo {cert_name_short} &egrave; in fase di generazione").format(cert_name_short=cert_name_short)}</span><span class="en">${_("Your {cert_name_short} is Generating").format(cert_name_short=cert_name_short)}</span></span></div>
       % elif cert_status['show_download_url'] and cert_status.get('show_cert_web_view', False):
-        <li class="action action-certificate">
+        <div class="action action-certificate">
         <a class="btn" href="${cert_status['cert_web_view_url']}" target="_blank"
            title="${_('This link will open the certificate web view')}">
-           ${_("View {cert_name_short}").format(cert_name_short=cert_name_short,)}</a></li>
+           ${_("View {cert_name_short}").format(cert_name_short=cert_name_short,)}</a></div>
       % elif cert_status['show_download_url'] and enrollment.mode in CourseMode.NON_VERIFIED_MODES:
-        <li class="action action-certificate">
+        <div class="action action-certificate">
         <a class="btn" href="${cert_status['download_url']}"
            title="${_('This link will open/download a PDF document')}">
-           ${_("Download {cert_name_short} (PDF)").format(cert_name_short=cert_name_short,)}</a></li>
+           ${_("Download {cert_name_short} (PDF)").format(cert_name_short=cert_name_short,)}</a></div>
       % elif cert_status['show_download_url'] and enrollment.mode == 'verified' and cert_status['mode'] == 'honor':
-        <li class="action">
+        <div class="action">
         <a class="btn" href="${cert_status['download_url']}"
            title="${_('This link will open/download a PDF document')}">
-           ${_("Download Your {cert_name_short} (PDF)").format(cert_name_short=cert_name_short)}</a></li>
+           ${_("Download Your {cert_name_short} (PDF)").format(cert_name_short=cert_name_short)}</a></div>
       % elif cert_status['show_download_url'] and enrollment.mode in CourseMode.VERIFIED_MODES:
-        <li class="action">
+        <div class="action">
         <a class="btn" href="${cert_status['download_url']}"
            title="${_('This link will open/download a PDF document of your verified {cert_name_long}.').format(cert_name_long=cert_name_long)}">
-           ${_("Download Your ID Verified {cert_name_short} (PDF)").format(cert_name_short=cert_name_short)}</a></li>
+           ${_("Download Your ID Verified {cert_name_short} (PDF)").format(cert_name_short=cert_name_short)}</a></div>
       % endif
 
       % if cert_status['show_survey_button']:
-        <li class="action survey-url"><a class="btn" href="${cert_status['survey_url']}">
-               ${_("Complete our course feedback survey")}</a></li>
+        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}">
+               ${_("Complete our course feedback survey")}</a></div>
       % endif
-    </ul>
+
   </div>
 
   % if cert_status['show_download_url'] and cert_status['linked_in_url']:
