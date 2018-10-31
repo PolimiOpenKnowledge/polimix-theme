@@ -62,9 +62,12 @@
     a.email-settings {
       color: $polimi-ciano;
     }
-    .course .wrapper-messages-primary .message.message-status .action .btn, p.fail {
+
+    // dashboard certificate information
+
+    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
       border: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
       text-align: center;
       text-shadow: none;
       background: $polimi-ciano;
@@ -76,11 +79,34 @@
         text-decoration: none;
       }
     }
-    div.fail {
-      background-color: #c9c9ca;
-    }
     .course .wrapper-messages-primary .message {
       padding: 20px 0 0;
+
+      &.message-status .message-copy {
+        margin: 0 0 15px;
+      }
+
+      &.message-status.course-status-certavailable .message-copy {
+        float:none;
+      }
+    }
+    div.action, div.fail {
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+      font-weight: normal;
+    }
+    div.action-certificate {
+      padding-right: 8px;
+    }
+    div.fail {
+      background-color: #d8d8d8;
+      cursor: not-allowed;
+      margin-right: 8px;
+      width: calc(50% - 8px);
+    }
+    div.survey-url {
+      padding-left: 8px;
     }
   }
   .my-courses .course .info > hgroup h3 a,
