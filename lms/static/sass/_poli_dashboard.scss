@@ -81,6 +81,14 @@
     }
     .course .wrapper-messages-primary .message {
       padding: 20px 0 0;
+
+      &.message-status.course-status-certavailable .message-copy {
+        float:none;
+      }
+    }
+    .action, .fail {
+      float: left;
+      width: 50%;
     }
   }
   .my-courses .course .info > hgroup h3 a,

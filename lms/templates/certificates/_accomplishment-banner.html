@@ -37,14 +37,12 @@ from django.template.defaultfilters import escapejs
   </script>
 </%block>
 <div id="fb-root"></div>
-<div class="wrapper-banner wrapper-banner-user">
-    <section class="banner banner-user">
-        <div class="message message-block message-notice">
-            <h2 class="message-title hd-5 emphasized">${accomplishment_banner_opening | h}</h2>
+<div class="wrapper-banner">
+
             <div class="wrapper-copy-and-actions">
-                <p class="message-copy copy copy-base emphasized">${accomplishment_banner_congrats}</p>
+                <p class="message-copy copy copy-base emphasized">To save a copy of your Certificate of Accomplishment, use the browser print function and select the PDF printer from the device list.</p>
                 <div class="message-actions">
-                    <h3 class="sr-only">${_("Print or share your certificate:")}</h3>
+
                     % if facebook_share_enabled:
                       <button class="action action-share-facebook btn-inverse btn-small icon-only" id="action-share-facebook"
                          onclick="FaceBook.share({
@@ -87,6 +85,5 @@ from django.template.defaultfilters import escapejs
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
+
 </div>

@@ -198,3 +198,9 @@ p.disclaimer {
   top: 0;
   right: 0;
 }
+
+@media print {
+  .wrapper-banner {
+    display:none;
+  }
+}
