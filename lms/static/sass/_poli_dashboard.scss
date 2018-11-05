@@ -62,7 +62,7 @@
     a.email-settings {
       color: $polimi-ciano;
     }
-    .course .wrapper-messages-primary .message.message-status .action .btn, p.fail {
+    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
       border: none;
       padding: 10px 20px;
       text-align: center;
@@ -86,9 +86,16 @@
         float:none;
       }
     }
-    .action, .fail {
+    div.action, div.fail {
       float: left;
       width: 50%;
+      box-sizing: border-box;
+    }
+    div.action-certificate, .div.fail {
+      padding-right: 8px;
+    }
+    div.survey-url {
+      padding-left: 8px;
     }
   }
   .my-courses .course .info > hgroup h3 a,

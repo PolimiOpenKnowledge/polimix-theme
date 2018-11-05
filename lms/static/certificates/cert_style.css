@@ -192,15 +192,27 @@ p.disclaimer {
 
 /* print button */
 
+@media print {
+  .wrapper-banner {
+    display:none;
+  }
+}
 .wrapper-banner {
   z-index: 1;
   position: fixed;
   top: 0;
   right: 0;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  color: #707172;
+  font-family: "trebuchet MS", sans-serif;
 }
-
-@media print {
-  .wrapper-banner {
-    display:none;
-  }
+span.message-copy {
+  float:left;
+}
+button.action-print {
+  float:right;
 }
