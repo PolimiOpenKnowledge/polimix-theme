@@ -210,9 +210,32 @@ p.disclaimer {
   color: #707172;
   font-family: "trebuchet MS", sans-serif;
 }
+.wrapper-copy-and-actions {
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 span.message-copy {
-  float:left;
+  line-height: 1;
 }
 button.action-print {
-  float:right;
+  font-size: 1em;
+  box-sizing: border-box;
+  letter-spacing: 0;
+  border: 1px solid #0083a4;
+  border-radius: 3px;
+  padding: 8px 20px;
+  background-color: transparent;
+  color: #0083a4;
+  text-align: center;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+button.action-print:hover {
+  background-color: #00acd7;
+  color: white;
+  border-color: #00acd7;
 }

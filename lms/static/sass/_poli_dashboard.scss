@@ -62,6 +62,9 @@
     a.email-settings {
       color: $polimi-ciano;
     }
+
+    // dashboard certificate information
+
     .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
       border: none;
       padding: 10px 20px;
@@ -77,10 +80,15 @@
       }
     }
     div.fail {
-      background-color: #c9c9ca;
+      background-color: #d8d8d8;
+      cursor: not-allowed;
     }
     .course .wrapper-messages-primary .message {
       padding: 20px 0 0;
+
+      &.message-status .message-copy {
+        margin: 0 0 15px;
+      }
 
       &.message-status.course-status-certavailable .message-copy {
         float:none;
@@ -90,8 +98,9 @@
       float: left;
       width: 50%;
       box-sizing: border-box;
+      font-weight: normal;
     }
-    div.action-certificate, .div.fail {
+    div.action-certificate, div.fail {
       padding-right: 8px;
     }
     div.survey-url {
