@@ -182,6 +182,7 @@ p.disclaimer {
 @media print{
   #certificate_wrapper {
     border:0;
+    background-color:transparent;
   }
   #certificate {
     left:0!important;
