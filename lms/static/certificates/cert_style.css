@@ -218,9 +218,6 @@ p.disclaimer {
   justify-content: space-between;
   align-items: center;
 }
-span.message-copy {
-  line-height: 1;
-}
 button.action-print {
   font-size: 1em;
   box-sizing: border-box;
@@ -233,6 +230,7 @@ button.action-print {
   text-align: center;
   transition: all .2s ease-in-out;
   cursor: pointer;
+  margin-left: 15px;
 }
 button.action-print:hover {
   background-color: #00acd7;

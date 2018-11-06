@@ -67,7 +67,7 @@
 
     .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
       border: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
       text-align: center;
       text-shadow: none;
       background: $polimi-ciano;
@@ -78,10 +78,6 @@
       &:hover {
         text-decoration: none;
       }
-    }
-    div.fail {
-      background-color: #d8d8d8;
-      cursor: not-allowed;
     }
     .course .wrapper-messages-primary .message {
       padding: 20px 0 0;
@@ -100,8 +96,14 @@
       box-sizing: border-box;
       font-weight: normal;
     }
-    div.action-certificate, div.fail {
+    div.action-certificate {
       padding-right: 8px;
+    }
+    div.fail {
+      background-color: #d8d8d8;
+      cursor: not-allowed;
+      margin-right: 8px;
+      width: calc(50% - 8px);
     }
     div.survey-url {
       padding-left: 8px;
