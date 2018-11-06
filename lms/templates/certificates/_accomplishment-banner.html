@@ -3,6 +3,22 @@ from django.utils.translation import ugettext as _
 from django.template.defaultfilters import escapejs
 %>
 <%namespace name='static' file='../static_content.html'/>
+
+<%! from courseware.courses import get_course %>
+<%! from opaque_keys.edx.keys import CourseKey %>
+<%! from openedx.core.lib.courses import course_image_url %>
+<%! from datetime import datetime %>
+<%! import locale %>
+
+<%
+ # access to full course is slow need to find other solution to access to language
+ courseid = CourseKey.from_string(course_id)
+ full_course = get_course(courseid)
+ certificate_date_formatted = datetime.strptime(certificate_date_issued, '%B %d, %Y').strftime('%d %B %Y')
+%>
+
+
+
 <%block name="js_extra">
   <%static:js group='certificates_wv'/>
   <script type="text/javascript">
@@ -40,7 +56,14 @@ from django.template.defaultfilters import escapejs
 <div class="wrapper-banner">
 
             <div class="wrapper-copy-and-actions">
-                <span class="message-copy copy copy-base emphasized">To save a copy of your Certificate of Accomplishment, use the browser print function and select the PDF printer from the device list.</span>
+                <span class="message-copy copy copy-base emphasized">
+                % if full_course.language == "it":
+                Per salvare una copia del tuo Attestato di Partecipazione usa la funzione di stampa del browser e seleziona nell'elenco dei dispositivi la stampante PDF.
+                % else: 
+                To save a copy of your Certificate of Accomplishment, use the browser print function and select the PDF printer from the device list.
+                % endif
+
+                </span>
                 <div class="message-actions">
 
                     % if facebook_share_enabled:
@@ -81,7 +104,12 @@ from django.template.defaultfilters import escapejs
 
                     <button class="action action-print btn-inverse btn-small" id="action-print-view">
                         <span class="icon fa fa-print" aria-hidden="true"></span>
+                        % if full_course.language == "it":
+                        ${_("Stampa Attestato")} 
+                        % else: 
                         ${_("Print Certificate")}
+                        % endif
+                        
                     </button>
                 </div>
             </div>
