@@ -150,7 +150,7 @@ p.disclaimer {
   height: 80px;
   display:block;
 }
-.teachers img, .teachers span {
+.teachers span {
   max-width: 90%;
 }
 
@@ -220,16 +220,16 @@ p.disclaimer {
   align-items: center;
 }
 button.action-print {
-  font-size: 1em;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 16px;
   box-sizing: border-box;
-  letter-spacing: 0;
   border: 1px solid #0083a4;
   border-radius: 3px;
   padding: 8px 20px;
-  background-color: transparent;
-  color: #0083a4;
+  background-color: #f2f1eb;
+  color: #00acd7;
   text-align: center;
-  transition: all .2s ease-in-out;
+  transition: all .25s ease-in-out;
   cursor: pointer;
   margin-left: 15px;
 }
