@@ -32,7 +32,7 @@
     <div id="certificate">
       % if full_course.language == "en":
       <h1>Certificate of accomplishment</h1>
-      % else: 
+      % else:
       <h1>Attestato di partecipazione</h1>
       % endif
       <img class="head_stripes left_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
@@ -42,6 +42,8 @@
       <div class="loghi">
         <img src="${static.url('images/certificates/logo_polimi.svg')}" alt="Politecnico di Milano" />
         <img src="${static.url('images/certificates/logo_pok.svg')}" alt="Polimi Open Knowledge" />
+        <span style="width:50px;height:50px;display:inline-block;"></span>
+        <img src="${static.url('images/certificates/logo_dtransform.jpg')}" alt="D-Transform" />
       </div>
 
       <table>
@@ -56,7 +58,7 @@
             <img class="preview" src="${course_image_url(full_course)}" />
             <h6>Honor code certificate</h6>
           </td>
-          % else: 
+          % else:
           <td class="card">
             <p>Si attesta che</p>
             <p>ha partecipato con successo</p>
@@ -66,7 +68,7 @@
             <img class="preview" src="${course_image_url(full_course)}" />
             <h6>Honor code certificate</h6>
           </td>
-          % endif 
+          % endif
 
 
           <td class="core">
@@ -76,8 +78,8 @@
               <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
             </div>
             <div>
-              <p class="date"> 
-              
+              <p class="date">
+
               % if full_course.language == "en":
               <% locale.setlocale(locale.LC_TIME, "en_US.utf8") %>
               Milan, ${certificate_date_formatted}</p>
@@ -86,7 +88,7 @@
               Milano, ${certificate_date_formatted}</p>
               % endif
 
-               
+
               <div class="teachers">
                 <div class="single_teacher">
                   <img src="${static.url('images/certificates/signatures/sancassani.jpg')}" />
@@ -95,8 +97,8 @@
               </div>
               % if full_course.language == "en":
               <p class="code">Authenticity of this certificate can be verified at
-              % else: 
-              <p class="code">L'autenticita' di questo Attestato di partecipazione puo' essere verificata a 
+              % else:
+              <p class="code">L'autenticita' di questo Attestato di partecipazione puo' essere verificata a
               % endif
               <a href="https://${site}/certificates/${certificate_id_number}">https://${site}/certificates/${certificate_id_number}</a></p>
             </div>
