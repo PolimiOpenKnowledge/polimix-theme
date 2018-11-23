@@ -187,6 +187,7 @@ p.disclaimer {
   #certificate {
     left:0!important;
     top:0!important;
+    transform:scale(1)!important;
     box-shadow:none;
   }
 }
