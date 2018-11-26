@@ -141,6 +141,7 @@ p.code {
 }
 p.disclaimer {
   margin-bottom: 0;
+  line-height: 1.2;
 }
 .teachers {
   display: grid;
