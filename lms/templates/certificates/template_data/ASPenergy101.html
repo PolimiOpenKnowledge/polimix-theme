@@ -61,7 +61,7 @@
           % else:
           <td class="card">
             <p>Si attesta che</p>
-            <p>ha partecipato con successo</p>
+            <p>ha partecipato con successo al corso</p>
             <div class="stripes">
               <img src="${static.url('images/certificates/side_stripes.svg')}" />
             </div>
@@ -77,8 +77,8 @@
               <p class="highlighted">${accomplishment_copy_course_name}</p>
               % if full_course.language == "en":
               <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
-              % else: 
-              <p class="disclaimer">Il conseguimento di questo attestato non vale ai fini del riconoscimento di crediti universitari né costituisce titolo per il superamento del test di ingresso al Politecnico o ad altre università.</p>
+              % else:
+              <p class="disclaimer">Il conseguimento di questo attestato non vale ai fini del riconoscimento di crediti universitari.</p>
               % endif
             </div>
             <div>
