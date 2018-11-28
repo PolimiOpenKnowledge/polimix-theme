@@ -183,6 +183,6 @@ header.header-global.slim {
   border-right:0;
 }
 
-.wrapper-problem-response input { // quiz
+.wrapper-problem-response input[type="text"] { // quiz
   vertical-align: baseline;
 }
