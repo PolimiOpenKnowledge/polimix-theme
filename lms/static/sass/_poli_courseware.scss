@@ -182,3 +182,7 @@ header.header-global.slim {
 .profile-wrapper .course-info>.chapters>section h4.hd {
   border-right:0;
 }
+
+.wrapper-problem-response input { // quiz
+  vertical-align: baseline;
+}
