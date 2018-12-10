@@ -186,3 +186,20 @@ header.header-global.slim {
 .wrapper-problem-response input[type="text"] { // quiz
   vertical-align: baseline;
 }
+
+
+.video .wrapper-downloads .video-download-button > a { //bottone download transcript
+    transition: all 0.25s ease-in-out 0s;
+    font-size: 14px;
+    line-height: 14px;
+    float: left;
+    border-radius: 3px;
+    background-color: #fbfbf9;
+    padding: 15px;
+    color: #585754;
+
+     &:hover, &:focus {
+        background-color: $polimi-ciano!important;
+        color: $gray-1;
+      }
+}
