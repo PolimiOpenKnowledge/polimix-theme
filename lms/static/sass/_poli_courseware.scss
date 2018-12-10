@@ -197,9 +197,11 @@ header.header-global.slim {
     background-color: #fbfbf9;
     padding: 15px;
     color: #585754;
+    font-weight:normal;
 
      &:hover, &:focus {
         background-color: $polimi-ciano!important;
         color: $gray-1;
+        text-decoration: none!important;
       }
 }
