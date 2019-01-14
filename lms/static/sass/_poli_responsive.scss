@@ -1,0 +1,310 @@
+/****************************************************************************************************
+*   Extend base/base
+*
+*   Theme css are loaded after base/base but some customization is needed. Use extra-selectors to do it!
+*
+****************************************************************************************************/
+
+@media only screen and (max-width: 1220px){
+    .window-wrap{
+        min-width: 320px;
+    }
+    /* cambiate larghezze elementi per fare in modo che prenda tutta la larghezza */
+    .container.about img{
+        max-width: 100%;
+        height: auto;
+    }
+    #polimi-header, .polimi-container, header.header-global, header.header-global nav, .content-wrapper, .footer-content-wrapper, .header-global-new .wrapper-header:not(.rwd), .header-global .wrapper-header, #polimi-footer,
+    .content-wrapper section .container, .content-wrapper section section.outside-app, .content-wrapper section .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, .view-profile .profile-self .wrapper-profile-field-account-privacy .content-wrapper section .u-field-account_privacy, .content-wrapper section .view-profile .wrapper-profile-sections, .view-profile .content-wrapper section .wrapper-profile-sections, .content-wrapper section .view-profile .badge-set-display, .view-profile .content-wrapper section .badge-set-display, .content-wrapper section.introduction, .content-wrapper section.intro-polimi, .content-wrapper section.container, .content-wrapper section.outside-app, .content-wrapper .view-profile .profile-self .wrapper-profile-field-account-privacy section.u-field-account_privacy, .view-profile .profile-self .wrapper-profile-field-account-privacy .content-wrapper section.u-field-account_privacy, .content-wrapper .view-profile section.wrapper-profile-sections, .view-profile .content-wrapper section.wrapper-profile-sections, .content-wrapper .view-profile section.badge-set-display, .view-profile .content-wrapper section.badge-set-display, .content-wrapper section.home, .content-wrapper section.about, .content-wrapper section.lego, .content-wrapper section .box .innerbox{
+        max-width: 100%;
+    }
+    .courses-container{
+        padding: 0 1em;
+    }
+    /* pagina learn more */
+    .course-info header.course-profile{
+        padding: 150px 1em 0 1em;
+        width: auto;
+    }
+    .course-info .container{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    /* pagina interna al corso */
+    body.view-in-course .wrapper-course-material{
+        max-width: 1300px;
+        padding: 0 2em;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    /* taglio immagine di sfondo */
+    .home > header {
+        height: 400px;
+    }
+    .home > header .outer-wrapper {
+        margin-bottom: 0;
+        padding: 180px 10px 0 10px;
+    }
+    /* dashboard (home da loggati) */
+    .header-global .user .user-link .label-username{
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute;
+        margin: -1px;
+        height: 1px;
+        width: 1px;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        word-wrap: normal;
+    }
+    .container.dashboard{
+        padding: 1em;
+    }
+    .dashboard .my-courses{
+        width: 100%;
+    }
+    /* pagina interna al corso (menu utente e topbar diverso) */
+    .header-global.slim .wrapper-header .wrapper-user-menu{
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADNElEQVRoge2Z226jMBCG9/2fsK1UqfEZYxubQBIL7H8vVkRptklKcGh31ZF+CXEDn2bGc/Av/Cf266t/oJT9gHw3+wH5bvYDcs1SStjtdnDOQWsNpRS01rDWou97jONY/JtFQcZxRNM0oJSCcw6tNYwxcM7BGIO6riGEAKUU1loMw1Ds28VADocDGGOQUsJ7j7ZtLyqEAKUUKKXY7XZFvl8EZL/f4+npCdbaqwDnapoGhBB0Xbf4HxaDxBhBKYVzbhbEKczz8/NizywCSSmBcz7bE+dyzoExtugQWATSti0454sgJkkp0TTN+iA5Z3DO0TRNERDvPSilSCmtCxJjBGOsCMQkzjn2+/26INvtFkqpoiBVVcF7vy6I9x5VVRUFmar/qiBT+1ESZKr+q4JM1bm0R5xz64J0XQcpZVEQpdT6OTIMAwghRUEYYzgcDuuCAADn/O7W5FxTHck5rw8SQoAQolhY3Zsfi0FSSqCULq7ukzeWzCeLu98ptkMId4MIIRb1WUVAcs5QSt1dHKep8d4eqxgI8GfEFULM7r201mCMFRl5i426OWdsNhsIIW6GWQgBhBC8vr4Wm9uLLh9yzschaWoAz5O6qiowxmCMufuo/cgesg6KMcI5B0opCCHgnIMQAkopjDF3F71r9tAFXc4ZKSXEGJFSKuqBcysOEmNECOGYyJNXNpvNcd9ljEHbtt9vr5VSQggBnHMwxqCUgjEG3vt3ie+9R9M0qOsaUkoQQiClRN/3i721GGS73R4Xc3P7rhACrLVgjEEIgRjj+iA5ZxhjwBgr0jgaY0ApRdu264EMwwAhBKSUi1qTc017Y63140HGccTLy0vxMfc03KY8m5M3s0CGYTgWu0dAnDeSxpjyICklCCEe5olLnvns6PspkJzz8cJmDYhTGErpp5Z2nwLpum7xzHGvjDEQQtzMl5sg4zguujYolS+3QuwmiLV29ZA61zQKX7t2uAoyrXxuXaWtoVvXDldBrLWrHLVzvHJpJL4IMm1IviLBr3mlbT9uYS6ChBDw9vaGuq6htYbW+uLzWqqqCpTSeSAxRlhr38k599e70/fOuYer7/t5IP+a/QaUJ0Nq3LLBawAAAABJRU5ErkJggg==);
+        background-size: 40px;
+        background-repeat: no-repeat;
+        padding-left: 40px;
+    }
+    .header-global.slim .wrapper-header .wrapper-user-menu .menu-title{
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute;
+        margin: -1px;
+        height: 1px;
+        width: 1px;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        word-wrap: normal;
+    }
+    /* pagina about */
+    .static-container.about-text{
+        width: auto;
+    }
+    /* pagina register e login */
+    .view-login .introduction header,
+    .view-register .introduction header{
+        background-size: cover;
+        padding: 10px 10px;
+    }
+    .view-login .login.container,
+    .view-register .register.container{
+        padding: 0 1em;
+    }
+    .view-register .introduction header h1.title,
+    .view-login .introduction header h1.title{
+        position: static;
+        padding: 10px;
+    }
+    .view-login .introduction header h1.title span.title-sub,
+    .view-login .introduction header h1.title span.title-super,
+    .view-register .introduction header h1.title span.title-sub,
+    .view-register .introduction header h1.title span.title-super{
+        display: block;
+    }
+    .view-login .introduction header h1.title span.title-sub,
+    .view-register .introduction header h1.title span.title-sub{
+        margin: 0;
+        font-size: 0.7em;
+    }
+    /* pagina learn more */
+    .course-info header.course-profile{
+        padding: 50px 1em 0 1em;
+    }
+    .course-info header.course-profile .intro-inner-wrapper{
+        min-width: 290px;
+    }
+    .course-info header.course-profile .intro-inner-wrapper h1{
+        font-size: 1.5em;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    /* sistemata scritta e logo unibook */
+    .home > header .outer-wrapper .title{
+        margin: 0;
+        width: 100%;
+    }
+    .home > header .media{
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 0;
+        background: rgba(251,251,249,0.9);
+    }
+    .home > header .media .hero{
+        background-color: transparent;
+        background-image: url("/static/book-theme/images/BOOK_logo_80.png");
+    }
+    /* dashboard (home da loggati) */
+    
+    .content-wrapper .dashboard .my-courses .course .details .wrapper-course-details{
+        margin-top: 5px;
+    }
+    .content-wrapper .dashboard .my-courses .course .details .course-title a{
+        font-size: 1.2em;
+    }
+    .dashboard .my-courses .course .details .wrapper-course-actions,
+    .dashboard .my-courses .course .details .course-info{
+        width: 100%;
+    }
+    /* pagina interna del corso */
+    html .header-global.slim .wrapper-header h2{
+        font-size: 0.9em;
+        max-width: 50%;
+        clear: none;
+    }
+    /* pagina about */
+    .container.about .media{
+        height: 13vw;
+    }
+    /* pagina register e login */    
+    .view-login .login.container section.content,
+    .view-register .register.container section.content{
+        padding: 0 1em 2em;
+    }
+
+    /* pagina learn more */
+    .course-info header.course-profile{
+        height: auto;
+        padding: 0;
+    }
+    .course-info header.course-profile .intro-inner-wrapper > div.table {
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;    
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro,
+    .course-info header.course-profile .intro-inner-wrapper .media{
+        width: 100%;
+        display: block;
+        padding: 0;
+        background-image: none;
+    }
+    .course-info header.course-profile .intro-inner-wrapper{
+        background-color: #eee;
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro{
+        padding: 1em;
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro > .heading-group{
+        padding-bottom: 0.5em;
+        margin-bottom: 1em;
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro h1{
+        font-size: 1.4em;
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
+        width: auto;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .modal.video-modal, 
+    .video-modal.leanModal_box{
+        max-width: 100%;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .modal.video-modal iframe{
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .modal.video-modal .inner-wrapper, 
+    .video-modal.leanModal_box .inner-wrapper{
+        max-width: 100%;
+        padding: 0;
+        background-color: transparent;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    /* Alma Mater Studiorum Università di Bologna sul bordo superiore e inferiore della pagina è tagliata */
+    .polimi-name img{
+        max-width: 100%;
+        height: auto;
+    }
+    /* cambiato menu in smartphone */
+    html .header-global.slim .wrapper-header h1.logo,
+    html .header-global h1.logo {
+        margin: -10px 15px 0 0;
+    }
+    html .header-global{
+        height: 50px;
+    }
+    .header-global.slim{
+        height: 50px !important;
+    }
+    html .header-global.slim .wrapper-header h1.logo img,
+    html .header-global.header-global h1.logo img{
+        height: 50px;
+    }
+    .header-global .wrapper-header{
+        padding-top: 10px;
+    }
+    .header-global .nav-global li a{
+        font-size: 18px;
+    }
+    .header-global .nav-global{
+        margin-top: 0;
+    }
+    html .header-global .nav-courseware .item a.btn-login{
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+    /* dashboard (home da loggati) */
+    html .header-global.slim .wrapper-header ol.user{
+        margin-top: 2px;
+    }
+    .header-global .user .user-link .user-image-frame {
+        width: 25px;
+        height: auto;
+    }
+    .header-global .user-menu .user-dropdown {
+        margin-top: -2px;
+        width: 25px;
+        height: 25px;
+    }
+    /* pagina interna del corso */
+    html .header-global.slim .wrapper-header h2{
+        line-height: 32px;
+        margin: 0;
+    }
+    /* pagina interna al corso (menu utente e topbar diverso) */
+    header.header-global.slim{
+        min-height: 65px;
+    }
+    .header-global.slim .wrapper-header .logo img{
+        margin-top: 0;
+    }
+    .header-global.slim .wrapper-header .wrapper-user-menu{
+        background-size: 30px;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        height: 30px;
+    }
+    .header-global.slim .wrapper-header .wrapper-user-menu button{
+        margin-top: -2px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* pagina learn more */
+    .course-info header.course-profile .intro-inner-wrapper h1 {
+        font-size: 1.2em;
+    }
+    .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
+        font-size: 1em;
+    }
+}
