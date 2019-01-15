@@ -130,22 +130,15 @@
 @media only screen and (max-width: 768px){
     /* sistemata scritta e logo unibook */
     .home > header .outer-wrapper .title{
-        margin: 0;
-        width: 100%;
+      width: calc(100% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
     }
     .home > header .media{
-        display: block;
-        width: 100%;
-        height: 40px;
-        padding: 0;
-        background: rgba(251,251,249,0.9);
-    }
-    .home > header .media .hero{
-        background-color: transparent;
-        background-image: url("/static/book-theme/images/BOOK_logo_80.png");
+        display:none;
     }
     /* dashboard (home da loggati) */
-    
+
     .content-wrapper .dashboard .my-courses .course .details .wrapper-course-details{
         margin-top: 5px;
     }
@@ -166,10 +159,10 @@
     .container.about .media{
         height: 13vw;
     }
-    /* pagina register e login */    
+    /* pagina register e login */
     .view-login .login.container section.content,
     .view-register .register.container section.content{
-        padding: 0 1em 2em;
+        padding: 0 0 2em 1em;
     }
 
     /* pagina learn more */
@@ -180,7 +173,7 @@
     .course-info header.course-profile .intro-inner-wrapper > div.table {
         display: flex;
         width: 100%;
-        flex-direction: column-reverse;    
+        flex-direction: column-reverse;
     }
     .course-info header.course-profile .intro-inner-wrapper .intro,
     .course-info header.course-profile .intro-inner-wrapper .media{
@@ -208,7 +201,7 @@
         padding-left: 1em;
         padding-right: 1em;
     }
-    .modal.video-modal, 
+    .modal.video-modal,
     .video-modal.leanModal_box{
         max-width: 100%;
         padding: 0;
@@ -220,13 +213,33 @@
         margin: auto;
     }
 
-    .modal.video-modal .inner-wrapper, 
+    .modal.video-modal .inner-wrapper,
     .video-modal.leanModal_box .inner-wrapper{
         max-width: 100%;
         padding: 0;
         background-color: transparent;
         margin: auto;
     }
+
+    .top-bar {
+      display:block;
+    }
+    .banner-book {
+      margin-right:0;
+    }
+}
+
+@media screen and (max-width:600px) {
+  .content-wrapper section.container.login aside, .content-wrapper section.container.login section.content {
+    float: none;
+    width: 100%;
+  }
+  .content-wrapper section.container.login section.content {
+    padding:0;
+  }
+  .dashboard .my-courses .course .details .enter-course {
+    width:100%;
+  }
 }
 
 @media only screen and (max-width: 480px){
@@ -248,7 +261,7 @@
     }
     html .header-global.slim .wrapper-header h1.logo img,
     html .header-global.header-global h1.logo img{
-        height: 50px;
+        height: 35px;
     }
     .header-global .wrapper-header{
         padding-top: 10px;
@@ -276,6 +289,15 @@
         width: 25px;
         height: 25px;
     }
+
+    .content-wrapper .dashboard .my-courses div.action, .content-wrapper .dashboard .my-courses div.fail {
+      width:100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .content-wrapper .dashboard .my-courses div.action-certificate {
+      padding-bottom:8px;
+    }
     /* pagina interna del corso */
     html .header-global.slim .wrapper-header h2{
         line-height: 32px;
@@ -299,7 +321,7 @@
         width: 25px;
         height: 25px;
     }
-    
+
     /* pagina learn more */
     .course-info header.course-profile .intro-inner-wrapper h1 {
         font-size: 1.2em;
