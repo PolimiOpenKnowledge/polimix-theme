@@ -128,7 +128,7 @@
 }
 
 @media only screen and (max-width: 768px){
-    /* sistemata scritta e logo unibook */
+    /* sistemata scritta e logo */
     .home > header .outer-wrapper .title{
       width: calc(100% - 20px);
       margin-left: 10px;
@@ -243,7 +243,6 @@
 }
 
 @media only screen and (max-width: 480px){
-    /* Alma Mater Studiorum Università di Bologna sul bordo superiore e inferiore della pagina è tagliata */
     .polimi-name img{
         max-width: 100%;
         height: auto;
