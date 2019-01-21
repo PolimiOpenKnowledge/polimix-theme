@@ -1,39 +1,55 @@
 /***   Footer   ***/
+footer#footer-edx-v3.pok-footer {
+  padding:0;
 
-.footer-content-wrapper {
-  p, li {
-    font-size: .8em;
-  }
 
-  a {
-    color: $black; //#707172
-    &:hover, &:focus, &:active {
-      border-bottom: 1px solid $polimi-ciano;
+    p, li {
+      font-size: .8em;
     }
-  }
 
-  .site-nav {
     a {
-      text-transform: uppercase;
-      font-family: $serif;
+      color: $black; //#707172
     }
-  }
 
-  .footer-logo a, .references a.open-edx-logo, .references a.eco-project-logo {
-    &:hover, &:focus, &:active {
-      border-bottom: none;
-    }
-  }
-
-  nav.nav-terms {
-    li {
-
+    .site-nav {
       a {
-        color: $base-font-color;
-        &:last-child {
-          color: $link-color;
+        text-transform: uppercase;
+        font-family: $serif;
+      }
+    }
+
+    nav.nav-terms {
+      li {
+
+        a {
+          color: $base-font-color;
+          &:last-child {
+            color: $link-color;
+          }
         }
       }
     }
-  }
+
+    .footer-nav, .resources {
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    &>div {
+      padding: 30px 0;
+    }
+
+    .social {
+      padding-bottom:30px;
+      
+      a {
+        display: inline-block;
+        color: white;
+        background-color: blue;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+      }
+    }
+
 }

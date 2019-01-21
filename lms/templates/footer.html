@@ -8,24 +8,26 @@
 
 
 
-<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}">
+<footer id="footer-edx-v3" class="pok-footer" role="contentinfo" aria-label="${_("Page Footer")}">
   <div class="footer-content-wrapper">
     <h2 class="sr footer-about-title">${_("About POK")}</h2>
 
     <div class="footer-nav">
 			<nav class="site-nav" aria-label="${_("About POK")}">
-        <li class="footer-logo">
-          <a target="_blank"  href="http://www.polimi.it">
-            <img src="${static.url('images/logo_poli_home.png')}"  alt="Home page" />
-          </a>
-        </li>
-				<li><a href="/about">About</a></li>
-				%if not user.is_authenticated():
-				<li><a href="/register">Register Now</a></li>
-				%endif
-				%if user.is_authenticated():
-				<li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
-				%endif
+        <ol>
+          <li class="footer-logo">
+            <a target="_blank"  href="http://www.polimi.it">
+              <img src="${static.url('images/logo_poli_home.png')}"  alt="Home page" />
+            </a>
+          </li>
+  				<li><a href="/about">About</a></li>
+  				%if not user.is_authenticated():
+  				<li><a href="/register">Register Now</a></li>
+  				%endif
+  				%if user.is_authenticated():
+  				<li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
+  				%endif
+        </ol>
 			</nav>
       <nav class="info-nav">
 				<ol>
@@ -36,12 +38,14 @@
 			</nav>
     </div>
 
-    <div>
+    <div class="resources">
       <div class="follow-us">
         <p>Do you want to stay updated? Follow us on:</p>
-        <a href="https://www.facebook.com/polimiopenknowledge/" target="_blank"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-        <a href="https://twitter.com/pokpolimi" target="_blank"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-        <a href="https://www.youtube.com/channel/UCOKtBGblWKlkE-KIf-S0Fvg" target="_blank"><span class="fa fa-youtube" aria-hidden="true"></span></a>
+        <div class="social">
+          <a href="https://www.facebook.com/polimiopenknowledge/" target="_blank"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+          <a href="https://twitter.com/pokpolimi" target="_blank"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+          <a href="https://www.youtube.com/channel/UCOKtBGblWKlkE-KIf-S0Fvg" target="_blank"><span class="fa fa-youtube" aria-hidden="true"></span></a>
+        </div>
       </div>
       <div class="banner-book-footer">
         <p>Stay tuned also with <a href="http://book.unibo.it/" target="_blank">BOOK</a> (UniBO Open Knowledge platform) for a growing offer of MOOC contents!</p>
@@ -50,8 +54,8 @@
 
   	<div class="references">
       % if not hide_openedx_link:
-  		<div class="built-on">
-  			<a class="open-edx-logo" href="http://openedx.org"><img src="${static.url('images/edx-openedx-logo-tag-light.png')}" alt="Powered by Open edX" /></a>
+  		<div>
+  			<a class="open-edx-logo" href="http://openedx.org"><img src="${static.url('images/openedx.png')}" alt="Powered by Open edX" /></a>
   			<p>Built on <a target="_blank" href="http://openedx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a> in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></p>
   		</div>
       % endif
