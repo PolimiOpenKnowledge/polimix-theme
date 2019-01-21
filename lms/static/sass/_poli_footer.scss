@@ -35,12 +35,16 @@ footer#footer-edx-v3.pok-footer {
       border-bottom: 1px solid #e6e6e6;
     }
 
-    &>div {
+    .footer-content-wrapper > div {
       padding: 30px 0;
     }
 
     .social {
       padding-bottom:30px;
+
+      span.fa{
+        font-family: 'FontAwesome';
+      }
 
       a {
         display: inline-block;
