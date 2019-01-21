@@ -79,17 +79,6 @@ html body.discussion {
     }
   }
 
-
-  footer#footer-edx-v3 {
-    .site-details , .references {
-      // strange override ...flex-grid(6,12) for other pages is working...in forum not!
-      width: flex-grid(4,8);
-    }
-    nav ol {
-      margin:0;
-    }
-  }
-
   .left.nav-global.list-inline.authenticated {
     display:none;
   }

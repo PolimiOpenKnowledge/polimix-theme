@@ -31,11 +31,7 @@
       float: none;
     }
   }
-  //override edx _footer.scss file which set 960px
-  html .view-register footer .footer-content-wrapper,
-  html .view-login footer .footer-content-wrapper {
-    width: auto;
-  }
+
   .view-register,
   .view-login {
     .introduction,
