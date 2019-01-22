@@ -19,6 +19,11 @@ footer#footer-edx-v3.pok-footer {
     text-transform: uppercase;
     font-family: $serif;
     font-size:24px;
+
+    &:hover {
+      text-decoration:none;
+      color: $link-color;
+    }
   }
 
   .resources, .references {
@@ -48,6 +53,11 @@ footer#footer-edx-v3.pok-footer {
       font-size: 24px;
       line-height: 1.9;
       margin-right: 12px;
+
+      &:hover {
+        -webkit-animation: rotate-hor-center 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) ;
+	      animation: rotate-hor-center 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) ;
+      }
     }
   }
 
@@ -55,7 +65,7 @@ footer#footer-edx-v3.pok-footer {
     padding-bottom:30px;
   }
 
-  .reimagine-award {
+  .eco-references, .badge {
     display: flex;
     align-items: center;
   }
@@ -73,6 +83,7 @@ footer#footer-edx-v3.pok-footer {
   .footer-content-wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    grid-column-gap: 30px;
     grid-template-areas: "nav"
                          "social"
                          "loghi";
@@ -110,6 +121,18 @@ footer#footer-edx-v3.pok-footer {
 
     .references {
       border-top:0;
+    }
+  }
+
+  @media (min-width:769px) and (max-width: 979px){
+    .references {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 30px;
+    }
+
+    .openedx {
+      padding-bottom:0;
     }
   }
 

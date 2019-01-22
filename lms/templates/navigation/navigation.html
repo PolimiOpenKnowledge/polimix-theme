@@ -21,10 +21,8 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
 ## Provide a hook for themes to inject branding on top.
 <%block name="navigation_top">
 <div id="polimi-header">
-  <div class="polimi-container">
-    <div class="polimi-name"> <a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
-   </div>
- </div>
+  <a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a>
+</div>
 </%block>
 
 ## Add UI Toolkit components if using the Pattern Library
