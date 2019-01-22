@@ -5,16 +5,13 @@
   header.header-global,
   header.header-global nav,
   .content-wrapper,
-  .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
-  .header-global .wrapper-header,
-  #polimi-footer {
+  .header-global .wrapper-header {
     max-width: $width;
     //margin:0 ($baseline / 2) 0 ($baseline / 2);
 
   }
   header.header-global nav,
-  footer .footer-content-wrapper,
   .header-global-new .wrapper-header:not(.rwd),
   .content-wrapper section.container,
   .content-wrapper .container,
@@ -47,11 +44,6 @@
     }
   }
 
-  html body footer#footer-edx-v3 .footer-content-wrapper {
-    max-width: $width - $baseline;
-    margin-right: 0;
-    margin-left: 0;
-  }
   img,
   select,
   input {
