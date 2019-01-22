@@ -82,4 +82,19 @@ html body.discussion {
   .left.nav-global.list-inline.authenticated {
     display:none;
   }
+
+  /* footer */
+
+  footer#footer-edx-v3.pok-footer nav ol {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  #polimi-header, #polimi-footer {
+    padding: 1px 0;
+
+    img {
+      vertical-align: unset;
+    }
+  }
 }

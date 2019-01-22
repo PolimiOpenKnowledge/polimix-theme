@@ -55,8 +55,8 @@ footer#footer-edx-v3.pok-footer {
       margin-right: 12px;
 
       &:hover {
-        -webkit-animation: rotate-hor-center 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) ;
-	      animation: rotate-hor-center 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) ;
+        -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	        animation: heartbeat 1.5s ease-in-out infinite both;
       }
     }
   }
@@ -83,7 +83,6 @@ footer#footer-edx-v3.pok-footer {
   .footer-content-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-column-gap: 30px;
     grid-template-areas: "nav"
                          "social"
                          "loghi";
