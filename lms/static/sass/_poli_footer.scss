@@ -21,8 +21,8 @@ footer#footer-edx-v3.pok-footer {
     font-size:24px;
   }
 
-  .footer-nav, .resources {
-    border-bottom: 1px solid #e6e6e6;
+  .resources, .references {
+    border-top: 1px solid #e6e6e6;
   }
 
   .footer-content-wrapper > div {
@@ -45,8 +45,8 @@ footer#footer-edx-v3.pok-footer {
       height: 44px;
       width: 44px;
       text-align: center;
-      font-size: 1.5em;
-      line-height: 2;
+      font-size: 24px;
+      line-height: 1.9;
       margin-right: 12px;
     }
   }
@@ -72,6 +72,7 @@ footer#footer-edx-v3.pok-footer {
 
   .footer-content-wrapper {
     display: grid;
+    grid-template-columns: 1fr;
     grid-template-areas: "nav"
                          "social"
                          "loghi";
@@ -91,14 +92,24 @@ footer#footer-edx-v3.pok-footer {
 
   @media (min-width:769px) {
     .footer-content-wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "nav social ."
-                           "loghi";
+                           "loghi loghi loghi";
+    }
+
+    .resources {
+      border-top:0;
     }
   }
 
   @media (min-width:980px) {
     .footer-content-wrapper {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-areas: "nav social . loghi";
+    }
+
+    .references {
+      border-top:0;
     }
   }
 
