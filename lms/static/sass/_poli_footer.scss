@@ -55,8 +55,7 @@ footer#footer-edx-v3.pok-footer {
       margin-right: 12px;
 
       &:hover {
-        -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-	        animation: heartbeat 1.5s ease-in-out infinite both;
+        transform: scale(1.2);
       }
     }
   }

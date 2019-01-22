@@ -91,10 +91,8 @@ html body.discussion {
   }
 
   #polimi-header, #polimi-footer {
-    padding: 1px 0;
-
-    img {
-      vertical-align: unset;
-    }
+    padding: 0;
+    height: 20px;
+    line-height: 1;
   }
 }
