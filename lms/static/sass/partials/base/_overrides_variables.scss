@@ -255,33 +255,6 @@ $video-thumb-url: "../images/POK_logo.png";
   text-align: right;
 }
 
-
-// ----------------------------------------
-// animation rotate-hor-center
-// ----------------------------------------
-
-@-webkit-keyframes rotate-hor-center {
-  0% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-  }
-  100% {
-    -webkit-transform: rotateX(-360deg);
-            transform: rotateX(-360deg);
-  }
-}
-@keyframes rotate-hor-center {
-  0% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-  }
-  100% {
-    -webkit-transform: rotateX(-360deg);
-            transform: rotateX(-360deg);
-  }
-}
-
-
 $home-opacity: 0.94;
 
 // CLASSIFICATION STYLES
