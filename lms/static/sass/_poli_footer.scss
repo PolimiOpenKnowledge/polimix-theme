@@ -2,79 +2,104 @@
 footer#footer-edx-v3.pok-footer {
   padding:0;
 
+  p, li {
+    font-size: .9em;
+    margin-bottom: 15px;
+  }
 
-    p, li {
-      font-size: .9em;
-      margin-bottom: 15px;
+  nav a {
+    color: $black; //#707172
+
+    &.standard-link {
+      color: $link-color;
+    }
+  }
+
+  .footer-content-wrapper .site-nav li a {
+    text-transform: uppercase;
+    font-family: $serif;
+    font-size:24px;
+  }
+
+  .footer-nav, .resources {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .footer-content-wrapper > div {
+    padding: 35px 15px 20px;
+    box-sizing: border-box;
+  }
+
+  .social {
+    padding-bottom:30px;
+
+    span.fa{
+      font-family: 'FontAwesome';
     }
 
-    nav a {
-      color: $black; //#707172
+    a {
+      display: inline-block;
+      color: white;
+      background-color: $link-color;
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 2;
+      margin-right: 12px;
     }
+  }
 
-    .footer-content-wrapper .site-nav li a {
-      text-transform: uppercase;
-      font-family: $serif;
-      font-size:24px;
+  .openedx {
+    padding-bottom:30px;
+  }
+
+  .reimagine-award {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  .eco-references img, .reimagine-award img {
+    margin-right:15px;
+  }
+
+  /* grid settings */
+
+  .footer-content-wrapper {
+    display: grid;
+    grid-template-areas: "nav"
+                         "social"
+                         "loghi";
+  }
+
+  .footer-nav {
+    grid-area: nav;
+  }
+
+  .resources {
+    grid-area: social;
+  }
+
+  .references {
+    grid-area: loghi;
+  }
+
+  @media (min-width:769px) {
+    .footer-content-wrapper {
+      grid-template-areas: "nav social ."
+                           "loghi";
     }
+  }
 
-    nav.nav-terms {
-      li {
-
-        a {
-          color: $base-font-color;
-          &.standard-link {
-            color: $link-color;
-          }
-        }
-      }
+  @media (min-width:980px) {
+    .footer-content-wrapper {
+      grid-template-areas: "nav social . loghi";
     }
-
-    .footer-nav, .resources {
-      border-bottom: 1px solid #e6e6e6;
-    }
-
-    .footer-content-wrapper > div {
-      padding: 35px 15px 20px;
-      box-sizing: border-box;
-    }
-
-    .social {
-      padding-bottom:30px;
-
-      span.fa{
-        font-family: 'FontAwesome';
-      }
-
-      a {
-        display: inline-block;
-        color: white;
-        background-color: $link-color;
-        border-radius: 50%;
-        height: 44px;
-        width: 44px;
-        text-align: center;
-        font-size: 1.5em;
-        line-height: 1.9;
-        margin-right: 12px;
-      }
-    }
-
-    .opened {
-      padding-bottom:30px;
-    }
-
-    .reimagine-award {
-      display: flex;
-      align-items: center;
-    }
-
-    .references img {
-      margin-bottom: 15px;
-    }
-
-    .eco-references img, .reimagine-award img {
-      margin-right:15px;
-    }
+  }
 
 }
