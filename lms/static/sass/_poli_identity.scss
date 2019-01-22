@@ -8,10 +8,14 @@
 	background: #00acd7;
 	box-shadow: inset 0 -4px 8px -2px rgba(0, 0, 0, 0.2); /* Horizontal offset , vertical offset, blur, internal spacing */
 	text-align: center;
-	padding: 2px 0;
+	padding: 3px 0;
 
 	a { /*fallback */
 		color:#fff;
 		text-transform:uppercase;
+	}
+
+	img {
+		vertical-align: unset;
 	}
 }
