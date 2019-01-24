@@ -140,10 +140,6 @@ footer#footer-edx-v3.pok-footer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 30px;
-
-      & > div {
-        float:left; //grid fallback
-      }
     }
 
     .openedx {
