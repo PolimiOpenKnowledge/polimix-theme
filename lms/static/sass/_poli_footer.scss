@@ -31,13 +31,13 @@ footer#footer-edx-v3.pok-footer {
     }
   }
 
-  .resources, .references {
-    border-top: 1px solid #e6e6e6;
-  }
-
   .footer-content-wrapper > div {
     padding: 35px 15px 20px;
     box-sizing: border-box;
+  }
+
+  .resources, .references {
+    border-top: 1px solid #e6e6e6;
   }
 
   .social {
@@ -109,6 +109,10 @@ footer#footer-edx-v3.pok-footer {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "nav social ."
                            "loghi loghi loghi";
+
+       & > div {
+         float:left; //grid fallback
+       }
     }
 
     .resources {
@@ -120,6 +124,14 @@ footer#footer-edx-v3.pok-footer {
     .footer-content-wrapper {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-areas: "nav social . loghi";
+
+      & > div {
+        width: 25%; //grid fallback
+
+        &:last-child {
+          float:right; //grid fallback
+        }
+      }
     }
 
     .references {
@@ -137,6 +149,19 @@ footer#footer-edx-v3.pok-footer {
     .openedx {
       padding-bottom:0;
     }
+
+    .footer-content-wrapper > div {
+      width: 33%; //grid fallback
+
+      &:last-child {
+        float:none; //grid fallback
+        width:100%; //grid fallback
+
+        & > div {
+          width:33%; //grid fallback
+          float:left; //grid fallback
+        }
+      }
   }
 
 }
