@@ -268,13 +268,13 @@ footer#footer-edx-v3.pok-footer .footer-content-wrapper .site-nav li a:hover {
   color: #00acd7;
 }
 
-footer#footer-edx-v3.pok-footer .resources, footer#footer-edx-v3.pok-footer .references {
-  border-top: 1px solid #e6e6e6;
-}
-
 footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
   padding: 35px 15px 20px;
   box-sizing: border-box;
+}
+
+footer#footer-edx-v3.pok-footer .resources, footer#footer-edx-v3.pok-footer .references {
+  border-top: 1px solid #e6e6e6;
 }
 
 footer#footer-edx-v3.pok-footer .social {
@@ -348,6 +348,10 @@ footer#footer-edx-v3.pok-footer .references {
                          "loghi loghi loghi";
   }
 
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
+    float:left;
+  }
+
   footer#footer-edx-v3.pok-footer .resources {
     border-top:0;
   }
@@ -357,6 +361,14 @@ footer#footer-edx-v3.pok-footer .references {
   footer#footer-edx-v3.pok-footer .footer-content-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "nav social . loghi";
+  }
+
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
+    width: 25%;
+  }
+
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
+    float:right;
   }
 
   footer#footer-edx-v3.pok-footer .references {
@@ -373,6 +385,20 @@ footer#footer-edx-v3.pok-footer .references {
 
   footer#footer-edx-v3.pok-footer .openedx {
     padding-bottom:0;
+  }
+
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
+    width: 33%;
+  }
+
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
+    float:none;
+    width:100%;
+  }
+
+  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child > div {
+    width:33%;
+    float:left;
   }
 }
 
