@@ -80,6 +80,7 @@ footer#footer-edx-v3.pok-footer {
 
   .eco-references img, .reimagine-award img {
     margin-right:15px;
+    max-width: unset;
   }
 
   /* grid settings */
@@ -111,7 +112,8 @@ footer#footer-edx-v3.pok-footer {
                            "loghi loghi loghi";
 
        & > div {
-         float:left; //grid fallback
+         display: table-cell; //grid fallback
+         vertical-align: top; //grid fallback
        }
     }
 
@@ -124,10 +126,6 @@ footer#footer-edx-v3.pok-footer {
     .footer-content-wrapper {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-areas: "nav social . loghi";
-
-      & > div:last-child {
-        float:right; //grid fallback
-      }
     }
 
     .references {
@@ -136,7 +134,9 @@ footer#footer-edx-v3.pok-footer {
   }
 
   @media (min-width:769px) and (max-width: 979px){
-    .references {
+    div.references {
+      display: table; //grid fallback
+      width: 100%; //grid fallback
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 30px;
@@ -144,15 +144,6 @@ footer#footer-edx-v3.pok-footer {
 
     .openedx {
       padding-bottom:0;
-    }
-
-    .footer-content-wrapper > div:last-child {
-      float:none; //grid fallback
-      width:100%; //grid fallback
-
-      & > div {
-        float:left; //grid fallback
-      }
     }
   }
 }

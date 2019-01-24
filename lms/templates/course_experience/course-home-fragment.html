@@ -317,6 +317,7 @@ footer#footer-edx-v3.pok-footer img {
 
 footer#footer-edx-v3.pok-footer .eco-references img, footer#footer-edx-v3.pok-footer .reimagine-award img {
   margin-right:15px;
+  max-width: unset;
 }
 
 /* copying and parsing footer grid settings */
@@ -349,7 +350,8 @@ footer#footer-edx-v3.pok-footer .references {
   }
 
   footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
-    float:left;
+    display: table-cell;
+    vertical-align: top;
   }
 
   footer#footer-edx-v3.pok-footer .resources {
@@ -363,17 +365,15 @@ footer#footer-edx-v3.pok-footer .references {
     grid-template-areas: "nav social . loghi";
   }
 
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
-    float:right;
-  }
-
   footer#footer-edx-v3.pok-footer .references {
     border-top:0;
   }
 }
 
 @media (min-width:769px) and (max-width: 979px){
-  footer#footer-edx-v3.pok-footer .references {
+  footer#footer-edx-v3.pok-footer div.references {
+    display: table;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 30px;
@@ -381,18 +381,6 @@ footer#footer-edx-v3.pok-footer .references {
 
   footer#footer-edx-v3.pok-footer .openedx {
     padding-bottom:0;
-  }
-
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
-  }
-
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
-    float:none;
-    width:100%;
-  }
-
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child > div {
-    float:left;
   }
 }
 
