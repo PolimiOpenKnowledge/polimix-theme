@@ -80,6 +80,7 @@ footer#footer-edx-v3.pok-footer {
 
   .eco-references img, .reimagine-award img {
     margin-right:15px;
+    max-width: unset;
   }
 
   /* grid settings */
@@ -133,7 +134,7 @@ footer#footer-edx-v3.pok-footer {
   }
 
   @media (min-width:769px) and (max-width: 979px){
-    .references {
+    div.references {
       display: table; //grid fallback
       width: 100%; //grid fallback
       display: grid;
@@ -141,7 +142,6 @@ footer#footer-edx-v3.pok-footer {
       grid-column-gap: 30px;
 
       & > div {
-        width:33%; //grid fallback
         float:left; //grid fallback
       }
     }
