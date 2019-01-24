@@ -134,26 +134,20 @@ footer#footer-edx-v3.pok-footer {
 
   @media (min-width:769px) and (max-width: 979px){
     .references {
+      display: table; //grid fallback
+      width: 100%; //grid fallback
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 30px;
+
+      & > div {
+        width:33%; //grid fallback
+        float:left; //grid fallback
+      }
     }
 
     .openedx {
       padding-bottom:0;
-    }
-
-    .footer-content-wrapper > div {
-
-      &:last-child {
-        display: block; //grid fallback
-        width: 100%; //grid fallback
-
-        & > div {
-          width:33%; //grid fallback
-          float:left; //grid fallback
-        }
-      }
     }
   }
 }

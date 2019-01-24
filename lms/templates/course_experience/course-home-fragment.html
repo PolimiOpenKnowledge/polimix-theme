@@ -371,23 +371,20 @@ footer#footer-edx-v3.pok-footer .references {
 
 @media (min-width:769px) and (max-width: 979px){
   footer#footer-edx-v3.pok-footer .references {
+    display: table;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 30px;
   }
 
-  footer#footer-edx-v3.pok-footer .openedx {
-    padding-bottom:0;
-  }
-
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
-    display: block;
-    width: 100%;
-  }
-
   footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child > div {
     width:33%;
     float:left;
+  }
+
+  footer#footer-edx-v3.pok-footer .openedx {
+    padding-bottom:0;
   }
 }
 
