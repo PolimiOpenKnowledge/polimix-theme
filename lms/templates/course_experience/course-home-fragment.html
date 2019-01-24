@@ -349,7 +349,8 @@ footer#footer-edx-v3.pok-footer .references {
   }
 
   footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
-    float:left;
+    display: table-cell;
+    vertical-align: top;
   }
 
   footer#footer-edx-v3.pok-footer .resources {
@@ -361,10 +362,6 @@ footer#footer-edx-v3.pok-footer .references {
   footer#footer-edx-v3.pok-footer .footer-content-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "nav social . loghi";
-  }
-
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
-    float:right;
   }
 
   footer#footer-edx-v3.pok-footer .references {
@@ -383,15 +380,13 @@ footer#footer-edx-v3.pok-footer .references {
     padding-bottom:0;
   }
 
-  footer#footer-edx-v3.pok-footer .footer-content-wrapper > div {
-  }
-
   footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child {
-    float:none;
-    width:100%;
+    display: block;
+    width: 100%;
   }
 
   footer#footer-edx-v3.pok-footer .footer-content-wrapper > div:last-child > div {
+    width:33%;
     float:left;
   }
 }

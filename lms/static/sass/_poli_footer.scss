@@ -109,6 +109,11 @@ footer#footer-edx-v3.pok-footer {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "nav social ."
                            "loghi loghi loghi";
+
+       & > div {
+         display: table-cell; //grid fallback
+         vertical-align: top; //grid fallback
+       }
     }
 
     .resources {
@@ -120,15 +125,6 @@ footer#footer-edx-v3.pok-footer {
     .footer-content-wrapper {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-areas: "nav social . loghi";
-
-      & > div {
-        float:left; //grid fallback
-        width: 25%; //grid fallback
-
-        &:last-child {
-          float:right; //grid fallback
-        }
-      }
     }
 
     .references {
@@ -148,12 +144,10 @@ footer#footer-edx-v3.pok-footer {
     }
 
     .footer-content-wrapper > div {
-      float:left; //grid fallback
-      width: 33%; //grid fallback
 
       &:last-child {
-        float:none; //grid fallback
-        width:100%; //grid fallback
+        display: block; //grid fallback
+        width: 100%; //grid fallback
 
         & > div {
           width:33%; //grid fallback
