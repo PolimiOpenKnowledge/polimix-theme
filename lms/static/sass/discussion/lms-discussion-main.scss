@@ -6,6 +6,7 @@
 
 // Fix some missing style from courseware in discussion
 html body.discussion {
+  font-family: $sans-serif;
 
   .header-global.slim {
       border-bottom: 1px solid $polimi-ciano;
