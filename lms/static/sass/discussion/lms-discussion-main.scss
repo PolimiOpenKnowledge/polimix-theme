@@ -6,6 +6,7 @@
 
 // Fix some missing style from courseware in discussion
 html body.discussion {
+  font-family: $sans-serif;
 
   .header-global.slim {
       border-bottom: 1px solid $polimi-ciano;
@@ -79,18 +80,28 @@ html body.discussion {
     }
   }
 
+  .left.nav-global.list-inline.authenticated {
+    display:none;
+  }
 
-  footer#footer-edx-v3 {
-    .site-details , .references {
-      // strange override ...flex-grid(6,12) for other pages is working...in forum not!
-      width: flex-grid(4,8);
-    }
-    nav ol {
-      margin:0;
+  /* footer */
+
+  footer#footer-edx-v3.pok-footer nav ol {
+    list-style-type: none;
+    margin-left: 0;
+
+    a {
+      font-family: $sans-serif;
     }
   }
 
-  .left.nav-global.list-inline.authenticated {
-    display:none;
+  #polimi-header, #polimi-footer {
+    padding: 0;
+    height: 20px;
+    line-height: 1;
+
+    img {
+      vertical-align: middle;
+    }
   }
 }

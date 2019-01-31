@@ -1,146 +1,149 @@
-
 /***   Footer   ***/
-html  footer#footer-edx-v3 {
-  .footer-content-wrapper {
-    .footer-logo {
-      width:auto;
+footer#footer-edx-v3.pok-footer {
+  padding:0;
+  background: white;
+
+  p {
+    line-height: 1.3;
+  }
+
+  p, li {
+    font-size: .9em;
+    margin-bottom: 15px;
+  }
+
+  nav a {
+    color: $black; //#707172
+
+    &.standard-link {
+      color: $link-color;
     }
-    li {
-      font-size: .875em;
-      font-weight: 500;
+  }
+
+  .footer-content-wrapper .site-nav li a {
+    text-transform: uppercase;
+    font-family: $serif;
+    font-size:24px;
+
+    &:hover {
+      text-decoration:none;
+      color: $link-color;
+    }
+  }
+
+  .footer-content-wrapper > div {
+    padding: 35px 15px 20px;
+    box-sizing: border-box;
+  }
+
+  .resources, .references {
+    border-top: 1px solid #e6e6e6;
+  }
+
+  .social {
+    padding-bottom:30px;
+
+    span.fa{
+      font-family: 'FontAwesome';
+    }
+
+    a {
       display: inline-block;
-      margin: 0 21px 0 0;
+      color: white;
+      background-color: $link-color;
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.9;
+      margin-right: 12px;
 
-      a {
-        color: $black; //#707172
-        &:hover,
-        &:focus,
-        &:active {
-          border-bottom: 1px dotted $polimi-ciano;
-        }
+      &:hover {
+        transform: scale(1.2);
       }
     }
-    .site-details .site-nav {
-      a {
-        text-transform: uppercase;
-        font-family: $serif;
-      }
+  }
+
+  .openedx {
+    padding-bottom:30px;
+  }
+
+  .eco-references, .badge {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  .eco-references img, .reimagine-award img {
+    margin-right:15px;
+    max-width: unset;
+  }
+
+  /* grid settings */
+
+  .footer-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav"
+                         "social"
+                         "loghi";
+  }
+
+  .footer-nav {
+    grid-area: nav;
+  }
+
+  .resources {
+    grid-area: social;
+  }
+
+  .references {
+    grid-area: loghi;
+  }
+
+  @media (min-width:769px) {
+    .footer-content-wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "nav social ."
+                           "loghi loghi loghi";
+
+       & > div {
+         display: table-cell; //grid fallback
+         vertical-align: top; //grid fallback
+       }
     }
-    .banner-book-footer {
-      clear:both;
-      p {
-        padding: 5px;
-        font-size: .8em;
-      }
+
+    .resources {
+      border-top:0;
     }
+  }
+
+  @media (min-width:980px) {
+    .footer-content-wrapper {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "nav social . loghi";
+    }
+
     .references {
-      width: flex-grid(6, 12);
-      margin: 0;
-      display:inline-block;
+      border-top:0;
     }
-    .footer-logo {
-      position: relative;
-      float: left;
-      margin: -10px 39px 0 0;
-      a {
-        display: block;
-        color: $link-color;
-        &:hover,
-        &:focus,
-        &:active {
-          border-bottom: none;
-        }
-      }
-    }
-    .references a.open-edx-logo,
-    .references a.eco-project-logo {
-      &:hover,
-      &:focus,
-      &:active {
-        border-bottom: none;
-      }
-    }
-    a.open-edx-logo {
-      display: block;
-      text-align:left;
-    }
-    .references .additional-logo-info {
-      font-size: .8em;
-      margin-top: 75px;
-      display: block;
-      text-align: left;
-      padding-left: 10px;
-      .eco-agreement {
-        font-size: .9em;
-      }
-      span {
-        display: block;
-        &.in-collab {
-          margin-top: -2px;
-        }
-      }
-    }
-    .eco-references {
-      float: right;
-      padding-right: 20px;
-      border-right: 1px solid #ebebeb;
-      .eco-loghi-container {
-        margin-top: 7px;
-        text-align:left;
-        @include clearfix;
-        .eco-loghi {
-          float: left;
-          width: flex-grid(6, 12);
-        }
-        .eco-project-logo {
-          float: right;
-          text-align:center;
-        }
-      }
-    }
-    .reimagine-award {
-      font-size:0.8em;
-      line-height:1.6em;
-      margin-top:60px;
+  }
 
-      .award-link {
-        float: left;
-      }
-      .award-desc {
-        float: left;
-        text-align: left;
-        margin-left: 20px;
-        margin-top: 15px;
-      }
+  @media (min-width:769px) and (max-width: 979px){
+    div.references {
+      display: table; //grid fallback
+      width: 100%; //grid fallback
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 30px;
     }
-    .built-on {
-      float: right;
-      padding-left: 20px;
-      @include clearfix;
 
-    }
-    .terms {
-      clear: left;
-      margin-top: 30px;
-    }
-    nav.nav-terms {
-      li {
-        font-size: .8em;
-        display: inline;
-        float: left;
-        padding: 5px;
-        border-right: 1px dotted $base-font-color;
-        margin-right:0;
-        &:last-child {
-          border: none;
-        }
-        a {
-          color: $base-font-color;
-          &.standard-link {
-            color: $link-color;
-          }
-        }
-      }
+    .openedx {
+      padding-bottom:0;
     }
   }
 }
