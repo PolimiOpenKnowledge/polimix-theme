@@ -73,10 +73,10 @@ $eco-yellow: #EAAF31;
 // ----------------------------
 // #TYPOGRAPHY
 // ----------------------------
-$sans-serif: 'Open Sans', $verdana, sans-serif !default;
+$sans-serif: 'Open Sans', sans-serif !default;
 $monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace !default;
 $body-font-family: $sans-serif !default;
-$serif: $georgia !default;
+$serif: Georgia, serif !default;
 
 // newer variables/standards
 $f-serif: 'Bree Serif', Georgia, Cambria, 'Times New Roman', Times, serif !default;
