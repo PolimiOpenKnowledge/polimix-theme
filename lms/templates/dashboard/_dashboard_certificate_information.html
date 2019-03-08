@@ -91,16 +91,8 @@ else:
       % endif
 
       % if cert_status['show_survey_button']:
-        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}" target="_blank">
-               ${_("Complete our course feedback survey")}</a></div>
-        <div class="action survey-url"><a class="btn" href="${user.mail}" target="_blank">
-               ${_("Complete our course feedback survey (user.mail)")}</a></div>
-        <div class="action survey-url"><a class="btn" href="{user.email}" target="_blank">
+        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}.?email=[${user.email}]" target="_blank">
                ${_("Complete our course feedback survey (user.email)")}</a></div>
-        <div class="action survey-url"><a class="btn" href="${cert_status['email']}" target="_blank">
-               ${_("Complete our course feedback survey (cert_status_email)")}</a></div>
-        <div class="action survey-url"><a class="btn" href="${cert_status['mail']}" target="_blank">
-               ${_("Complete our course feedback survey (cert_status_mail)")}</a></div>
       % endif
 
   </div>
