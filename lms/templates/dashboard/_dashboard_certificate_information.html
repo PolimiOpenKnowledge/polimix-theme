@@ -32,6 +32,7 @@ else:
   <p class="message-copy">
     <span class="it">I dettagli finali del corso sono in fase di elaborazione. Il tuo risultato finale sarà disponibile a breve.</span> <br />
     <span class="en">${_("Final course details are being wrapped up at this time. Your final standing will be available shortly.")}</span>
+    <div class="action survey-url"><a class="btn" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?email=[${user.email}]" target="_blank">
   </p>
 % elif cert_status['status'] in ('generating', 'ready', 'notpassing', 'restricted', 'auditing', 'unverified'):
   <p class="message-copy"><span class="it">Il tuo risultato finale</span><span class="locale-separator">/</span><span class="en">${_("Your final grade:")}</span>
@@ -91,7 +92,7 @@ else:
       % endif
 
       % if cert_status['show_survey_button']:
-        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}.?email=[${user.email}]" target="_blank">
+        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}?email=[${user.email}]" target="_blank">
                ${_("Complete our course feedback survey (user.email)")}</a></div>
       % endif
 
