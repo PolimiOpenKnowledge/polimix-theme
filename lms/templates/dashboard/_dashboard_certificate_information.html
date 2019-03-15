@@ -16,7 +16,6 @@ from course_modes.models import CourseMode
   if cert_name_long == "":
     cert_name_long = settings.CERT_NAME_LONG
 
-  user_survey_id=user.id + 290890
 %>
 
 <%
@@ -35,7 +34,7 @@ else:
     <!--<span class="it">I dettagli finali del corso sono in fase di elaborazione. Il tuo risultato finale sarà disponibile a breve. </span> <br />
     <div class="action survey-url"><a class="btn" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?email=[${user.email}]" target="_blank">
     -->
-    <span class="it"> Prima di iniziare il corso, rispondi ad <a href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?id=[${user_survey_id}]">alcune domande</a> per aiutarci a definire le tue aspettative e le tue motivazioni! </span> <br />
+    <span class="it"> Prima di iniziare il corso, rispondi ad <a href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?id=[${user._anonymous_id}}]">alcune domande</a> per aiutarci a definire le tue aspettative e le tue motivazioni! </span> <br />
     <span class="en">${_("Final course details are being wrapped up at this time. Your final standing will be available shortly.")}</span>
     
   </p>
@@ -97,7 +96,7 @@ else:
       % endif
 
       % if cert_status['show_survey_button']:
-        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}?id=[${user_survey_id}]" target="_blank">
+        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}?id=[${user._anonymous_id}]" target="_blank">
                ${_("Complete our course feedback survey")}</a></div>
       % endif
 
