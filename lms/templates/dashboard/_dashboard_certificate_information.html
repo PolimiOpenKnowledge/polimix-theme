@@ -36,8 +36,8 @@ user_anonymous_id= user._anonymous_id[None]
   <p class="message-copy">
     <!--<span class="it">I dettagli finali del corso sono in fase di elaborazione. Il tuo risultato finale sarà disponibile a breve. </span> <br />
     -->
-    <span class="it"> Prima di iniziare il corso, rispondi ad <a href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?id=[${user_anonymous_id}}]">alcune domande</a> per aiutarci a definire le tue aspettative e le tue motivazioni! </span> <br />
-    <span class="en">${_("Final course details are being wrapped up at this time. Your final standing will be available shortly.")}</span>
+    <span class="it"> Prima di iniziare il corso, rispondi ad <a href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_${course_overview.language}?id=[${user_anonymous_id}}]">alcune domande</a> per aiutarci a definire le tue aspettative e le tue motivazioni! </span> <br />
+    <span class="en">Please share your feelings and expectations about this course by completing this short <a href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_ITA?${course_overview.language}=[${user_anonymous_id}}]">pre-course survey.</a></span>
     
   </p>
 % elif cert_status['status'] in ('generating', 'ready', 'notpassing', 'restricted', 'auditing', 'unverified'):
