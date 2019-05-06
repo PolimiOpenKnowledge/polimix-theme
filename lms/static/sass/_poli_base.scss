@@ -17,6 +17,22 @@ p {
   font: normal 1em/1.6em $serif;
   margin: 0;
 }
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// custom font files (not from google)
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('fonts/Trebuchet/Trebuchet_MS.ttf');
+  }
+@font-face {
+  font-family: "Trebuchet MS";
+  src: url('fonts/Trebuchet/Trebuchet-Bold.ttf');
+  font-weight: bold;
+  }
+
 // Change font serif to sans-serif for all paragraph. This can be deleted after picked better serif font (not Yanone as Polimi site?)
 html {
   .static-container ol li,
@@ -55,7 +71,6 @@ html {
 .header-global .nav-global li a,
 .header-global-new .nav-global div.item a,
 .header-global-new .nav-global li a,
-footer#footer-edx-v3 .footer-content-wrapper .site-nav li a,
 .header-global .nav-courseware li .cta {
   font-family: $serif;
   //@include font-size(21);
@@ -148,4 +163,9 @@ footer#footer-edx-v3 .footer-content-wrapper .site-nav li a,
       }
     }
   }
+}
+
+.content-wrapper {
+  padding: 0 10px;
+  box-sizing: border-box;
 }

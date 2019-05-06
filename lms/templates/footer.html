@@ -8,87 +8,76 @@
 
 
 
-	<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}">
-    <div class="footer-content-wrapper">
+<footer id="footer-edx-v3" class="pok-footer" role="contentinfo" aria-label="${_("Page Footer")}">
+  <div class="footer-content-wrapper">
     <h2 class="sr footer-about-title">${_("About POK")}</h2>
 
-      <div class="site-details">
-  			<nav class="clearfix site-nav" aria-label="${_("About POK")}">
-            <li class="footer-logo">
-              <a target="_blank"  href="http://www.polimi.it">
-                <img src="${static.url('images/logo_poli_home.png')}"  alt="Home page" />
-              </a>
-            </li>
-  					<li class="nav-global-01"><a href="/about">About</a></li>
-  					%if not user.is_authenticated():
-  					<li class="nav-global-04"><a class="cta cta-register"
-  						href="/register">Register Now</a></li>
-  					%endif
-  					%if user.is_authenticated():
-  					  <li class="nav-global-02">
-      					<a href="${marketing_link('COURSES')}">Find Courses</a>
-    					</li>
-    				%endif
-  			</nav>
-        <div class="banner-book-footer"><p>Stay tuned also with <a href="http://book.unibo.it/">BOOK</a> (UniBO Open Knowledge platform) <br />for a growing offer of MOOC contents!</p></div>
-        <div class="terms">
-            <nav class="nav-terms clearfix">
-    					<ol>
-    						<li><a href="/tos">Terms of Service & Copyright</a></li>
-    						<li><a href="/privacy">Privacy Policy</a></li>
-    						<li><a class="standard-link" href="mailto:pok@polimi.it">pok@polimi.it</a></li>
-    					</ol>
-    				</nav>
+    <div class="footer-nav">
+			<nav class="site-nav" aria-label="${_("About POK")}">
+        <ol>
+          <li>
+            <a target="_blank"  href="http://www.polimi.it">
+              <img src="${static.url('images/polimi_footer.svg')}"  alt="Home page" width="151" height="44"/>
+            </a>
+          </li>
+  				<li><a href="/about">About</a></li>
+  				%if not user.is_authenticated():
+  				<li><a href="/register">Register Now</a></li>
+  				%endif
+  				%if user.is_authenticated():
+  				<li><a href="${marketing_link('COURSES')}">Find Courses</a></li>
+  				%endif
+        </ol>
+			</nav>
+      <nav class="info-nav">
+				<ol>
+          <li><a href="/faq">FAQ</a></li>
+					<li><a href="/tos">Terms of Service & Copyright</a></li>
+					<li><a href="/privacy">Privacy Policy</a></li>
+					<li><a class="standard-link" href="mailto:pok@polimi.it">pok@polimi.it</a></li>
+				</ol>
+			</nav>
+    </div>
+
+    <div class="resources">
+      <div class="follow-us">
+        <p>Do you want to stay updated? Follow us on:</p>
+        <div class="social">
+          <a href="https://www.facebook.com/polimiopenknowledge/" target="_blank"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+          <a href="https://twitter.com/pokpolimi" target="_blank"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+          <a href="https://www.youtube.com/channel/UCOKtBGblWKlkE-KIf-S0Fvg" target="_blank"><span class="fa fa-youtube" aria-hidden="true"></span></a>
         </div>
       </div>
-
-
-
-
-		<div class="references">
-      % if not hide_openedx_link:
-			<div class="built-on">
-				<a  class="open-edx-logo" href="http://openedx.org">
-	  				<img src="${static.url('images/edx-openedx-logo-tag-light.png')}"
-	    				height="50" alt="Powered by Open edX" />
-				</a>
-				<div class="additional-logo-info">
-				 <span>Built on <a target="_blank" href="http://openedx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a></span><span class="in-collab">in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></span>
-				</div>
-			</div>
-      % endif
-			<div class="eco-references">
-					<div class="eco-loghi-container">
-						<div class="cip-eu-logo eco-loghi">
-							<img src="${static.url('images/cip-eu_logo.jpg')}"
-			    				 alt="ECO Project" />
-						</div>
-						<a class="eco-project-logo eco-loghi" href="http://ecolearning.eu">
-			  				<img src="${static.url('images/eco_logo.jpg')}"
-			    				 alt="ECO Project" />
-						</a>
-					</div>
-					<div class="reimagine-award clearfix">
-						<a class="award-link" href="http://www.reimagine-education.com/">
-								<img src="${static.url('images/award_big.png')}"
-									alt="Reimagine Education" />
-						</a>
-						<div class="award-desc">
-							<div>Reimagine Education Award</div>
-							<div>2015 - Shortlisted</div>
-						</div>
-					</div>
-
-			</div>
-		</div>
+      <div class="banner-book-footer">
+        <p>Stay tuned also with <a href="http://book.unibo.it/" target="_blank">BOOK</a> (UniBO Open Knowledge platform) for a growing offer of MOOC contents!</p>
+      </div>
     </div>
-	</footer>
+
+  	<div class="references">
+      % if not hide_openedx_link:
+  		<div class="openedx">
+  			<a class="open-edx-logo" href="http://openedx.org"><img src="${static.url('images/openedx.png')}" alt="Powered by Open edX" /></a>
+  			<p>Built on <a target="_blank" href="http://openedx.org">OpenEdX</a> by <a target="_blank" href="http://www.metid.polimi.it">METID</a> in collaboration with <a target="_blank" href="http://www.asict.polimi.it">ASICT</a></p>
+  		</div>
+      % endif
+  		<div class="eco-references">
+  			<img src="${static.url('images/cip-eu_logo.jpg')}" alt="ECO Project" />
+  			<a class="eco-project-logo eco-loghi" href="http://ecolearning.eu"><img src="${static.url('images/eco_logo.jpg')}" alt="ECO Project" /></a>
+  		</div>
+      <div class="reimagine-award">
+        <div class="badge">
+          <a href="http://www.reimagine-education.com/"><img src="${static.url('images/award_big.png')}" alt="Reimagine Education" /></a>
+          <p>Reimagine Education Award 2015 - Shortlisted</p>
+        </div>
+      </div>
+  	</div>
+
+  </div>
+</footer>
 
 
 <div id="polimi-footer">
-	<div class="polimi-container">
-		<div class="polimi-name"><a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a></div>
-	</div>
+	<a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a>
 </div>
 
 

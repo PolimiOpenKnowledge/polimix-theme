@@ -1,5 +1,5 @@
-.view-dashboard .header-global-new {
-  border-bottom: 1px solid $polimi-ciano;
+.view-dashboard .header-global {
+  border-bottom: 1px solid #a1a5a5;
 }
 
 .content-wrapper .dashboard {
@@ -26,6 +26,9 @@
     width: flex-grid(8);
   }
   .my-courses {
+    .course {
+      margin: 24px;
+    }
 
     .course .details .wrapper-course-image {
       @include margin-right(flex-gutter(9));
@@ -51,17 +54,59 @@
         min-height: 0;
       }
     }
-    .listing-courses .course-item {
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 2px solid $gray-3;
+    .listing-courses .course-item .course-container {
+      background-color: white;
+      border: 1px solid #d9d9d9;
     }
     a.unenroll,
     a.email-settings {
       color: $polimi-ciano;
     }
-    .course .wrapper-messages-primary .message.message-status .actions .action.survey-url .cta {
-      font-size: 20px;
+
+    // dashboard certificate information
+
+    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      text-shadow: none;
+      background: $polimi-ciano;
+      color: white;
+      border-radius: 0;
+      display:block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .course .wrapper-messages-primary .message {
+      padding: 20px 0 0;
+
+      &.message-status .message-copy {
+        margin: 0 0 15px;
+      }
+
+      &.message-status.course-status-certavailable .message-copy {
+        float:none;
+      }
+    }
+    div.action, div.fail {
+      float: left;
+      width: 50%;
+      box-sizing: border-box;
+      font-weight: normal;
+    }
+    div.action-certificate {
+      padding-right: 8px;
+    }
+    div.fail {
+      background-color: #d8d8d8;
+      cursor: not-allowed;
+      margin-right: 8px;
+      width: calc(50% - 8px);
+    }
+    div.survey-url {
+      padding-left: 8px;
     }
   }
   .my-courses .course .info > hgroup h3 a,

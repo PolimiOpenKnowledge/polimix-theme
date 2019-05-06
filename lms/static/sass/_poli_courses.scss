@@ -24,8 +24,18 @@ html .find-courses, html .university-profile {
 html .highlighted-courses .courses,
 html .find-courses .courses {
   .course {
-    .course-image .cover-image:before {
-      height:150px;
+    .course-image .cover-image {
+      height:147px;
+
+      &:before {
+        height:147px;
+        transition-delay: 0s;
+      }
+
+      .learn-more {
+        transition-delay: 0s;
+        top: 49px;
+      }
     }
     .course-info {
       position:relative;
@@ -145,6 +155,12 @@ html .find-courses .courses {
 
 .course-info .container {
   box-sizing: border-box;
+}
+
+.course-info header.course-profile {
+  overflow:visible;
+  margin: 0 -15px;
+  width: calc(100% + 25px);
 }
 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta span.register {
