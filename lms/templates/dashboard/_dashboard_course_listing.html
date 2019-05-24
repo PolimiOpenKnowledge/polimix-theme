@@ -107,7 +107,7 @@ from student.helpers import (
         <div class="course-info">
           <span class="info-university">${course_overview.display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
-          
+
 	 <span class="info-date-block" data-tooltip="Hi">
           % if course_overview.has_ended() and course_overview.end:
             ${_("Ended - {end_date}").format(end_date=course_overview.end.strftime('%b %d, %Y'))}
@@ -127,6 +127,10 @@ from student.helpers import (
 	</div>
         <div class="wrapper-course-actions">
           <div class="course-actions">
+            % if cert_status['status'] == 'processing':
+            <a class="btn btn-survey" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_${course_overview.language}?id=[${user_anonymous_id}}]">Complete the initial survey</a>
+
+            % endif
             % if show_courseware_link:
               % if course_overview.has_ended():
                 % if not is_course_blocked:

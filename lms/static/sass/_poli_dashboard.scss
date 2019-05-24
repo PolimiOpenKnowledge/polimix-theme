@@ -65,18 +65,30 @@
 
     // dashboard certificate information
 
-    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
+    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail, .btn.btn-survey {
       border: none;
       padding: 10px 15px;
       text-align: center;
       text-shadow: none;
       background: $polimi-ciano;
       color: white;
-      border-radius: 0;
+      border-radius: 3px;
       display:block;
+      font-size: 16px;
 
       &:hover {
         text-decoration: none;
+      }
+    }
+    .btn.btn-survey {
+      float:right;
+      padding: 8px 20px;
+      margin-top: 10px;
+      line-height: 23.68px;
+
+      @media(max-width:500px) {
+        display: block;
+        float:none;
       }
     }
     .course .wrapper-messages-primary .message {
