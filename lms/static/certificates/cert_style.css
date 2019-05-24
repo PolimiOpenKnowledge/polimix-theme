@@ -143,6 +143,13 @@ p.disclaimer {
   margin-bottom: 0;
   line-height: 1.2;
 }
+p.duration+p.disclaimer {
+  margin-top: 4px;
+}
+p.duration {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .teachers {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
