@@ -65,18 +65,31 @@
 
     // dashboard certificate information
 
-    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail {
+    .course .wrapper-messages-primary .message.message-status .action .btn, div.fail, .btn.btn-survey {
       border: none;
       padding: 10px 15px;
       text-align: center;
       text-shadow: none;
       background: $polimi-ciano;
       color: white;
-      border-radius: 0;
+      border-radius: 3px;
       display:block;
+      font-size: 16px;
 
       &:hover {
         text-decoration: none;
+      }
+    }
+    .btn.btn-survey {
+      float:right;
+      padding: 8px 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 23.68px;
+
+      @media(max-width:500px) {
+        display: block;
+        float:none;
       }
     }
     .course .wrapper-messages-primary .message {
@@ -117,4 +130,59 @@
   .dashboard-search-bar .search-field {
     box-shadow: 0 0 6px 0 $gray-3, inset 0 0 4px 0 rgba(0, 0, 0, 0.15);
   }
+}
+
+// divided dashboard
+
+.dashboard.container{
+    &.active,
+    &.completed{
+        margin:0;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+        .my-courses{
+           float: none;
+            margin: auto;
+            max-width: 900px;
+            padding: 1em;
+            box-sizing: border-box;
+            .header-courses{
+                font-weight: normal;
+                font-size: 1.6em;
+                color: #333;
+            }
+            .listing-courses .course-item{
+                padding-bottom: 0;
+            }
+        }
+        .wrapper-header-courses{
+            border-bottom: 0;
+            margin-bottom: 2em;
+            &:before{
+                content: "";
+                display: block;
+                background-color: $polimi-ciano;
+                width: 60px;
+                height: 4px;
+                margin-bottom: 1em;
+            }
+            span.it,
+            span.en {
+              display: block;
+            }
+        }
+    }
+    &.completed{
+        background-color: #efefef;
+        border-top: 1px solid #ddd;
+        margin-bottom: -20px;
+        margin-top: 2em;
+        padding-top: 3em;
+        margin-left: -10px;
+        width: calc(100% + 20px);
+        .wrapper-header-courses:before{
+            background-color: #999;
+        }
+    }
 }

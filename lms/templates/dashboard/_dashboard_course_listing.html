@@ -107,18 +107,15 @@ from student.helpers import (
         <div class="course-info">
           <span class="info-university">${course_overview.display_org_with_default} - </span>
           <span class="info-course-id">${course_overview.display_number_with_default}</span>
-          
+
 	 <span class="info-date-block" data-tooltip="Hi">
-          % if course_overview.has_ended():
+          % if course_overview.has_ended() and course_overview.end:
             ${_("Ended - {end_date}").format(end_date=course_overview.end.strftime('%b %d, %Y'))}
-          % elif course_overview.has_started():
+          % elif course_overview.has_started() and course_overview.start:
             ${_("Started - {start_date}").format(start_date=course_overview.start.strftime('%b %d, %Y'))}
           % elif course_overview.start_date_is_still_default: # Course start date TBD
             ${_("Coming Soon")}
-          <!--% elif course_overview.starts_within(days=5):   # hasn't started yet
-            #${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("DAY_AND_TIME", time_zone))}
-	    ${_("Starts - {start_date}").format(start_date=course_overview.start('%b %d,'))} #%k %p %a -->
-          % else:   # hasn't started yet
+          % elif course_overview.start:   # hasn't started yet
             ${_("Starts - {start_date}").format(start_date=course_overview.start.strftime('%b %d, %Y'))}
           % endif
 	</span>
@@ -130,6 +127,11 @@ from student.helpers import (
 	</div>
         <div class="wrapper-course-actions">
           <div class="course-actions">
+            % if cert_status and cert_status['status'] == 'processing':
+            <%user_anonymous_id= user._anonymous_id[None] %>
+            <a class="btn btn-survey" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou2018_${course_overview.language}?id=[${user_anonymous_id}}]">Complete the initial survey</a>
+
+            % endif
             % if show_courseware_link:
               % if course_overview.has_ended():
                 % if not is_course_blocked:

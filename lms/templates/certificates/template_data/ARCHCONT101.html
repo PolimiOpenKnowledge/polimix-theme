@@ -85,10 +85,10 @@
               <p class="date"> 
               
               % if full_course.language == "en":
-              <% locale.setlocale(locale.LC_TIME, "en_US.utf8") %>
+              <% locale.setlocale(locale.LC_ALL, "en_US.utf8") %>
               Milan, ${certificate_date_formatted}</p>
               % else:
-              <% locale.setlocale(locale.LC_TIME, "it_IT") %>
+              <% locale.setlocale(locale.LC_ALL, "it_IT.utf8") %>
               Milano, ${certificate_date_formatted}</p>
               % endif
 
