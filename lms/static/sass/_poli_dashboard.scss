@@ -167,6 +167,10 @@
                 height: 4px;
                 margin-bottom: 1em;
             }
+            span.it,
+            span.en {
+              display: block;
+            }
         }
     }
     &.completed{
