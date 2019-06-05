@@ -133,6 +133,10 @@ h2.unit-title {
   .xmodule_display.xmodule_CapaModule div.problem-progress {
     display:block;
   }
+
+  .xmodule_display.xmodule_CapaModule .problem-hint {
+    flex-basis: 100%;
+  }
 }
 
 h2.hd.hd-2.progress-certificates-title {
