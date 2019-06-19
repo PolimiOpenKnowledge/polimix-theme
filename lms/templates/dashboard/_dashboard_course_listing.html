@@ -119,7 +119,7 @@ from student.helpers import (
             ${_("Starts - {start_date}").format(start_date=course_overview.start.strftime('%b %d, %Y'))}
           % endif
 	</span>
-	% if not full_course.has_ended() and not full_course.start_date_is_still_default:
+	% if not full_course.has_ended() and not full_course.start_date_is_still_default and course_overview.end:
           <span class="info-date-block" data-tooltip="Hi">
               ${_("Ends - {end_date}").format(end_date=course_overview.end.strftime('%b %d, %Y'))}
           </span>
