@@ -105,7 +105,7 @@ user_anonymous_id= user._anonymous_id[None]
       % endif
 
       % if cert_status['show_survey_button']:
-        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}?id=[${user_anonymous_id}]" target="_blank">
+        <div class="action survey-url"><a class="btn" href="${cert_status['survey_url']}?id=${user_anonymous_id}" target="_blank">
                ${_("Complete our course feedback survey")}</a></div>
       % endif
 

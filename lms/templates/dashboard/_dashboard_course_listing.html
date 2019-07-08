@@ -129,7 +129,7 @@ from student.helpers import (
           <div class="course-actions">
             % if cert_status and cert_status['status'] == 'processing':
             <%user_anonymous_id= user._anonymous_id[None] %>
-            <a class="btn btn-survey" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou_${course_overview.language}?id=[${user_anonymous_id}]" target="_blank">Complete the initial survey</a>
+            <a class="btn btn-survey" href="https://it.surveymonkey.com/r/${course_overview.display_number_with_default}_AboutYou_${course_overview.language}?id=${user_anonymous_id}" target="_blank">Complete the initial survey</a>
 
             % endif
             % if show_courseware_link:
