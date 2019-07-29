@@ -4,10 +4,11 @@
 Dear ${ full_name },
 
 You have been invited to join the course "${ course_name }" at ${ site_name } by a member of the course staff. The course should now appear on your dashboard.
-To start accessing course materials, please visit ${ course_url }.
+Once the course has started, the course materials will be available here ${ course_url }.
+
 
 ---
-This email was automatically sent from ${ site_name } to ${ full_name }
+This email was automatically sent from ${ platform_name } to ${ full_name } and you don't need to reply. 
 
 
 
@@ -16,7 +17,8 @@ This email was automatically sent from ${ site_name } to ${ full_name }
 Caro ${ full_name },
 
 ricevi questa mail perchè sei stato iscritto al corso "${course_name}" sulla piattaforma ${site_name} da un membro dello staff del corso. Troverai il corso nella tua dashboard.
-Per iniziare ad accedere ai materiali, visita ${course_url}.
+Una volta partito il corso, i materiali saranno disponibili a questo indirizzo ${course_url}.
+
 
 ---
-Questa email è inviata automaticamente da ${site_name} a ${ full_name }
+Questa email è inviata automaticamente da ${ platform_name } a ${ full_name }

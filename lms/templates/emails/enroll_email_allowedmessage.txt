@@ -1,0 +1,30 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
+
+Dear student,
+
+You have been invited to join the course "${ course_name }" at ${ site_name } by a member of the course staff. 
+
+To complete your registration, visit ${ registration_url } and fill out the registration form. Please, be sure to use ${email_address} when filling out the E-mail field.
+
+Once you have registered and activated your account, you will find the course on your dashboard.
+
+
+---
+This email was automatically sent from ${ platform_name } to ${email_address} and you don't need to reply. 
+
+
+
+
+
+Caro studente,
+
+ricevi questa mail perchè sei stato iscritto al corso "${course_name}" sulla piattaforma ${site_name} da un membro dello staff del corso. 
+
+Per poter accedere al corso è necessario registrarsi alla pagina ${ registration_url }, prestando attenzione ad inserire ${email_address} nel campo E-mail.
+
+Una volta che ti sarai registrato e avrai attivato l'account, troverai il corso nella tua dashboard. 
+
+
+---
+Questa email è inviata automaticamente da ${ platform_name } a ${email_address}
