@@ -1,19 +1,22 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
 
-Dear {full_name},
+Dear ${ full_name },
 
-You have been invited to join {course_name} at {site_name} by a member of the course staff. The course should now appear on your {site_name}dashboard.
-To start accessing course materials, please visit {course_url}.
-
----
-This email was automatically sent from {site_name} to {email_address}
-
-
-Caro {full_name},
-
-ricevi questa mail perchè sei stato iscritto al corso {course_name} sulla piattaforma {site_name} da un membro dello staff del corso. Troverai il corso nella tua dashboard.
-Per iniziare ad accedere ai materiali, visita {course_url}.
+You have been invited to join the course "${ course_name }" at ${ site_name } by a member of the course staff. The course should now appear on your dashboard.
+To start accessing course materials, please visit ${ course_url }.
 
 ---
-Questa email è inviata automaticamente da {site_name} a {email_address}
+This email was automatically sent from ${ site_name } to ${ full_name }
+
+
+
+
+
+Caro ${ full_name },
+
+ricevi questa mail perchè sei stato iscritto al corso "${course_name}" sulla piattaforma ${site_name} da un membro dello staff del corso. Troverai il corso nella tua dashboard.
+Per iniziare ad accedere ai materiali, visita ${course_url}.
+
+---
+Questa email è inviata automaticamente da ${site_name} a ${ full_name }
