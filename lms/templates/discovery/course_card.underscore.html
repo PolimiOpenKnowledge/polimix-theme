@@ -34,7 +34,10 @@
               </h2>
               <div class="course-date" aria-hidden="true">
               <% if(!_.isUndefined(arguments[0].advertised_start)) { %>
-                  <%= advertised_start %>
+                 <%= interpolate(
+                      gettext("Starts: %(start_date)s"),
+                      { start_date: advertised_start }, true
+                    ) %>
               <% } else {%>
                 <%= interpolate(
                       gettext("Starts: %(start_date)s"),
