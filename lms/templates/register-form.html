@@ -88,16 +88,16 @@ if third_party_auth.is_enabled():
       <label for="name">${_('Full Name')}</label>
       <input id="name" type="text" name="name" value="${name}" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
       <span class="tip tip-input" id="name-tip">
-	            <span class="it">È il nome che apparirà su eventuali attestati</span>
 	            <span class="en">${_("Will be shown on any certificate")}</span>
+              <span class="it">È il nome che apparirà su eventuali attestati</span>
             </span>
     </li>
     <li class="field required text" id="field-username">
       <label for="username">${_('Public Username')}</label>
       <input id="username" type="text" name="username" value="${username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
       <span class="tip tip-input" id="username-tip">
-	            <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong></span>
 	            <span class="en">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
+              <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong></span>
 	    </span>
     </li>
 
@@ -140,8 +140,8 @@ if third_party_auth.is_enabled():
       <label for="username">${_('Public Display Name')}</label>
       <input id="username" type="text" name="username" value="${extauth_username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip" />
       <span class="tip tip-input" id="id="username-tip>
-	            <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong></span>
 	            <span class="en">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
+              <span class="it">Verrà mostrato nei forum e nelle discussioni cui prenderai parte <strong>(non potrà essere modificato in un secondo momento)</strong></span>
 	    </span>
     </li>
 
@@ -151,8 +151,8 @@ if third_party_auth.is_enabled():
       <label for="name">${_('Full Name')}</label>
       <input id="name" type="text" name="name" value="" placeholder="$_('example: Jane Doe')}" aria-describedby="name-tip" />
       <span class="tip tip-input" id="name-tip">
-	            <span class="it">È il nome che apparirà su eventuali attestati</span>
 	            <span class="en">${_("Will be shown on any certificate")}</span>
+              <span class="it">È il nome che apparirà su eventuali attestati</span>
       </span>
     </li>
 
@@ -256,12 +256,12 @@ if third_party_auth.is_enabled():
       <div class="field required checkbox" id="field-tos">
         <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
         <label for="tos-yes">
-          <span class="it">${_('Autorizzo il trattamento dei dati personali come indicato nella {notice_start}Privacy Notice{notice_end} e nei {tos_start}Termini di Servizio{tos_end}').format(
+          <span class="en">${_('I give my consent to the processing of my personal data as set out in the {notice_start}Privacy Notice{notice_end} and to the {tos_start}Terms of Service{tos_end}').format(
           notice_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('NOTICE')),
           notice_end='</a>',
           tos_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
           tos_end='</a>')}</span>
-          <span class="en">${_('I give my consent to the processing of my personal data as set out in the {notice_start}Privacy Notice{notice_end} and to the {tos_start}Terms of Service{tos_end}').format(
+          <span class="it">${_('Autorizzo il trattamento dei dati personali come indicato nella {notice_start}Privacy Notice{notice_end} e nei {tos_start}Termini di Servizio{tos_end}').format(
           notice_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('NOTICE')),
           notice_end='</a>',
           tos_start='<a href="{url}" class="new-vp" tabindex="-1">'.format(url=marketing_link('TOS')),
