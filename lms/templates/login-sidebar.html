@@ -20,11 +20,11 @@ from third_party_auth import provider, pipeline
 % if third_party_auth.is_enabled():
     % for enabled in provider.Registry.get_enabled_by_backend_name("tpa-saml"):
     <div class="cta aunica-login bolder-shame">
-      <h3><span class="it">Sei un utente POLIMI?</span><span class="locale-separator">/</span><span class="en">Are you a POLIMI user?</span></h3>
+      <h3><span class="en">Are you a POLIMI user?</span><span class="locale-separator">/</span><span class="it">Sei un utente POLIMI?</span></h3>
       <p class="instructions">
-         <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Codice Persona</a>.</span>
-         <span class="locale-separator">/</span>
          <span class="en">If you are a POLIMI user <strong>you have to log in</strong> using your <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Person Code</a>.</span>
+         <span class="locale-separator">/</span>
+         <span class="it">Se sei un utente POLIMI <strong>devi accedere</strong> con il tuo <a onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');" href="#">Codice Persona</a>.</span>
       </p>
       <p class="button-login">
         <button type="submit" class="link2button button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline_url[enabled.provider_id]}');"><span class="icon fa ${enabled.icon_class}"></span>   POLIMI Login</button>
@@ -33,7 +33,7 @@ from third_party_auth import provider, pipeline
     % endfor
     % for enabled in provider.Registry.get_enabled_by_backend_name("ecoopenid-auth"):
       <div class="cta eco-login">
-        <h3><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span><span class="locale-separator">/</span><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span></h3>
+        <h3><span class="en"><a href="http://ecolearning.eu/" target="_blank">ECO</a> User</span><span class="locale-separator">/</span><span class="it">Utente <a href="http://ecolearning.eu/" target="_blank">ECO</a></span></h3>
         <p class="button-login">
         <button type="submit" class="link2button button button-primary button-${enabled.provider_id} login-${enabled.provider_id}" onclick="thirdPartySignin(event, '${pipeline.get_login_url(enabled.provider_id, pipeline.AUTH_ENTRY_LOGIN)}');">
            	<span class="icon ${enabled.icon_class}"></span>${_('Sign in with {provider_name}').format(provider_name=enabled.name)}
@@ -43,7 +43,7 @@ from third_party_auth import provider, pipeline
     % endfor
 % endif
 <div class="cta cta-help">
-   <h3><span class="it">Serve Aiuto</span><span class="locale-separator">/</span><span class="en">Need help?</span></h3>
+   <h3><span class="en">Need help?</span><span class="locale-separator">/</span><span class="it">Serve Aiuto</span></h3>
    <p>${_('{email}').format(
     email='<a href="mailto:{email}">{email}</a>'.format(email=settings.TECH_SUPPORT_EMAIL))}</p>
  </div>

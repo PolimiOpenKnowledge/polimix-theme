@@ -121,26 +121,26 @@ import calendar
   </aside>
   <section role="main" class="content">
     <div class="cta already-registered">
-      <h3 class="title"><span class="it">Già Registrato?</span><span class="locale-separator">/</span><span class="en">Already Registered?</span></h3>
+      <h3 class="title"><span class="en">Already Registered?</span><span class="locale-separator">/</span><span class="it">Già Registrato?</span></h3>
       <p class="instructions">
-          <span class="it"> Vai al
-      	     <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
-               Login
-             </a>
-          </span>
-          <span class="locale-separator">/</span>
-            <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
+          <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
               <span class="en">
               Log in
               </span>
             </a>
+          <span class="locale-separator">/</span>
+           <span class="it"> Vai al
+             <a class=" cta-login-action" href="${reverse('signin_user')}${login_query()}">
+               Login
+             </a>
+          </span>
             .
       </p>
     </div>
     <div class="cta new-user-external">
-      <h3 class="title"><span class="it">Sei un nuovo utente?</span><span class="locale-separator">/</span><span class="en">Are you a new user?</span></h3>
+      <h3 class="title"><span class="en">Are you a new user?</span><span class="locale-separator">/</span><span class="it">Sei un nuovo utente?</span></h3>
       <p class="instructions">
-      	<span class="it">Se non sei un utente POLIMI puoi registrarti a POK compilando i campi di testo.</span><span class="locale-separator">/</span><span class="en">If you are not POLIMI user you can register to POK by filling in the form.</span>
+      	<span class="en">If you are not POLIMI user you can register to POK by filling in the form.</span><span class="locale-separator">/</span><span class="it">Se non sei un utente POLIMI puoi registrarti a POK compilando i campi di testo.</span>
       </p>
     </div>
     <form role="form" id="register-form" method="post" data-remote="true" action="/create_account" novalidate>
