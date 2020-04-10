@@ -225,17 +225,17 @@ from openedx.core.lib.courses import course_image_url
         <%include file="course_about_sidebar_header.html" />
 
         <ol class="important-dates">
-          <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
+          <li class="important-dates-item"><span class="icon fa fa-tag" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
           % if course.advertised_start is not None:
-            <li class="important-dates-item"><span class="icon fa fa-calendar" aria-hidden="true"></span><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.advertised_start}</span></li>
-          % elif not course.start_date_is_still_default: 
-            <li class="important-dates-item"><span class="icon fa fa-calendar" aria-hidden="true"></span><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.start.strftime('%b %d, %Y')}</span></li>
+            <li class="important-dates-item"><span class="icon fa fa-hourglass-start" aria-hidden="true"></span><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.advertised_start}</span></li>
+          % elif not course.start_date_is_still_default:
+            <li class="important-dates-item"><span class="icon fa	fa-hourglass-start" aria-hidden="true"></span><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.start.strftime('%b %d, %Y')}</span></li>
           %endif
             ## We plan to ditch end_date (which is not stored in course metadata),
             ## but for backwards compatibility, show about/end_date blob if it exists.
             % if get_course_about_section(request, course, "end_date") or course.end:
             <li class="important-dates-item">
-                <span class="icon fa fa-calendar" aria-hidden="true"></span>
+                <span class="icon fa fa-hourglass-end" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Classes End")}</p>
                 <span class="important-dates-item-text final-date">
                     % if get_course_about_section(request, course, "end_date"):
@@ -252,14 +252,14 @@ from openedx.core.lib.courses import course_image_url
               effort = get_course_about_section(request, course, "effort").split('/')
             %>
             % if len(effort) ==2:
-              <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${effort[0]}</span></li>
-              <li class="important-dates-item"><span class="icon fa fa-list-ol" aria-hidden="true"></span><p class="important-dates-item-title">${_("Weeks")}</p><span class="important-dates-item-text effort">${effort[1]}</span></li>
+              <li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${effort[0]}</span></li>
+              <li class="important-dates-item"><span class="icon fa fa-calendar" aria-hidden="true"></span><p class="important-dates-item-title">${_("Weeks")}</p><span class="important-dates-item-text effort">${effort[1]}</span></li>
             % else:
-              <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${effort[0]}</span></li>
+              <li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${effort[0]}</span></li>
             %endif
           % endif
 
-          ##<li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
+          ##<li class="important-dates-item"><span class="icon fa fa-calendar" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
 
           %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
             <li class="important-dates-item">
