@@ -112,7 +112,7 @@ from openedx.core.djangolib.markup import HTML, Text
               <% credit_status = credit_statuses.get(enrollment.course_id) %>
               <% show_email_settings = (enrollment.course_id in show_email_settings_for) %>
               <% course_mode_info = all_course_modes.get(enrollment.course_id) %>
-              <% show_refund_option = (enrollment.course_id in show_refund_option_for) %>
+              <% show_refund_option = null %> <!-- POK FIX: deleted refund option, template doesn't work -->
               <% is_paid_course = (enrollment.course_id in enrolled_courses_either_paid) %>
               <% is_course_blocked = (enrollment.course_id in block_courses) %>
               <% course_verification_status = verification_status_by_course.get(enrollment.course_id, {}) %>
@@ -181,7 +181,7 @@ from openedx.core.djangolib.markup import HTML, Text
                       <% credit_status = credit_statuses.get(enrollment.course_id) %>
                       <% show_email_settings = (enrollment.course_id in show_email_settings_for) %>
                       <% course_mode_info = all_course_modes.get(enrollment.course_id) %>
-                      <% show_refund_option = (enrollment.course_id in show_refund_option_for) %>
+                      #<% show_refund_option = null %> <!-- POK FIX: deleted refund option, template doesn't work -->
                       <% is_paid_course = (enrollment.course_id in enrolled_courses_either_paid) %>
                       <% is_course_blocked = (enrollment.course_id in block_courses) %>
                       <% course_verification_status = verification_status_by_course.get(enrollment.course_id, {}) %>
