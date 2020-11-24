@@ -149,7 +149,7 @@ from openedx.core.lib.courses import course_image_url
         ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
         ## so that they can register and become a real user that can enroll.
         % elif not is_shib_course and not can_enroll:
-          <span class="register disabled"><i class="fa fa-exclamation-triangle"></i><span class="message">This edition is closed. To enroll in this course, please go to <a href='/courses'>Find courses</a> and search for the running edition!</span></span>
+          <span class="register disabled closed"><i class="fa fa-info-circle"></i><span class="message">This edition is closed. To enroll in this course, please go to <a href='/courses'>Find courses</a> and search for the running edition!</span></span>
         %elif can_add_course_to_cart:
           <%
           if user.is_authenticated():
