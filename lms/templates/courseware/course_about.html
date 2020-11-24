@@ -149,7 +149,7 @@ from openedx.core.lib.courses import course_image_url
         ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
         ## so that they can register and become a real user that can enroll.
         % elif not is_shib_course and not can_enroll:
-          <span class="register disabled">${_("Enrollment is Closed")}</span>
+          <span class="register disabled">${_("<i class="fa fa-exclamation-triangle"></i><span class="message">This edition is closed. To enroll in this course, please go to <a href='/courses'>Find courses</a> and search for the running edition!</span>")}</span>
         %elif can_add_course_to_cart:
           <%
           if user.is_authenticated():
@@ -225,7 +225,7 @@ from openedx.core.lib.courses import course_image_url
         <%include file="course_about_sidebar_header.html" />
 
         <ol class="important-dates">
-          
+
           % if course.advertised_start is not None:
             <li class="important-dates-item"><span class="icon fa fa-hourglass-start" aria-hidden="true"></span><p class="important-dates-item-title">${_("Classes Start")}</p><span class="important-dates-item-text start-date">${course.advertised_start}</span></li>
           % elif not course.start_date_is_still_default:
