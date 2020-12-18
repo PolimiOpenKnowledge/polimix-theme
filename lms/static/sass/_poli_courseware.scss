@@ -234,3 +234,13 @@ header.header-global.slim {
     }
   }
 }
+
+.course-info {
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    box-sizing: border-box;
+    padding: 8px 0;
+  }
+}
