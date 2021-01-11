@@ -134,6 +134,9 @@ section.about.outside-app {
       text-align: left;
       margin-left: 30px;
       font-family: $sans-serif;
+      &.classification-job {
+        color:$color-classification-job;
+      }
       &.classification-citizens {
         color:$color-classification-citizens;
       }
