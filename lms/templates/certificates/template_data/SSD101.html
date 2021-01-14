@@ -1,0 +1,117 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../../static_content.html'/>
+<%course_mode_class = course_mode if course_mode else ''%>
+
+<%! from django.utils.translation import ugettext as _ %>
+
+<%! from courseware.courses import get_course %>
+<%! from opaque_keys.edx.keys import CourseKey %>
+<%! from openedx.core.lib.courses import course_image_url %>
+<%! from datetime import datetime %>
+<%! import locale %>
+
+<%
+ # access to full course is slow need to find other solution to access to language
+ courseid = CourseKey.from_string(course_id)
+ full_course = get_course(courseid)
+ certificate_date_formatted = datetime.strptime(certificate_date_issued, '%B %d, %Y').strftime('%d %B %Y')
+%>
+
+
+<head>
+  <title>Certificate template</title>
+  <link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css">
+  <link href="${static.url('certificates/cert_style.css')}" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+  <script src="${static.url('certificates/cert_script.js')}" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="cert_body">
+  <div id="certificate_wrapper">
+    <div id="certificate">
+      % if full_course.language == "en":
+      <h1>Certificate of accomplishment</h1>
+      % else:
+      <h1>Attestato di partecipazione</h1>
+      % endif
+      <img class="head_stripes left_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
+      <h2>Polimi Open Knowledge</h2>
+      <img class="head_stripes right_stripes" src="${static.url('images/certificates/head_stripes.svg')}" />
+
+      <div class="loghi">
+        <img src="${static.url('images/certificates/logo_polimi.svg')}" alt="Politecnico di Milano" />
+        <img src="${static.url('images/certificates/logo_pok.svg')}" alt="Polimi Open Knowledge" />
+        <span style="width:50px;height:50px;display:inline-block;"></span>
+        <img src="${static.url('images/certificates/logo_elene4life.png')}" alt="Elene 4 Life" />
+      </div>
+
+      <table>
+        <tr>
+          % if full_course.language == "en":
+          <td class="card">
+            <p>This is to certify that</p>
+            <p>succesfully completed</p>
+            <div class="stripes">
+              <img src="${static.url('images/certificates/side_stripes.svg')}" />
+            </div>
+            <img class="preview" src="${course_image_url(full_course)}" />
+            <h6>Honor code certificate</h6>
+          </td>
+          % else:
+          <td class="card">
+            <p>Si attesta che</p>
+            <p>ha partecipato con successo al corso</p>
+            <div class="stripes">
+              <img src="${static.url('images/certificates/side_stripes.svg')}" />
+            </div>
+            <img class="preview" src="${course_image_url(full_course)}" />
+            <h6>Honor code certificate</h6>
+          </td>
+          % endif
+
+
+          <td class="core">
+            <div>
+              <p class="highlighted username">${accomplishment_copy_name}</p>
+              <p class="highlighted">${accomplishment_copy_course_name}</p>
+              % if full_course.language == "en":
+              <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
+              % else:
+              <p class="disclaimer">Il conseguimento di questo attestato non vale ai fini del riconoscimento di crediti universitari.</p>
+              % endif
+            </div>
+            <div>
+              <p class="date">
+
+              % if full_course.language == "en":
+              <% locale.setlocale(locale.LC_ALL, "en_US.utf8") %>
+              Milan, ${certificate_date_formatted}</p>
+              % else:
+              <% locale.setlocale(locale.LC_ALL, "it_IT.utf8") %>
+              Milano, ${certificate_date_formatted}</p>
+              % endif
+
+
+              <div class="teachers">
+                <div class="single_teacher">
+                  <img src="${static.url('images/certificates/signatures/sancassani.jpg')}" />
+                  <span>Susanna Sancassani<br/>METID – Learning Innovation<br/>Politecnico di Milano</span>
+                </div>
+              </div>
+              % if full_course.language == "en":
+              <p class="code">Authenticity of this certificate can be verified at
+              % else:
+              <p class="code">L’autenticità di questo attestato può essere verificata a
+              % endif
+              <a href="https://${site}/certificates/${certificate_id_number}">https://${site}/certificates/${certificate_id_number}</a></p>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
