@@ -244,3 +244,26 @@ header.header-global.slim {
     padding: 8px 0;
   }
 }
+
+.ilos a { // link a abilità ESCO
+  background-color: white;
+  border: 1px solid #ebcc51;
+  padding: 4px 7px 2px;
+  border-radius: 4px;
+  color: #707172;
+  font-family: "Yanone Kaffeesatz", "Bree Serif", Georgia, Cambria, "Times New Roman", Times, serif!important;
+  margin-bottom: 5px;
+  display: inline-block;
+  line-height: 1;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    background-color: lighten(#ebcc51, 10%);
+    color: black;
+  }
+
+  &:focus {
+    border: 1px solid black;
+    outline:none;
+  }
+}
