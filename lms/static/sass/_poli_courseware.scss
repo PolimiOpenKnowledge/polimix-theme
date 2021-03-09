@@ -256,6 +256,10 @@ header.header-global.slim {
   display: inline-block;
   line-height: 1;
 
+  &:visited {
+    color: #707172;
+  }
+
   &:hover, &:active, &:focus {
     text-decoration: none;
     background-color: lighten(#ebcc51, 10%);
