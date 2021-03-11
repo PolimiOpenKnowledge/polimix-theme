@@ -31,7 +31,7 @@
     }
 
     .course .details .wrapper-course-image {
-      @include margin-right(flex-gutter(9));
+      ////@include margin-right(flex-gutter(9));
       width: flex-grid(3,9);
     }
     .course .details .wrapper-course-details {

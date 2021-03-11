@@ -47,7 +47,7 @@
   }
   .introduction {
     header {
-      @include account-header($gray-1);
+      ////@include account-header($gray-1);
     }
   }
   .register.container {
@@ -178,7 +178,7 @@
   }
   .introduction {
     header {
-      @include account-header($gray-1);
+      //@include account-header($gray-1);
     }
   }
   .login.container {
@@ -294,8 +294,8 @@
     margin: 0 auto;
     padding: 10px;
     background: $container-bg;
-    @include box-sizing(border-box);
-    @include clearfix;
+    //@include box-sizing(border-box);
+    //@include clearfix;
     .instructions {
       .locale-separator {
         display: none;
@@ -326,7 +326,7 @@
 
 .login.container .cta, .register.container .cta {
   button.link2button  {
-    @include reset-button();
+    //@include reset-button();
   }
 }
 

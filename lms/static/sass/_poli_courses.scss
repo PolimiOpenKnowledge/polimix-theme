@@ -59,7 +59,7 @@ html .find-courses .courses {
     .status.enrollment {
       left: 2%;
       background: $red;
-      @include transform(rotate(0deg));
+      //@include transform(rotate(0deg));
       &:after {
         position: absolute;
         top: 0;

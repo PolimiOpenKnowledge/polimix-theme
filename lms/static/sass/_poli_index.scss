@@ -96,8 +96,8 @@
   margin-top: 20px;
   position:relative;
   .search-input {
-    @include border-radius(3px);
-    @include padding-right(55px);
+    //@include border-radius(3px);
+    //@include padding-right(55px);
     border: 2px solid $gray-l3;
     width: 100%;
     height: 55px;
@@ -113,8 +113,8 @@
   }
 
   .search-button {
-    @include margin-left(-2px);
-    @include right(0);
+    //@include margin-left(-2px);
+    //@include right(0);
     position: absolute;
     top: 0;
     border: 2px solid $m-blue-d6;
@@ -131,4 +131,11 @@
       background: $m-blue-d5;
     }
   }
+  .header-global {
+    border-bottom: 1px solid #0075b4;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+    background: #fff;
+    position: relative;
+    width: 100%;
+    }
 }

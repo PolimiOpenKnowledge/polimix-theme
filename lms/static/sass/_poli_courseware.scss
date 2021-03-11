@@ -90,7 +90,7 @@ body.view-in-course .container {
   .teacher {
     padding: 10px 0;
     background-color: transparent;
-    @include clearfix;
+    //@include clearfix;
 
     h3 {
       line-height: 0.8;

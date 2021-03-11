@@ -131,7 +131,7 @@ html {
       max-width: 1200px;
       margin: 0 auto;
       padding: 150px 10px 0;
-      @include clearfix;
+      //@include clearfix;
     }
     .title.legend-course-level {
       width: 100%;
@@ -143,14 +143,14 @@ html {
       border: 1px solid $white;
       background: $gray-1;
       box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.5);
-      @include box-sizing(border-box);
+      //@include box-sizing(border-box);
       ul {
         font-size: .9em;
         height: 60px;
         margin: .5em auto;
         padding-left: 2.3em;
         list-style: none;
-        @include clearfix;
+        //@include clearfix;
         li {
           font-weight: 900;
           display: inline;
