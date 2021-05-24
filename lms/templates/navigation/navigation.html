@@ -20,8 +20,8 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
 from status.status import get_site_status_msg
 %>
 
-## Provide a hook for themes to inject branding on top.
-<%block name="navigation_top">
+    ## Provide a hook for themes to inject branding on top.
+    <%block name="navigation_top">
 <div id="polimi-header">
   <a href="http://www.polimi.it" target="_blank"><img src="${static.url('images/poli_logotipo.png')}"  alt="Politecnico di Milano" /></a>
 </div>
@@ -45,23 +45,23 @@ except:
     course_id = None
 site_status_msg = get_site_status_msg(course_id)
 %>
-% if site_status_msg:
-<div class="site-status">
-  <div class="inner-wrapper">
-    <span class="icon fa fa-warning"></span>
-    <p>${site_status_msg}</p>
-  </div>
-</div>
-% endif
-</%block>
+        % if site_status_msg:
+        <div class="site-status">
+            <div class="inner-wrapper">
+                <span class="icon fa fa-warning"></span>
+                <p>${site_status_msg}</p>
+            </div>
+        </div>
+        % endif
+    </%block>
 
-% if uses_bootstrap:
-  <header class="navigation-container header-global ${"slim" if course else ""}">
-    <nav class="navbar navbar-toggleable-md navbar-light">
-      <button class="navbar-toggler navbar-toggler-right mt-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    % if uses_bootstrap:
+    <header class="navigation-container header-global ${" slim " if course else " "}">
+        <nav class="navbar navbar-toggleable-md navbar-light">
+            <button class="navbar-toggler navbar-toggler-right mt-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <%include file="bootstrap/navbar-logo-header.html" args="online_help_token=online_help_token"/>
+            <%include file="bootstrap/navbar-logo-header.html" args="online_help_token=online_help_token"/>
       % if user.is_authenticated:
         <%include file="bootstrap/navbar-authenticated.html" args="online_help_token=online_help_token"/>
       % else:
@@ -80,17 +80,14 @@ site_status_msg = get_site_status_msg(course_id)
       % endif
       % if header_language_selector_is_enabled():
         <% languages = released_languages() %>
-        % if len(languages) > 1:
-          <ol class="user">
-            <li class="primary">
-              <form action="/i18n/setlang/" method="post" class="settings-language-form" id="language-settings-form">
-                <input type="hidden" id="csrf_token" name="csrfmiddlewaretoken" value="${csrf_token}">
-                % if user.is_authenticated:
-                  <input title="preference api" type="hidden" class="url-endpoint" value="${reverse('preferences_api', kwargs={'username': user.username})}" data-user-is-authenticated="true">
-                % else:
-                  <input title="session update url" type="hidden" class="url-endpoint" value="${reverse('session_language')}" data-user-is-authenticated="false">
-                % endif
-                <label><span class="sr">${_("Choose Language")}</span>
+                % if len(languages) > 1:
+                <ol class="user">
+                    <li class="primary">
+                        <form action="/i18n/setlang/" method="post" class="settings-language-form" id="language-settings-form">
+                            <input type="hidden" id="csrf_token" name="csrfmiddlewaretoken" value="${csrf_token}"> % if user.is_authenticated:
+                            <input title="preference api" type="hidden" class="url-endpoint" value="${reverse('preferences_api', kwargs={'username': user.username})}" data-user-is-authenticated="true"> % else:
+                            <input title="session update url" type="hidden" class="url-endpoint" value="${reverse('session_language')}" data-user-is-authenticated="false"> % endif
+                            <label><span class="sr">${_("Choose Language")}</span>
                   <select class="input select language-selector" id="settings-language-value" name="language">
                     % for language in languages:
                       % if language[0] == LANGUAGE_CODE:
@@ -101,16 +98,14 @@ site_status_msg = get_site_status_msg(course_id)
                     % endfor
                   </select>
                 </label>
-              </form>
-            </li>
-          </ol>
-        % endif
-      % endif
-    </nav>
-  </header>
-% endif
-% if course:
-<!--[if lte IE 9]>
+                        </form>
+                    </li>
+                </ol>
+                % endif % endif
+        </nav>
+    </header>
+    % endif % if course:
+    <!--[if lte IE 9]>
 <div class="ie-banner" aria-hidden="true">${Text(_('{begin_strong}Warning:{end_strong} Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.')).format(
     begin_strong=HTML('<strong>'),
     end_strong=HTML('</strong>'),
@@ -118,6 +113,6 @@ site_status_msg = get_site_status_msg(course_id)
     ff_link=HTML('<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>'),
 )}</div>
 <![endif]-->
-% endif
+    % endif ##
 
-##<%include file="../help_modal.html"/>
+    <%include file="../help_modal.html"/>
