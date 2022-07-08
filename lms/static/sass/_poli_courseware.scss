@@ -13,6 +13,42 @@ body.view-in-course .container {
   padding:0;
 }
 
+// EU box
+.box-info {
+  margin: 20px auto;
+  padding: 24px;
+  border: 1px #707172 solid;
+}
+
+.course-info .box-info p, .box-info p {
+  margin-bottom: 15px;
+}
+
+.box-info p.disclaimer {
+  font-size: .8em;
+  margin-bottom: 0;
+}
+
+.loghi {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.loghi div {
+  display: flex;
+  align-items: center;
+  max-width: 280px;
+}
+
+.loghi img {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.logo_sep {
+  width:15px;
+}
+
 .content-wrapper div.info-wrapper {
   background-color:white;
 
