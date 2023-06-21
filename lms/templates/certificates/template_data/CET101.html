@@ -42,6 +42,8 @@
       <div class="loghi">
         <img src="${static.url('images/certificates/logo_polimi.svg')}" alt="Politecnico di Milano" />
         <img src="${static.url('images/certificates/logo_pok.svg')}" alt="Polimi Open Knowledge" />
+        <span style="width:50px;height:50px;display:inline-block;"></span>
+        <img src="${static.url('images/certificates/fempower.png')}" alt="digimood" />
       </div>
 
       <table>
@@ -74,6 +76,7 @@
               <p class="highlighted username">${accomplishment_copy_name}</p>
               <p class="highlighted">${accomplishment_copy_course_name}</p>
               % if full_course.language == "en":
+              <p class="disclaimer">Total duration: 25 hours<br/>The certificate of accomplishment is not valid for university credits.</p>
               <p class="disclaimer">The certificate of accomplishment is not valid for university credits.</p>
               % else:
               <p class="disclaimer">Il conseguimento di questo attestato non vale ai fini del riconoscimento di crediti universitari.</p>
@@ -81,6 +84,7 @@
             </div>
             <div>
               <p class="date">
+
               % if full_course.language == "en":
               <% locale.setlocale(locale.LC_ALL, "en_US.utf8") %>
               Milan, ${certificate_date_formatted}</p>
@@ -89,14 +93,11 @@
               Milano, ${certificate_date_formatted}</p>
               % endif
 
+
               <div class="teachers">
                 <div class="single_teacher">
-                  <img src="${static.url('images/certificates/signatures/cocchiarella.jpg')}" />
-                  <span>Prof. Luigi Cocchiarella<br/>Responsabile scientifico</span>
-                </div>
-                <div class="single_teacher">
-                  <img src="${static.url('images/certificates/signatures/aiminio.jpg')}" />
-                  <span>Prof. Renato Aiminio<br/>Responsabile LaborA - modellistica fisica e virtuale</span>
+                  <img src="${static.url('images/certificates/signatures/sancassani.jpg')}" />
+                  <span>Prof. Susanna Sancassani<br/>Politecnico di Milano</span>
                 </div>
               </div>
               % if full_course.language == "en":
