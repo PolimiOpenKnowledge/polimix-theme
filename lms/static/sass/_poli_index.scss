@@ -57,16 +57,17 @@
 
   .updates-box {
     text-align: center;
-    background-color: #faf6e5;
+    background-color: #fcf4ea;
     width: 80%;
     padding: 20px;
     max-width: 950px;
-    border: 5px solid #d6a502;
+    border: 5px solid #E79A32;
     box-sizing: border-box;
     border-radius: 6px;
     margin: 20px auto;
     font-size:1.25em;
     box-shadow:6px 6px 5px 0 rgba(0,0,0,0.5);
+    margin-top:50px;
 
     h3 {
       text-transform: uppercase;
@@ -74,7 +75,7 @@
       font-size: 1.4em;
       padding-bottom: 10px;
       font-weight: bold;
-      color: #d6a502;
+      color: #E79A32;
     }
   }
 }
