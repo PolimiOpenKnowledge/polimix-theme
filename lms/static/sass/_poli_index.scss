@@ -22,6 +22,7 @@
   .outer-wrapper {
     margin-bottom: 0;
     padding: 320px 10px 0 10px;
+    animation:none!important;
   }
   .title {
     width: flex-grid(6) + flex-gutter();
@@ -68,6 +69,11 @@
     font-size:1.25em;
     box-shadow:6px 6px 5px 0 rgba(0,0,0,0.5);
     margin-top:50px;
+
+    animation: home-header-pop-up 1.15s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+
 
     h3 {
       text-transform: uppercase;
