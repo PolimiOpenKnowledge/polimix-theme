@@ -16,7 +16,7 @@
 }
 
  .home > header {
-  height: 650px;
+  height: 750px;
   margin: 0 -15px;
   width: calc(100% + 25px);
   .outer-wrapper {
@@ -57,18 +57,24 @@
 
   .updates-box {
     text-align: center;
-    background-color: white;
-    width: 100%;
+    background-color: #faf6e5;
+    width: 80%;
     padding: 20px;
-    max-width: 1200px;
-    border: 2px solid $polimi-ciano;
+    max-width: 950px;
+    border: 5px solid #d6a502;
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: 6px;
     margin: 20px auto;
+    font-size:1.25em;
+    box-shadow:6px 6px 5px 0 rgba(0,0,0,0.5);
 
     h3 {
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-size: 1.4em;
+      padding-bottom: 10px;
+      font-weight: bold;
+      color: #d6a502;
     }
   }
 }
